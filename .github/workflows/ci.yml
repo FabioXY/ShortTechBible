@@ -1,0 +1,155 @@
+name: CI — Validate & Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  # ─────────────────────────────────────────────
+  # Job 1: Validate all entries
+  # ─────────────────────────────────────────────
+  validate:
+    name: Validate entries
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run validate.py
+        run: |
+          python scripts/validate.py
+        # Exit code 1 blocks merge automatically
+
+  # ─────────────────────────────────────────────
+  # Job 2: Build all artifacts (only on main push or after PR validate passes)
+  # ─────────────────────────────────────────────
+  build:
+    name: Build artifacts
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Pandoc and XeLaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended \
+            texlive-fonts-extra fonts-dejavu
+
+      - name: Run build.py
+        run: |
+          python scripts/build.py
+
+      - name: Commit updated dist/ and docs/ files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dist/ docs/acronyms_data.js README.md
+          # Only commit if there are changes
+          git diff --staged --quiet || git commit -m "chore(build): regenerate dist artifacts [skip ci]"
+          git push
+
+      - name: Upload PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShortTechBible-PDF
+          path: dist/ShortTechBible.pdf
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload JSON as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShortTechBible-JSON
+          path: dist/acronyms.json
+          retention-days: 30
+
+  # ─────────────────────────────────────────────
+  # Job 3: Create GitHub Release on tag push
+  # ─────────────────────────────────────────────
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download PDF artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ShortTechBible-PDF
+          path: dist/
+
+      - name: Download JSON artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ShortTechBible-JSON
+          path: dist/
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/ShortTechBible.pdf
+            dist/acronyms.json
+            dist/acronyms.csv
+          generate_release_notes: true
+          draft: false
+          prerelease: false
+
+  # ─────────────────────────────────────────────
+  # Job 4: Deploy GitHub Pages
+  # ─────────────────────────────────────────────
+  deploy-pages:
+    name: Deploy GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main  # Pull the latest commit (which has updated dist/ files)
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

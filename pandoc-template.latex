@@ -1,0 +1,142 @@
+% ─────────────────────────────────────────────────────────────────────────────
+% ShortTechBible — Custom Pandoc LaTeX Template
+% Engine: XeLaTeX
+% ─────────────────────────────────────────────────────────────────────────────
+
+\documentclass[11pt,a4paper,openany]{book}
+
+% ── Font & encoding ───────────────────────────────────────────────────────────
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setmonofont{DejaVu Sans Mono}[Scale=0.85]
+\setsansfont{DejaVu Sans}
+
+% ── Page geometry ─────────────────────────────────────────────────────────────
+\usepackage[
+  a4paper,
+  top=2.5cm,
+  bottom=2.5cm,
+  left=2.8cm,
+  right=2.8cm,
+  headheight=15pt
+]{geometry}
+
+% ── Color ─────────────────────────────────────────────────────────────────────
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\definecolor{stbblue}{RGB}{30, 80, 140}
+\definecolor{stbgray}{RGB}{100, 100, 100}
+\definecolor{stblightgray}{RGB}{245, 245, 245}
+\definecolor{stbaccent}{RGB}{220, 50, 50}
+
+% ── Hyperlinks ────────────────────────────────────────────────────────────────
+\usepackage[
+  colorlinks=true,
+  linkcolor=stbblue,
+  urlcolor=stbblue,
+  citecolor=stbblue,
+  pdftitle={ShortTechBible},
+  pdfsubject={Open-Source IT Acronym Encyclopedia},
+  pdfauthor={ShortTechBible Contributors},
+  pdfkeywords={IT acronyms, tech glossary, networking, security, devops}
+]{hyperref}
+
+% ── Header & footer ───────────────────────────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\textcolor{stbgray}{\textit{ShortTechBible}}}
+\fancyhead[RO]{\small\textcolor{stbgray}{\textit{\leftmark}}}
+\fancyfoot[C]{\small\textcolor{stbgray}{\thepage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{stbblue}\hrule width\headwidth height\headrulewidth}
+\renewcommand{\footrulewidth}{0pt}
+
+% ── Chapter/section styling ───────────────────────────────────────────────────
+\usepackage{titlesec}
+
+% Chapter (letter A, B, C …) — large blue letter
+\titleformat{\chapter}[display]
+  {\normalfont\Huge\bfseries\color{stbblue}}
+  {}
+  {0pt}
+  {\Huge}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}
+
+% Section (## ACRONYM — Full Name)
+\titleformat{\section}
+  {\normalfont\large\bfseries\color{stbblue}}
+  {}
+  {0pt}
+  {}
+\titlespacing*{\section}{0pt}{18pt}{4pt}
+
+% ── Table of contents ─────────────────────────────────────────────────────────
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\bfseries\color{stbblue}}
+\renewcommand{\cftsecfont}{\small}
+\setlength{\cftbeforechapskip}{4pt}
+
+% ── Horizontal rule between entries ──────────────────────────────────────────
+\usepackage{booktabs}
+
+% Redefine \hrule to be colored and thin
+\let\OldHrule\hrule
+\renewcommand{\hrule}{\vspace{4pt}{\color{stblightgray}\OldHrule height 0.6pt}\vspace{4pt}}
+
+% ── Code / monospace blocks ───────────────────────────────────────────────────
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  backgroundcolor=\color{stblightgray},
+  frame=single,
+  rulecolor=\color{stbblue!30},
+  framesep=4pt,
+}
+
+% ── Misc ──────────────────────────────────────────────────────────────────────
+\usepackage{microtype}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+% ── Cover page ───────────────────────────────────────────────────────────────
+\newcommand{\makecovertitle}{
+  \begin{titlepage}
+    \pagecolor{stbblue}
+    \color{white}
+    \vspace*{3cm}
+    \begin{center}
+      {\fontsize{52}{60}\selectfont\bfseries ShortTechBible}\\[0.5cm]
+      {\LARGE\itshape The Open-Source IT Acronym Encyclopedia}\\[2cm]
+      {\large\textcolor{white!80!stbblue} Community Contributors}\\[0.5cm]
+      {\large $date$}
+    \end{center}
+    \vfill
+    \begin{center}
+      \textcolor{white!60!stbblue}{\small
+        github.com/YOUR\_USERNAME/ShortTechBible\\
+        Licensed under MIT
+      }
+    \end{center}
+  \end{titlepage}
+  \nopagecolor
+}
+
+% ─────────────────────────────────────────────────────────────────────────────
+% Document body
+% ─────────────────────────────────────────────────────────────────────────────
+
+\begin{document}
+
+\makecovertitle
+
+\frontmatter
+\tableofcontents
+\clearpage
+
+\mainmatter
+
+$body$
+
+\end{document}

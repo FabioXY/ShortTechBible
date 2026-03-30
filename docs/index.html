@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShortTechBible — IT Acronym Encyclopedia</title>
+  <meta name="description" content="Open-source encyclopedia of 3–4 letter IT acronyms. Search networking, security, OS, cloud, and dev terms." />
+  <meta name="keywords" content="IT acronyms, tech glossary, networking acronyms, security acronyms, open source dictionary, DevOps terms" />
+  <meta property="og:title" content="ShortTechBible — IT Acronym Encyclopedia" />
+  <meta property="og:description" content="Every 3–4 letter IT acronym, explained properly. Open-source, community-driven." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --blue:     #1e508c;
+      --blue-lt:  #2d6db5;
+      --accent:   #dc3232;
+      --gray:     #6b7280;
+      --gray-lt:  #f3f4f6;
+      --border:   #e5e7eb;
+      --text:     #111827;
+      --text-sm:  #374151;
+      --radius:   8px;
+      --shadow:   0 1px 3px rgba(0,0,0,.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--blue);
+      color: #fff;
+      padding: 40px 24px 32px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: -0.5px; }
+    header p  { margin-top: 8px; opacity: .85; font-size: 1.05rem; }
+    .header-links { margin-top: 20px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .header-links a {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 20px;
+      padding: 6px 16px;
+      text-decoration: none;
+      font-size: .9rem;
+      transition: background .2s;
+    }
+    .header-links a:hover { background: rgba(255,255,255,.28); }
+
+    /* ── Controls ── */
+    .controls {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: var(--shadow);
+    }
+
+    #search {
+      flex: 1;
+      min-width: 200px;
+      padding: 9px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    #search:focus { border-color: var(--blue-lt); }
+
+    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .filter-btn {
+      padding: 6px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      background: #fff;
+      cursor: pointer;
+      font-size: .85rem;
+      color: var(--text-sm);
+      transition: all .15s;
+    }
+    .filter-btn.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: #fff;
+    }
+    .filter-btn:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue); }
+
+    /* ── A–Z nav ── */
+    .az-nav {
+      padding: 12px 24px;
+      background: var(--gray-lt);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+    .az-nav a {
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem;
+      color: var(--blue);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background .15s;
+    }
+    .az-nav a:hover { background: var(--blue); color: #fff; }
+
+    /* ── Main layout ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    #stats {
+      display: flex; gap: 16px; flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .stat-pill {
+      background: var(--gray-lt);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: .88rem;
+      color: var(--text-sm);
+    }
+    .stat-pill strong { color: var(--blue); }
+
+    /* ── Letter group ── */
+    .letter-group { margin-bottom: 40px; }
+    .letter-heading {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--blue);
+      border-bottom: 2px solid var(--blue);
+      padding-bottom: 4px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Entry card ── */
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .entry-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      transition: box-shadow .2s, border-color .2s;
+      background: #fff;
+    }
+    .entry-card:hover { box-shadow: 0 4px 12px rgba(30,80,140,.12); border-color: var(--blue-lt); }
+    .entry-card.hidden { display: none; }
+
+    .entry-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+    .entry-acronym {
+      font-size: 1.2rem; font-weight: 800; color: var(--blue);
+      font-family: 'SF Mono', Consolas, monospace;
+    }
+    .entry-fullname { font-size: .85rem; color: var(--gray); flex: 1; }
+
+    .entry-desc { font-size: .9rem; color: var(--text-sm); line-height: 1.55; margin-bottom: 12px; }
+
+    .entry-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+    .badge {
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+    }
+
+    /* Difficulty badges */
+    .diff-Base         { background: #dcfce7; color: #166534; }
+    .diff-Intermediate { background: #fef9c3; color: #854d0e; }
+    .diff-Advanced     { background: #fee2e2; color: #991b1b; }
+
+    /* Category badges */
+    .cat { background: #eff6ff; color: var(--blue); }
+
+    /* ── Empty state ── */
+    #empty-state {
+      display: none;
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--gray);
+    }
+    #empty-state h2 { font-size: 1.4rem; margin-bottom: 8px; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 24px;
+      color: var(--gray);
+      font-size: .88rem;
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      .entry-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📖 ShortTechBible</h1>
+  <p>The Open-Source IT Acronym Encyclopedia — every 3–4 letter IT term, explained properly.</p>
+  <div class="header-links">
+    <a href="https://github.com/YOUR_USERNAME/ShortTechBible" target="_blank">⭐ GitHub</a>
+    <a href="https://github.com/YOUR_USERNAME/ShortTechBible/releases/latest" target="_blank">📄 Download PDF</a>
+    <a href="https://github.com/YOUR_USERNAME/ShortTechBible/blob/main/CONTRIBUTING.md" target="_blank">➕ Contribute</a>
+    <a href="https://github.com/YOUR_USERNAME/ShortTechBible/issues/new?template=new_acronym.md" target="_blank">💡 Propose Acronym</a>
+  </div>
+</header>
+
+<div class="controls">
+  <input type="search" id="search" placeholder="Search acronyms, names, or descriptions…" autocomplete="off" />
+
+  <div class="filter-group" id="cat-filters">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Networking">Networking</button>
+    <button class="filter-btn" data-filter="Security">Security</button>
+    <button class="filter-btn" data-filter="OS">OS</button>
+    <button class="filter-btn" data-filter="Dev">Dev</button>
+    <button class="filter-btn" data-filter="Hardware">Hardware</button>
+    <button class="filter-btn" data-filter="Cloud">Cloud</button>
+    <button class="filter-btn" data-filter="Database">Database</button>
+    <button class="filter-btn" data-filter="AI">AI</button>
+    <button class="filter-btn" data-filter="Protocol">Protocol</button>
+  </div>
+</div>
+
+<nav class="az-nav" id="az-nav"></nav>
+
+<main>
+  <div id="stats"></div>
+  <div id="entries-container"></div>
+  <div id="empty-state">
+    <h2>No results found</h2>
+    <p>Try a different search term or category filter.</p>
+  </div>
+</main>
+
+<footer>
+  <p>
+    <strong>ShortTechBible</strong> — Community-maintained open-source project.<br/>
+    <a href="https://github.com/YOUR_USERNAME/ShortTechBible/blob/main/LICENSE">MIT License</a> ·
+    <a href="https://github.com/YOUR_USERNAME/ShortTechBible">Contribute on GitHub</a> ·
+    Data: <a href="acronyms_data.js">acronyms_data.js</a>
+  </p>
+</footer>
+
+<!-- Data injected by build.py -->
+<script src="acronyms_data.js"></script>
+
+<script>
+  // ── Fallback if acronyms_data.js hasn't been built yet ──────────────────
+  if (typeof ACRONYMS_DATA === 'undefined') {
+    window.ACRONYMS_DATA = [];
+    document.getElementById('empty-state').innerHTML =
+      '<h2>Data not yet generated</h2><p>Run <code>python scripts/build.py</code> to generate <code>docs/acronyms_data.js</code>.</p>';
+    document.getElementById('empty-state').style.display = 'block';
+  }
+
+  const data = ACRONYMS_DATA;
+
+  // ── State ────────────────────────────────────────────────────────────────
+  let activeCategory = 'all';
+  let searchQuery    = '';
+
+  // ── A–Z nav ──────────────────────────────────────────────────────────────
+  const letters = [...new Set(data.map(e => e.letter))].sort();
+  const azNav   = document.getElementById('az-nav');
+  letters.forEach(l => {
+    const a = document.createElement('a');
+    a.href = '#letter-' + l;
+    a.textContent = l;
+    azNav.appendChild(a);
+  });
+
+  // ── Stats ─────────────────────────────────────────────────────────────────
+  function renderStats(visible) {
+    const cats = {};
+    visible.forEach(e => { cats[e.category] = (cats[e.category] || 0) + 1; });
+    const statsEl = document.getElementById('stats');
+    statsEl.innerHTML = `
+      <div class="stat-pill">Total: <strong>${data.length}</strong></div>
+      <div class="stat-pill">Visible: <strong>${visible.length}</strong></div>
+      ${Object.entries(cats).sort((a,b) => b[1]-a[1]).map(([k,v]) =>
+        `<div class="stat-pill">${k}: <strong>${v}</strong></div>`).join('')}
+    `;
+  }
+
+  // ── Render ────────────────────────────────────────────────────────────────
+  function render() {
+    const q = searchQuery.toLowerCase();
+
+    const filtered = data.filter(e => {
+      const catMatch = activeCategory === 'all' || e.category === activeCategory;
+      const qMatch   = !q ||
+        e.acronym.toLowerCase().includes(q) ||
+        (e.full_name || '').toLowerCase().includes(q) ||
+        (e.description || '').toLowerCase().includes(q);
+      return catMatch && qMatch;
+    });
+
+    // Group by letter
+    const byLetter = {};
+    filtered.forEach(e => {
+      (byLetter[e.letter] = byLetter[e.letter] || []).push(e);
+    });
+
+    const container = document.getElementById('entries-container');
+    container.innerHTML = '';
+
+    const sortedLetters = Object.keys(byLetter).sort();
+    sortedLetters.forEach(letter => {
+      const group = document.createElement('div');
+      group.className = 'letter-group';
+      group.id = 'letter-' + letter;
+
+      const heading = document.createElement('div');
+      heading.className = 'letter-heading';
+      heading.textContent = letter;
+      group.appendChild(heading);
+
+      const grid = document.createElement('div');
+      grid.className = 'entry-grid';
+
+      byLetter[letter].forEach(e => {
+        const card = document.createElement('div');
+        card.className = 'entry-card';
+        card.innerHTML = `
+          <div class="entry-header">
+            <span class="entry-acronym">${esc(e.acronym)}</span>
+            <span class="entry-fullname">${esc(e.full_name || '')}</span>
+          </div>
+          <div class="entry-desc">${esc(e.description || '')}</div>
+          <div class="entry-meta">
+            <span class="badge diff-${esc(e.difficulty)}">${esc(e.difficulty)}</span>
+            <span class="badge cat">${esc(e.category)}</span>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      group.appendChild(grid);
+      container.appendChild(group);
+    });
+
+    const empty = document.getElementById('empty-state');
+    empty.style.display = filtered.length === 0 ? 'block' : 'none';
+
+    renderStats(filtered);
+  }
+
+  function esc(str) {
+    return String(str)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Event listeners ───────────────────────────────────────────────────────
+  document.getElementById('search').addEventListener('input', e => {
+    searchQuery = e.target.value;
+    render();
+  });
+
+  document.getElementById('cat-filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCategory = btn.dataset.filter;
+    render();
+  });
+
+  // ── Initial render ────────────────────────────────────────────────────────
+  render();
+</script>
+</body>
+</html>

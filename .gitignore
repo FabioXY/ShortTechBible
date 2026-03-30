@@ -1,0 +1,50 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist_py/
+build/
+.venv/
+venv/
+env/
+.env
+
+# ── Build intermediates ───────────────────────────────────────────────────────
+dist/_combined.md
+
+# ── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── Editors ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+
+# ── LaTeX intermediates ───────────────────────────────────────────────────────
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# ── Keep dist/ tracked (except intermediates above) ──────────────────────────
+!dist/ShortTechBible.pdf
+!dist/acronyms.json
+!dist/acronyms.csv
