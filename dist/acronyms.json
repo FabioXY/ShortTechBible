@@ -1,0 +1,1273 @@
+{
+  "meta": {
+    "total": 158,
+    "generated_at": "2026-03-30T21:57:56.605639+00:00",
+    "source": "https://github.com/YOUR_USERNAME/ShortTechBible"
+  },
+  "entries": [
+    {
+      "acronym": "ACL",
+      "full_name": "Access Control List",
+      "description": "A set of rules attached to a network interface, file system object, or other resource that specifies which users or systems are granted or denied access. ACLs operate at the packet level in networking (filtering by IP/port) and at the object level in file systems (defining read/write/execute permissions per user or group).",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "A"
+    },
+    {
+      "acronym": "AES",
+      "full_name": "Advanced Encryption Standard",
+      "description": "A symmetric-key block cipher standardized by NIST in 2001, operating on 128-bit blocks with key sizes of 128, 192, or 256 bits. It replaced DES and is now the de facto standard for symmetric encryption across TLS, disk encryption, VPNs, and virtually every modern secure protocol.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "A"
+    },
+    {
+      "acronym": "API",
+      "full_name": "Application Programming Interface",
+      "description": "A defined contract (set of endpoints, methods, request/response formats) that allows two software components to communicate without exposing internal implementation. APIs can be REST, GraphQL, RPC-based, or library-level. The key concept is abstraction: the caller does not need to know how the service works internally.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "A"
+    },
+    {
+      "acronym": "ARP",
+      "full_name": "Address Resolution Protocol",
+      "description": "A Layer 2 protocol used to map a known IPv4 address to an unknown MAC address on a local network segment. A device broadcasts \"Who has IP X?\" and the owner replies with its MAC. ARP has no authentication, making it vulnerable to ARP spoofing and poisoning attacks.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "A"
+    },
+    {
+      "acronym": "ASN",
+      "full_name": "Autonomous System Number",
+      "description": "A unique identifier assigned to an autonomous system (a group of IP networks under a single routing policy) for use in BGP routing. ASNs are 16-bit (1–65535) or 32-bit (RFC 4893). Internet service providers and large organizations each hold one or more ASNs to exchange routing information on the global internet.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "A"
+    },
+    {
+      "acronym": "ATA",
+      "full_name": "Advanced Technology Attachment",
+      "description": "A parallel interface standard for connecting storage devices (HDDs, optical drives) to a motherboard, originally called IDE. ATA evolved through versions (ATA-1 through ATA-7) and was superseded by SATA. Still referenced in contexts like S.M.A.R.T. diagnostics, which originated from the ATA command set.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "A"
+    },
+    {
+      "acronym": "ACPI",
+      "full_name": "Advanced Configuration and Power Interface",
+      "description": "A hardware abstraction layer and specification that allows the OS to manage device power states, thermal sensors, battery status, and hardware enumeration. ACPI replaced APM and is implemented in firmware as tables (DSDT, SSDT) that the OS kernel parses at boot to discover hardware topology.",
+      "difficulty": "Advanced",
+      "category": "OS",
+      "letter": "A"
+    },
+    {
+      "acronym": "BGP",
+      "full_name": "Border Gateway Protocol",
+      "description": "The routing protocol that drives the global internet. BGP exchanges reachability information between autonomous systems using TCP port 179. It is a path-vector protocol: each route advertisement carries the full AS path, enabling loop detection and policy-based routing. Misconfigurations can cause large-scale internet outages (route leaks, hijacks).",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "B"
+    },
+    {
+      "acronym": "BFD",
+      "full_name": "Bidirectional Forwarding Detection",
+      "description": "A lightweight, protocol-agnostic hello mechanism designed to detect link failures in milliseconds rather than the seconds required by BGP/OSPF hold timers. BFD runs between two network nodes and notifies the upper-layer routing protocol when the path goes down, enabling sub-second convergence.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "B"
+    },
+    {
+      "acronym": "BSD",
+      "full_name": "Berkeley Software Distribution",
+      "description": "A Unix derivative developed at UC Berkeley from the late 1970s onward. BSD introduced many foundational networking concepts including the BSD socket API and the TCP/IP stack later adopted by virtually all operating systems. Modern descendants include FreeBSD, OpenBSD, NetBSD, and macOS (which uses a BSD-derived kernel called XNU).",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "B"
+    },
+    {
+      "acronym": "BLE",
+      "full_name": "Bluetooth Low Energy",
+      "description": "A wireless personal area network technology introduced in Bluetooth 4.0, optimized for low power consumption at the cost of throughput. BLE operates in the 2.4 GHz ISM band and uses a different channel/packet structure than Classic Bluetooth. It is the foundation for IoT sensors, wearables, and proximity-based services (beacons).",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "B"
+    },
+    {
+      "acronym": "BIOS",
+      "full_name": "Basic Input/Output System",
+      "description": "Firmware stored in a chip on the motherboard that initializes hardware (POST), locates a bootable device, and hands control to the bootloader. BIOS uses a 16-bit real-mode interface and is limited to MBR-based booting from disks under 2 TB. Largely replaced by UEFI on modern systems, though the term is still widely used colloquially.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "B"
+    },
+    {
+      "acronym": "BLOB",
+      "full_name": "Binary Large Object",
+      "description": "A data type in databases and storage systems used to store arbitrary binary data (images, video, compiled code, encrypted files) as a single opaque unit. BLOBs are typically stored outside the main table rows (in an overflow segment or separate object store) because their size is unpredictable and often large.",
+      "difficulty": "Base",
+      "category": "Database",
+      "letter": "B"
+    },
+    {
+      "acronym": "CDN",
+      "full_name": "Content Delivery Network",
+      "description": "A geographically distributed network of proxy servers and data centers that serves content to users from the node closest to them. CDNs cache static assets (images, JS, CSS, video), reducing origin server load and latency. They also provide DDoS mitigation and TLS termination at the edge.",
+      "difficulty": "Intermediate",
+      "category": "Cloud",
+      "letter": "C"
+    },
+    {
+      "acronym": "CLI",
+      "full_name": "Command-Line Interface",
+      "description": "A text-based interface where users interact with a program by typing commands. Unlike GUIs, CLIs are scriptable, composable via pipes, and reproducible. Every serious infrastructure tool (git, kubectl, docker, openssl) exposes a CLI because it enables automation, logging, and integration into CI/CD pipelines.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "C"
+    },
+    {
+      "acronym": "CPU",
+      "full_name": "Central Processing Unit",
+      "description": "The primary processor of a computer that executes instructions from programs. A CPU fetches instructions from memory, decodes them, and executes them through functional units (ALU, FPU). Modern CPUs contain multiple cores, cache hierarchies (L1/L2/L3), branch predictors, and hardware support for virtualization and encryption.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "C"
+    },
+    {
+      "acronym": "CRC",
+      "full_name": "Cyclic Redundancy Check",
+      "description": "An error-detection algorithm that treats data as a polynomial and computes a remainder when divided by a generator polynomial. The resulting checksum (typically 16 or 32 bits) is appended to data and recomputed on receipt; a mismatch indicates corruption. Used in Ethernet frames, ZIP files, storage protocols, and firmware images.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "C"
+    },
+    {
+      "acronym": "CIDR",
+      "full_name": "Classless Inter-Domain Routing",
+      "description": "A method for allocating IP addresses and routing that replaced the rigid Class A/B/C system. CIDR notation expresses a network as an IP address followed by a prefix length (e.g., 192.168.1.0/24). This allows arbitrary-sized allocations, reducing IP address waste and enabling route aggregation (supernetting) on the internet.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "C"
+    },
+    {
+      "acronym": "CORS",
+      "full_name": "Cross-Origin Resource Sharing",
+      "description": "A browser security mechanism that controls how web pages can request resources from a different origin (domain, protocol, or port). The browser sends a preflight OPTIONS request; the server responds with headers (Access-Control-Allow-Origin, etc.) indicating whether the cross-origin request is permitted. Misconfiguration is a common web security vulnerability.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "C"
+    },
+    {
+      "acronym": "CSRF",
+      "full_name": "Cross-Site Request Forgery",
+      "description": "An attack that tricks an authenticated user's browser into sending unintended requests to a web application where the user is logged in. The attacker exploits the fact that browsers automatically attach cookies. Mitigated by CSRF tokens (random secret values per session) and the SameSite cookie attribute.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "C"
+    },
+    {
+      "acronym": "DDL",
+      "full_name": "Data Definition Language",
+      "description": "The subset of SQL used to define and modify database schema: CREATE, ALTER, DROP, TRUNCATE, and RENAME. DDL statements modify the data dictionary (catalog) and are auto-committed in most RDBMS implementations, meaning they cannot be rolled back. Contrast with DML (data manipulation) and DCL (data control).",
+      "difficulty": "Base",
+      "category": "Database",
+      "letter": "D"
+    },
+    {
+      "acronym": "DHCP",
+      "full_name": "Dynamic Host Configuration Protocol",
+      "description": "A network management protocol (UDP ports 67/68) that automatically assigns IP addresses, subnet masks, default gateways, DNS servers, and other parameters to hosts on a network. The exchange follows a four-step process: Discover → Offer → Request → Acknowledge (DORA). Leases are time-limited; clients must renew before expiry.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "D"
+    },
+    {
+      "acronym": "DKIM",
+      "full_name": "DomainKeys Identified Mail",
+      "description": "An email authentication method that lets a domain owner cryptographically sign outgoing messages. The sending mail server attaches a signature header derived from a private key; the recipient's server retrieves the public key from DNS (via a TXT record) and verifies the signature. DKIM protects against message tampering and is required for effective DMARC enforcement.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "D"
+    },
+    {
+      "acronym": "DMA",
+      "full_name": "Direct Memory Access",
+      "description": "A capability that allows hardware peripherals (NIC, GPU, storage controller) to read/write main memory directly without involving the CPU for each byte. The CPU sets up a DMA transfer (source, destination, size), then the DMA controller handles the actual data movement, freeing the CPU to do other work. Critical for high-throughput I/O.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "D"
+    },
+    {
+      "acronym": "DNS",
+      "full_name": "Domain Name System",
+      "description": "A hierarchical, distributed database that maps human-readable domain names to IP addresses (and vice versa) and stores other records (MX, TXT, CNAME, NS). Queries traverse a resolver → root server → TLD server → authoritative server chain. DNS operates over UDP/TCP port 53 and is fundamental to virtually every internet service.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "D"
+    },
+    {
+      "acronym": "DRAM",
+      "full_name": "Dynamic Random-Access Memory",
+      "description": "The most common type of RAM used as main memory in computers. DRAM stores each bit in a capacitor that leaks charge and must be refreshed thousands of times per second (hence \"dynamic\"). It is denser and cheaper than SRAM but slower due to refresh cycles. Modern variants include DDR4 and DDR5.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "D"
+    },
+    {
+      "acronym": "EAP",
+      "full_name": "Extensible Authentication Protocol",
+      "description": "A framework (not a protocol itself) used in wireless and point-to-point connections that supports multiple authentication methods: certificates, tokens, passwords, SIM cards. EAP runs over 802.1X in Wi-Fi networks, with the access point acting as an authenticator passing EAP messages between the supplicant and a RADIUS server.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "E"
+    },
+    {
+      "acronym": "ECC",
+      "full_name": "Error-Correcting Code (memory)",
+      "description": "A type of computer data storage that detects and corrects common types of internal data corruption. ECC memory uses extra bits (typically adding 8 bits per 64-bit word) to detect and correct single-bit errors, and detect double-bit errors. Required in servers, workstations, and any environment where silent data corruption is unacceptable.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "E"
+    },
+    {
+      "acronym": "EOF",
+      "full_name": "End of File",
+      "description": "A condition or marker indicating that no more data can be read from a data source (file, stream, socket). In Unix-like systems, EOF is not a character in the file; it is a condition returned by read() when the file position reaches the end. On a terminal, Ctrl+D sends EOF. In binary protocols, explicit length fields are preferred to EOF-detection.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "E"
+    },
+    {
+      "acronym": "ETL",
+      "full_name": "Extract, Transform, Load",
+      "description": "A data integration process that pulls data from one or more sources (Extract), applies cleaning, normalization, and business logic (Transform), and writes it to a target system such as a data warehouse (Load). ETL pipelines are the backbone of data engineering and BI systems. Modern variants include ELT (transform after load) for cloud data warehouses.",
+      "difficulty": "Intermediate",
+      "category": "Database",
+      "letter": "E"
+    },
+    {
+      "acronym": "ESB",
+      "full_name": "Enterprise Service Bus",
+      "description": "A middleware architecture pattern that provides a centralized communication layer between heterogeneous services and applications in an enterprise. The ESB handles message routing, transformation, protocol mediation, and orchestration. Largely replaced by microservices architectures and lightweight message brokers (Kafka, RabbitMQ) in modern stacks.",
+      "difficulty": "Advanced",
+      "category": "Dev",
+      "letter": "E"
+    },
+    {
+      "acronym": "ECDH",
+      "full_name": "Elliptic-Curve Diffie–Hellman",
+      "description": "A key agreement protocol that allows two parties to establish a shared secret over an insecure channel using elliptic-curve cryptography. ECDH provides the same security as classical Diffie–Hellman with much smaller key sizes, making it efficient for TLS handshakes. The ephemeral variant (ECDHE) provides forward secrecy.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "E"
+    },
+    {
+      "acronym": "FAT",
+      "full_name": "File Allocation Table",
+      "description": "A file system architecture developed by Microsoft in 1977. FAT uses a table indexed by cluster number to track which clusters belong to which files and which are free. Variants (FAT12, FAT16, FAT32) differ in table entry width, limiting maximum volume and file sizes. exFAT is a modern successor used on flash media due to no file-size limit and simpler structure.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "F"
+    },
+    {
+      "acronym": "FIFO",
+      "full_name": "First In, First Out",
+      "description": "A data structure and scheduling discipline where the first element added is the first to be removed, analogous to a queue. In OS contexts, FIFO refers to named pipes (mkfifo), process scheduling (tasks run in arrival order), and I/O queues. Contrast with LIFO (stack) and priority queues.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "F"
+    },
+    {
+      "acronym": "FQDN",
+      "full_name": "Fully Qualified Domain Name",
+      "description": "A domain name that specifies the complete path from the root of the DNS hierarchy, unambiguously identifying a host. An FQDN includes the hostname, all domain labels, and the trailing dot representing the root zone (e.g., mail.example.com.). The trailing dot is often omitted in practice but is required for technical correctness in DNS zone files.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "F"
+    },
+    {
+      "acronym": "FTP",
+      "full_name": "File Transfer Protocol",
+      "description": "A standard network protocol (TCP ports 20/21) for transferring files between a client and server. FTP has two modes: active (server initiates data connection back to client) and passive (client initiates both connections). FTP transmits credentials in plaintext; it has been superseded by SFTP (SSH-based) and FTPS (TLS-wrapped) for secure transfers.",
+      "difficulty": "Base",
+      "category": "Protocol",
+      "letter": "F"
+    },
+    {
+      "acronym": "FPU",
+      "full_name": "Floating-Point Unit",
+      "description": "A specialized component of a CPU (or coprocessor) that handles arithmetic operations on floating-point numbers according to the IEEE 754 standard. FPUs implement operations like addition, multiplication, division, and square root on 32-bit (single) and 64-bit (double) precision numbers with hardware-accelerated rounding and exception handling.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "F"
+    },
+    {
+      "acronym": "FTPS",
+      "full_name": "File Transfer Protocol Secure",
+      "description": "An extension of FTP that adds support for TLS encryption. FTPS has two modes: explicit (FTPES), where the client upgrades to TLS after connecting, and implicit, where TLS is negotiated immediately on a separate port (990). Not to be confused with SFTP, which is a completely different protocol running over SSH.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "F"
+    },
+    {
+      "acronym": "GPU",
+      "full_name": "Graphics Processing Unit",
+      "description": "A massively parallel processor originally designed to accelerate rasterization and rendering of 3D graphics. GPUs contain thousands of smaller cores optimized for SIMD operations on floating-point data. Modern GPUs are general-purpose compute engines (GPGPU) used for ML training, scientific simulation, and cryptography via APIs like CUDA and OpenCL.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "G"
+    },
+    {
+      "acronym": "GUI",
+      "full_name": "Graphical User Interface",
+      "description": "A type of user interface that uses visual components (windows, icons, buttons, menus) rather than text commands to interact with software. GUIs rely on a windowing system (X11, Wayland, Win32, Cocoa) and an event loop to handle user input. While more accessible than CLIs, GUIs are harder to automate and script.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "G"
+    },
+    {
+      "acronym": "GRUB",
+      "full_name": "Grand Unified Bootloader",
+      "description": "The default bootloader for most Linux distributions, part of the GNU project. GRUB is installed in the MBR or EFI System Partition and is responsible for loading the OS kernel and initramfs into memory. GRUB2 supports UEFI, GPT, multiple file systems, scripting, and boot menu customization via /etc/grub.d/ and grub.cfg.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "G"
+    },
+    {
+      "acronym": "GZIP",
+      "full_name": "GNU Zip",
+      "description": "A file compression format and program (RFC 1952) using DEFLATE compression (a combination of LZ77 and Huffman coding). gzip compresses a single file; for multiple files, it is combined with tar (producing .tar.gz or .tgz archives). HTTP/1.1 and later support gzip content encoding for compressing HTTP responses in transit.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "G"
+    },
+    {
+      "acronym": "GPT",
+      "full_name": "GUID Partition Table",
+      "description": "A partitioning scheme that replaces MBR, defined as part of the UEFI specification. GPT stores partition entries in a header and backup at the end of the disk, supports up to 128 partitions by default, and handles disks larger than 2 TB. Each partition has a 128-bit GUID identifying its type and unique identity.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "G"
+    },
+    {
+      "acronym": "GDT",
+      "full_name": "Global Descriptor Table",
+      "description": "A data structure in x86 architecture that defines memory segments for the CPU. The GDT is loaded via the LGDT instruction and contains segment descriptors specifying base address, limit, privilege level, and type (code, data, system). In 64-bit long mode, segmentation is largely vestigial but the GDT still exists for privilege-level switching (syscalls, TSS).",
+      "difficulty": "Advanced",
+      "category": "OS",
+      "letter": "G"
+    },
+    {
+      "acronym": "HBA",
+      "full_name": "Host Bus Adapter",
+      "description": "A hardware component that connects a host system to a storage network or device. In SAN environments, HBAs provide Fibre Channel (FC) or iSCSI connectivity between servers and shared storage arrays. An HBA offloads storage protocol processing from the CPU, similar to how a NIC offloads network processing.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "H"
+    },
+    {
+      "acronym": "HDD",
+      "full_name": "Hard Disk Drive",
+      "description": "A magnetic storage device that stores data on rotating platters coated with a ferromagnetic material. Read/write heads on actuator arms access data as platters spin (typically 5400 or 7200 RPM). HDDs have higher latency than SSDs due to mechanical seek time but offer higher capacity at lower cost per gigabyte. Susceptible to physical shock.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "H"
+    },
+    {
+      "acronym": "HDMI",
+      "full_name": "High-Definition Multimedia Interface",
+      "description": "A proprietary audio/video interface standard that transmits uncompressed digital video and audio over a single cable. HDMI versions (1.4, 2.0, 2.1) differ in maximum bandwidth, supported resolutions, and feature sets (4K, 8K, HDR, eARC). HDMI includes HDCP copy protection and a CEC channel for device control.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "H"
+    },
+    {
+      "acronym": "HMAC",
+      "full_name": "Hash-based Message Authentication Code",
+      "description": "A specific construction for a message authentication code (MAC) that uses a cryptographic hash function (e.g., SHA-256) combined with a secret key. HMAC provides both integrity (the message has not been altered) and authenticity (only the key holder could have produced it). Used in API authentication, JWT signatures (HS256), and TLS.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "H"
+    },
+    {
+      "acronym": "HTML",
+      "full_name": "HyperText Markup Language",
+      "description": "The standard markup language for web pages. HTML defines the structure and meaning of web content using a hierarchy of elements (tags) such as headings, paragraphs, links, images, and forms. HTML5 added semantic elements, native audio/video support, and APIs for offline storage and drawing (Canvas). Rendered by the browser's layout engine.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "H"
+    },
+    {
+      "acronym": "HSTS",
+      "full_name": "HTTP Strict Transport Security",
+      "description": "A web security policy mechanism (RFC 6797) that instructs browsers to only communicate with a server over HTTPS, never HTTP. The server sends the Strict-Transport-Security header with a max-age directive. Once received, the browser enforces HTTPS for all future requests to that origin, preventing SSL stripping attacks even if the user types HTTP.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "H"
+    },
+    {
+      "acronym": "IANA",
+      "full_name": "Internet Assigned Numbers Authority",
+      "description": "The organization responsible for coordinating the global pool of IP addresses, ASNs, DNS root zone management, and protocol parameter registries (port numbers, protocol types, MIME types). IANA is operated by ICANN. Regional registries (ARIN, RIPE, APNIC, etc.) receive address blocks from IANA and distribute them to ISPs and organizations.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "I"
+    },
+    {
+      "acronym": "ICMP",
+      "full_name": "Internet Control Message Protocol",
+      "description": "A Layer 3 protocol used by network devices to send operational information and error messages. ICMP is not used to transport application data; it carries diagnostics: echo request/reply (ping), destination unreachable, time exceeded (used by traceroute), and redirect messages. ICMPv6 also handles Neighbor Discovery, replacing ARP in IPv6 networks.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "I"
+    },
+    {
+      "acronym": "IMAP",
+      "full_name": "Internet Message Access Protocol",
+      "description": "An email retrieval protocol (TCP port 143, 993 for TLS) that keeps messages on the mail server and synchronizes state (read, deleted, flagged) across multiple clients. Unlike POP3, which downloads and deletes messages, IMAP supports folders, server-side search, and partial message fetch. The dominant protocol for email clients connecting to hosted mailboxes.",
+      "difficulty": "Base",
+      "category": "Protocol",
+      "letter": "I"
+    },
+    {
+      "acronym": "IPMI",
+      "full_name": "Intelligent Platform Management Interface",
+      "description": "A standardized hardware management interface embedded in server motherboards (via a Baseboard Management Controller, BMC) that allows out-of-band management independent of the main CPU and OS. IPMI provides remote power control, console access (SOL), sensor monitoring (temperature, voltage, fan speed), and event logging via a dedicated network interface.",
+      "difficulty": "Advanced",
+      "category": "Hardware",
+      "letter": "I"
+    },
+    {
+      "acronym": "IPV4",
+      "full_name": "Internet Protocol version 4",
+      "description": "The fourth version of the Internet Protocol, using 32-bit addresses written in dotted-decimal notation (e.g., 192.168.1.1), providing approximately 4.3 billion unique addresses. IPv4 defines packet structure, fragmentation, TTL, and addressing. Address exhaustion (mitigated by NAT) drove the development of IPv6. Still the dominant protocol for actual internet traffic.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "I"
+    },
+    {
+      "acronym": "IPV6",
+      "full_name": "Internet Protocol version 6",
+      "description": "The successor to IPv4, using 128-bit addresses (written as eight groups of four hex digits, e.g., 2001:db8::1) to provide a virtually inexhaustible address space. IPv6 eliminates the need for NAT, mandates IPSec support, and introduces Stateless Address Autoconfiguration (SLAAC) and the Neighbor Discovery Protocol as replacements for DHCP and ARP.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "I"
+    },
+    {
+      "acronym": "JAR",
+      "full_name": "Java Archive",
+      "description": "A package file format (based on ZIP) used to aggregate Java class files, associated metadata, and resources (images, configuration) into a single distributable file. JARs can be executable (if a Main-Class manifest entry is defined), library-only, or web archives (.war). The JVM classloader reads class files directly from JARs on the classpath.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "J"
+    },
+    {
+      "acronym": "JBOD",
+      "full_name": "Just a Bunch Of Disks",
+      "description": "A storage configuration where multiple physical drives are exposed to the OS as independent, unrelated volumes — with no RAID striping, mirroring, or parity. JBOD is used when data loss protection is handled at a higher layer (application-level replication, ZFS, etc.) or when maximum usable capacity per disk is needed without overhead.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "J"
+    },
+    {
+      "acronym": "JDBC",
+      "full_name": "Java Database Connectivity",
+      "description": "A Java API (part of the Java SE standard library) that defines a standard interface for connecting Java applications to relational databases. JDBC drivers are provided by database vendors (PostgreSQL, MySQL, Oracle) and implement the Connection, Statement, and ResultSet interfaces, allowing the same application code to work with different databases.",
+      "difficulty": "Intermediate",
+      "category": "Database",
+      "letter": "J"
+    },
+    {
+      "acronym": "JNDI",
+      "full_name": "Java Naming and Directory Interface",
+      "description": "A Java API for accessing naming and directory services (LDAP, DNS, RMI registries, file system). JNDI became widely known due to the Log4Shell vulnerability (CVE-2021-44228), where user-supplied strings were passed to JNDI lookups, allowing remote class loading and arbitrary code execution in any application using Log4j 2.x.",
+      "difficulty": "Advanced",
+      "category": "Dev",
+      "letter": "J"
+    },
+    {
+      "acronym": "JSON",
+      "full_name": "JavaScript Object Notation",
+      "description": "A lightweight, text-based data interchange format based on a subset of JavaScript object syntax. JSON supports objects (key-value maps), arrays, strings, numbers, booleans, and null. It is the dominant format for REST API payloads, configuration files, and data serialization due to its human readability and universal parser availability.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "J"
+    },
+    {
+      "acronym": "JWT",
+      "full_name": "JSON Web Token",
+      "description": "A compact, URL-safe token format (RFC 7519) consisting of three Base64URL-encoded parts separated by dots: Header.Payload.Signature. The header specifies the signing algorithm; the payload contains claims (sub, exp, iat, custom fields); the signature verifies integrity. JWTs are stateless: the server verifies the signature without database lookup, at the cost of non-revocability.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "J"
+    },
+    {
+      "acronym": "KDC",
+      "full_name": "Key Distribution Center",
+      "description": "A trusted third party in Kerberos authentication that issues tickets granting access to services. The KDC has two components: the Authentication Server (AS), which validates credentials and issues a Ticket Granting Ticket (TGT), and the Ticket Granting Server (TGS), which exchanges the TGT for service-specific tickets. The KDC holds the master key database.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "K"
+    },
+    {
+      "acronym": "KVM",
+      "full_name": "Kernel-based Virtual Machine",
+      "description": "A virtualization module built into the Linux kernel (since 2.6.20) that turns Linux into a Type-1 hypervisor by leveraging CPU hardware virtualization extensions (Intel VT-x, AMD-V). KVM exposes each VM as a process; QEMU provides device emulation. KVM is the foundation of OpenStack, oVirt, Proxmox, and most Linux cloud infrastructure.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "K"
+    },
+    {
+      "acronym": "KMIP",
+      "full_name": "Key Management Interoperability Protocol",
+      "description": "An OASIS standard protocol for communication between key management servers and clients. KMIP defines operations (Create, Get, Destroy, Register, Locate) for managing cryptographic keys, certificates, and secrets in a vendor-neutral way. Used in enterprise environments where multiple applications need to retrieve encryption keys from a centralized hardware security module (HSM).",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "K"
+    },
+    {
+      "acronym": "KPI",
+      "full_name": "Key Performance Indicator",
+      "description": "A quantifiable metric used to evaluate success against a defined objective. In IT and DevOps contexts, KPIs include uptime percentage, mean time to recovery (MTTR), deployment frequency, error rate, and p99 latency. KPIs are only meaningful when paired with a baseline, a target, and a measurement interval — without these, they are vanity metrics.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "K"
+    },
+    {
+      "acronym": "KNX",
+      "full_name": "Konnex",
+      "description": "A standardized network communications protocol for intelligent building automation: lighting, HVAC, blinds, security, and energy management. KNX devices communicate over twisted-pair wiring, RF, or IP. It is the most widely deployed building automation standard in Europe and is governed by the KNX Association and recognized by ISO/IEC 14543.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "K"
+    },
+    {
+      "acronym": "LAN",
+      "full_name": "Local Area Network",
+      "description": "A network that interconnects devices within a limited geographical area (building, floor, home) using Ethernet (IEEE 802.3) or Wi-Fi (IEEE 802.11). LANs typically operate at Layer 2, with switches forwarding frames by MAC address. Contrast with WAN (wide area) and MAN (metropolitan area). The broadcast domain boundaries are typically defined by VLANs.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "L"
+    },
+    {
+      "acronym": "LACP",
+      "full_name": "Link Aggregation Control Protocol",
+      "description": "An IEEE 802.3ad protocol that negotiates and maintains link aggregation (bonding) between two network nodes. LACP dynamically detects compatible partners, forms a logical aggregate link from multiple physical links, and handles failure by redistributing traffic. Provides increased bandwidth and redundancy compared to a single link.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "L"
+    },
+    {
+      "acronym": "LDAP",
+      "full_name": "Lightweight Directory Access Protocol",
+      "description": "A protocol (TCP port 389, 636 for LDAPS) for accessing and maintaining distributed directory information services. LDAP directories store hierarchical data in a tree structure (Distinguished Names, Organizational Units, Common Names). Used for centralized authentication, address books, and authorization policies. Active Directory exposes an LDAP interface.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "L"
+    },
+    {
+      "acronym": "LLDP",
+      "full_name": "Link Layer Discovery Protocol",
+      "description": "An IEEE 802.1AB vendor-neutral protocol that allows network devices (switches, routers, phones) to advertise their identity, capabilities, and neighbors to directly connected devices. LLDP frames are multicast and not forwarded by switches. Used by network management systems to auto-discover and map physical topology.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "L"
+    },
+    {
+      "acronym": "LUKS",
+      "full_name": "Linux Unified Key Setup",
+      "description": "The standard disk encryption specification for Linux, implemented in the kernel via dm-crypt. LUKS stores all setup information in a partition header, allowing multiple passphrases or key files (up to 8 keyslots per device). LUKS2 (the current version) uses Argon2 for key derivation and adds integrity checking support via dm-integrity.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "L"
+    },
+    {
+      "acronym": "LRU",
+      "full_name": "Least Recently Used",
+      "description": "A cache eviction policy that discards the item that has not been accessed for the longest time when the cache is full. LRU approximates temporal locality: recently accessed items are more likely to be accessed again. Implemented efficiently with a doubly-linked list and hash map (O(1) get and put). Used in CPU caches, OS page replacement, and application-level caches.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "L"
+    },
+    {
+      "acronym": "MAC",
+      "full_name": "Media Access Control (address)",
+      "description": "A 48-bit hardware identifier assigned to a network interface at the factory, written as six colon-separated hex octets (e.g., 00:1A:2B:3C:4D:5E). The first three octets identify the vendor (OUI). MAC addresses operate at Layer 2 and are used by switches to forward frames within a network segment. They can be spoofed in software.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "M"
+    },
+    {
+      "acronym": "MBR",
+      "full_name": "Master Boot Record",
+      "description": "A 512-byte sector at the very start of a disk (LBA 0) containing the bootstrap code (446 bytes), the partition table (64 bytes, up to 4 primary partitions), and a boot signature (2 bytes: 0x55AA). The BIOS loads and executes the MBR code. MBR is limited to 2 TB disks and 4 primary partitions; GPT replaces it on modern systems.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "M"
+    },
+    {
+      "acronym": "MFA",
+      "full_name": "Multi-Factor Authentication",
+      "description": "An authentication method that requires the user to present two or more independent factors: something they know (password), something they have (TOTP token, hardware key), and something they are (biometric). MFA drastically reduces the risk of account compromise from credential theft, since an attacker needs all factors simultaneously.",
+      "difficulty": "Base",
+      "category": "Security",
+      "letter": "M"
+    },
+    {
+      "acronym": "MIME",
+      "full_name": "Multipurpose Internet Mail Extensions",
+      "description": "A standard (RFC 2045–2049) that extends email to support non-ASCII text, attachments, and multipart messages. MIME defines Content-Type headers (e.g., text/html, application/json, image/png) used in both email and HTTP. The Content-Type header is how a browser or mail client knows how to interpret and render a received payload.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "M"
+    },
+    {
+      "acronym": "MPLS",
+      "full_name": "Multiprotocol Label Switching",
+      "description": "A data-forwarding technique that routes traffic using short labels attached to packets rather than long IP prefixes. Routers (Label Switching Routers) swap labels at each hop based on a pre-established Label Switched Path (LSP). MPLS provides traffic engineering, QoS, and VPN services in carrier and enterprise backbone networks with lower per-hop processing overhead.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "M"
+    },
+    {
+      "acronym": "MQTT",
+      "full_name": "Message Queuing Telemetry Transport",
+      "description": "A lightweight publish/subscribe messaging protocol (ISO/IEC 20922) designed for constrained devices and low-bandwidth, high-latency networks. MQTT clients connect to a broker; publishers push messages to topics; subscribers receive messages on topics they have subscribed to. QoS levels (0, 1, 2) trade off delivery guarantees against overhead. The de facto IoT messaging protocol.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "M"
+    },
+    {
+      "acronym": "MMU",
+      "full_name": "Memory Management Unit",
+      "description": "A hardware component (integrated in modern CPUs) that translates virtual addresses to physical addresses using page tables. The MMU enforces memory protection between processes (preventing one process from accessing another's memory) and enables virtual memory (pages can be swapped to disk). The TLB (Translation Lookaside Buffer) caches recent translations.",
+      "difficulty": "Advanced",
+      "category": "Hardware",
+      "letter": "M"
+    },
+    {
+      "acronym": "NAT",
+      "full_name": "Network Address Translation",
+      "description": "A method of remapping one IP address space to another by modifying IP header information in transit. Most commonly used to allow multiple devices on a private network (RFC 1918 addresses) to share a single public IP. NAT breaks the end-to-end connectivity model of the internet and complicates protocols that embed IP addresses in payloads (FTP, SIP).",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "N"
+    },
+    {
+      "acronym": "NFS",
+      "full_name": "Network File System",
+      "description": "A distributed file system protocol (originally developed by Sun Microsystems, RFC 7530 for NFSv4) that allows a client to mount and access remote file systems over a network as if they were local. NFS uses RPC/XDR for communication. NFSv4 added stateful operations, strong authentication (Kerberos), and compound operations to reduce round-trips.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "N"
+    },
+    {
+      "acronym": "NIC",
+      "full_name": "Network Interface Card",
+      "description": "A hardware component that provides a device with network connectivity. A NIC implements the physical and data link layers: it converts data to electrical/optical signals (or radio waves for Wi-Fi) and handles MAC addressing, framing, and error detection. Modern NICs support offloading functions like checksums, TSO, and RSS from the CPU.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "N"
+    },
+    {
+      "acronym": "NTFS",
+      "full_name": "New Technology File System",
+      "description": "The proprietary journaling file system developed by Microsoft and used by default in Windows NT and all subsequent Windows versions. NTFS supports file permissions (ACLs), journaling (for crash recovery), file compression, encryption (EFS), alternate data streams, hard/symbolic links, and volumes larger than 2 TB. The MFT (Master File Table) is the core metadata structure.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "N"
+    },
+    {
+      "acronym": "NTP",
+      "full_name": "Network Time Protocol",
+      "description": "A networking protocol (UDP port 123, RFC 5905) for clock synchronization between computer systems over packet-switched networks. NTP uses a hierarchical structure of time sources (strata): stratum 0 is an atomic clock or GPS receiver; stratum 1 servers sync directly to it; clients typically sync to stratum 2 or 3 servers. Accurate time is critical for logs, certificates, and distributed systems.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "N"
+    },
+    {
+      "acronym": "NUMA",
+      "full_name": "Non-Uniform Memory Access",
+      "description": "A memory design used in multi-processor systems where memory access time depends on the physical location of memory relative to the processor. Each CPU has local memory (fast) and can access remote memory (attached to another CPU socket) via an interconnect (slower). OS schedulers and applications must be NUMA-aware to avoid performance penalties from remote memory access.",
+      "difficulty": "Advanced",
+      "category": "Hardware",
+      "letter": "N"
+    },
+    {
+      "acronym": "ORM",
+      "full_name": "Object-Relational Mapper",
+      "description": "A programming technique and library that converts between incompatible type systems (object-oriented language types and relational database tables) automatically. An ORM lets developers interact with a database using language objects and methods instead of raw SQL. Examples: SQLAlchemy (Python), Hibernate (Java), Entity Framework (.NET). ORMs trade raw query control for developer productivity.",
+      "difficulty": "Intermediate",
+      "category": "Database",
+      "letter": "O"
+    },
+    {
+      "acronym": "OSI",
+      "full_name": "Open Systems Interconnection (model)",
+      "description": "A conceptual framework (ISO/IEC 7498-1) that divides network communication into 7 ordered layers: Physical, Data Link, Network, Transport, Session, Presentation, Application. Each layer provides services to the one above and consumes services from the one below. The OSI model is primarily a teaching and troubleshooting reference; real protocols (TCP/IP) don't map to it cleanly.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "O"
+    },
+    {
+      "acronym": "OTP",
+      "full_name": "One-Time Password",
+      "description": "A password that is valid for only a single authentication session or transaction, generated by a shared secret and a counter or timestamp. TOTP (time-based) uses the current Unix time; HOTP (HMAC-based) uses an incrementing counter. OTPs protect against replay attacks since each code expires immediately after use or after a short time window.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "O"
+    },
+    {
+      "acronym": "OIDC",
+      "full_name": "OpenID Connect",
+      "description": "An identity layer built on top of OAuth 2.0 (RFC 8414) that adds authentication to OAuth's authorization framework. OIDC introduces the ID Token (a JWT containing user identity claims), a UserInfo endpoint, and a standardized discovery mechanism. It is the dominant SSO protocol for web and mobile applications, used by Google, Microsoft, and most identity providers.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "O"
+    },
+    {
+      "acronym": "OSPF",
+      "full_name": "Open Shortest Path First",
+      "description": "A link-state routing protocol (RFC 2328 for OSPFv2, RFC 5340 for OSPFv3) that builds a complete map of the network topology using LSA (Link State Advertisements) flooded to all routers in an area. Each router independently runs Dijkstra's SPF algorithm to compute the shortest path tree. OSPF supports VLSM, fast convergence, and hierarchical design via areas.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "O"
+    },
+    {
+      "acronym": "OVF",
+      "full_name": "Open Virtualization Format",
+      "description": "An open standard (DMTF OVF Spec) for packaging and distributing virtual machines and appliances in a vendor-neutral format. An OVF package contains a descriptor XML file, optional disk images (VMDK or VHD), and a manifest. The single-file variant (.ova) is a TAR archive of all components. Supported by VMware, VirtualBox, Proxmox, and most hypervisors.",
+      "difficulty": "Intermediate",
+      "category": "Cloud",
+      "letter": "O"
+    },
+    {
+      "acronym": "PCI",
+      "full_name": "Peripheral Component Interconnect",
+      "description": "A local computer bus standard for attaching hardware components to a motherboard. The original parallel PCI (33/66 MHz) was replaced by PCI-X and then by PCIe (PCI Express), which uses serial point-to-point lanes instead of a shared parallel bus. PCIe is the dominant expansion slot for GPUs, NVMe drives, and network cards.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "P"
+    },
+    {
+      "acronym": "PKI",
+      "full_name": "Public Key Infrastructure",
+      "description": "A framework of policies, procedures, hardware, software, and people for creating, managing, distributing, and revoking digital certificates. A PKI relies on a Certificate Authority (CA) hierarchy to sign certificates binding public keys to identities. PKI underpins TLS/HTTPS, code signing, S/MIME email encryption, and smart card authentication.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "P"
+    },
+    {
+      "acronym": "PHP",
+      "full_name": "PHP Hypertext Preprocessor",
+      "description": "A server-side scripting language designed for web development, widely embedded in HTML. PHP scripts execute on the web server and return HTML to the client. Despite criticism for inconsistent API design, PHP powers a significant portion of the web including WordPress, Drupal, and Laravel applications. Modern PHP (8.x) includes strong typing, JIT compilation, and fibers.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "P"
+    },
+    {
+      "acronym": "PXE",
+      "full_name": "Preboot Execution Environment",
+      "description": "A specification (Intel/HP) that enables a client to boot from the network before loading a local OS. The client uses DHCP to obtain an IP address and the address of a TFTP server, then downloads a bootloader and kernel. PXE is used for bare-metal provisioning, diskless workstations, and OS deployment systems (Cobbler, iPXE, Windows Deployment Services).",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "P"
+    },
+    {
+      "acronym": "PKCS",
+      "full_name": "Public Key Cryptography Standards",
+      "description": "A group of cryptography standards developed by RSA Security. Each numbered standard (PKCS#1 through PKCS#15) defines a specific aspect: PKCS#1 (RSA encryption/signatures), PKCS#7/CMS (signed/encrypted data), PKCS#8 (private key info), PKCS#10 (certificate signing requests), PKCS#12 (PFX archives for key+cert bundles). Foundational to TLS, S/MIME, and certificate management.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "P"
+    },
+    {
+      "acronym": "PAT",
+      "full_name": "Port Address Translation",
+      "description": "A variant of NAT (also called NAPT or NAT overload) that maps multiple private IP:port pairs to a single public IP address using different port numbers. PAT is what most home routers do: all internal hosts share one public IP, differentiated by their translated source port. It conserves IPv4 address space at the cost of breaking certain protocols.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "P"
+    },
+    {
+      "acronym": "QOS",
+      "full_name": "Quality of Service",
+      "description": "A set of techniques for managing network traffic to ensure predictable performance for specific applications or traffic classes. QoS mechanisms include traffic classification (DSCP marking), policing (dropping excess traffic), shaping (buffering to smooth bursts), and queuing algorithms (FIFO, WFQ, CBWFQ, LLQ). Critical for VoIP, video conferencing, and real-time applications on congested links.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "Q"
+    },
+    {
+      "acronym": "QUIC",
+      "full_name": "Quick UDP Internet Connections",
+      "description": "A transport layer protocol developed by Google and standardized by the IETF (RFC 9000) that runs over UDP. QUIC combines TLS 1.3 handshake with transport setup (0-RTT or 1-RTT), eliminates head-of-line blocking at the transport layer (unlike TCP), and supports connection migration (survives IP changes). QUIC is the transport layer for HTTP/3.",
+      "difficulty": "Advanced",
+      "category": "Protocol",
+      "letter": "Q"
+    },
+    {
+      "acronym": "QEMU",
+      "full_name": "Quick Emulator",
+      "description": "A free and open-source machine emulator and virtualizer. In emulation mode, QEMU translates guest CPU instructions to host instructions using dynamic binary translation (TCG). In virtualization mode (paired with KVM), guest code runs directly on the host CPU at near-native speed. QEMU provides device emulation (VirtIO, SCSI, USB) for all major hypervisors.",
+      "difficulty": "Advanced",
+      "category": "OS",
+      "letter": "Q"
+    },
+    {
+      "acronym": "QTLS",
+      "full_name": "QUIC Transport Layer Security",
+      "description": "The integration of TLS 1.3 within the QUIC protocol, where TLS is used not as a record layer wrapping transport but as a cryptographic handshake producing keying material for QUIC's own record protection. QTLS eliminates the separate TCP+TLS layering, reducing connection setup latency. Not to be confused with generic TLS running over standard TCP.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "Q"
+    },
+    {
+      "acronym": "QCOW",
+      "full_name": "QEMU Copy On Write (disk image format)",
+      "description": "A disk image format used by QEMU/KVM that supports sparse allocation (the file only grows as data is written), snapshots, compression, and AES encryption. QCOW2 (version 2) is the standard format, widely used in Proxmox, libvirt, and OpenStack environments. QCOW2 has lower performance than raw images but is far more flexible for VM management.",
+      "difficulty": "Intermediate",
+      "category": "Cloud",
+      "letter": "Q"
+    },
+    {
+      "acronym": "RAID",
+      "full_name": "Redundant Array of Independent Disks",
+      "description": "A data storage virtualization technology that combines multiple physical drives into one logical unit for redundancy, performance, or both. Common levels: RAID 0 (striping, speed, no redundancy), RAID 1 (mirroring), RAID 5 (striping + distributed parity, tolerates 1 disk failure), RAID 6 (tolerates 2), RAID 10 (striping + mirroring). RAID does not replace backups.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "R"
+    },
+    {
+      "acronym": "RBAC",
+      "full_name": "Role-Based Access Control",
+      "description": "An access control model that assigns permissions to roles rather than directly to users. Users are assigned roles; roles carry permissions. RBAC simplifies administration in large systems: adding a new employee means assigning roles, not configuring hundreds of individual resource permissions. Contrast with ABAC (attribute-based) and DAC (discretionary).",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "R"
+    },
+    {
+      "acronym": "RAM",
+      "full_name": "Random-Access Memory",
+      "description": "Volatile memory that provides the CPU with fast, directly addressable working storage. Unlike sequential storage (tapes) or HDDs, any RAM location can be read or written in constant time regardless of address. RAM loses its contents when power is removed. The term encompasses DRAM (main memory) and SRAM (CPU cache), though colloquially it refers to DRAM.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "R"
+    },
+    {
+      "acronym": "REST",
+      "full_name": "Representational State Transfer",
+      "description": "An architectural style for distributed hypermedia systems, defined by Roy Fielding in his 2000 dissertation. REST constraints include statelessness (no session state on server), uniform interface (resource identification via URI, manipulation via representations), and layered system. RESTful APIs use HTTP methods (GET, POST, PUT, DELETE, PATCH) semantically and return representations (typically JSON or XML).",
+      "difficulty": "Intermediate",
+      "category": "Dev",
+      "letter": "R"
+    },
+    {
+      "acronym": "RFC",
+      "full_name": "Request for Comments",
+      "description": "The publication format used by the IETF and related organizations to define internet standards, protocols, and best practices. RFCs are numbered sequentially and never modified after publication (corrections are issued as new RFCs). Not all RFCs are standards — they can be Informational, Experimental, or Historic. Key examples: RFC 791 (IP), RFC 793 (TCP), RFC 2616 (HTTP/1.1).",
+      "difficulty": "Base",
+      "category": "Protocol",
+      "letter": "R"
+    },
+    {
+      "acronym": "RPC",
+      "full_name": "Remote Procedure Call",
+      "description": "A protocol that allows a program to execute a procedure (function) on a remote system as if it were a local call, abstracting the network communication. The caller serializes arguments, sends them to the remote, waits for a result, and deserializes the response. Implementations include gRPC (Google, uses Protocol Buffers over HTTP/2), JSON-RPC, and XML-RPC.",
+      "difficulty": "Intermediate",
+      "category": "Dev",
+      "letter": "R"
+    },
+    {
+      "acronym": "SAML",
+      "full_name": "Security Assertion Markup Language",
+      "description": "An XML-based open standard for exchanging authentication and authorization data between an identity provider (IdP) and a service provider (SP). SAML 2.0 is the dominant SSO protocol in enterprise environments, allowing users to authenticate once with the IdP and access multiple SPs without re-entering credentials. Used by Okta, Azure AD, and ADFS.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "S"
+    },
+    {
+      "acronym": "SCSI",
+      "full_name": "Small Computer System Interface",
+      "description": "A set of standards for physically connecting and transferring data between computers and peripheral devices (originally HDDs, scanners, tape drives). SCSI defines a command set that persists in modern storage: SAS (Serial Attached SCSI), iSCSI (SCSI over IP), and NVMe share SCSI command-layer heritage. The SCSI command set underpins enterprise storage communication globally.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "S"
+    },
+    {
+      "acronym": "SDK",
+      "full_name": "Software Development Kit",
+      "description": "A collection of tools, libraries, documentation, APIs, sample code, and build utilities that allow developers to build applications for a specific platform, framework, or service. SDKs abstract low-level details and provide idiomatic interfaces. Examples: Android SDK, AWS SDK, iOS SDK. Contrast with an API (just the interface) — an SDK includes the implementation.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "S"
+    },
+    {
+      "acronym": "SMTP",
+      "full_name": "Simple Mail Transfer Protocol",
+      "description": "The standard protocol (TCP port 25, 587 for submission, 465 for SMTPS) for sending email between mail servers and from clients to servers. SMTP is a push protocol: the sender initiates the connection. Modern SMTP requires STARTTLS or implicit TLS, SASL authentication, and SPF/DKIM/DMARC records for deliverability. Receiving mail uses IMAP or POP3.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "S"
+    },
+    {
+      "acronym": "SNMP",
+      "full_name": "Simple Network Management Protocol",
+      "description": "A UDP-based protocol (ports 161/162) for monitoring and managing network devices (routers, switches, servers, printers). SNMP uses a manager/agent model: agents expose a Management Information Base (MIB) of OIDs; the manager polls (GET) or receives unsolicited alerts (TRAP). SNMPv3 adds authentication and encryption; v1/v2c send community strings in plaintext.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "S"
+    },
+    {
+      "acronym": "SSH",
+      "full_name": "Secure Shell",
+      "description": "A cryptographic network protocol (TCP port 22, RFC 4251–4254) providing secure remote login, command execution, port forwarding, and file transfer (SCP, SFTP) over an unsecured network. SSH uses asymmetric cryptography for authentication (public/private key pairs) and symmetric encryption for the session. It replaced Telnet, rsh, and rlogin.",
+      "difficulty": "Base",
+      "category": "Security",
+      "letter": "S"
+    },
+    {
+      "acronym": "SSD",
+      "full_name": "Solid-State Drive",
+      "description": "A storage device that uses NAND flash memory chips instead of spinning magnetic platters. SSDs have no moving parts, giving them lower latency (microseconds vs. milliseconds), higher IOPS, lower power consumption, and greater shock resistance than HDDs. NVMe SSDs connect via PCIe, bypassing the AHCI protocol overhead; SATA SSDs use the legacy interface.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "S"
+    },
+    {
+      "acronym": "TCP",
+      "full_name": "Transmission Control Protocol",
+      "description": "A connection-oriented, reliable, ordered, and error-checked transport protocol (RFC 793) that provides byte-stream delivery between applications. TCP uses a three-way handshake (SYN, SYN-ACK, ACK) to establish connections, sequence numbers and acknowledgments for reliability, sliding windows for flow control, and congestion control algorithms (Reno, CUBIC, BBR) to avoid network saturation.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "T"
+    },
+    {
+      "acronym": "TDD",
+      "full_name": "Test-Driven Development",
+      "description": "A software development methodology where tests are written before the code they test. The cycle is: write a failing test (Red), write the minimum code to pass it (Green), refactor without breaking tests (Refactor). TDD drives API design from the consumer perspective, ensures high coverage by construction, and creates a regression safety net for refactoring.",
+      "difficulty": "Intermediate",
+      "category": "Dev",
+      "letter": "T"
+    },
+    {
+      "acronym": "TFTP",
+      "full_name": "Trivial File Transfer Protocol",
+      "description": "A simple lockstep file transfer protocol (UDP port 69, RFC 1350) with no authentication, no directory listing, and no encryption. TFTP is used specifically in environments where simplicity is paramount: PXE network booting, router firmware transfers, and embedded device provisioning. Its simplicity makes it feasible to implement in ROM with minimal code.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "T"
+    },
+    {
+      "acronym": "TLS",
+      "full_name": "Transport Layer Security",
+      "description": "A cryptographic protocol (successor to SSL) that provides confidentiality, integrity, and authentication for network communications. TLS operates over TCP (or DTLS over UDP) and uses asymmetric cryptography for key exchange and authentication, then symmetric ciphers for bulk data. TLS 1.3 (RFC 8446) removed weak cipher suites, reduced handshake round-trips to 1-RTT, and mandated forward secrecy.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "T"
+    },
+    {
+      "acronym": "TPM",
+      "full_name": "Trusted Platform Module",
+      "description": "A dedicated microcontroller (ISO/IEC 11889) embedded in hardware that provides cryptographic functions: secure key generation and storage, attestation (proving hardware/software state), random number generation, and sealed storage (data accessible only in a specific measured system state). TPM 2.0 is required for Windows 11 and underpins BitLocker, secure boot, and remote attestation.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "T"
+    },
+    {
+      "acronym": "TTL",
+      "full_name": "Time to Live",
+      "description": "A counter in IP packet headers (and DNS records) that limits the lifespan of data in a network. In IP, TTL is decremented by 1 at each router hop; when it reaches 0, the packet is discarded and an ICMP \"Time Exceeded\" is sent back (the mechanism traceroute exploits). In DNS, TTL specifies how long a resolver may cache a record before re-querying the authoritative server.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "T"
+    },
+    {
+      "acronym": "TOTP",
+      "full_name": "Time-based One-Time Password",
+      "description": "An algorithm (RFC 6238) that generates a short-lived numeric code using a shared secret and the current Unix timestamp divided into 30-second windows. TOTP is the mechanism behind authenticator apps (Google Authenticator, Authy). The code is computed as HMAC-SHA1(secret, floor(time/30)), then truncated to 6–8 digits.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "T"
+    },
+    {
+      "acronym": "UART",
+      "full_name": "Universal Asynchronous Receiver-Transmitter",
+      "description": "A hardware circuit for serial communication that converts data between parallel (bus) and serial (wire) formats. UART transmits data as a framed bit stream: start bit, data bits (5–9), optional parity bit, stop bit(s). The baud rate must match on both ends. UART is the underlying interface for RS-232, debug consoles, and serial connections on embedded systems and SBCs.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "U"
+    },
+    {
+      "acronym": "UDP",
+      "full_name": "User Datagram Protocol",
+      "description": "A connectionless, unreliable, minimal transport protocol (RFC 768) that sends datagrams with no handshake, no ordering, no retransmission, and no flow control. UDP's simplicity makes it faster than TCP for latency-sensitive applications where occasional packet loss is acceptable: DNS queries, VoIP, video streaming, online games, and QUIC (which builds reliability on top of UDP at the application layer).",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "U"
+    },
+    {
+      "acronym": "UEFI",
+      "full_name": "Unified Extensible Firmware Interface",
+      "description": "The modern replacement for BIOS, defined by the UEFI Forum. UEFI runs in 32/64-bit mode (no 16-bit limitation), supports GPT disks (beyond 2 TB), provides a pre-OS execution environment with drivers and a shell, and implements Secure Boot (verifying bootloader signatures against a key database). UEFI applications (bootloaders, diagnostics) reside in the EFI System Partition.",
+      "difficulty": "Intermediate",
+      "category": "Hardware",
+      "letter": "U"
+    },
+    {
+      "acronym": "URI",
+      "full_name": "Uniform Resource Identifier",
+      "description": "A string that uniquely identifies a resource. URIs are the superset: a URL (Uniform Resource Locator) is a URI that also specifies how to locate the resource (scheme + authority + path), while a URN (Uniform Resource Name) identifies a resource without implying its location. All URLs are URIs; not all URIs are URLs. Defined in RFC 3986.",
+      "difficulty": "Base",
+      "category": "Protocol",
+      "letter": "U"
+    },
+    {
+      "acronym": "URL",
+      "full_name": "Uniform Resource Locator",
+      "description": "A reference to a web resource that specifies its location on a computer network and the mechanism for retrieving it. A URL consists of: scheme (https://), authority (user:password@host:port), path (/path/to/resource), query (?key=value), and fragment (#section). URL encoding (percent-encoding) escapes characters not allowed in the syntax.",
+      "difficulty": "Base",
+      "category": "Protocol",
+      "letter": "U"
+    },
+    {
+      "acronym": "UUID",
+      "full_name": "Universally Unique Identifier",
+      "description": "A 128-bit label (RFC 4122) used to uniquely identify information in computer systems without central coordination. UUIDs are formatted as 32 hex digits in 5 groups (e.g., 550e8400-e29b-41d4-a716-446655440000). Version 4 (random) is most common; Version 1 is time+MAC-based; Version 5 is name-based (SHA-1 hash). The probability of collision is negligible in practice.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "U"
+    },
+    {
+      "acronym": "VGA",
+      "full_name": "Video Graphics Array",
+      "description": "A display standard introduced by IBM in 1987, defining a 640×480 resolution at 16 colors (or 320×240 at 256 colors) and the 15-pin D-sub analog connector still found on legacy hardware. VGA has been superseded by DVI, HDMI, and DisplayPort, but VGA output in server firmware and hypervisors (QEMU, Proxmox) remains common for fallback console access.",
+      "difficulty": "Base",
+      "category": "Hardware",
+      "letter": "V"
+    },
+    {
+      "acronym": "VLAN",
+      "full_name": "Virtual Local Area Network",
+      "description": "A Layer 2 mechanism (IEEE 802.1Q) that logically segments a physical network into multiple isolated broadcast domains without requiring separate physical infrastructure. Frames on a trunk port carry a 12-bit VLAN ID tag (1–4094). VLANs are used to separate traffic by function (management, production, DMZ), reduce broadcast domains, and enforce security boundaries between groups of hosts.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "V"
+    },
+    {
+      "acronym": "VMDK",
+      "full_name": "Virtual Machine Disk",
+      "description": "A file format developed by VMware for storing disk images of virtual machines. A VMDK set typically consists of a descriptor file and one or more extent files containing the actual data. VMDK supports sparse (thin-provisioned) and pre-allocated (thick) modes, snapshots via delta disk chains, and can be converted to/from QCOW2 or raw format using tools like qemu-img.",
+      "difficulty": "Intermediate",
+      "category": "Cloud",
+      "letter": "V"
+    },
+    {
+      "acronym": "VPN",
+      "full_name": "Virtual Private Network",
+      "description": "A technology that creates an encrypted tunnel over a public network, allowing remote clients or sites to communicate as if they were on the same private network. VPN protocols include IPSec (Layer 3, common in site-to-site), OpenVPN (SSL/TLS-based, UDP/TCP), WireGuard (modern, kernel-native, ChaCha20+Poly1305), and L2TP/IPSec. Split tunneling routes only specific traffic through the VPN.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "V"
+    },
+    {
+      "acronym": "VPS",
+      "full_name": "Virtual Private Server",
+      "description": "A virtualized server sold as a service by a hosting provider. A VPS runs on shared physical hardware but is isolated via hypervisor (KVM, Xen) or container technology (OpenVZ), giving each customer root access, dedicated CPU/RAM/disk allocations, and a dedicated IP. A VPS sits between shared hosting (no isolation) and a dedicated server (no sharing) in cost and isolation level.",
+      "difficulty": "Base",
+      "category": "Cloud",
+      "letter": "V"
+    },
+    {
+      "acronym": "VTEP",
+      "full_name": "VXLAN Tunnel Endpoint",
+      "description": "A network entity (physical or virtual) that originates and terminates VXLAN tunnels. A VTEP encapsulates Layer 2 frames in UDP packets (port 4789) adding a 24-bit VXLAN Network Identifier (VNI), then sends them to a remote VTEP which decapsulates and delivers the original frame. VTEPs are implemented in hypervisors (OVS), physical switches, and network appliances.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "V"
+    },
+    {
+      "acronym": "WAF",
+      "full_name": "Web Application Firewall",
+      "description": "A security appliance or software layer that monitors, filters, and blocks HTTP/HTTPS traffic to and from a web application. Unlike a network firewall (IP/port rules), a WAF understands HTTP and inspects request/response content for attack patterns: SQL injection, XSS, CSRF, path traversal, and OWASP Top 10 threats. WAFs operate in detection mode (log only) or prevention mode (block).",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "W"
+    },
+    {
+      "acronym": "WAN",
+      "full_name": "Wide Area Network",
+      "description": "A telecommunications network that extends over a large geographic area, connecting LANs across cities, countries, or continents. WANs use leased lines (MPLS, SD-WAN), the public internet, or point-to-point links (satellite, microwave). The internet is the world's largest WAN. WAN links have higher latency and lower bandwidth than LAN connections due to the physical distances involved.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "W"
+    },
+    {
+      "acronym": "WLAN",
+      "full_name": "Wireless Local Area Network",
+      "description": "A LAN that uses radio waves (IEEE 802.11) instead of cables to connect devices. WLAN operates in the 2.4 GHz (longer range, more interference) and 5 GHz (shorter range, higher throughput) bands; Wi-Fi 6E and Wi-Fi 7 add 6 GHz. WLAN security relies on WPA2 (AES/CCMP) or WPA3 (SAE handshake, forward secrecy). The access point bridges wireless clients to the wired network.",
+      "difficulty": "Base",
+      "category": "Networking",
+      "letter": "W"
+    },
+    {
+      "acronym": "WSUS",
+      "full_name": "Windows Server Update Services",
+      "description": "A Microsoft server role that downloads Windows updates from Microsoft Update and distributes them to managed clients within an organization. WSUS allows administrators to approve, test, and schedule updates before deployment, reducing internet bandwidth consumption and giving control over the patch lifecycle. Managed via Group Policy or SCCM/Intune in larger environments.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "W"
+    },
+    {
+      "acronym": "WPAD",
+      "full_name": "Web Proxy Autodiscovery Protocol",
+      "description": "A method for clients to automatically discover the URL of a proxy configuration file (PAC file) using DHCP option 252 or DNS resolution of the hostname \"wpad\". The client fetches the PAC file and uses it to determine which requests should go through a proxy. WPAD has well-documented security vulnerabilities (DNS hijacking, man-in-the-middle) and is disabled by default in modern browsers.",
+      "difficulty": "Advanced",
+      "category": "Networking",
+      "letter": "W"
+    },
+    {
+      "acronym": "WMI",
+      "full_name": "Windows Management Instrumentation",
+      "description": "Microsoft's implementation of WBEM (Web-Based Enterprise Management), providing a standardized interface for querying and managing Windows system components: hardware inventory, running processes, services, event logs, registry, and performance counters. WMI queries use WQL (a SQL-like language). Heavily used by sysadmins, monitoring tools, and attackers for lateral movement and persistence.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "W"
+    },
+    {
+      "acronym": "XMPP",
+      "full_name": "Extensible Messaging and Presence Protocol",
+      "description": "An open standard (RFC 6120) for real-time messaging based on XML streams. XMPP uses a federated architecture where servers communicate using server-to-server (S2S) dialback, similar to email. It supports presence (online/offline/away), roster management, and is extensible via XEPs (XMPP Extension Protocols). Used by WhatsApp (historically), Jabber, and many enterprise chat systems.",
+      "difficulty": "Intermediate",
+      "category": "Protocol",
+      "letter": "X"
+    },
+    {
+      "acronym": "XSLT",
+      "full_name": "Extensible Stylesheet Language Transformations",
+      "description": "A language for transforming XML documents into other XML documents, HTML, plain text, or other formats. An XSLT stylesheet defines template rules that match XML nodes and produce output. XSLT processors are Turing-complete and can perform complex transformations. Used in document processing pipelines, web services, and configuration generation from XML data sources.",
+      "difficulty": "Intermediate",
+      "category": "Dev",
+      "letter": "X"
+    },
+    {
+      "acronym": "XSS",
+      "full_name": "Cross-Site Scripting",
+      "description": "A web security vulnerability where an attacker injects malicious client-side scripts into web pages viewed by other users. Stored XSS persists in the database; reflected XSS is in a URL parameter echoed back immediately; DOM-based XSS manipulates the DOM client-side without server involvement. Mitigated by output encoding, Content Security Policy (CSP), and avoiding innerHTML.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "X"
+    },
+    {
+      "acronym": "XACL",
+      "full_name": "Extended Access Control List",
+      "description": "An extended variant of traditional ACLs that supports additional match criteria beyond basic IP/port rules, such as MAC addresses, DSCP values, protocol fields, or user identity (in identity-aware firewalls). The exact feature set varies by vendor and platform. XACLs are used in environments where standard ACL capabilities are insufficient for granular traffic classification.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "X"
+    },
+    {
+      "acronym": "XDCR",
+      "full_name": "Cross Data Center Replication",
+      "description": "A Couchbase-specific feature for replicating data between Couchbase buckets across geographically distributed data centers. XDCR operates asynchronously using a push model, enabling active-active or active-passive multi-region topologies. Conflict resolution is handled by document revision (sequence number) or timestamp. Represents a pattern now generalized across distributed databases.",
+      "difficulty": "Advanced",
+      "category": "Database",
+      "letter": "X"
+    },
+    {
+      "acronym": "XSRF",
+      "full_name": "Cross-Site Request Forgery",
+      "description": "An alternative acronym for CSRF (Cross-Site Request Forgery), used interchangeably in web security literature. XSRF appears in some frameworks' anti-forgery token implementations (e.g., ASP.NET uses \"XSRF token\" in its documentation). The attack, mitigations, and principles are identical to those described under CSRF. See CSRF for the canonical entry.",
+      "difficulty": "Intermediate",
+      "category": "Security",
+      "letter": "X"
+    },
+    {
+      "acronym": "YAML",
+      "full_name": "YAML Ain't Markup Language",
+      "description": "A human-readable data serialization format designed for configuration files and data exchange. YAML uses indentation (spaces only, never tabs) to represent hierarchy and supports scalars, sequences (lists), and mappings (key-value pairs). It is a superset of JSON. Widely used in CI/CD pipelines (GitHub Actions, GitLab CI), Kubernetes manifests, Ansible playbooks, and Docker Compose.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "Y"
+    },
+    {
+      "acronym": "YUM",
+      "full_name": "Yellowdog Updater Modified",
+      "description": "A package manager for RPM-based Linux distributions (RHEL, CentOS, Fedora). YUM resolves dependencies automatically, manages repositories, and handles package installation, updates, and removal. It was replaced by DNF (Dandified YUM) in Fedora 22 and RHEL 8, which uses the same command syntax but has better dependency resolution and performance via the libsolv library.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "Y"
+    },
+    {
+      "acronym": "YML",
+      "full_name": "YAML (file extension)",
+      "description": "The file extension used for YAML files. While .yaml is the officially correct extension per the YAML specification, .yml is the de facto standard due to older systems' 3-character extension limits and convention in tools like Docker (docker-compose.yml), Kubernetes, and GitHub Actions. Both extensions are functionally identical; .yml dominates in DevOps tooling.",
+      "difficulty": "Base",
+      "category": "Dev",
+      "letter": "Y"
+    },
+    {
+      "acronym": "YARN",
+      "full_name": "Yet Another Resource Negotiator",
+      "description": "A cluster resource management and job scheduling framework introduced in Hadoop 2.0, separating resource management from the MapReduce programming model. YARN allows multiple processing frameworks (MapReduce, Spark, Tez) to share the same Hadoop cluster by negotiating resource containers. Each application has an Application Master that negotiates resources from the Resource Manager.",
+      "difficulty": "Advanced",
+      "category": "Cloud",
+      "letter": "Y"
+    },
+    {
+      "acronym": "YARA",
+      "full_name": "Yet Another Ridiculous Acronym",
+      "description": "A pattern-matching tool and rule language used in malware research and threat detection. YARA rules define conditions based on strings (byte sequences, text, regular expressions) and boolean logic to classify and identify files or processes. Used by antivirus engines, SIEM systems, and incident responders to detect malware families, indicators of compromise (IOCs), and suspicious files at scale.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "Y"
+    },
+    {
+      "acronym": "ZFS",
+      "full_name": "Z File System",
+      "description": "An advanced combined file system and logical volume manager developed by Sun Microsystems and open-sourced under CDDL. ZFS provides end-to-end checksums on all data and metadata (silent corruption detection), copy-on-write transactional semantics, snapshots and clones, RAID-Z (software RAID with variable parity), inline compression, and deduplication. The ARC (Adaptive Replacement Cache) manages read caching in RAM.",
+      "difficulty": "Advanced",
+      "category": "OS",
+      "letter": "Z"
+    },
+    {
+      "acronym": "ZIP",
+      "full_name": "ZIP archive format",
+      "description": "A lossless data compression and archiving format created by Phil Katz (1989). Unlike gzip, ZIP archives can contain multiple files, each independently compressed (using DEFLATE by default). The central directory at the end of the archive allows random access to individual files without reading the whole archive. Supported natively by all major operating systems.",
+      "difficulty": "Base",
+      "category": "OS",
+      "letter": "Z"
+    },
+    {
+      "acronym": "ZTP",
+      "full_name": "Zero-Touch Provisioning",
+      "description": "An automated device provisioning process that configures network equipment (switches, routers, access points) without manual intervention. On first boot, the device contacts a DHCP server for an IP and the location of a configuration script or file, downloads it, and applies the full configuration automatically. ZTP eliminates manual on-site configuration for large-scale deployments.",
+      "difficulty": "Intermediate",
+      "category": "Networking",
+      "letter": "Z"
+    },
+    {
+      "acronym": "ZRAM",
+      "full_name": "Zram (compressed RAM block device)",
+      "description": "A Linux kernel module that creates compressed block devices in RAM, used as a swap device or tmpfs backing store. Instead of swapping to disk, compressed pages are stored in ZRAM, trading CPU cycles (compression/decompression) for dramatically reduced I/O. Used by Android, ChromeOS, and low-RAM Linux systems to extend effective memory at minimal latency cost.",
+      "difficulty": "Intermediate",
+      "category": "OS",
+      "letter": "Z"
+    },
+    {
+      "acronym": "ZTNA",
+      "full_name": "Zero Trust Network Access",
+      "description": "A security model and product category that replaces VPN-based remote access by applying least-privilege, identity-aware access controls to every application request, regardless of network location. ZTNA assumes no implicit trust based on network location; every access request must be verified against identity, device posture, and context. Implemented by products like Cloudflare Access, Zscaler ZPA, and Tailscale.",
+      "difficulty": "Advanced",
+      "category": "Security",
+      "letter": "Z"
+    },
+    {
+      "acronym": "ZXDB",
+      "full_name": "Zabbix External Database (unofficial abbreviation)",
+      "description": "An unofficial shorthand used in Zabbix monitoring deployments referring to configurations where Zabbix stores its monitoring data in an externally managed database server (MySQL, PostgreSQL, TimescaleDB) rather than on the same host. Not an official acronym in the Zabbix documentation, but frequently used in community forums and deployment guides to distinguish single-node from distributed setups.",
+      "difficulty": "Intermediate",
+      "category": "Database",
+      "letter": "Z"
+    }
+  ]
+}
