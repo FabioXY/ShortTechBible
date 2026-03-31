@@ -319,3 +319,24 @@ An organizational policy that allows employees to use personally owned devices (
 
 **Difficulty:** Base
 **Category:** Security
+
+---
+
+## BORG — BorgBackup
+Deduplicating, compression, and encryption backup program for Linux/macOS. Uses content-defined chunking so only changed data is transmitted and stored. Supports LZMA, LZ4, zstd compression and AES-CTR encryption. Backups are stored as archives inside a repository; accessed via borg mount using FUSE.
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## BRPF — Berkeley Packet Filter (Raw)
+Raw access layer of the BPF kernel subsystem, providing a VM-based packet filtering engine at the network driver level. eBPF extends the classic BPF with a more capable instruction set, maps, and helper functions, enabling use beyond packet filtering: tracing, security policy, and XDP forwarding.
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## BYOK — Bring Your Own Key
+Cloud encryption model where the customer generates and controls the master encryption key rather than relying on the provider's managed keys. Keys are stored in a customer-managed HSM or KMS (e.g. AWS CloudHSM, Azure Key Vault) and imported into the cloud service. Revocation immediately renders encrypted data inaccessible.
+**Difficulty:** Intermediate
+**Category:** Security

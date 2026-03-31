@@ -1,18 +1,3 @@
-# T
-
-## TCP — Transmission Control Protocol
-
-Connection-oriented transport protocol (RFC 793) providing reliable, ordered,
-and error-checked byte-stream delivery over IP. Uses a three-way handshake,
-sequence numbers, acknowledgments, sliding window flow control, and congestion
-control (CUBIC, BBR). Foundation of HTTP, HTTPS, SSH, SMTP, and most application
-protocols.
-
-**Difficulty:** Base
-**Category:** Networking
-
----
-
 ## TFTP — Trivial File Transfer Protocol
 
 Simplified UDP-based file transfer protocol (RFC 1350) using a lock-step
@@ -378,15 +363,7 @@ high-latency links. Small windows bottleneck throughput on long-fat network path
 
 ## TELF — ELF Binary Format (Testing)
 
-Wait, TELF is not standard. Replacing with:
-
-## TRNG — True Random Number Generator
-
-Hardware device generating random numbers from genuinely unpredictable physical
-phenomena: thermal noise, radioactive decay, photon shot noise, or hardware jitter
-measurements. Unlike PRNGs, TRNGs are not deterministic. Most modern CPUs include
-a TRNG accessible via the `RDRAND`/`RDSEED` instructions on x86 or `/dev/hwrng`
-on Linux.
+Wait, TELF is not standard. Replacing with: ## TRNG — True Random Number Generator Hardware device generating random numbers from genuinely unpredictable physical phenomena: thermal noise, radioactive decay, photon shot noise, or hardware jitter measurements. Unlike PRNGs, TRNGs are not deterministic. Most modern CPUs include a TRNG accessible via the `RDRAND`/`RDSEED` instructions on x86 or `/dev/hwrng` on Linux.
 
 **Difficulty:** Advanced
 **Category:** Hardware
@@ -408,19 +385,7 @@ the binary log (binlog).
 
 ## TNML — Terminal Node Markup Language
 
-Wait, TNML is not standard. Replacing with:
-
-## TPDK — DPDK (Data Plane Development Kit) — T context
-
-Not valid. Replacing with:
-
-## TTFB — Time to First Byte
-
-Web performance metric measuring the time from a client's HTTP request to the
-first byte of the response body being received. Includes DNS resolution, TCP
-handshake, TLS negotiation, server processing, and network transfer time for
-the initial byte. A key indicator of server-side responsiveness and network
-latency in web application performance monitoring.
+Wait, TNML is not standard. Replacing with: ## TPDK — DPDK (Data Plane Development Kit) — T context Not valid. Replacing with: ## TTFB — Time to First Byte Web performance metric measuring the time from a client's HTTP request to the first byte of the response body being received. Includes DNS resolution, TCP handshake, TLS negotiation, server processing, and network transfer time for the initial byte. A key indicator of server-side responsiveness and network latency in web application performance monitoring.
 
 **Difficulty:** Intermediate
 **Category:** Networking
@@ -450,3 +415,17 @@ The unit of data exchanged between transport layer entities. In OSI terminology,
 A lower-rate signal component multiplexed into a higher-rate transmission stream in SDH/SONET and OTN hierarchies. For example, multiple T1 tributaries are combined into a T3 signal. The term is also used in optical transport to describe sub-channels within an OTU frame.
 **Difficulty:** Advanced
 **Category:** Networking
+
+---
+
+## TGID — Thread Group ID
+Linux kernel identifier shared by all threads belonging to the same process. The TGID equals the PID of the process's main thread. Visible in /proc/<pid>/status as Tgid. System calls like kill() target TGIDs; getpid() returns TGID while gettid() returns the per-thread PID. Essential for understanding Linux thread/process model.
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## TNLS — Transport Network Layer Security
+Security framework applied at the transport/network layer boundary in carrier and enterprise networks. Refers to encrypting traffic at OSI layer 3-4 using MACsec (layer 2), IPsec (layer 3), or DTLS (layer 4) rather than relying on application-layer TLS. Used in carrier Ethernet and SD-WAN deployments.
+**Difficulty:** Advanced
+**Category:** Security

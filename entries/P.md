@@ -1,17 +1,3 @@
-# P
-
-## PAM — Pluggable Authentication Modules
-
-Linux/Unix framework allowing system administrators to configure authentication
-policies without modifying individual applications. Each service references a
-PAM stack in `/etc/pam.d/`; modules in the stack handle authentication, account
-validation, password management, and session setup independently and composably.
-
-**Difficulty:** Advanced
-**Category:** Security
-
----
-
 ## PAT — Port Address Translation
 
 Specific form of NAT where both IP address and port number are translated, allowing
@@ -443,22 +429,6 @@ to grant or deny port access based on identity and policy.
 
 **Difficulty:** Advanced
 **Category:** Security
-
----
-
-## PRTG — Paessler Router Traffic Grapher
-
-Wait, PRTG already used. Replacing with:
-
-## PVRS — Physical Volume Resource Set
-
-LVM concept grouping multiple Physical Volumes (PVs) into a Volume Group (VG).
-The VG represents the total available storage pool from which Logical Volumes
-(LVs) are carved. The VG abstraction allows adding new PVs online to expand
-the storage pool without unmounting existing logical volumes.
-
-**Difficulty:** Advanced
-**Category:** OS
 
 ---
 

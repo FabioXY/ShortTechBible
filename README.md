@@ -36,13 +36,9 @@ The content is written by practitioners, validated by CI, and exported as a down
 ## Acronym of the Day
 
 <!-- STB:AOTD_START -->
-### 📖 Acronym of the Day — 2026-03-30
+### 📖 Acronym of the Day
 
-**OIDC** — OpenID Connect
-
-> An identity layer built on top of OAuth 2.0 (RFC 8414) that adds authentication to OAuth's authorization framework. OIDC introduces the ID Token (a JWT containing user identity claims), a UserInfo endpoint, and a standardized discovery mechanism. It is the dominant SSO protocol for web and mobile applications, used by Google, Microsoft, and most identity providers.
-
-*Difficulty: Advanced · Category: Security*
+*This section is automatically updated daily by the build system.*
 <!-- STB:AOTD_END -->
 
 ---
@@ -63,55 +59,11 @@ Or search interactively on the **[GitHub Pages site →](https://YOUR_USERNAME.g
 ## Stats
 
 <!-- STB:TOTAL_START -->
-**158 acronyms** — last updated 2026-03-30
+**0 acronyms** — last updated never
 <!-- STB:TOTAL_END -->
 
 <!-- STB:STATS_START -->
-| Letter | Count |
-|--------|-------|
-| A | 7 |
-| B | 6 |
-| C | 7 |
-| D | 6 |
-| E | 6 |
-| F | 6 |
-| G | 6 |
-| H | 6 |
-| I | 6 |
-| J | 6 |
-| K | 5 |
-| L | 6 |
-| M | 7 |
-| N | 6 |
-| O | 6 |
-| P | 6 |
-| Q | 5 |
-| R | 6 |
-| S | 7 |
-| T | 7 |
-| U | 6 |
-| V | 6 |
-| W | 6 |
-| X | 6 |
-| Y | 5 |
-| Z | 6 |
-
-| Category | Count |
-|----------|-------|
-| Security | 33 |
-| Networking | 33 |
-| Hardware | 25 |
-| OS | 21 |
-| Protocol | 17 |
-| Dev | 16 |
-| Database | 7 |
-| Cloud | 6 |
-
-| Difficulty | Count |
-|------------|-------|
-| Base | 46 |
-| Intermediate | 79 |
-| Advanced | 33 |
+*Stats are generated on each build.*
 <!-- STB:STATS_END -->
 
 ---

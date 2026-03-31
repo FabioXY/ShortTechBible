@@ -1,4 +1,3 @@
-
 ## MAAS — Metal as a Service
 
 Canonical's open-source platform for provisioning bare-metal servers as cloud
@@ -383,19 +382,6 @@ analyzing Wi-Fi frame captures in protocol analyzers.
 
 ---
 
-## NUMA — Non-Uniform Memory Access
-
-Multi-processor memory architecture where each CPU has local memory with lower
-latency and higher bandwidth, while accessing remote memory on another CPU's
-node incurs higher latency. Optimal performance requires NUMA-aware memory
-allocation. Linux manages NUMA via the `numactl` tool and NUMA balancing kernel
-subsystem.
-
-**Difficulty:** Advanced
-**Category:** Hardware
-
----
-
 ## MSET — Multivariate State Estimation Technique
 
 Machine learning anomaly detection method for industrial and IT systems. Learns
@@ -430,7 +416,6 @@ Examples: AWS Private CA, Google Cloud Certificate Authority Service.
 **Difficulty:** Intermediate
 **Category:** Security
 
-
 ---
 
 ## MTLS — Mutual TLS
@@ -451,7 +436,6 @@ Microsoft-proprietary encryption protocol used to encrypt PPP and PPTP VPN conne
 Third-party company that remotely manages and monitors a customer's security infrastructure and operations. Services include 24/7 SOC, SIEM management, threat intelligence, vulnerability scanning, and incident response. Differs from MDR (Managed Detection and Response) in scope and integration depth.
 **Difficulty:** Intermediate
 **Category:** Security
-
 
 ---
 

@@ -1,17 +1,3 @@
-# R
-
-## RAID — Redundant Array of Independent Disks
-
-Storage technique combining multiple physical drives for redundancy and/or
-performance. RAID 0: striping (performance, no redundancy). RAID 1: mirroring.
-RAID 5: striping with parity (N-1 usable). RAID 6: dual parity. RAID 10: mirrored
-stripes. Software RAID via `mdadm`; hardware RAID via dedicated controllers.
-
-**Difficulty:** Intermediate
-**Category:** Hardware
-
----
-
 ## RAM — Random Access Memory
 
 Volatile primary memory providing fast, direct (random) access to any memory
@@ -472,5 +458,12 @@ Unix metadata intact, overcoming ISO 9660's 8.3 filename and flat-hierarchy limi
 
 ## RSVP — Resource Reservation Protocol
 IETF signaling protocol (RFC 2205) used by hosts and routers to request and reserve network resources (bandwidth, buffer space) along a data path. Forms the basis of IntServ QoS. Operates on a soft-state model where reservations must be periodically refreshed. Less common in modern IP networks where DiffServ is preferred.
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## RTCP — RTP Control Protocol
+Companion protocol to RTP that provides out-of-band control and statistics for media streams. Sends RTCP packets (SR, RR, SDES, BYE, APP types) to report packet loss, jitter, and round-trip time. Used by VoIP and video conferencing systems (WebRTC, SIP) to monitor and adapt media quality.
 **Difficulty:** Advanced
 **Category:** Protocol

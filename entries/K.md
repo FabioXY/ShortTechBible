@@ -1,17 +1,3 @@
-# K
-
-## KAAS — Kubernetes as a Service
-
-Cloud offering where a provider manages the Kubernetes control plane, leaving
-users responsible only for workloads. Examples: GKE (Google), EKS (AWS), AKS
-(Azure). Eliminates operational burden of etcd, API server, and scheduler
-management while retaining full `kubectl` access to the cluster.
-
-**Difficulty:** Intermediate
-**Category:** Cloud
-
----
-
 ## KABI — Kernel Application Binary Interface
 
 Stable interface between the Linux kernel and loadable kernel modules or user-space
@@ -479,3 +465,10 @@ management and incident response readiness.
 
 **Difficulty:** Base
 **Category:** Dev
+
+---
+
+## KSFT — Kernel Selftests Framework
+Linux kernel testing infrastructure located in tools/testing/selftests/. Provides a standardized way to write and run userspace tests that exercise kernel subsystems (networking, memory, cgroups, BPF, etc.). Tests are run via make -C tools/testing/selftests run_tests and integrated into kernel CI pipelines.
+**Difficulty:** Advanced
+**Category:** OS

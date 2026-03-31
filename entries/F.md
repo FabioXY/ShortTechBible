@@ -322,18 +322,16 @@ A minimal, container-optimized Linux distribution that automatically applies OS 
 
 ---
 
-## FDDI — Fiber Distributed Data Interface
-
-See main FDDI entry. FDDI ran at 100 Mbit/s over dual counter-rotating fiber rings, providing fault tolerance. Campus backbones used FDDI before Gigabit Ethernet (1998) rendered it obsolete. FDDI's deterministic token rotation timer (TTRT) influenced later industrial protocols requiring bounded latency, including IEEE 802.1Qbv Time-Sensitive Networking.
-
-**Difficulty:** Intermediate
-**Category:** Networking
-
----
-
 ## FTAM — File Transfer, Access and Management
 
 An ISO OSI application-layer protocol (ISO 8571) providing file transfer and remote file manipulation capabilities in the OSI networking stack. FTAM was the OSI-stack equivalent of FTP, offering more complex virtual file store semantics including partial file access and structured file types. Never widely adopted outside of government and telecom networks; FTP and later SFTP dominated in TCP/IP environments.
 
 **Difficulty:** Advanced
 **Category:** Protocol
+
+---
+
+## FSCM — File System Change Monitor
+Kernel or userspace subsystem that tracks filesystem events (create, modify, delete, rename) and notifies applications. Linux: inotify (per-file) and fanotify (filesystem-wide). macOS: FSEvents. Windows: ReadDirectoryChangesW. Used by IDEs, backup tools, antivirus, and live-reload development servers.
+**Difficulty:** Intermediate
+**Category:** OS

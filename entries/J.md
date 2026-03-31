@@ -1,17 +1,3 @@
-# J
-
-## JAAS — Java Authentication and Authorization Service
-
-Java security framework providing pluggable authentication and fine-grained
-access control. Uses a LoginModule architecture backed by Kerberos, LDAP, JDBC,
-or custom sources without changing application code. Integrates with the Java
-Security Manager for permission enforcement in enterprise Java applications.
-
-**Difficulty:** Advanced
-**Category:** Security
-
----
-
 ## JAR — Java Archive
 
 ZIP-based package format that bundles compiled Java class files, metadata, and
@@ -477,3 +463,10 @@ access controls, audit logging, and compartmentalization.
 
 **Difficulty:** Advanced
 **Category:** Security
+
+---
+
+## JLOG — Journal Log
+Structured, append-only log format used in some messaging and replication systems (e.g. OmniTI's Jlog library) to provide durable, multi-subscriber log consumption. Subscribers maintain independent read positions; data is retained until all subscribers have consumed it. Used in Resmon and other monitoring infrastructure.
+**Difficulty:** Advanced
+**Category:** Dev

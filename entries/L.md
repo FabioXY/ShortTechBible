@@ -1,17 +1,3 @@
-# L
-
-## LAN — Local Area Network
-
-Network covering a limited geographic area (building, campus) connecting devices
-at high speed using Ethernet or Wi-Fi. Devices communicate directly without
-traversing a router hop. Managed switches segment a LAN into VLANs for traffic
-isolation. Contrasted with WAN (wide area) and MAN (metropolitan area) networks.
-
-**Difficulty:** Base
-**Category:** Networking
-
----
-
 ## LACP — Link Aggregation Control Protocol
 
 IEEE 802.3ad protocol for dynamically negotiating link aggregation (bonding)

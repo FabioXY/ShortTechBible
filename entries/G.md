@@ -328,3 +328,10 @@ A massively parallel processor with thousands of small cores optimized for SIMD 
 
 **Difficulty:** Intermediate
 **Category:** Hardware
+
+---
+
+## GWLB — Gateway Load Balancer
+AWS service (and similar in Azure) that provides transparent layer 3/4 load balancing for network virtual appliances (firewalls, IDS/IPS). Uses GENEVE encapsulation to forward traffic to appliance fleets while preserving the original packet flow. Scales appliance capacity without changing route tables or application configuration.
+**Difficulty:** Advanced
+**Category:** Cloud

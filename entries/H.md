@@ -97,15 +97,6 @@ A cross-platform interactive process monitoring utility (successor to top) with 
 
 ---
 
-## HTTP — HyperText Transfer Protocol
-
-The foundational protocol for data communication on the web. HTTP/1.1 (RFC 7230) introduced persistent connections and chunked transfer encoding. HTTP/2 (RFC 7540) added binary framing, multiplexing, header compression (HPACK), and server push over TLS. HTTP/3 (RFC 9114) replaced TCP with QUIC, eliminating transport-level head-of-line blocking and enabling faster connection establishment.
-
-**Difficulty:** Base
-**Category:** Protocol
-
----
-
 ## HVAC — Heating, Ventilation, and Air Conditioning
 
 Mechanical systems controlling temperature, humidity, and air quality in buildings. In data center contexts, HVAC (specifically precision cooling) is a critical infrastructure component: servers generate significant heat that must be removed to prevent throttling and hardware failure. Hot-aisle/cold-aisle containment, in-row cooling, liquid cooling, and free-air cooling (economization) are strategies for data center HVAC efficiency.
@@ -214,24 +205,6 @@ In DNS, an A or AAAA record mapping a hostname to an IP address. In general usag
 
 ---
 
-## HSTS — HTTP Strict Transport Security
-
-A browser security enforcement mechanism delivered via the Strict-Transport-Security response header. HSTS tells the browser to refuse plain HTTP connections to the domain and automatically upgrade them to HTTPS for the duration of max-age. Preloaded HSTS (submitted to browser preload lists) enforces HTTPS even on first visit without ever having seen the header, preventing SSL-stripping attacks on initial connections.
-
-**Difficulty:** Intermediate
-**Category:** Security
-
----
-
-## HMAC — Hash-based Message Authentication Code
-
-A cryptographic construction combining a hash function with a secret key to produce a fixed-length authentication tag. The double-hashing construction (ipad and opad) makes HMAC resistant to length-extension attacks. HMAC-SHA256 is widely used for API request signing, JWT HS256 tokens, TLS 1.2 PRF, and TOTP one-time password generation. Security depends entirely on key secrecy.
-
-**Difficulty:** Intermediate
-**Category:** Security
-
----
-
 ## HART — Highway Addressable Remote Transducer
 
 An industrial communication protocol (IEC 61158) for communicating with smart field instruments (pressure sensors, flow meters, level transmitters) over 4–20 mA analog loops. HART superimposes a digital FSK signal (1200/2200 Hz) on the analog loop, enabling digital configuration and diagnostics alongside the existing analog reading without replacing wiring. Widely used in process automation and oil/gas industry.
@@ -295,15 +268,6 @@ A Linux traffic control queuing discipline providing hierarchical bandwidth allo
 
 ---
 
-## HELO — SMTP Extended Hello
-
-See HELO entry. EHLO (Extended HELO) is the modern SMTP greeting command defined in RFC 5321, replacing HELO. After sending EHLO, the server responds with a list of supported SMTP extensions (STARTTLS, AUTH, SIZE, CHUNKING, 8BITMIME). Clients that receive a 502/500 error on EHLO fall back to HELO, indicating a very old server with no extension support.
-
-**Difficulty:** Intermediate
-**Category:** Protocol
-
----
-
 ## HLSL — High-Level Shader Language
 
 Microsoft's C-like programming language for writing GPU shader programs (vertex, pixel, geometry, compute, hull, domain shaders) in Direct3D. HLSL is compiled to DXBC (DirectX Bytecode) or DXIL (DirectX Intermediate Language for DXR/DirectX 12). Analogous to GLSL (OpenGL) and Metal Shading Language (Apple). HLSL shaders are the building blocks of all Direct3D rendering pipelines.
@@ -319,3 +283,24 @@ A programming mechanism intercepting function calls, messages, or events before 
 
 **Difficulty:** Intermediate
 **Category:** Dev
+
+---
+
+## HRSP — HTTP Response
+Generic term for the server-side reply in an HTTP transaction. Consists of a status line (version, code, reason phrase), headers (Content-Type, Set-Cookie, Cache-Control, etc.), and optional body. Status codes are grouped: 1xx informational, 2xx success, 3xx redirect, 4xx client error, 5xx server error.
+**Difficulty:** Base
+**Category:** Protocol
+
+---
+
+## HDLC — High-level Data Link Control
+ISO bit-oriented data link layer protocol (ISO 13239). Frames data with a flag sequence (01111110), address, control, and FCS fields. Foundation for many WAN protocols (PPP, LAPB, LAPD). Supports three frame types: I-frames (data), S-frames (supervisory), and U-frames (unnumbered/control).
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## HMIP — Hierarchical Mobile IP
+Extension to Mobile IP that introduces a regional anchor point (MAP - Mobility Anchor Point) to localize handover signaling within a visited domain. Reduces handover latency and binding updates to the home agent by handling local mobility regionally. Defined in RFC 4140.
+**Difficulty:** Advanced
+**Category:** Protocol

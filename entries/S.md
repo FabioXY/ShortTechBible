@@ -1,17 +1,3 @@
-# S
-
-## SAML — Security Assertion Markup Language
-
-XML-based open standard for exchanging authentication and authorization data
-between parties (IdP and SP). Enables SSO: a user authenticates once with the
-Identity Provider and gains access to multiple Service Providers without
-re-entering credentials. Widely used in enterprise SSO alongside OIDC.
-
-**Difficulty:** Intermediate
-**Category:** Security
-
----
-
 ## SAN — Storage Area Network
 
 Dedicated high-speed network connecting servers to shared block storage devices.

@@ -1,17 +1,3 @@
-# U
-
-## UART — Universal Asynchronous Receiver-Transmitter
-
-Hardware serial communication controller converting parallel data to serial for
-transmission and vice versa. Configurable baud rate, data bits (7/8), stop bits
-(1/2), and parity (None/Even/Odd). Standard for embedded system debugging via
-serial console, GPS modules, Bluetooth adapters, and legacy RS-232 interfaces.
-
-**Difficulty:** Intermediate
-**Category:** Hardware
-
----
-
 ## UEFI — Unified Extensible Firmware Interface
 
 Modern replacement for BIOS providing a standardized firmware interface between
@@ -134,14 +120,7 @@ path fails. Used in metropolitan fiber rings for carrier-grade resilience.
 
 ## URLL — URL Encoding
 
-Wait, URLL is not standard. Replacing with:
-
-## URLP — URL Path
-
-Hierarchical part of a URL between the authority component and query string,
-identifying a specific resource within a web server or application. RESTful API
-design uses the URL path to identify resources (nouns) while HTTP methods (verbs)
-define operations. Path parameters encode resource identifiers (e.g., `/users/42`).
+Wait, URLL is not standard. Replacing with: ## URLP — URL Path Hierarchical part of a URL between the authority component and query string, identifying a specific resource within a web server or application. RESTful API design uses the URL path to identify resources (nouns) while HTTP methods (verbs) define operations. Path parameters encode resource identifiers (e.g., `/users/42`).
 
 **Difficulty:** Base
 **Category:** Dev

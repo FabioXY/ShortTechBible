@@ -1,17 +1,3 @@
-# I
-
-## IANA — Internet Assigned Numbers Authority
-
-Organization responsible for the global coordination of DNS root, IP addressing,
-and other Internet protocol resources. Delegates IP address blocks to regional
-registries (ARIN, RIPE, APNIC) and maintains the official registry of port
-numbers and protocol parameters used across the Internet.
-
-**Difficulty:** Base
-**Category:** Networking
-
----
-
 ## ICMP — Internet Control Message Protocol
 
 Network-layer protocol used by IP devices to send error and diagnostic messages.

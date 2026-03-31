@@ -196,15 +196,6 @@ A block of encoded text sent to a Certificate Authority to request a digital cer
 
 ---
 
-## CLI — Command Line Interface
-
-See CLI entry. Canonical reference.
-
-**Difficulty:** Base
-**Category:** OS
-
----
-
 ## CRUD — Create, Read, Update, Delete
 
 The four basic operations of persistent storage, forming the foundation of most data-driven applications. CRUD maps to SQL (INSERT, SELECT, UPDATE, DELETE), HTTP methods (POST, GET, PUT/PATCH, DELETE), and REST resource semantics. A "CRUD application" refers to any app whose primary function is managing data through these four operations.
@@ -283,3 +274,31 @@ An open standard by DMTF that defines how managed elements in an IT environment 
 
 **Difficulty:** Advanced
 **Category:** Protocol
+
+---
+
+## CEPH — Ceph Distributed Storage
+Open-source, software-defined storage platform providing object (RADOS), block (RBD), and filesystem (CephFS) interfaces on commodity hardware. Uses CRUSH algorithm for data placement without a central metadata bottleneck. Deployed via Rook operator in Kubernetes or cephadm for bare-metal clusters.
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## CRON — Cron Job Scheduler
+Unix time-based job scheduler daemon that executes commands at specified intervals defined in a crontab file. Each entry uses a five-field time expression (minute, hour, day, month, weekday) followed by the command. System-wide crontabs are in /etc/cron.d/; user crontabs are managed via crontab -e.
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## CUPS — Common Unix Printing System
+Modular printing system for Unix-like operating systems developed by Apple. Uses IPP (Internet Printing Protocol) as its primary protocol, supports PostScript and raster printing via filter chains, and provides a web-based admin interface on port 631. Default print system on macOS and most Linux distributions.
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## COOP — Cross-Origin Opener Policy
+HTTP response header that isolates a browsing context from cross-origin documents, preventing cross-window access via window.opener. Required alongside COEP to enable SharedArrayBuffer and high-resolution timers in browsers (mitigating Spectre-class timing attacks). Values: same-origin, same-origin-allow-popups, unsafe-none.
+**Difficulty:** Advanced
+**Category:** Security

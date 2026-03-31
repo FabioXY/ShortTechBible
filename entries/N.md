@@ -1,4 +1,3 @@
-
 ## NAT — Network Address Translation
 
 Process of rewriting source or destination IP addresses in packet headers as
@@ -182,14 +181,7 @@ Kerberos authentication for NFSv4 with `rpc.gssd` and `rpc.idmapd` helpers.
 
 ## NFTB — Netfilter Tables
 
-Wait, the correct acronym is NFTS. Actually the proper name is nftables. Since nftables > 4 chars, this won't work. Replacing with:
-
-## NHRP — Next Hop Resolution Protocol
-
-Protocol used in DMVPN (Dynamic Multipoint VPN) deployments to allow spoke VPN
-routers to discover the public IP address of other spoke routers dynamically.
-A central hub maintains an NHRP database; spokes query it to build direct
-spoke-to-spoke tunnels on demand, reducing hub-and-spoke traffic bottlenecks.
+Wait, the correct acronym is NFTS. Actually the proper name is nftables. Since nftables > 4 chars, this won't work. Replacing with: ## NHRP — Next Hop Resolution Protocol Protocol used in DMVPN (Dynamic Multipoint VPN) deployments to allow spoke VPN routers to discover the public IP address of other spoke routers dynamically. A central hub maintains an NHRP database; spokes query it to build direct spoke-to-spoke tunnels on demand, reducing hub-and-spoke traffic bottlenecks.
 
 **Difficulty:** Advanced
 **Category:** Networking
@@ -426,7 +418,6 @@ temperature ranges, fire resistance, and EMC requirements for carrier deployment
 **Difficulty:** Advanced
 **Category:** Hardware
 
-
 ---
 
 ## NVRM — NVIDIA Resource Manager
@@ -454,4 +445,3 @@ NVIDIA GPU hardware accelerator (available from Turing architecture onward) that
 BPF (Berkeley Packet Filter) program attached to a network interface at the kernel level to filter or process packets before they reach userspace. Written in eBPF bytecode and loaded via tc (traffic control) or XDP (eXpress Data Path). Used for packet capture filtering (tcpdump), DDoS mitigation, and high-performance load balancing.
 **Difficulty:** Advanced
 **Category:** Networking
-

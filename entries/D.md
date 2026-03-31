@@ -79,15 +79,6 @@ The SQL subset for defining and modifying database schema: CREATE, ALTER, DROP, 
 
 ---
 
-## DDoS — Distributed Denial of Service
-
-An attack flooding a target (server, network, application) with traffic from many sources simultaneously, exhausting resources and making the service unavailable. DDoS attacks use botnets of compromised hosts or amplification techniques (DNS amplification, NTP amplification, SSDP). Mitigated by scrubbing centers, anycast routing, rate limiting, and CDN-based absorption.
-
-**Difficulty:** Intermediate
-**Category:** Security
-
----
-
 ## DFS — Distributed File System
 
 A file system allowing files to be accessed from multiple computers over a network as if they were local. DFS abstracts physical location: clients use namespace paths that transparently map to servers. Microsoft DFS-N (Namespace) + DFS-R (Replication) provide HA file shares in Windows environments. HDFS, GlusterFS, and CephFS are Linux-native alternatives.
@@ -223,15 +214,6 @@ An open-source framework enabling user-space packet processing at line rate by b
 
 ---
 
-## DPI — Deep Packet Inspection
-
-A technique examining the full content of packets beyond IP/TCP headers, enabling application identification, intrusion detection, QoS classification, and content filtering. DPI requires dedicated hardware acceleration at high link speeds. Next-generation firewalls rely on DPI for application-aware policies. Deep inspection of encrypted traffic requires TLS interception (MITM), raising privacy concerns.
-
-**Difficulty:** Intermediate
-**Category:** Networking
-
----
-
 ## DRAM — Dynamic Random-Access Memory
 
 The most common type of main memory. DRAM stores each bit in a capacitor that leaks charge, requiring refresh thousands of times per second (hence "dynamic"). Denser and cheaper than SRAM but slower due to refresh cycles and higher latency. Modern variants: DDR4 (2014), DDR5 (2020), LPDDR5 (mobile). ECC DRAM adds error correction bits for server reliability.
@@ -337,3 +319,17 @@ A term used in hardware testing and quality assurance to refer to the specific d
 
 **Difficulty:** Base
 **Category:** Hardware
+
+---
+
+## DLNA — Digital Living Network Alliance
+Industry standard for sharing media (audio, video, images) between consumer electronics devices over a home network using UPnP and HTTP. DLNA-certified devices (TVs, NAS, game consoles) discover each other via SSDP and stream content via HTTP with DLNA-specific MIME type profiles.
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## DNAT — Destination NAT
+NAT variant that rewrites the destination IP address (and optionally port) of incoming packets. Used to forward external traffic to an internal server (port forwarding). Implemented in iptables via the DNAT target in the PREROUTING chain, or in nftables with dnat to. The inverse of SNAT.
+**Difficulty:** Intermediate
+**Category:** Networking

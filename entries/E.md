@@ -286,15 +286,6 @@ A legal contract between a software vendor and the end user specifying the terms
 
 ---
 
-## EULA — End User License Agreement
-
-A legal contract between software vendor and user specifying use terms. EULAs restrict activities like reverse engineering, redistribution, and simultaneous installations. They disclaim warranties and limit liability. Enforceability varies by jurisdiction; shrink-wrap and click-through EULAs have been challenged in courts as contracts of adhesion where users have no meaningful negotiating power.
-
-**Difficulty:** Base
-**Category:** Dev
-
----
-
 ## EVPN — Ethernet VPN
 
 An IETF standard (RFC 7432) for providing Layer 2 and Layer 3 VPN services over an MPLS or VXLAN fabric using BGP as the control plane. EVPN replaces older L2VPN technologies (VPLS, LDP-signaled pseudowires) with a scalable, BGP-based approach supporting multi-homing, ARP/ND suppression, and integrated IP routing. EVPN/VXLAN is the dominant architecture for modern data center fabrics.
@@ -327,4 +318,25 @@ A standard for embedding metadata in image (JPEG, TIFF, HEIC) and audio files. E
 The default filesystem for most Linux distributions, introduced in 2008 as the successor to ext3. EXT4 supports volumes up to 1 exabyte, files up to 16 TB, extents (contiguous block ranges reducing fragmentation), delayed allocation, journal checksums, and online defragmentation. EXT4 maintains backward compatibility with ext2/ext3. For new deployments, ZFS, Btrfs, and XFS offer more advanced features.
 
 **Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## EGRP — Enhanced Gateway Routing Protocol
+Cisco-proprietary advanced distance-vector routing protocol (formerly EIGRP referenced incorrectly). Combines distance-vector and link-state characteristics using the DUAL algorithm to provide fast convergence with loop-free backup routes. Supports IPv4, IPv6, and unequal-cost load balancing. Partially open-sourced in RFC 7868.
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## ENUM — E.164 Number Mapping
+IETF protocol (RFC 6116) that maps PSTN telephone numbers (E.164 format) to URIs using DNS NAPTR records. Enables VoIP systems to route calls to SIP addresses, email, or web services using the standard DNS infrastructure. Used in carrier interconnection and number portability databases.
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## EXEC — Execute Permission / Remote Execution
+Dual usage in IT: (1) Unix filesystem execute bit (chmod +x) granting permission to run a file as a program. (2) Generic term for remote command execution protocols (rexec, SSH exec channel, Docker exec). In security contexts, arbitrary code execution via exec() system calls is a primary attack objective.
+**Difficulty:** Base
 **Category:** OS
