@@ -36,9 +36,13 @@ The content is written by practitioners, validated by CI, and exported as a down
 ## Acronym of the Day
 
 <!-- STB:AOTD_START -->
-### 📖 Acronym of the Day
+### 📖 Acronym of the Day — 2026-03-31
 
-*This section is automatically updated daily by the build system.*
+**CRC** — Cyclic Redundancy Check
+
+> An error-detection algorithm that treats data as a polynomial and computes a remainder when divided by a generator polynomial. The resulting checksum (typically 16 or 32 bits) is appended to data and recomputed on receipt; a mismatch indicates corruption. Used in Ethernet frames, ZIP files, storage protocols, and firmware images.
+
+*Difficulty: Intermediate · Category: Protocol*
 <!-- STB:AOTD_END -->
 
 ---
@@ -59,11 +63,56 @@ Or search interactively on the **[GitHub Pages site →](https://YOUR_USERNAME.g
 ## Stats
 
 <!-- STB:TOTAL_START -->
-**0 acronyms** — last updated never
+**1012 acronyms** — last updated 2026-03-31
 <!-- STB:TOTAL_END -->
 
 <!-- STB:STATS_START -->
-*Stats are generated on each build.*
+| Letter | Count |
+|--------|-------|
+| A | 40 |
+| B | 39 |
+| C | 35 |
+| D | 38 |
+| E | 39 |
+| F | 38 |
+| G | 38 |
+| H | 35 |
+| I | 39 |
+| J | 40 |
+| K | 40 |
+| L | 40 |
+| M | 39 |
+| N | 39 |
+| O | 40 |
+| P | 38 |
+| Q | 40 |
+| R | 40 |
+| S | 39 |
+| T | 38 |
+| U | 38 |
+| V | 40 |
+| W | 40 |
+| X | 40 |
+| Y | 40 |
+| Z | 40 |
+
+| Category | Count |
+|----------|-------|
+| Networking | 204 |
+| Security | 189 |
+| Dev | 165 |
+| OS | 149 |
+| Hardware | 131 |
+| Protocol | 88 |
+| Cloud | 44 |
+| Database | 32 |
+| AI | 10 |
+
+| Difficulty | Count |
+|------------|-------|
+| Base | 171 |
+| Intermediate | 462 |
+| Advanced | 379 |
 <!-- STB:STATS_END -->
 
 ---
