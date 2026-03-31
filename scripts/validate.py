@@ -148,9 +148,9 @@ def validate_entry(entry: dict) -> list[ValidationError]:
         err("Missing or malformed header. Expected: ## ACRONYM — Full Name")
         return errors  # Can't validate further without header
 
-    # 2. Acronym length (3–4 chars, A-Z0-9)
+    # 2. Acronym length (3–6 chars, A-Z0-9)
     acronym = entry["acronym"]
-    if not re.match(r"^[A-Z0-9]{3,4}$", acronym):
+    if not re.match(r"^[A-Z0-9]{3,6}$", acronym):
         err(
             f"Acronym '{acronym}' is invalid. Must be 3–4 uppercase letters/digits only."
         )

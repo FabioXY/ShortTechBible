@@ -8,7 +8,7 @@ Thank you for contributing. This guide contains everything you need to know to s
 
 Before anything else, burn these rules into memory:
 
-1. **Acronyms must be exactly 3 or 4 characters.** Uppercase letters and digits only. No hyphens, no lowercase, no punctuation. `TCP` ✓, `HTTP` ✓, `Wi-Fi` ✗, `TLS1.3` ✗.
+1. **Acronyms must be exactly 3 to 6 characters.** Uppercase letters and digits only. No hyphens, no lowercase, no punctuation. `TCP` ✓, `HTTP` ✓, `Wi-Fi` ✗, `TLS1.3` ✗.
 2. **Zero duplicates.** Search the `entries/` folder before writing anything. `grep -r "^## TCP" entries/` takes 2 seconds.
 3. **No placeholder language.** Never write "this is a protocol used for..." — explain the mechanism, the context, and why it matters.
 4. **No copy-paste.** Do not copy descriptions from Wikipedia, Cisco docs, or any other source. Write from your understanding.
@@ -182,7 +182,7 @@ Do not open a PR that adds 50 acronyms at once — it is very hard to review.
 
 | Error | Fix |
 |-------|-----|
-| `Acronym 'HTTPS' is invalid. Must be 3–4 chars` | The acronym has 5+ characters. Not accepted by design. |
+| `Acronym 'HTTPS' is invalid. Must be 3–6 chars` | The acronym has 7+ characters. Not accepted by design. |
 | `Missing **Difficulty:** field` | Add the field. Check spacing — it must be exactly `**Difficulty:** Value` |
 | `Invalid category 'network'` | Use the exact capitalized value: `Networking` not `network` |
 | `Duplicate acronym 'DNS'` | DNS is already in the repo. Do not re-add existing acronyms. |
@@ -194,7 +194,7 @@ Do not open a PR that adds 50 acronyms at once — it is very hard to review.
 ## What Maintainers Will Not Merge
 
 - Entries that already exist in the repo
-- Acronyms with fewer than 3 or more than 4 characters
+- Acronyms with fewer than 3 or more than 6 characters
 - Descriptions copied from Wikipedia or any other source
 - Entries without Difficulty or Category fields
 - Entries with invalid Difficulty or Category values

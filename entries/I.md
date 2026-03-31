@@ -1,51 +1,479 @@
+# I
+
 ## IANA — Internet Assigned Numbers Authority
 
-The organization responsible for coordinating the global pool of IP addresses, ASNs, DNS root zone management, and protocol parameter registries (port numbers, protocol types, MIME types). IANA is operated by ICANN. Regional registries (ARIN, RIPE, APNIC, etc.) receive address blocks from IANA and distribute them to ISPs and organizations.
+Organization responsible for the global coordination of DNS root, IP addressing,
+and other Internet protocol resources. Delegates IP address blocks to regional
+registries (ARIN, RIPE, APNIC) and maintains the official registry of port
+numbers and protocol parameters used across the Internet.
 
-**Difficulty:** Intermediate
+**Difficulty:** Base
 **Category:** Networking
 
 ---
 
 ## ICMP — Internet Control Message Protocol
 
-A Layer 3 protocol used by network devices to send operational information and error messages. ICMP is not used to transport application data; it carries diagnostics: echo request/reply (ping), destination unreachable, time exceeded (used by traceroute), and redirect messages. ICMPv6 also handles Neighbor Discovery, replacing ARP in IPv6 networks.
+Network-layer protocol used by IP devices to send error and diagnostic messages.
+Operates alongside IP without a port number. Commands like `ping` and `traceroute`
+rely on ICMP Echo Request/Reply and Time Exceeded messages. Not used for data
+transfer but essential for network troubleshooting.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## ICAP — Internet Content Adaptation Protocol
+
+Protocol (RFC 3507) that allows HTTP proxies to offload content processing to
+external servers. An ICAP server can scan for malware, filter URLs, or rewrite
+responses without modifying the proxy itself. Uses REQMOD and RESPMOD modes
+to intercept HTTP requests and responses respectively.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## IDE — Integrated Development Environment
+
+Software application bundling a code editor, debugger, compiler or interpreter,
+and build tools into a single interface. Examples: VS Code, IntelliJ IDEA, Eclipse.
+Modern IDEs add language servers via LSP, version control integration, and plugin
+ecosystems that dramatically accelerate development workflows.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## IDS — Intrusion Detection System
+
+Security system that monitors network traffic or host activity for malicious
+patterns and policy violations. Passive by design: it detects and alerts but
+does not block. Two main modes: signature-based (known attack patterns) and
+anomaly-based (detecting deviation from a learned baseline).
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## IDPS — Intrusion Detection and Prevention System
+
+Extension of IDS that adds active inline blocking capability. Sits directly in
+the traffic path and can drop packets, reset connections, or quarantine hosts
+in real time. The prevention component introduces latency risk, so threshold
+tuning is critical to avoid false positives blocking legitimate traffic.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## IEEE — Institute of Electrical and Electronics Engineers
+
+International professional association that publishes widely adopted technical
+standards. IEEE 802 defines Ethernet (802.3), Wi-Fi (802.11), and Bluetooth
+(802.15). IEEE standards govern everything from power systems to embedded
+software engineering practices and are referenced globally.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## IETF — Internet Engineering Task Force
+
+Open standards organization that develops and promotes Internet protocols
+primarily through the RFC process. Anyone can participate. Notable RFCs include
+TCP (793), HTTP/2 (7540), and TLS 1.3 (8446). Working groups operate by
+rough consensus and running code rather than formal voting.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## IGMP — Internet Group Management Protocol
+
+Protocol used by IPv4 hosts and routers to manage multicast group membership.
+A host sends an IGMP Join to subscribe to a multicast group; routers track
+membership to avoid flooding multicast traffic on uninterested segments.
+IGMPv3 adds source filtering for precise multicast source control.
 
 **Difficulty:** Intermediate
 **Category:** Networking
 
 ---
 
-## IMAP — Internet Message Access Protocol
+## IGRP — Interior Gateway Routing Protocol
 
-An email retrieval protocol (TCP port 143, 993 for TLS) that keeps messages on the mail server and synchronizes state (read, deleted, flagged) across multiple clients. Unlike POP3, which downloads and deletes messages, IMAP supports folders, server-side search, and partial message fetch. The dominant protocol for email clients connecting to hosted mailboxes.
+Cisco-proprietary distance-vector routing protocol developed in the 1980s as an
+improvement over RIP. Used composite metrics (bandwidth, delay, reliability,
+load, MTU) rather than just hop count. Superseded by EIGRP and now obsolete,
+but historically significant in large enterprise campus networks.
 
-**Difficulty:** Base
-**Category:** Protocol
+**Difficulty:** Advanced
+**Category:** Networking
 
 ---
 
-## IPMI — Intelligent Platform Management Interface
+## IKE — Internet Key Exchange
 
-A standardized hardware management interface embedded in server motherboards (via a Baseboard Management Controller, BMC) that allows out-of-band management independent of the main CPU and OS. IPMI provides remote power control, console access (SOL), sensor monitoring (temperature, voltage, fan speed), and event logging via a dedicated network interface.
+Protocol used to establish a Security Association (SA) in the IPsec suite.
+Runs over UDP port 500. IKEv1 used two phases; IKEv2 (RFC 7296) simplified
+the exchange, added EAP authentication, and improved reliability. Handles
+mutual authentication and negotiation of cipher parameters between peers.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## ILP — Instruction-Level Parallelism
+
+CPU optimization technique that executes multiple instructions simultaneously
+within a single processor core. Achieved through pipelining, superscalar
+execution, out-of-order execution, and speculative execution. Fundamentally
+limited by data dependencies and control hazards between adjacent instructions.
 
 **Difficulty:** Advanced
 **Category:** Hardware
 
 ---
 
-## IPV4 — Internet Protocol version 4
+## IMAP — Internet Message Access Protocol
 
-The fourth version of the Internet Protocol, using 32-bit addresses written in dotted-decimal notation (e.g., 192.168.1.1), providing approximately 4.3 billion unique addresses. IPv4 defines packet structure, fragmentation, TTL, and addressing. Address exhaustion (mitigated by NAT) drove the development of IPv6. Still the dominant protocol for actual internet traffic.
+Email retrieval protocol (RFC 9051) that keeps messages on the server and
+synchronizes state across multiple clients. Unlike POP3 which downloads and
+optionally deletes, IMAP preserves folder structure and read/unread flags
+server-side. Default port 143; port 993 for IMAPS over TLS.
+
+**Difficulty:** Base
+**Category:** Protocol
+
+---
+
+## IMEI — International Mobile Equipment Identity
+
+15-digit unique identifier assigned to every GSM, UMTS, and LTE mobile device.
+Used by carriers to block stolen devices from accessing the network. Structured
+as TAC (Type Allocation Code) plus serial number plus a Luhn check digit.
+Can be retrieved by dialing `*#06#` on most handsets.
 
 **Difficulty:** Base
 **Category:** Networking
 
 ---
 
-## IPV6 — Internet Protocol version 6
+## INET — Internet Address Family (Socket API)
 
-The successor to IPv4, using 128-bit addresses (written as eight groups of four hex digits, e.g., 2001:db8::1) to provide a virtually inexhaustible address space. IPv6 eliminates the need for NAT, mandates IPSec support, and introduces Stateless Address Autoconfiguration (SLAAC) and the Neighbor Discovery Protocol as replacements for DHCP and ARP.
+Prefix used in POSIX socket programming to denote Internet address families.
+`AF_INET` refers to IPv4 and `AF_INET6` to IPv6. Functions like `inet_aton()`
+and `inet_ntop()` handle conversion between binary network representations and
+human-readable dotted-decimal or colon-separated string formats.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## INTR — Interrupt Signal
+
+Hardware or software signal that pauses CPU execution to handle an urgent event.
+Hardware interrupts originate from devices (keyboard, NIC, storage); software
+interrupts are triggered by privileged instructions. The CPU saves context,
+jumps to the ISR, handles the event, then resumes the interrupted task.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## IOCP — I/O Completion Port
+
+Windows kernel mechanism for high-performance asynchronous I/O. Applications
+submit I/O requests associated with a completion port; a thread pool dequeues
+completion notifications as operations finish. Avoids one-thread-per-connection
+overhead, enabling servers to handle thousands of concurrent connections efficiently.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## IOPS — Input/Output Operations Per Second
+
+Metric measuring the throughput of a storage device for discrete read and write
+operations. Distinct from bandwidth (MB/s), which measures sequential data volume.
+IOPS matters most for databases and VMs with many small random accesses.
+NVMe SSDs reach millions of IOPS; spinning HDDs are limited to a few hundred.
+
+**Difficulty:** Base
+**Category:** Hardware
+
+---
+
+## IOT — Internet of Things
+
+Ecosystem of physical devices embedded with sensors, software, and connectivity
+that collect and exchange data over the Internet. Examples: smart thermostats,
+industrial sensors, medical monitors. Security is a major concern since IoT
+devices often lack update mechanisms and run with minimal compute resources.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## IPC — Inter-Process Communication
+
+Set of OS mechanisms allowing processes on the same host to exchange data and
+synchronize execution. Methods include pipes, named pipes (FIFOs), message
+queues, shared memory, Unix domain sockets, and signals. Each has different
+latency, throughput, and complexity trade-offs for different use cases.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## IPAM — IP Address Management
+
+Practice and software category for planning, tracking, and managing IP address
+space across an organization. A centralized IPAM system records all allocated
+IPs, subnets, VLANs, and DNS/DHCP bindings. Prevents address conflicts and
+aids capacity planning in large enterprise and cloud networks.
 
 **Difficulty:** Intermediate
 **Category:** Networking
+
+---
+
+## IPCP — IP Control Protocol
+
+Network Control Protocol (NCP) within PPP responsible for negotiating IP layer
+parameters over a point-to-point link. Negotiates IP addresses for both ends,
+compression options, and DNS server addresses. Runs after LCP establishes the
+link layer; IP traffic cannot flow until IPCP completes negotiation.
+
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## IPMI — Intelligent Platform Management Interface
+
+Hardware-level interface for out-of-band server management. Operates independently
+of the CPU and OS via a Baseboard Management Controller (BMC). Enables remote
+power cycling, serial console access, sensor monitoring (temperatures, voltages,
+fan speeds), and hardware event log access even when the server is powered off.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## IPV4 — Internet Protocol Version 4
+
+Fourth version of the Internet Protocol, defining 32-bit addresses that yield
+approximately 4.3 billion unique values. The dominant routing protocol since the
+1980s. Address exhaustion (completed in most regions by 2011–2019) drove the
+adoption of NAT and the eventual transition to IPv6.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## IPV6 — Internet Protocol Version 6
+
+Successor to IPv4 using 128-bit addresses, providing 3.4×10³⁸ unique values.
+Eliminates NAT by design, mandates IPsec support, and introduces stateless
+address autoconfiguration (SLAAC). Dual-stack deployments run IPv4 and IPv6
+simultaneously during the long transition period.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## IPTV — Internet Protocol Television
+
+Delivery of television content over IP networks instead of broadcast or cable.
+Uses multicast for live TV and unicast for on-demand streaming. Requires Quality
+of Service (QoS) guarantees to prevent buffering. Common protocols: IGMP for
+channel join/leave, RTSP for stream control and session management.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## IPS — Intrusion Prevention System
+
+Inline network security device that inspects traffic in real time and actively
+blocks detected threats. Unlike passive IDS, IPS sits directly in the data path
+and can drop packets before delivery. Requires careful threshold tuning to
+minimize false positives that would block legitimate business traffic.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## IRAM — Internal RAM
+
+RAM embedded directly within a processor or microcontroller die rather than
+connected as external DRAM chips. Offers significantly lower latency and higher
+bandwidth due to physical proximity to CPU cores. Common in embedded systems,
+DSPs, GPU shared memory, and network processor packet buffers.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## IRQ — Interrupt Request
+
+Signal line used by hardware devices to notify the CPU that they require
+immediate attention. Legacy x86 systems used the 8259 PIC with 16 IRQ lines.
+Modern systems use the APIC, which supports hundreds of IRQs with programmable
+priority levels and can distribute interrupts across multiple CPU cores.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## ISDN — Integrated Services Digital Network
+
+Circuit-switched telephone network standard providing digital transmission over
+ordinary copper telephone wire. B channels (64 kbps each) carry voice or data;
+the D channel carries signaling. BRI provides 2B+D; PRI provides 23B+D (North
+America) or 30B+D (Europe). Largely replaced by DSL and fiber broadband.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## ISO — International Organization for Standardization
+
+Non-governmental organization that develops and publishes international standards
+across virtually every industry. In computing: ISO 9660 (CD-ROM filesystem),
+ISO 27001 (information security management), ISO/IEC 12207 (software lifecycle).
+Also used colloquially for optical disc image files in the ISO 9660 format.
+
+**Difficulty:** Base
+**Category:** Protocol
+
+---
+
+## ISOC — Internet Society
+
+International non-profit that supports the open development and use of the Internet.
+Provides organizational and financial backing for the IETF, IRTF, and IAB.
+Advocates for Internet access, security, and governance policies globally.
+Founded in 1992 by Vint Cerf and Bob Kahn as steward of the open Internet.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## ISP — Internet Service Provider
+
+Company that provides Internet access and related services to consumers and
+businesses. Operates physical infrastructure (fiber, cable, DSL, wireless) and
+connects to upstream transit providers. Also typically provides DNS resolution,
+email hosting, and allocates public IP addresses to customers.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## ISR — Interrupt Service Routine
+
+Function in OS kernel or firmware that executes in response to a hardware interrupt.
+Must execute quickly to avoid blocking other interrupts. Typically saves registers,
+reads/clears the device status, performs minimal handling, then schedules a
+deferred work queue or bottom half for heavier processing outside interrupt context.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## ITAR — International Traffic in Arms Regulations
+
+United States export control regulations governing manufacture, sale, and
+distribution of defense-related articles, services, and data. IT systems handling
+ITAR-controlled technical data require strict access controls, US-person-only
+access restrictions, encryption, and comprehensive audit trails.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## ITAM — IT Asset Management
+
+Discipline of tracking and optimizing the full lifecycle of hardware and software
+assets within an organization. Covers procurement, deployment, license compliance
+monitoring, maintenance scheduling, and secure disposal. Reduces audit risk and
+helps identify unused software licenses available for reclamation and cost savings.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## ITIL — IT Infrastructure Library
+
+Framework of best practices for IT service management organized into a service
+lifecycle: Strategy, Design, Transition, Operation, and Continual Improvement.
+ITIL 4 (2019) updated the framework to align with Agile, DevOps, and cloud-native
+practices, adding a Service Value System model for holistic service delivery.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## ITU — International Telecommunication Union
+
+United Nations specialized agency for information and communication technology
+standards and global spectrum coordination. Publishes recommendations across
+three sectors: ITU-T (telecommunications standards), ITU-R (radio), and ITU-D
+(development). Manages allocation of radio frequencies and satellite orbital slots.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## IVR — Interactive Voice Response
+
+Automated telephony system that interacts with callers using pre-recorded prompts
+and recognizes DTMF tones or natural speech. Routes calls to correct queues,
+collects account information, and handles routine requests without human agents.
+Used extensively in banking, healthcare, and enterprise call center deployments.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## IXFR — Incremental Zone Transfer
+
+DNS mechanism (RFC 1995) allowing a secondary nameserver to request only the
+changes to a zone since its last synchronization, rather than a full AXFR transfer.
+Reduces bandwidth consumption significantly for large zones. The primary server
+must maintain a change history indexed by the DNS zone serial number.
+
+**Difficulty:** Advanced
+**Category:** Protocol

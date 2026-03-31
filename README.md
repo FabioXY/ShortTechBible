@@ -4,7 +4,7 @@
 
 ### The Open-Source IT Acronym Encyclopedia
 
-*Every 3–4 letter acronym in IT, explained properly.*
+*Every 3–6 letter acronym in IT, explained properly.*
 
 [![Acronym Count](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2FYOUR_USERNAME.github.io%2FShortTechBible%2Facronyms_data.js&label=acronyms&color=1e508c&style=flat-square)](https://github.com/YOUR_USERNAME/ShortTechBible)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
@@ -21,7 +21,7 @@
 
 ## What is this?
 
-ShortTechBible is a collaboratively maintained, open-source reference for **IT acronyms of exactly 3 or 4 characters** — the alphabet soup that fills job postings, documentation, Stack Overflow answers, and certification exams.
+ShortTechBible is a collaboratively maintained, open-source reference for **IT acronyms of exactly 3 to 6 characters** — the alphabet soup that fills job postings, documentation, Stack Overflow answers, and certification exams.
 
 Every entry follows a strict, consistent format:
 - **What** the acronym stands for
