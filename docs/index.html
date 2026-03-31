@@ -82,7 +82,8 @@
     }
     #search:focus { border-color: var(--blue-lt); }
 
-    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .filter-label { font-size: .78rem; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
 
     .filter-btn {
       padding: 6px 14px;
@@ -100,6 +101,29 @@
       color: #fff;
     }
     .filter-btn:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue); }
+
+    /* Difficulty active states */
+    .filter-btn.diff-active-Base         { background: #166534; border-color: #166534; color: #fff; }
+    .filter-btn.diff-active-Intermediate { background: #854d0e; border-color: #854d0e; color: #fff; }
+    .filter-btn.diff-active-Advanced     { background: #991b1b; border-color: #991b1b; color: #fff; }
+
+    /* Download button */
+    .download-btn {
+      padding: 6px 16px;
+      border: 1.5px solid var(--blue);
+      border-radius: 20px;
+      background: #fff;
+      cursor: pointer;
+      font-size: .85rem;
+      color: var(--blue);
+      font-weight: 600;
+      transition: all .15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .download-btn:hover { background: var(--blue); color: #fff; }
+    .download-group { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; align-items: center; }
 
     /* ── A–Z nav ── */
     .az-nav {
@@ -235,6 +259,7 @@
   <input type="search" id="search" placeholder="Search acronyms, names, or descriptions…" autocomplete="off" />
 
   <div class="filter-group" id="cat-filters">
+    <span class="filter-label">Category</span>
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="Networking">Networking</button>
     <button class="filter-btn" data-filter="Security">Security</button>
@@ -245,6 +270,19 @@
     <button class="filter-btn" data-filter="Database">Database</button>
     <button class="filter-btn" data-filter="AI">AI</button>
     <button class="filter-btn" data-filter="Protocol">Protocol</button>
+  </div>
+
+  <div class="filter-group" id="diff-filters">
+    <span class="filter-label">Difficulty</span>
+    <button class="filter-btn active" data-diff="all">All</button>
+    <button class="filter-btn" data-diff="Base">Base</button>
+    <button class="filter-btn" data-diff="Intermediate">Intermediate</button>
+    <button class="filter-btn" data-diff="Advanced">Advanced</button>
+  </div>
+
+  <div class="download-group">
+    <button class="download-btn" id="download-csv">⬇ CSV</button>
+    <button class="download-btn" id="download-json">⬇ JSON</button>
   </div>
 </div>
 
@@ -283,8 +321,10 @@
   const data = ACRONYMS_DATA;
 
   // ── State ────────────────────────────────────────────────────────────────
-  let activeCategory = 'all';
-  let searchQuery    = '';
+  let activeCategory   = 'all';
+  let activeDifficulty = 'all';
+  let searchQuery      = '';
+  let lastFiltered     = data; // cache for download
 
   // ── A–Z nav ──────────────────────────────────────────────────────────────
   const letters = [...new Set(data.map(e => e.letter))].sort();
@@ -314,13 +354,16 @@
     const q = searchQuery.toLowerCase();
 
     const filtered = data.filter(e => {
-      const catMatch = activeCategory === 'all' || e.category === activeCategory;
-      const qMatch   = !q ||
+      const catMatch  = activeCategory   === 'all' || e.category   === activeCategory;
+      const diffMatch = activeDifficulty === 'all' || e.difficulty === activeDifficulty;
+      const qMatch    = !q ||
         e.acronym.toLowerCase().includes(q) ||
         (e.full_name || '').toLowerCase().includes(q) ||
         (e.description || '').toLowerCase().includes(q);
-      return catMatch && qMatch;
+      return catMatch && diffMatch && qMatch;
     });
+
+    lastFiltered = filtered;
 
     // Group by letter
     const byLetter = {};
@@ -387,10 +430,58 @@
   document.getElementById('cat-filters').addEventListener('click', e => {
     const btn = e.target.closest('.filter-btn');
     if (!btn) return;
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('#cat-filters .filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     activeCategory = btn.dataset.filter;
     render();
+  });
+
+  document.getElementById('diff-filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#diff-filters .filter-btn').forEach(b => {
+      b.classList.remove('active', 'diff-active-Base', 'diff-active-Intermediate', 'diff-active-Advanced');
+    });
+    const diff = btn.dataset.diff;
+    if (diff === 'all') {
+      btn.classList.add('active');
+    } else {
+      btn.classList.add('diff-active-' + diff);
+    }
+    activeDifficulty = diff;
+    render();
+  });
+
+  // ── Download helpers ──────────────────────────────────────────────────────
+  function downloadFile(content, filename, mime) {
+    const blob = new Blob([content], { type: mime });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function buildFilename(ext) {
+    const parts = ['stb'];
+    if (activeCategory   !== 'all') parts.push(activeCategory.toLowerCase());
+    if (activeDifficulty !== 'all') parts.push(activeDifficulty.toLowerCase());
+    if (searchQuery.trim()) parts.push('search-' + searchQuery.trim().toLowerCase().replace(/\s+/g, '_'));
+    return parts.join('_') + '.' + ext;
+  }
+
+  document.getElementById('download-csv').addEventListener('click', () => {
+    const header = 'acronym,full_name,description,difficulty,category,letter\n';
+    const rows   = lastFiltered.map(e => [
+      e.acronym, e.full_name, e.description, e.difficulty, e.category, e.letter
+    ].map(v => '"' + String(v || '').replace(/"/g, '""') + '"').join(','));
+    downloadFile(header + rows.join('\n'), buildFilename('csv'), 'text/csv');
+  });
+
+  document.getElementById('download-json').addEventListener('click', () => {
+    const payload = JSON.stringify({ total: lastFiltered.length, entries: lastFiltered }, null, 2);
+    downloadFile(payload, buildFilename('json'), 'application/json');
   });
 
   // ── Initial render ────────────────────────────────────────────────────────
