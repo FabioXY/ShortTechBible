@@ -154,7 +154,7 @@ fork → clone → branch → edit → validate locally → commit → push → 
 ```
 
 1. **Fork** the repository on GitHub.
-2. **Clone** your fork: `git clone https://github.com/YOUR_USERNAME/ShortTechBible`
+2. **Clone** your fork: `git clone https://github.com/FabioXY/ShortTechBible`
 3. **Create a branch**: `git checkout -b add/ACRONYM` (e.g., `add/BGP`)
 4. **Edit** the correct `entries/X.md` file.
 5. **Validate**: `python scripts/validate.py` — fix all errors before pushing.
@@ -221,6 +221,6 @@ python scripts/build.py      # Generates dist/ files and updates README
 
 ## Questions?
 
-Open a [Discussion](https://github.com/YOUR_USERNAME/ShortTechBible/discussions) or a [Bug Report issue](https://github.com/YOUR_USERNAME/ShortTechBible/issues/new?template=bug_report.md).
+Open a [Discussion](https://github.com/FabioXY/ShortTechBible/discussions) or a [Bug Report issue](https://github.com/FabioXY/ShortTechBible/issues/new?template=bug_report.md).
 
 Do not open issues to ask questions that are answered in this document.

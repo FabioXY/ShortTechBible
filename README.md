@@ -6,14 +6,14 @@
 
 *Every 3–6 letter acronym in IT, explained properly.*
 
-[![Acronym Count](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2FYOUR_USERNAME.github.io%2FShortTechBible%2Facronyms_data.js&label=acronyms&color=1e508c&style=flat-square)](https://github.com/YOUR_USERNAME/ShortTechBible)
+[![Acronym Count](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FFabioXY%2FShortTechBible%2Fmain%2Fdist%2Facronyms.json&query=%24.meta.total&label=acronyms&color=1e508c&style=flat-square)](https://github.com/FabioXY/ShortTechBible)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
-[![CI Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/ShortTechBible/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/YOUR_USERNAME/ShortTechBible/actions)
-[![Last Build](https://img.shields.io/github/last-commit/YOUR_USERNAME/ShortTechBible?label=last%20build&style=flat-square)](https://github.com/YOUR_USERNAME/ShortTechBible/commits/main)
-[![Contributors](https://img.shields.io/github/contributors/YOUR_USERNAME/ShortTechBible?style=flat-square&color=orange)](https://github.com/YOUR_USERNAME/ShortTechBible/graphs/contributors)
-[![Stars](https://img.shields.io/github/stars/YOUR_USERNAME/ShortTechBible?style=social)](https://github.com/YOUR_USERNAME/ShortTechBible/stargazers)
+[![CI Status](https://img.shields.io/github/actions/workflow/status/FabioXY/ShortTechBible/ci.yml?branch=main&label=CI&style=flat-square)](https://github.com/FabioXY/ShortTechBible/actions)
+[![Last Build](https://img.shields.io/github/last-commit/FabioXY/ShortTechBible?label=last%20build&style=flat-square)](https://github.com/FabioXY/ShortTechBible/commits/main)
+[![Contributors](https://img.shields.io/github/contributors/FabioXY/ShortTechBible?style=flat-square&color=orange)](https://github.com/FabioXY/ShortTechBible/graphs/contributors)
+[![Stars](https://img.shields.io/github/stars/FabioXY/ShortTechBible?style=social)](https://github.com/FabioXY/ShortTechBible/stargazers)
 
-[**Browse Online →**](https://YOUR_USERNAME.github.io/ShortTechBible) · [**Download PDF →**](https://github.com/YOUR_USERNAME/ShortTechBible/releases/latest) · [**Add an Acronym →**](.github/ISSUE_TEMPLATE/new_acronym.md)
+[**Browse Online →**](https://FabioXY.github.io/ShortTechBible) · [**Download PDF →**](https://github.com/FabioXY/ShortTechBible/releases/latest) · [**Add an Acronym →**](.github/ISSUE_TEMPLATE/new_acronym.md)
 
 </div>
 
@@ -56,7 +56,7 @@ The content is written by practitioners, validated by CI, and exported as a down
 | [O](entries/O.md) | [P](entries/P.md) | [Q](entries/Q.md) | [R](entries/R.md) | [S](entries/S.md) | [T](entries/T.md) | [U](entries/U.md) |
 | [V](entries/V.md) | [W](entries/W.md) | [X](entries/X.md) | [Y](entries/Y.md) | [Z](entries/Z.md) | | |
 
-Or search interactively on the **[GitHub Pages site →](https://YOUR_USERNAME.github.io/ShortTechBible)**
+Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.io/ShortTechBible)**
 
 ---
 
@@ -121,7 +121,7 @@ Or search interactively on the **[GitHub Pages site →](https://YOUR_USERNAME.g
 
 | Format | Description | Link |
 |--------|-------------|------|
-| 📄 **PDF** | Full encyclopedia, book layout, table of contents | [Latest Release](https://github.com/YOUR_USERNAME/ShortTechBible/releases/latest) |
+| 📄 **PDF** | Full encyclopedia, book layout, table of contents | [Latest Release](https://github.com/FabioXY/ShortTechBible/releases/latest) |
 | 🗃️ **JSON** | Machine-readable, all fields, suitable for APIs and scripts | [acronyms.json](dist/acronyms.json) |
 | 📊 **CSV** | Spreadsheet-friendly, one row per acronym | [acronyms.csv](dist/acronyms.csv) |
 
@@ -133,14 +133,14 @@ Everyone is welcome. You don't need to be an expert — you need to know what an
 
 ### Add a new acronym (quick path)
 
-1. [Open an issue](https://github.com/YOUR_USERNAME/ShortTechBible/issues/new?template=new_acronym.md) with the proposal form
+1. [Open an issue](https://github.com/FabioXY/ShortTechBible/issues/new?template=new_acronym.md) with the proposal form
 2. A maintainer or you can then open a PR using the format below
 
 ### Add a new acronym (direct PR)
 
 ```bash
 # Fork and clone
-git clone https://github.com/YOUR_USERNAME/ShortTechBible.git
+git clone https://github.com/FabioXY/ShortTechBible.git
 cd ShortTechBible
 
 # Create a branch
@@ -239,5 +239,5 @@ If you find it useful, leave a ⭐ — it helps the project get discovered.
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by the open-source community · <a href="https://github.com/YOUR_USERNAME/ShortTechBible">github.com/YOUR_USERNAME/ShortTechBible</a></sub>
+  <sub>Built with ❤️ by the open-source community · <a href="https://github.com/FabioXY/ShortTechBible">github.com/FabioXY/ShortTechBible</a></sub>
 </div>

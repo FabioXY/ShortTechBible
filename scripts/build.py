@@ -123,7 +123,7 @@ def generate_json(entries: list[dict]) -> None:
         "meta": {
             "total": len(entries),
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "source": "https://github.com/YOUR_USERNAME/ShortTechBible",
+            "source": "https://github.com/FabioXY/ShortTechBible",
         },
         "entries": entries,
     }

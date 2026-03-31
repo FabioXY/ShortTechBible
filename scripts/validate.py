@@ -152,7 +152,7 @@ def validate_entry(entry: dict) -> list[ValidationError]:
     acronym = entry["acronym"]
     if not re.match(r"^[A-Z0-9]{3,6}$", acronym):
         err(
-            f"Acronym '{acronym}' is invalid. Must be 3–4 uppercase letters/digits only."
+            f"Acronym '{acronym}' is invalid. Must be 3–6 uppercase letters/digits only."
         )
 
     # 3. Full name recommended (warn, not error — some acronyms are the name)
