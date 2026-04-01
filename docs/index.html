@@ -170,6 +170,18 @@
       border-bottom: 2px solid var(--blue);
       padding-bottom: 4px;
       margin-bottom: 16px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .letter-count {
+      font-size: .95rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 12px;
+      padding: 1px 10px;
+      line-height: 1.6;
     }
 
     /* ── Entry card ── */
@@ -382,7 +394,7 @@
 
       const heading = document.createElement('div');
       heading.className = 'letter-heading';
-      heading.textContent = letter;
+      heading.innerHTML = `${esc(letter)} <span class="letter-count">${byLetter[letter].length}</span>`;
       group.appendChild(heading);
 
       const grid = document.createElement('div');
