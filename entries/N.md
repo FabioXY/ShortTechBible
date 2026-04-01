@@ -445,3 +445,131 @@ NVIDIA GPU hardware accelerator (available from Turing architecture onward) that
 BPF (Berkeley Packet Filter) program attached to a network interface at the kernel level to filter or process packets before they reach userspace. Written in eBPF bytecode and loaded via tc (traffic control) or XDP (eXpress Data Path). Used for packet capture filtering (tcpdump), DDoS mitigation, and high-performance load balancing.
 **Difficulty:** Advanced
 **Category:** Networking
+
+
+---
+
+## NGINX — NGINX Web Server
+
+High-performance open-source web server, reverse proxy, and load balancer. Event-driven, asynchronous architecture handles tens of thousands of concurrent connections with low memory usage. Used as HTTP server, SSL terminator, upstream load balancer, and API gateway. NGINX Plus adds active health checks, dynamic upstream reconfiguration, and NGINX App Protect WAF.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## NETNS — Network Namespace
+
+Linux kernel isolation primitive creating an independent network stack (interfaces, routing tables, firewall rules, sockets) for a process group. Used by containers (Docker, Podman) and Kubernetes pods for network isolation. Created with ip netns add. Virtual Ethernet pairs (veth) connect namespaces to each other or to the host bridge.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## NFSV4 — NFSv4 Protocol
+
+Version 4 of the Network File System (RFC 7530). Introduces stateful semantics (file locking), mandatory strong security (Kerberos/RPCSEC_GSS), compound operations reducing round-trips, NFSv4 ACL support, and a single well-known port (2049). NFSv4.1 adds pNFS (parallel NFS) for distributed data access across multiple storage servers.
+
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## NOSQL — NoSQL Database
+
+Category of databases not using the relational model or SQL. Types: document (MongoDB, CouchDB), key-value (Redis, DynamoDB), wide-column (Cassandra, HBase), and graph (Neo4j, Neptune). Trade ACID guarantees (in some implementations) for horizontal scalability, flexible schemas, and high write throughput. BASE consistency model: Basically Available, Soft state, Eventually consistent.
+
+**Difficulty:** Base
+**Category:** Database
+
+---
+
+## NMCLI — NetworkManager CLI
+
+Command-line interface for NetworkManager on Linux. Manages wired, Wi-Fi, VPN, bond, bridge, VLAN, and team connections. Key operations: nmcli con show, nmcli con up/down, nmcli dev status, nmcli con mod. Connection profiles stored in /etc/NetworkManager/system-connections/ as INI-format files. Essential for server-side network configuration scripting.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## NVMET — NVMe over Fabrics Target
+
+Linux kernel subsystem exposing local NVMe namespaces to remote initiators over RDMA (RoCE, iWARP), Fibre Channel (FC-NVMe), or TCP (NVMe/TCP). Configured via configfs (/sys/kernel/config/nvmet/). Provides latency approaching local NVMe storage when used over high-speed RDMA fabrics. Managed with nvmetcli tool.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## NBIOS — NetBIOS Protocol
+
+Legacy network API and protocol providing name resolution (NBNS), session establishment, and datagram distribution over LAN. Three services: Name Service (UDP 137), Datagram Service (UDP 138), Session Service (TCP 139). NetBIOS over TCP/IP (NBT, RFC 1001/1002) extended it to IP networks. Largely replaced by DNS and SMB direct (port 445) in modern Windows environments.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## NLOAD — Network Traffic Monitor
+
+Linux command-line tool visualizing NIC traffic in real time as ASCII bar charts. Displays incoming and outgoing throughput, peak values, and total transferred data per interface. Useful for quick bandwidth monitoring on servers without a full observability stack. Complements iftop (per-connection view) and nethogs (per-process bandwidth).
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## NFLOG — Netfilter Log
+
+Linux Netfilter subsystem for logging matched packets to userspace via the NFLOG target in iptables/nftables rules. Packets sent to a netlink socket are processed by ulogd2 or libnetfilter_log. Provides richer metadata than the syslog-based LOG target: full packet headers, timestamps, and routing interface information for security auditing.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## NSTAT — Netstat Statistics Tool
+
+Command displaying network statistics: socket table (listening and connected), routing table, interface counters, and multicast memberships. Being replaced by ss (socket statistics from iproute2), which queries kernel netlink and is faster for large socket counts. Both remain useful: netstat -rn for routing table, ss -tulpn for listening ports and associated processes.
+
+**Difficulty:** Base
+**Category:** Networking
+
+
+---
+
+## NETSH — Network Shell
+
+Windows command-line scripting utility for configuring and monitoring network components. Supports firewall rules (netsh advfirewall), interface configuration, wireless profiles (netsh wlan), HTTP.sys URL reservation (netsh http), and IPsec policies. Outputs can be exported as scripts for repeatable configuration. Partially superseded by PowerShell networking cmdlets.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## NVML — NVIDIA Management Library
+
+C-based API for monitoring and managing NVIDIA GPU devices. Exposes GPU utilization, memory usage, temperature, power draw, ECC error counts, clock speeds, and process information. Used by nvidia-smi, monitoring agents (Prometheus nvidia_gpu_exporter), ML frameworks, and cluster managers (SLURM, Kubernetes device plugin) for GPU resource management.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## NBDE — Network Bound Disk Encryption
+
+Framework for automating LUKS volume decryption at boot based on network policy rather than a passphrase. The Clevis client binds a LUKS key to a Tang server's signing key; decryption succeeds only when the machine can reach the Tang server on the network. Prevents offline decryption of stolen drives. Implemented in Red Hat/Fedora via Clevis+Tang.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## NTPQ — NTP Query Tool
+
+Command-line utility for querying and monitoring NTP servers and the local ntpd daemon. Displays peer status (stratum, offset, jitter, reference clock), association variables, and kernel timekeeping state. Key commands: peers (list all peers), rv (read variables), mru (most recently used clients). Used for diagnosing NTP synchronization issues.
+
+**Difficulty:** Intermediate
+**Category:** Networking

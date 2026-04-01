@@ -395,3 +395,32 @@ Automation script that wraps Yum or DNF commands to orchestrate coordinated pack
 **Difficulty:** Intermediate
 **Category:** OS
 
+
+
+---
+
+## YCBCR — YCbCr Color Space
+
+Digital color encoding separating luminance (Y) from blue-difference (Cb) and red-difference (Cr) chroma channels. Allows chroma subsampling (4:2:0, 4:2:2, 4:4:4) to reduce bandwidth without significant perceptual quality loss. Used in JPEG compression, H.264, H.265, AV1, and broadcast video standards (BT.601, BT.709, BT.2020).
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+
+---
+
+## YACC — Yet Another Compiler Compiler
+
+LALR(1) parser generator developed at Bell Labs. Takes a grammar specification in BNF-like notation and produces a C parser that recognizes the language defined by that grammar. Paired with Lex (lexer generator). GNU Bison is the modern compatible replacement. Historical importance: used to build the original Unix C compiler (cc) and many subsequent language parsers.
+
+**Difficulty:** Advanced
+**Category:** Dev
+
+---
+
+## YAJL — Yet Another JSON Library
+
+Streaming SAX-style JSON parser written in C with a minimal footprint. Designed for parsing arbitrarily large JSON documents without loading the entire document into memory. Provides callback-based event notifications (string, number, boolean, null, array start/end, map start/end). Used in systems-level applications where memory allocation must be tightly controlled.
+
+**Difficulty:** Advanced
+**Category:** Dev

@@ -395,3 +395,41 @@ Direct quantum communication link between two nodes using QKD over a dedicated f
 **Difficulty:** Advanced
 **Category:** Networking
 
+
+
+---
+
+## QUERY — Database Query Statement
+
+Request for data retrieval or manipulation submitted to a DBMS. SQL queries use SELECT, INSERT, UPDATE, DELETE, and DDL statements. The query planner selects execution plans based on statistics, indexes, and join order. EXPLAIN/EXPLAIN ANALYZE shows the chosen plan and actual cost. Query optimization is the primary lever for database performance tuning.
+
+**Difficulty:** Base
+**Category:** Database
+
+
+---
+
+## QUEUE — First-In First-Out Data Structure
+
+Abstract data structure where elements are inserted at the tail and removed from the head (FIFO semantics). Implemented as linked lists, ring buffers, or lock-free structures depending on concurrency requirements. Kernel message queues (POSIX mq_open), task queues in thread pools, network packet queues (qdisc in Linux), and job queues in distributed systems all implement queue semantics.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## QUART — Async Python Web Framework
+
+Python async web microframework compatible with Flask's API but built on asyncio. Allows existing Flask applications to be ported to async with minimal code changes. Supports async request handlers, websockets, and server-sent events. Uses Hypercorn as its default ASGI server. Useful as a migration path from Flask to fully async architectures.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## QDISC — Queuing Discipline
+
+Linux kernel component of the traffic control (tc) subsystem that manages packet scheduling on a network interface. Different qdiscs implement different scheduling algorithms: pfifo_fast (default, three priority bands), HTB (Hierarchical Token Bucket for bandwidth shaping), FQ_CODEL (Fair Queue CoDel for bufferbloat), CAKE (Common Applications Kept Enhanced). Configured via tc qdisc commands.
+
+**Difficulty:** Advanced
+**Category:** Networking

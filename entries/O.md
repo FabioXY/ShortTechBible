@@ -456,3 +456,140 @@ Industry standard (backed by Axis, Bosch, Sony) defining interoperability protoc
 EGERIA project component (Linux Foundation) that provides a set of REST and event-driven APIs for integrating metadata repositories, data catalogs, and governance tools. Enables consistent metadata management across heterogeneous data platforms (Hadoop, cloud, relational) through a distributed metadata bus.
 **Difficulty:** Advanced
 **Category:** Database
+
+
+---
+
+## OAUTH — OAuth 2.0 Framework
+
+Open authorization framework (RFC 6749) enabling third-party applications to obtain limited access to user accounts without exposing credentials. Core grant types: Authorization Code (web apps), Client Credentials (M2M), and Device Code (input-constrained devices). OAuth 2.1 draft consolidates best practices by removing Implicit and ROPC grant types.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## OWASP — OWASP Foundation
+
+Open Web Application Security Project: non-profit producing freely available security resources. Best known for the OWASP Top 10 (most critical web security risks), ASVS (Application Security Verification Standard), WSTG (Web Security Testing Guide), ZAP (Zed Attack Proxy), and Dependency-Check (SCA tool for known vulnerable components).
+
+**Difficulty:** Base
+**Category:** Security
+
+---
+
+## OVSDB — OVS Database Protocol
+
+Management protocol and schema for Open vSwitch configuration (RFC 7047). Stores bridge, port, interface, flow, tunnel, and QoS settings. The ovsdb-server process manages the database; ovs-vsctl is the CLI client. Used by SDN controllers (OpenDaylight, OpenStack Neutron) to configure OVS remotely via JSON-RPC over TCP or Unix socket.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## OSTREE — OSTree Versioned OS
+
+Library and tool for versioning operating system file trees, analogous to git for OS images. Used by Fedora Silverblue, GNOME OS, and embedded Linux for atomic, transactional OS updates with rollback capability. Each deployment is a separate checkout; bootloader selects the active deployment. Core of the rpm-ostree and flatpak ecosystems.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## OSSEC — OSSEC HIDS
+
+Open-source host-based intrusion detection system performing log analysis, file integrity monitoring (FIM), rootkit detection, real-time alerting, and active response (auto firewall rules, account lockout). Supports agentless monitoring via SSH and agent-based deployment across Linux, Windows, and macOS. Successor projects: Wazuh (full SIEM), OSSEC+ (commercial).
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## OPCUA — OPC Unified Architecture
+
+Industrial communication standard (IEC 62541) for data exchange between industrial controllers, SCADA systems, and IT applications. Platform-independent, service-oriented with built-in security (TLS, X.509, authentication). Used in Industry 4.0 and IIoT to bridge OT (operational technology) and IT networks without proprietary vendor protocols.
+
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## OTELM — OpenTelemetry SDK
+
+CNCF observability framework (graduated) providing unified APIs and SDKs for generating traces, metrics, and logs. Vendor-neutral: exports to Jaeger, Zipkin, Prometheus, and any OTLP-compatible backend. OpenTelemetry Collector acts as a telemetry pipeline: receives, processes, and exports data. Merged OpenTracing and OpenCensus projects.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## OVIRT — oVirt Virtualization
+
+Open-source virtualization management platform built on KVM/QEMU. Provides centralized management of hosts, VMs, storage domains, and networking via web UI and REST API. Architecture: oVirt Engine (Java/WildFly) with VDSM agents on KVM hosts. Supports live migration, snapshots, and VM HA. Basis for Red Hat Virtualization (now replaced by Red Hat OpenShift Virtualization).
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## OPWRT — OpenWrt Firmware
+
+Open-source Linux distribution for embedded network devices (routers, APs, switches). Provides a writable filesystem, opkg package manager, and LuCI web UI replacing vendor firmware. Supports advanced networking: VLAN, VPN (WireGuard, OpenVPN), QoS, BGP (via FRRouting), and custom package installation. Runs on hundreds of supported devices.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## OSINT — Open Source Intelligence
+
+Collection and analysis of information from publicly available sources. In cybersecurity: gathering target information (domains, IPs, employee names, technologies, leaked credentials) before an engagement. Tools: Shodan, theHarvester, Maltego, SpiderFoot, WHOIS, Censys, Certificate Transparency logs. Also used by threat intelligence teams tracking adversary infrastructure.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## OFLOW — Buffer Overflow Attack
+
+Error condition when a computation result exceeds the representable range or a write goes beyond the end of a fixed-size buffer. Stack overflow overwrites the return address enabling code injection. Heap overflow corrupts adjacent metadata. Integer overflow wraps around to an unexpected small value. Foundation of many memory corruption exploits mitigated by ASLR, stack canaries, and NX/DEP.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## OBJST — Object Storage Model
+
+Storage architecture managing data as discrete objects (data + metadata + unique key) rather than files or blocks. Accessed via HTTP APIs (S3-compatible, Swift). No directory hierarchy; flat namespace with bucket/prefix organization. Ideal for unstructured data at scale: backups, media files, logs, and ML datasets. Examples: AWS S3, MinIO, Ceph RADOS GW, Azure Blob Storage.
+
+**Difficulty:** Base
+**Category:** Cloud
+
+
+---
+
+## OVPN — OpenVPN Configuration File
+
+File format and abbreviation for OpenVPN, an open-source SSL/TLS VPN solution. OpenVPN uses TLS for key exchange, supports UDP and TCP transports, operates in tun (layer 3) or tap (layer 2) mode, and authenticates via certificates, pre-shared keys, or username/password with MFA. The .ovpn file bundles server address, port, certificates, and client key into a single portable configuration.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## OPATH — Open Path File Descriptor
+
+Linux open(2) flag (O_PATH, since kernel 2.6.39) that opens a file descriptor referring to a path without opening the underlying file for read/write. The resulting fd can be used for fstat, fchdir, and as a base for openat/linkat operations. Useful for safely traversing directory trees without TOCTOU races or opening special files (devices, pipes) unintentionally.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## OLMEC — Online Machine-state Error Checker
+
+Internal AMD diagnostic framework used during silicon validation to detect memory controller and CPU core errors under real workloads. Not a user-facing product; referenced in AMD processor errata and validation reports. Analogous to Intel's MCA (Machine Check Architecture) validation infrastructure.
+
+**Difficulty:** Advanced
+**Category:** Hardware

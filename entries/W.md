@@ -395,3 +395,140 @@ Logical environment grouping tools, configurations, files, and sessions for a sp
 **Difficulty:** Base
 **Category:** Dev
 
+
+
+---
+
+## WAFFW — WAF Firewall
+
+Web Application Firewall inspecting HTTP/HTTPS traffic and blocking requests matching known attack signatures (OWASP Core Rule Set), rate limits, or custom rules. Deployed inline (reverse proxy), out-of-band, or as a cloud service (AWS WAF, Cloudflare WAF, F5 AWAF). Protects against SQLi, XSS, CSRF, LFI, RFI, and automated bot attacks.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## WRKFL — Workflow Engine
+
+System orchestrating task execution sequences, decisions, and data transformations. Examples: Apache Airflow (DAG-based ETL), Temporal.io (durable workflow execution), AWS Step Functions (serverless state machine), Argo Workflows (Kubernetes-native). Key features: retry logic, dependency management, parallel execution, and durable state persistence across failures.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## WINHV — Windows Hypervisor
+
+Hyper-V: Microsoft's native type-1 hypervisor integrated into Windows Server and Windows 10/11 Pro/Enterprise. Uses Intel VT-x/AMD-V hardware virtualization. Manages VMs via Hyper-V Manager, PowerShell, or Windows Admin Center. Supports nested virtualization, live migration, generation 2 VMs (UEFI, Secure Boot), and ReFS/VHDX virtual disk formats.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## WEBGL — WebGL Graphics API
+
+JavaScript API for GPU-accelerated 2D and 3D rendering in browsers without plugins. WebGL 1.0 is based on OpenGL ES 2.0; WebGL 2.0 on OpenGL ES 3.0. Executes GLSL shader programs on the GPU. Used for data visualization (deck.gl, three.js), browser games, and CAD tools. WebGPU is the next-generation successor with compute shader support.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## WINSV — Windows Server OS
+
+Microsoft's server OS providing Active Directory, DNS, DHCP, SMB file sharing, IIS web hosting, Hyper-V, failover clustering, and WSUS patch management. Available in Standard, Datacenter, and Essentials editions. Licensed per-core with CALs. Current release: Windows Server 2025. Server Core installation option provides a minimal footprint without GUI.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## WEBPK — Webpack JS Bundler
+
+JavaScript module bundler transforming application source files (JS, CSS, images) into optimized browser bundles. Concepts: entry points, loaders (transforming non-JS assets), plugins (HTML generation, optimization), code splitting (dynamic imports), and tree shaking (dead code elimination). Being supplemented by Vite, esbuild, and Turbopack in modern toolchains.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## WSHKL — Web Shell Malware
+
+Malicious script (PHP, ASP, JSP) uploaded to a web server to provide remote command execution via HTTP. Deployed after exploiting file upload vulnerabilities, RCE flaws, or CMS plugin vulnerabilities. Detection: file integrity monitoring (Tripwire, AIDE), EDR behavioral analysis, web server access log anomalies (unusual POST to image directories). Examples: China Chopper, b374k.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## WCORS — CORS Web Policy
+
+Cross-Origin Resource Sharing (W3C specification) controlling which origins can make cross-origin HTTP requests in browsers. Server responds with Access-Control-Allow-Origin, Access-Control-Allow-Methods, and Access-Control-Allow-Headers. Preflight OPTIONS request checks permissions before state-changing requests. Misconfigured wildcard CORS with credentials enables cross-site data theft.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## WRKLD — Cloud Workload
+
+Defined set of computing tasks running on cloud infrastructure. In Kubernetes: managed via Deployment, StatefulSet, DaemonSet, Job, and CronJob resources. Workload Identity Federation allows pods to authenticate to cloud APIs (S3, GCS, KMS) using Kubernetes service account tokens without static credentials stored as Secrets.
+
+**Difficulty:** Base
+**Category:** Cloud
+
+---
+
+## WPAPI — WordPress REST API
+
+WordPress REST API providing JSON endpoints for programmatic access to posts, pages, users, and taxonomies at /wp-json/wp/v2/. Authentication: Application Passwords, OAuth 1.0a, or JWT plugins. Enables headless WordPress architectures (Next.js/React frontend consuming WP content), mobile app backends, and third-party content integrations.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## WMIRM — WMI Remote Management
+
+Windows Management Instrumentation for remote system management: querying hardware inventory, monitoring performance counters, executing remote commands, and managing services via DCOM/RPC. PowerShell uses Get-CimInstance (WS-Man transport, recommended) or Get-WmiObject (deprecated). WMI lateral movement is heavily monitored by EDR solutions.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+
+---
+
+## WINRM — Windows Remote Management
+
+Microsoft implementation of the WS-Management SOAP protocol enabling remote command execution and system management on Windows. Uses HTTP (port 5985) or HTTPS (port 5986). PowerShell Remoting (Enter-PSSession, Invoke-Command) runs over WinRM. Ansible uses WinRM for Windows automation. Requires explicit enablement (Enable-PSRemoting) and firewall rule configuration.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## WAZUH — Open-Source SIEM and XDR
+
+Open-source security platform combining HIDS (host intrusion detection), log analysis, vulnerability detection, and incident response. Agents installed on endpoints forward security data to the Wazuh manager, which correlates events using rules and integrates with OpenSearch/Elasticsearch for storage and visualization. Successor to OSSEC with active commercial development.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## WARP — Cloudflare WARP Protocol
+
+Cloudflare's VPN and DNS-over-HTTPS client using the WireGuard protocol with Cloudflare's network as the carrier. Routes all device traffic through Cloudflare's 1.1.1.1 infrastructure for filtering and acceleration. WARP+ adds intelligent routing for performance. WARP for Teams integrates with Cloudflare Access for Zero Trust network policies.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## WEBDAV — Web Distributed Authoring and Versioning
+
+HTTP extension (RFC 4918) enabling collaborative document editing over the web. Adds methods PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, and UNLOCK to standard HTTP. Allows clients to mount remote filesystems over HTTP(S). Used by calendar (CalDAV) and contact (CardDAV) sync protocols and legacy document management systems. Supported natively by Windows, macOS, and Linux file managers.
+
+**Difficulty:** Intermediate
+**Category:** Protocol

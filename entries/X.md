@@ -395,3 +395,77 @@ Umbrella term for any technology capability delivered as a cloud service over a 
 **Difficulty:** Base
 **Category:** Cloud
 
+
+
+---
+
+## XPATH — XPath Query Language
+
+W3C query language for selecting nodes from XML documents. Syntax: /root/child (absolute), //element (any descendant), @attr (attribute), [predicate] (filter condition). Used in XSLT, XQuery, Selenium (element locators), and XML configuration systems. XPath 2.0 adds a type system; XPath 3.1 adds maps, arrays, and JSON support.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## XAUTH — X11 Authorization
+
+Authentication mechanism for X Window System connections. xauth manages .Xauthority files containing MIT-MAGIC-COOKIE-1 tokens. SSH X11 forwarding (ssh -X/-Y) creates synthetic cookies preventing unauthorized local X connections. Without XAUTH any local process can connect to the X server and capture keystrokes or take screenshots.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## XMLRP — XML-RPC Protocol
+
+Remote procedure call protocol encoding calls and responses in XML over HTTP. Simpler than SOAP: no WSDL, no namespaces. Supports basic types: int, string, boolean, double, dateTime, base64, array, struct. Used in WordPress XML-RPC API, Bugzilla, Confluence, and legacy blog publishing tools. Largely replaced by REST and gRPC in new systems.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## XSSER — XSS Testing Framework
+
+Open-source penetration testing tool for discovering and exploiting Cross-Site Scripting vulnerabilities. Automates XSS payload injection, vector testing (GET, POST, cookie, HTTP header), WAF bypass detection, and result reporting. Supports DOM-based, reflected, and stored XSS testing. Used in authorized web application security assessments.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## XSLTF — XSLT Transform File
+
+XSL Transformation file (.xsl/.xslt) containing template rules for transforming XML source documents into XML, HTML, or plain text. Processors: Saxon, Xalan, libxslt. Templates match input nodes and produce output fragments. Used in data integration pipelines, document publishing workflows, and converting between XML schemas (e.g. WSDL to HTML documentation).
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+
+---
+
+## XUNIT — xUnit Testing Framework
+
+Family of unit testing frameworks following a common architecture originally defined by SUnit (Smalltalk). Implementations exist for every major language: JUnit (Java), NUnit/.NET (C#), PyTest/unittest (Python), CppUnit (C++), RSpec (Ruby). Core concepts: test fixtures (setUp/tearDown), test cases, test suites, and test runners with assertion libraries.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## XFCE — Xfce Desktop Environment
+
+Lightweight GTK-based desktop environment for Unix-like systems. Designed for low resource consumption while remaining visually complete and functionally capable. Components include Xfwm4 (window manager), Thunar (file manager), and Xfce Panel. Popular in Linux distributions targeting older hardware (Xubuntu, MX Linux) and as a lightweight alternative on full-spec systems.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## XDGBP — XDG Base Directory Protocol
+
+Freedesktop.org specification defining standard locations for user-specific configuration, data, and cache files on Unix systems. Defines XDG_CONFIG_HOME (~/.config), XDG_DATA_HOME (~/.local/share), XDG_CACHE_HOME (~/.cache), and XDG_RUNTIME_DIR. Applications following XDG avoid cluttering the home directory with dot-files and enable clean multi-user environments.
+
+**Difficulty:** Intermediate
+**Category:** OS

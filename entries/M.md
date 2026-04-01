@@ -443,3 +443,131 @@ Third-party company that remotely manages and monitors a customer's security inf
 IETF protocol (RFC 6787) for controlling speech processing resources (ASR, TTS, speaker verification) on a media server from a client application. Used in IVR platforms and unified communications systems to separate the speech processing engine from the call control logic. Operates over SIP for session setup and RTSP-like messaging for media control.
 **Difficulty:** Advanced
 **Category:** Protocol
+
+
+---
+
+## MITRE — MITRE ATT&CK Framework
+
+Globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) based on real-world observations. Organized into matrices (Enterprise, Mobile, ICS) with Tactics (why), Techniques (how), and Sub-techniques (specific implementations). Used for threat modeling, red/blue team exercises, detection gap analysis, and SOC coverage mapping.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## MYSQL — MySQL Database
+
+Open-source relational database (GPL/commercial, owned by Oracle). Plugin-based storage engine architecture: InnoDB (default, ACID, row-level locking), MyISAM (legacy). Supports replication (async, semi-sync, Group Replication), partitioning, JSON columns, and full-text search. MariaDB is a community fork maintaining broad compatibility with additional features.
+
+**Difficulty:** Base
+**Category:** Database
+
+---
+
+## MESOS — Apache Mesos
+
+Distributed resource management platform abstracting CPU, memory, storage, and network across a cluster. Two-level scheduling: Mesos manages resources; frameworks (Marathon, Spark, Chronos) schedule tasks on offered resources. Largely superseded by Kubernetes for container orchestration but remains in some HPC and large-scale data processing environments.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## MINIO — MinIO Object Storage
+
+High-performance, S3-compatible open-source object storage. Runs on-premises or in any cloud. Supports erasure coding for data protection, distributed mode for horizontal scaling, server-side encryption (SSE-S3, SSE-KMS, SSE-C), and S3 lifecycle management. API-compatible with AWS S3 SDK for self-hosted private cloud and edge storage deployments.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## MCAST — Multicast Transmission
+
+Network delivery mode sending a single stream to multiple recipients simultaneously using a multicast group address (224.0.0.0/4 IPv4, ff00::/8 IPv6). Requires IGMP (IPv4) or MLD (IPv6) for group membership on each segment. PIM (Protocol Independent Multicast) routes multicast between segments. Used for IPTV, financial market data feeds, and video conferencing.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## MDMGR — MDM Manager Platform
+
+Mobile Device Management system remotely configuring, monitoring, and enforcing policies on smartphones, tablets, and laptops. Capabilities: certificate and profile deployment, application management, encryption enforcement, remote wipe, compliance checking, and conditional access integration. Platforms: Microsoft Intune, Jamf Pro, VMware Workspace ONE.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## MSSQL — Microsoft SQL Server
+
+Enterprise relational database management system from Microsoft. Key features: T-SQL language, AlwaysOn Availability Groups (HA), columnstore indexes (OLAP performance), in-memory OLTP (Hekaton), Row-Level Security, dynamic data masking, and Always Encrypted. Available on Windows and Linux. Editions: Express (free), Standard, Enterprise, Developer.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## MLOCK — Memory Lock Syscall
+
+System call (mlock/mlockall) preventing memory pages or an entire process's address space from being swapped to disk. Critical for cryptographic key material (preventing secrets from appearing in swap), real-time applications requiring deterministic latency, and database buffer pools. Controlled by RLIMIT_MEMLOCK resource limit per process.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## MTRCE — Multicast Trace Tool
+
+Linux network tool querying multicast routers along the path from source to destination, collecting hop-by-hop information about tree membership, packet counts, and TTL values. Analogous to traceroute for multicast paths. Used for diagnosing multicast routing failures, verifying PIM join propagation, and measuring multicast tree depth.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## MPENG — Malware Protection Engine
+
+Microsoft Malware Protection Engine (MpEngine): core antimalware scanning component used by Windows Defender, Microsoft Defender for Endpoint, and Exchange Online Protection. Processes file signatures, heuristics, cloud-based queries (MAPS), and behavioral analysis. Updated independently of Windows via Windows Update; critical MpEngine vulnerabilities have historically been high-severity RCE vectors.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+
+---
+
+## MPTCP — Multipath TCP
+
+Extension to TCP (RFC 8684) allowing a single connection to use multiple network paths simultaneously. Each subflow is a standard TCP stream; the MPTCP layer resequences data across paths. Enables seamless Wi-Fi/LTE handover on mobile devices (used in Apple iOS since iOS 7 for Siri), bandwidth aggregation, and resilience against link failures.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## MBUF — Memory Buffer
+
+Fundamental data structure in BSD-derived network stacks (FreeBSD, macOS, older Linux) for holding network packet data. An mbuf is a fixed-size structure (128 or 256 bytes) with a data region and pointer to the next mbuf in a chain. Modern Linux replaced mbufs with sk_buff (socket buffer) structures, but the term persists in BSD/macOS networking code.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## MOBY — Moby Project
+
+Open-source framework and upstream project behind Docker Engine, maintained by Docker Inc. and contributors. Provides modular components (containerd, runc, BuildKit, libnetwork) that can be assembled into custom container platforms. The name reflects Docker's shift from a monolithic product to a component ecosystem. Docker Desktop and Docker Engine are downstream products of Moby.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## MDBX — Memory-Mapped Database Extended
+
+Embedded key-value database derived from LMDB (Lightning Memory-Mapped Database). Uses memory-mapped files for zero-copy reads and MVCC (multi-version concurrency control) for concurrent readers with a single writer. MDBX adds improvements over LMDB: online compaction, reclaimable space tracking, and crash consistency guarantees. Used in Ethereum clients and high-throughput systems.
+
+**Difficulty:** Advanced
+**Category:** Database

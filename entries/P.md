@@ -454,3 +454,149 @@ minimal overhead; instrumentation profilers (gprof) add code to every function.
 
 **Difficulty:** Intermediate
 **Category:** Dev
+
+
+---
+
+## PYENV — Pyenv Python Manager
+
+Tool managing multiple Python versions on a single system. Installs Python versions into ~/.pyenv/versions/, sets global and per-directory versions via .python-version files, and provides shims intercepting python/pip calls. Works with pyenv-virtualenv plugin for isolated per-project environments. Alternative to system Python, avoiding dependency conflicts.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## PGSQL — PostgreSQL Database
+
+Short form of PostgreSQL: open-source object-relational database emphasizing extensibility and SQL standards compliance. Key features: MVCC, full ACID compliance, advanced indexing (GIN, GiST, BRIN, partial indexes), JSONB, table inheritance, custom types, procedural languages (PL/pgSQL, PL/Python), and logical replication with publication/subscription.
+
+**Difficulty:** Base
+**Category:** Database
+
+---
+
+## PXEBT — PXE Network Boot
+
+Preboot Execution Environment: boots a client OS image from the network via DHCP+TFTP without a local disk. BIOS/UEFI sends a DHCP Discover with PXE option; server returns TFTP address and boot filename. Used for OS deployment (Cobbler, Foreman, WDS), diskless workstations, rescue environments, and automated bare-metal provisioning.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## PHPFM — PHP-FPM Process Manager
+
+PHP FastCGI Process Manager providing advanced process management over standard CGI: adaptive process spawning, per-pool configuration, slow log, emergency restart, and per-pool resource limits. Web servers (NGINX, Apache mod_proxy_fcgi) communicate with PHP-FPM over Unix socket or TCP. Standard deployment model for PHP in containerized environments.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## PROTO — Protocol Buffer
+
+Short form for Protobuf: Google's language-neutral, platform-neutral mechanism for serializing structured data. Schema defined in .proto files; protoc compiler generates typed classes in 10+ languages. Produces compact binary encoding significantly smaller and faster to parse than JSON. Used by gRPC, Cloud Spanner, and many internal Google systems.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## PODFL — Podman Container File
+
+Containerfile or Dockerfile processed by Podman (podman build). Podman is a daemonless OCI container engine compatible with Docker CLI but running rootless by default. Uses Buildah for image construction, supports pods (groups of containers sharing a network namespace), and generates systemd unit files for container lifecycle management.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## PTRAC — ptrace System Call
+
+Linux/Unix system call allowing a process to observe and control another process's execution. Used by debuggers (gdb, lldb, strace) to set breakpoints, read/write registers and memory, and intercept system calls. Security: seccomp policies can restrict ptrace; YAMA LSM limits ptrace scope. Also the basis for sandboxing tools (minijail, gVisor ptrace mode).
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## PGBDR — pgBouncer Connection Pooler
+
+Lightweight PostgreSQL connection pooler maintaining a pool of persistent connections and multiplexing shorter-lived client connections onto them. Modes: session pooling (default), transaction pooling (most efficient), statement pooling. Reduces PostgreSQL process overhead when many short-lived clients connect. Configured via pgbouncer.ini with listen_addr, pool_mode, and auth settings.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## PWNDB — Pwned Credentials DB
+
+Service indexing leaked credential dumps from data breaches for security research. Used by security teams to check if organizational email addresses appear in breach data. Have I Been Pwned (hibp) offers a k-anonymity API: client sends the first 5 chars of a SHA-1 hash; server returns matching hashes without exposing the full password query.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## PKICP — PKI Certificate Policy
+
+Formal document defining rules under which a CA issues, manages, and revokes certificates. Identified by an OID in the Certificate Policies extension. Paired with a CPS (Certification Practice Statement). CA/Browser Forum Baseline Requirements define mandatory policies for publicly trusted CAs covering key generation, validation, and revocation timelines.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## PSYNC — Partial Rsync Sync
+
+rsync's incremental transfer algorithm transferring only changed portions of files. The sender computes rolling checksums of fixed-size blocks; the receiver identifies matching blocks, and only non-matching data is transmitted. The --partial flag preserves incomplete transfers for resumption. Reduces bandwidth dramatically for large file updates over slow links.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## PIPLN — CI/CD Pipeline
+
+Automated sequence of stages (build → test → scan → deploy) triggered by code commits. In Unix shells: cmd1 | cmd2 | cmd3 connects stdout to stdin. In CPU architecture: instruction pipeline stages (fetch, decode, execute, writeback) enabling instruction-level parallelism. In data engineering: ETL stages transforming raw data to enriched output.
+
+**Difficulty:** Base
+**Category:** Dev
+
+
+---
+
+## PERF — Performance Analysis Tool
+
+Linux kernel profiling tool using hardware performance counters (PMU), software counters, and tracepoints. Core commands: perf stat (aggregate counts), perf record + perf report (call graph sampling), perf top (live top-like view), perf trace (syscall tracer). Generates flame graphs via perf script output. Requires CAP_SYS_ADMIN or relaxed /proc/sys/kernel/perf_event_paranoid.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## PROOT — Userspace chroot
+
+Userspace implementation of chroot(2) using ptrace to intercept and translate filesystem path syscalls. Allows unprivileged users to run software as if rooted at an alternative directory, enabling package installation in a non-root environment. Used by Termux for Linux package compatibility on Android and in CI environments where root is unavailable.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## PKILL — Process Kill by Pattern
+
+Unix utility that sends signals to processes matching a name pattern or other criteria, without requiring a known PID. Internally wraps pgrep logic. Common usage: pkill -9 firefox (SIGKILL by name), pkill -HUP nginx (reload by name), pkill -u username (kill all processes of a user). Counterpart to killall; behavior differences exist between Linux and BSD implementations.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## PSTAT — Process Status Information
+
+BSD-derived tool displaying process statistics including memory usage, swap, I/O, and CPU time accumulated since process start. On Linux, similar data is exposed via /proc/[pid]/stat and /proc/[pid]/status. The pstat name also refers to a kernel data structure inspection tool in older BSD systems for examining swap, process tables, and open files.
+
+**Difficulty:** Intermediate
+**Category:** OS

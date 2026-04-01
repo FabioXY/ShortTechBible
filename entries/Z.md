@@ -395,3 +395,50 @@ Authorization primitive in capability-based security systems (object-capability 
 **Difficulty:** Advanced
 **Category:** Security
 
+
+
+---
+
+## ZINCD — Zinc Search Daemon
+
+Lightweight Elasticsearch-compatible full-text search engine daemon written in Go. Designed as a low-resource alternative to Elasticsearch for self-hosted environments. Supports Elasticsearch query DSL, index mappings, and API compatibility, allowing drop-in use with Elasticsearch clients without JVM or the operational complexity of a full Elastic Stack deployment.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## ZSTRD — Zstd Streaming Mode
+
+Zstandard compression in streaming mode processing data in chunks without requiring the full input in memory. Enables real-time compression of network streams, log pipelines (Fluentd zstd output plugin), and large file transfers. The zstd CLI --stream flag, libzstd streaming API, and kernel integration all support chunk-based streaming compression and decompression.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+
+---
+
+## ZINIT — Zsh Plugin Manager
+
+Fast Zsh plugin manager (formerly zplugin) supporting turbo mode for deferred plugin loading after shell startup, reducing interactive shell launch time. Supports loading from GitHub, local paths, and OMZ-compatible plugins. Features include snippet management, binary program management via pack, and ice-modifiers for fine-grained load control.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## ZSWAP — Compressed Swap Cache
+
+Linux kernel feature (since 3.11) implementing a compressed in-memory cache for swap pages. When a page is swapped out, ZSWAP compresses it (using lz4, zstd, or lzo) and stores it in a dynamically allocated pool before writing to the swap device. Reduces swap I/O at the cost of CPU cycles for compression/decompression. Useful on systems with fast CPUs and slow disks.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## ZBEAM — Zero-copy Beam
+
+Internal Erlang/OTP VM (BEAM) optimization concept for reducing memory copies when sending large binaries between processes or over network sockets. The BEAM VM uses reference-counted binary heaps shared across processes; binaries above 64 bytes are stored off-process heap and passed by reference rather than copied. Critical for high-throughput Erlang/Elixir network servers.
+
+**Difficulty:** Advanced
+**Category:** Dev

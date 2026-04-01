@@ -304,3 +304,131 @@ ISO bit-oriented data link layer protocol (ISO 13239). Frames data with a flag s
 Extension to Mobile IP that introduces a regional anchor point (MAP - Mobility Anchor Point) to localize handover signaling within a visited domain. Reduces handover latency and binding updates to the home agent by handling local mobility regionally. Defined in RFC 4140.
 **Difficulty:** Advanced
 **Category:** Protocol
+
+
+---
+
+## HTTPS — HTTP Secure
+
+HTTP protocol secured by TLS encryption. Operates on port 443 by default. The TLS handshake precedes any HTTP exchange, providing server authentication (X.509 certificate), data confidentiality, and integrity. HSTS (HTTP Strict Transport Security) forces HTTPS by instructing browsers to refuse plain HTTP connections for the declared max-age duration.
+
+**Difficulty:** Base
+**Category:** Protocol
+
+---
+
+## HIPAA — Health Insurance Portability Act
+
+US federal law establishing standards for protecting patient health information (PHI). IT requirements: access controls, audit logging, encryption of PHI at rest and in transit, breach notification (within 72 hours), and Business Associate Agreements with cloud providers. Compliance frameworks: NIST 800-66, HITRUST CSF. Civil penalties range from $100 to $50,000 per violation.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## HAPRX — HAProxy Load Balancer
+
+High Availability Proxy: open-source TCP/HTTP load balancer and proxy. Provides Layer 4 and Layer 7 load balancing, health checking, SSL termination, ACL-based routing, and detailed statistics via a management socket. Event-driven architecture handles hundreds of thousands of concurrent connections. Widely used as Kubernetes Ingress controller and database proxy.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## HBASE — Apache HBase
+
+Distributed, column-oriented NoSQL database running on HDFS, modeled after Google's Bigtable. Provides strong consistency for row-level operations, random read/write access to tables with billions of rows, and automatic region-based sharding. Used for time-series data (OpenTSDB), user profiles, and event logging at web scale. Integrates with MapReduce, Spark, and Phoenix SQL layer.
+
+**Difficulty:** Advanced
+**Category:** Database
+
+---
+
+## HMSET — Hash Multi-Set Command
+
+Redis command setting multiple field-value pairs in a hash in one atomic operation. Syntax: HMSET key field1 value1 field2 value2. Deprecated in Redis 4.0 in favor of HSET, which now accepts multiple field-value pairs with identical semantics. Commonly used for session storage, user profile caching, and feature flag storage in Redis-backed applications.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## HTTPX — HTTP Extended Client
+
+Async Python HTTP client library supporting HTTP/1.1 and HTTP/2 with a requests-compatible API. Features: connection pooling, cookie handling, redirect following, certificate verification, streaming responses, and configurable timeouts. Also refers to a fast web probe tool in security reconnaissance that identifies live HTTP/HTTPS services at scale across large IP ranges.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## HEXDP — Hex Dump Format
+
+Representation of binary data as hexadecimal values displayed alongside ASCII printable characters. Used for binary protocol analysis, file format inspection, and memory debugging. Tools: xxd, hexdump -C, od -Ax -tx1, and Wireshark's packet bytes pane. Convention: 16 bytes per line, byte offset on left, ASCII representation on right.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## HWVRT — Hardware Virtualization
+
+Processor feature enabling efficient virtualization via dedicated CPU instructions for guest/host context switching. Intel VT-x (vmx extension) and AMD-V (svm extension) allow the hypervisor to trap privileged guest instructions in hardware without binary translation. Required by KVM, Hyper-V, and VMware ESXi for near-native VM performance.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## HLASM — High-Level Assembler IBM
+
+IBM's assembler language for z/Architecture (mainframe) systems. Extends OS/360 assembly with structured programming macros, conditional assembly, and SYSLIST debugging. HLASM programs are assembled into object modules linked into load modules executed under z/OS. Used for performance-critical system routines in banking and insurance mainframe environments.
+
+**Difficulty:** Advanced
+**Category:** Dev
+
+---
+
+## HTTPL — HTTP Long Poll
+
+Web technique where the client sends a request and the server holds the connection open until new data is available (or a timeout occurs). Simulates server push over HTTP/1.1 without WebSockets. Used in legacy real-time applications (chat, notifications). Replaced by WebSockets, Server-Sent Events (SSE), or HTTP/2 push in modern implementations.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+
+---
+
+## HTTPD — HTTP Daemon
+
+Generic name for any process serving HTTP requests, most commonly referring to Apache HTTP Server (httpd). The Apache httpd uses a modular architecture (mod_ssl, mod_rewrite, mod_proxy) with prefork, worker, or event MPMs for concurrency. Configuration via httpd.conf and .htaccess files. Also used as the binary name for nginx and other servers.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## HKDF — HMAC-based Key Derivation Function
+
+Key derivation function (RFC 5869) built on HMAC. Two-stage process: extract (compress input keying material and salt into a pseudorandom key) then expand (derive output key material of arbitrary length). Used in TLS 1.3, Signal Protocol, and Noise Framework to derive session keys from Diffie-Hellman outputs and pre-shared secrets.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## HPROF — Heap Profiler
+
+Built-in JVM profiling agent (activated via -agentlib:hprof) that captures heap dumps, CPU sampling data, and memory allocation traces. Output written as binary HPROF format, readable by Eclipse MAT, VisualVM, and JProfiler. Largely replaced by JFR (Java Flight Recorder) in modern JVMs but still referenced for legacy heap dump analysis.
+
+**Difficulty:** Advanced
+**Category:** Dev
+
+---
+
+## HWLOC — Hardware Locality
+
+Open-source library and toolset for querying CPU topology, NUMA nodes, cache hierarchy, I/O devices, and GPU affinity. The lstopo command visualizes the hardware topology graph. Used by MPI runtimes (Open MPI, MPICH) and HPC schedulers to bind processes and threads to optimal cores for NUMA-aware parallel computing.
+
+**Difficulty:** Advanced
+**Category:** Hardware

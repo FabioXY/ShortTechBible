@@ -461,3 +461,149 @@ criticisms as KLOC as a proxy for complexity or quality.
 Simplified version of NTP (RFC 4330) designed for devices that do not need full NTP accuracy or complexity. Uses the same packet format as NTP but implements only unicast client-server mode without the full clock discipline algorithm. Common in embedded systems, IoT devices, and appliances.
 **Difficulty:** Base
 **Category:** Protocol
+
+
+---
+
+## SHELL — Unix Shell Interpreter
+
+Command interpreter providing a user interface to the OS. Parses and executes commands, manages job control, handles I/O redirection (>, >>, <, 2>&1) and pipelines (|). Supports scripting: variables, loops, conditionals, functions. Common shells: bash (default on most Linux), zsh (default on macOS), fish, dash (POSIX minimal, used for /bin/sh on Debian/Ubuntu).
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## SMTPS — SMTP Secure Port 465
+
+SMTP over implicit TLS on port 465, where the connection starts encrypted immediately. Re-standardized in RFC 8314 (2018) as the preferred submission port for mail clients. Distinct from STARTTLS on port 587 (upgrades unencrypted connection). Mail relaying between servers still uses port 25 with STARTTLS opportunistic encryption.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## SYSMD — Systemd Init System
+
+System and service manager for Linux replacing SysV init. Unit files (.service, .socket, .timer, .mount, .target) declare dependencies and startup order. journald collects structured binary logs queryable via journalctl -u service. Parallel service startup reduces boot time. Provides socket activation, cgroup-based process tracking, and transient service units.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## SFLOW — sFlow Sampling Protocol
+
+Sampling-based network monitoring protocol (RFC 3176) providing continuous traffic analysis at line rate. Samples 1-in-N packets and exports flow records to a collector. More scalable than NetFlow/IPFIX for 100G+ links where full flow export is impractical. Supported by data center switches (Arista, Juniper, Cumulus) for traffic visibility and capacity planning.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## SWARM — Docker Swarm Mode
+
+Native Docker container orchestration mode grouping Docker hosts into a swarm with manager and worker nodes. Services define desired state (replicas, image, ports); the swarm scheduler places containers across workers. Supports rolling updates, service discovery via internal DNS, overlay networks, and secrets management. Simpler than Kubernetes but less feature-rich.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## SOCAT — Socket Cat Relay
+
+Multipurpose relay utility for bidirectional byte stream transfer between two addresses. Supports TCP, UDP, Unix sockets, files, processes, SSL/TLS, and VSOCK. More powerful than netcat: supports full-duplex relay, SSL termination, SOCKS proxy. Used for port forwarding, socket debugging, VPN-less tunneling, and creating test listeners.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## SPARK — Apache Spark Engine
+
+Unified analytics engine for large-scale data processing. In-memory computation provides 10-100x speed improvement over Hadoop MapReduce for iterative algorithms. Supports batch (DataFrame API), streaming (Structured Streaming), ML (MLlib), and graph (GraphX) workloads. APIs in Python (PySpark), Scala, Java, and R. Runs on YARN, Kubernetes, Mesos, or standalone cluster.
+
+**Difficulty:** Advanced
+**Category:** Database
+
+---
+
+## SLAAC — Stateless Address Autoconfiguration
+
+IPv6 mechanism (RFC 4862) allowing hosts to self-configure global unicast addresses without DHCP. Combines the /64 prefix from Router Advertisement messages with an Interface Identifier (EUI-64 from MAC or random per RFC 8981 privacy extensions). DNS configuration requires RDNSS option (RFC 8106) in the RA or a separate DHCPv6 stateless server.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## SWAGR — Swagger API Spec Tool
+
+Original name for the OpenAPI Specification (OAS): language-agnostic, machine-readable format for REST API definitions. Swagger 2.0 was donated to the OpenAPI Initiative and renamed OpenAPI 3.0. Swagger UI renders interactive API documentation from OpenAPI files; Swagger Codegen generates client SDKs and server stubs in 40+ languages.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## STELT — Stealth Port Scan
+
+Nmap TCP SYN scan (-sS, half-open scan) sending SYN packets without completing the TCP handshake. Open port: returns SYN-ACK (scanner immediately resets). Closed port: returns RST. Faster and less detectable than full connect scans since no connection is established and many systems do not log incomplete handshakes. Requires raw socket privileges.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## SHMEM — Shared Memory IPC
+
+Inter-process communication mechanism allowing multiple processes to access a common memory region without kernel mediation per data transfer. POSIX API: shm_open, mmap, shm_unlink. System V API: shmget, shmat, shmdt. Fastest IPC method but requires explicit synchronization (mutex, semaphore) to prevent race conditions. Used in databases, video processing, and high-frequency trading.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## SALTK — SaltStack Automation
+
+Python-based infrastructure automation tool using a master-minion architecture with ZeroMQ messaging. States (.sls files in YAML+Jinja2) describe desired system configuration. Execution modules run ad-hoc commands across thousands of minions simultaneously. Salt-ssh provides agentless mode over SSH. Acquired by VMware; now part of Broadcom's portfolio.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+
+---
+
+## STAP — SystemTap
+
+Linux dynamic tracing framework that compiles probe scripts into kernel modules at runtime. A stap script attaches probes to kernel functions, syscalls, uprobes, and tracepoints; probe handlers execute arbitrary C-like code to collect and aggregate data. Used for performance analysis and debugging without kernel recompilation. Requires debug symbols or DWARF info.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## SMAP — Supervisor Mode Access Prevention
+
+x86 CPU security feature (Intel Broadwell+, AMD Zen) that prevents the kernel from accidentally reading or writing userspace memory while running in kernel mode (ring 0). Access must be explicitly allowed via STAC/CLAC instructions around intentional user memory copies (copy_from_user, copy_to_user). Mitigates certain kernel exploitation techniques.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## SONAR — SonarQube Platform
+
+Continuous code quality and security platform that performs static analysis on source code. Detects bugs, code smells, security vulnerabilities, and measures technical debt. Integrates with CI/CD pipelines via SonarScanner; results displayed on a dashboard with issue tracking. Supports 30+ languages. SonarCloud is the hosted SaaS version.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## SECAP — Security Capability
+
+Linux capability bit within the kernel's POSIX capabilities model, subdivided into permitted, effective, and inheritable sets per process. Individual capabilities (CAP_NET_ADMIN, CAP_SYS_PTRACE, CAP_SETUID, etc.) grant specific privileged operations without requiring full root. Container runtimes drop all non-required capabilities by default to reduce attack surface.
+
+**Difficulty:** Advanced
+**Category:** Security

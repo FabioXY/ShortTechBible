@@ -302,3 +302,122 @@ Modular printing system for Unix-like operating systems developed by Apple. Uses
 HTTP response header that isolates a browsing context from cross-origin documents, preventing cross-window access via window.opener. Required alongside COEP to enable SharedArrayBuffer and high-resolution timers in browsers (mitigating Spectre-class timing attacks). Values: same-origin, same-origin-allow-popups, unsafe-none.
 **Difficulty:** Advanced
 **Category:** Security
+
+
+---
+
+## CAPEX — Capital Expenditure
+
+One-time investment for purchasing and deploying owned IT assets (servers, licenses, networking hardware). Contrasted with OPEX (operational expenditure), which covers recurring costs. Cloud computing shifts IT spending from CAPEX to OPEX by replacing owned hardware with subscription-based, on-demand services billed by consumption.
+
+**Difficulty:** Base
+**Category:** Cloud
+
+---
+
+## CFSSL — Cloudflare SSL Toolkit
+
+Open-source PKI toolkit from Cloudflare for generating, signing, and managing TLS certificates. Includes a JSON API server, CLI, and certificate bundler. Used to build internal CAs and issue short-lived certificates. Often deployed alongside HashiCorp Vault PKI secrets engine in zero-trust certificate automation pipelines.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## CMDB — Configuration Management DB
+
+Repository storing structured records of IT assets (configuration items) and their relationships. Central component of ITIL service management. Populated by discovery tools (ServiceNow Discovery, Lansweeper), used by change management, incident management, and infrastructure automation workflows to maintain accurate asset inventory.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## CSIRT — Computer Security Incident Team
+
+Organized group responsible for receiving, analyzing, and responding to cybersecurity incidents. Coordinates containment, eradication, recovery, and post-incident review. Distinguished from SOC (ongoing monitoring) by its incident-focused mandate. PSIRTs (Product Security Incident Response Teams) handle vendor-specific vulnerability disclosures.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## COBIT — Control Objectives for IT
+
+ISACA framework for IT governance and management defining 40 governance and management objectives across five domains: EDM, APO, BAI, DSS, and MEA. Used for audit, compliance, and IT governance maturity assessments. Aligns IT strategy with business goals and provides metrics for measuring IT process performance.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## CRTSH — Certificate Transparency Search
+
+Web interface and API (crt.sh) operated by Sectigo for querying Certificate Transparency logs. Returns all publicly logged TLS certificates for a given domain, including wildcards and subdomains. Used for attack surface discovery, phishing detection, subdomain enumeration, and certificate lifecycle auditing in security assessments.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## CHAOS — Chaos Engineering
+
+Discipline of intentionally injecting failures into production systems to build confidence in resilience. Popularized by Netflix (Chaos Monkey). Principles: define steady state, hypothesize it continues, introduce variables (instance failure, latency, network partition), observe deviations. Tooling: Chaos Monkey, Litmus, Gremlin, AWS Fault Injection Simulator.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## CLOAD — Container Resource Load
+
+Aggregate resource demand (CPU millicores, memory bytes) of containers running on a Kubernetes node. Used by the scheduler to balance workloads across nodes. Defined in resource requests (scheduling guarantee) and limits (enforced ceiling) per container. High CPU load triggers throttling; memory overcommit triggers OOM killer.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## CBWFQ — Class-Based Weighted Fair Queue
+
+Cisco QoS queuing mechanism dividing traffic into user-defined classes and allocating guaranteed minimum bandwidth using weighted fair queuing. Extends WFQ with explicit class definitions via MQC (Modular QoS CLI). Typically combined with LLQ (Low Latency Queue) to provide strict priority for voice traffic while protecting data classes.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+
+---
+
+## COAP — Constrained Application Protocol
+
+UDP-based application protocol (RFC 7252) for constrained devices (IoT sensors, microcontrollers) with limited CPU and memory. Mirrors REST semantics (GET/PUT/POST/DELETE) over a binary framing format. Supports confirmable messages with retransmission, multicast, and optional DTLS security. Proxy-capable for HTTP interoperability.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## CHAP — Challenge Handshake Authentication Protocol
+
+Authentication protocol (RFC 1994) using a three-way handshake: server sends a random challenge, client responds with MD5(challenge + shared secret), server verifies. Used in PPP and iSCSI. Avoids sending passwords in clear text but depends on MD5, making it vulnerable to offline dictionary attacks. MS-CHAPv2 extends it for Windows environments.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## CTDB — Clustered Trivial Database
+
+Distributed database layer used by Samba to share TDB (Trivial Database) state across cluster nodes. Provides a virtual IP failover mechanism, node health monitoring, and lock synchronization for file serving in high-availability NAS clusters. Required for clustered Samba deployments serving SMB clients.
+
+**Difficulty:** Advanced
+**Category:** Database
+
+---
+
+## CGRP — Control Group
+
+Linux kernel mechanism (cgroups) for organizing processes into hierarchical groups and applying resource limits (CPU, memory, I/O, network). cgroups v2 uses a unified hierarchy under /sys/fs/cgroup/. Used by systemd, Docker, Kubernetes, and any container runtime to enforce per-container resource isolation.
+
+**Difficulty:** Intermediate
+**Category:** OS

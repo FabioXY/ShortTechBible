@@ -463,3 +463,140 @@ must maintain a change history indexed by the DNS zone serial number.
 
 **Difficulty:** Advanced
 **Category:** Protocol
+
+
+---
+
+## IPSEC — IPsec Protocol Suite
+
+IETF framework securing IP communications via cryptographic authentication and encryption at the network layer. Two modes: Transport (encrypts payload only, host-to-host) and Tunnel (encrypts the entire original IP packet, used in VPNs). Protocols: AH (authentication header) and ESP (encapsulating security payload). Key management: IKEv2 (RFC 7296, recommended) or legacy IKEv1.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## INODE — Index Node Structure
+
+Data structure in Unix/Linux file systems (ext4, XFS, Btrfs) storing file metadata: permissions, owner, timestamps, file size, and pointers to data blocks. Does not contain the filename, which is stored in the directory entry. Each file has one inode identified by a unique inode number. Running out of inodes prevents creating new files even with free disk space available.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## ISTIO — Istio Service Mesh
+
+Open-source service mesh (CNCF graduated) adding traffic management, mTLS, observability, and policy enforcement to Kubernetes workloads without application code changes. Uses Envoy sidecar proxies injected into pods. Control plane: istiod. Configured via CRDs: VirtualService, DestinationRule, Gateway, AuthorizationPolicy. Provides circuit breaking, retries, and canary deployments.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## IPMGR — IP Address Manager
+
+Software component allocating, tracking, and managing IP address assignments across a network. Core functions: IPAM (IP Address Management), DNS and DHCP integration, subnet planning, conflict detection, and utilization reporting. Platforms: Infoblox, phpIPAM, NetBox, SolarWinds IPAM. NetBox is widely used as open-source IPAM with REST API and IaC integration.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## ISATAP — Intra-Site Auto Tunnel Addressing
+
+IPv6 transition mechanism (RFC 5214) allowing IPv6 communication over IPv4 infrastructure within an organization. Encapsulates IPv6 in IPv4 with an interface identifier derived from the IPv4 address. Deprecated in modern deployments; superseded by native dual-stack or 464XLAT/DS-Lite for IPv6 transition in enterprise and carrier environments.
+
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## ISAKMP — IKE Security Association Protocol
+
+Framework (RFC 2408) for establishing Security Associations and exchanging cryptographic keys for IPsec. Defines message format and negotiation procedures but not specific algorithms. Forms the basis of IKEv1 Phase 1 (Main Mode, Aggressive Mode). Superseded by IKEv2, which merges ISAKMP and IKE into a simpler, more reliable exchange.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## IPFIX — IP Flow Information Export
+
+IETF standard (RFC 7011) for exporting IP flow data from routers and network devices to collectors. Successor to NetFlow v9 with a template-based approach where the exporter defines field types before sending records. Used for traffic analysis, capacity planning, security monitoring, anomaly detection, and ISP billing across carrier and enterprise networks.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## IMAPS — IMAP Secure Protocol
+
+IMAP4 over implicit TLS on port 993. Provides encrypted email retrieval with full IMAP4 semantics: server-side message storage, folder management, message flags, server-side search, and selective download. Preferred over STARTTLS on port 143 for mail client configuration as the encrypted session begins immediately without protocol upgrade.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## INFRA — IT Infrastructure
+
+Physical and virtual resources providing the foundation for computing systems: servers, networking, storage, power, and platform software. In Infrastructure as Code (IaC) contexts, infrastructure is defined declaratively (Terraform, Pulumi, Crossplane) and version-controlled. Cloud-native infrastructure follows the immutable infrastructure pattern: replace rather than modify.
+
+**Difficulty:** Base
+**Category:** Cloud
+
+---
+
+## IRQBL — IRQ Balance Daemon
+
+Linux daemon (irqbalance) automatically distributing hardware interrupt requests across CPU cores to prevent a single core becoming the bottleneck for all device interrupts. Improves throughput on multi-core systems under heavy I/O load. Network performance tuning often pins specific NIC queue IRQs to dedicated CPU cores using /proc/irq/N/smp_affinity instead.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+
+---
+
+## IOMMU — Input-Output Memory Management Unit
+
+Hardware unit that maps device-visible virtual addresses to physical memory addresses, enabling DMA remapping. Intel calls it VT-d; AMD uses AMD-Vi. Critical for PCI passthrough in virtualization (VFIO), preventing DMA attacks from malicious or compromised PCIe devices, and enabling SR-IOV virtual functions to operate in isolated address spaces.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## IDRAC — Integrated Dell Remote Access Controller
+
+Out-of-band management controller embedded in Dell PowerEdge servers. Provides remote KVM (virtual console), power management, hardware monitoring, firmware updates, and OS deployment via a dedicated NIC and management web interface, Redfish API, and RACADM CLI. Operates independently of the host OS, allowing management even when the OS is crashed or offline.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## IPVS — IP Virtual Server
+
+Layer-4 load balancing component built into the Linux kernel (netfilter framework). Supports NAT, DR (Direct Routing), and IP tunneling forwarding modes with scheduling algorithms including round-robin, least connections, weighted, and source hashing. Used by Kubernetes kube-proxy in IPVS mode as a scalable alternative to iptables for service routing.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## IMUX — Inverse Multiplexer
+
+Device or protocol that aggregates multiple low-bandwidth links into a single logical channel, splitting traffic across them and reassembling at the far end. Used historically with ISDN bonding (multiple B-channels) and in multilink PPP (MLPPP). Modern equivalents include LACP bonding, SD-WAN path aggregation, and MPTCP.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## IKEV2 — Internet Key Exchange Version 2
+
+Protocol (RFC 7296) used in IPsec to establish and manage Security Associations. IKEv2 replaces IKEv1's aggressive/main modes with a simplified four-message exchange (IKE_SA_INIT + IKE_AUTH). Supports MOBIKE for VPN mobility across IP changes (e.g., Wi-Fi to cellular), EAP authentication, and traffic selector negotiation.
+
+**Difficulty:** Advanced
+**Category:** Security

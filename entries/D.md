@@ -333,3 +333,122 @@ Industry standard for sharing media (audio, video, images) between consumer elec
 NAT variant that rewrites the destination IP address (and optionally port) of incoming packets. Used to forward external traffic to an internal server (port forwarding). Implemented in iptables via the DNAT target in the PREROUTING chain, or in nftables with dnat to. The inverse of SNAT.
 **Difficulty:** Intermediate
 **Category:** Networking
+
+
+---
+
+## DACL — Discretionary Access Control List
+
+Component of a Windows security descriptor specifying which users and groups are allowed or denied access to a securable object (file, registry key, service, process). Controlled by the object owner. Distinguished from SACL (System ACL, used for auditing). Managed via icacls, Get-Acl/Set-Acl, or the Security tab in Windows Explorer.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## DMARC — Domain-based Message Auth Reporting
+
+Email authentication policy framework (RFC 7489) built on SPF and DKIM. Instructs receiving servers what to do with messages failing authentication: none (monitor only), quarantine (spam folder), or reject. Generates aggregate (rua) and forensic (ruf) XML reports. Essential for preventing domain spoofing and business email compromise (BEC) attacks.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## DNSBL — DNS Block List
+
+Blacklist published via DNS used by mail servers and security appliances to check if a sending IP or domain is a known source of spam, malware, or phishing. Queried via reversed IP lookup (e.g. 4.3.2.1.zen.spamhaus.org). A positive response indicates the IP is listed. Major DNSBLs: Spamhaus ZEN, Barracuda, SORBS, URIBL.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## DNSSEC — DNS Security Extensions
+
+IETF standards (RFC 4033-4035) adding cryptographic signatures to DNS records. Signs RRsets with RRSIG records; DNSKEY records publish zone signing keys; DS records chain trust from parent to child zones. Prevents cache poisoning (Kaminsky attack) by allowing resolvers to verify record authenticity. Does not encrypt DNS queries.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## DRBD — Distributed Replicated Block Device
+
+Open-source Linux kernel module synchronously mirroring block devices between two servers over TCP/IP or RDMA. Creates a software RAID-1 equivalent across nodes without shared SAN hardware. Used in Pacemaker-based HA clusters for automatic failover of databases and file systems. Supports Primary/Primary mode for active-active configurations with cluster-aware applications.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## DPAPI — Data Protection API
+
+Windows cryptographic API encrypting data tied to a user or machine identity without explicit key management. Applications call CryptProtectData/CryptUnprotectData; Windows derives the encryption key from the user's password hash or machine secret. Used by Chrome (saved passwords), Credential Manager, and BitLocker recovery key protection.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## DSYNC — Directory Sync Process
+
+Synchronization of identity data (users, groups, attributes) between a source directory (AD, LDAP) and a target (cloud IdP, SaaS application). Implemented by Azure AD Connect, Okta AD Agent, and Google Cloud Directory Sync. Supports full sync and delta sync modes. Attribute mapping rules control which fields are replicated and transformed.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## DEVOP — DevOps Practice
+
+Cultural and technical movement combining software development (Dev) and IT operations (Ops) to shorten delivery cycles and improve reliability. Key practices: CI/CD pipelines, infrastructure as code, monitoring as code, and blameless postmortems. Measured via DORA metrics: deployment frequency, lead time for changes, MTTR, and change failure rate.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## DRATS — Disaster Recovery as a Service
+
+Cloud-delivered disaster recovery model where a provider replicates workloads to their infrastructure and manages failover automation. Provides contractual RTO/RPO guarantees without a dedicated DR data center. Implemented via Zerto, VMware Cloud DR, and AWS Elastic Disaster Recovery. Billed on a subscription model based on protected VM count.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+
+---
+
+## DTLS — Datagram Transport Layer Security
+
+Adaptation of TLS for datagram protocols (UDP, DCCP) defined in RFC 6347. Adds sequence numbers and retransmission logic to handle packet loss and reordering without a reliable transport layer. Used in WebRTC (DTLS-SRTP for media), QUIC predecessors, VPN protocols, and IoT deployments requiring encrypted UDP.
+
+**Difficulty:** Advanced
+**Category:** Protocol
+
+---
+
+## DEVFS — Device Filesystem
+
+Virtual filesystem exposing kernel device objects as files under /dev, populated dynamically as hardware is detected. In Linux, replaced by udev (userspace device manager) which creates device nodes based on kernel uevents and rules in /etc/udev/rules.d/. Provides a consistent interface between hardware drivers and userspace applications.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## DLRM — Deep Learning Recommendation Model
+
+Neural network architecture published by Meta for large-scale recommendation systems. Combines embedding tables for categorical features (user IDs, item IDs) with MLPs for dense features, then applies dot-product interactions. Characterized by massive embedding memory requirements (hundreds of GB) and mixed CPU/GPU execution patterns.
+
+**Difficulty:** Advanced
+**Category:** AI
+
+---
+
+## DSHOT — Digital Shot
+
+Digital protocol for communication between flight controllers and ESCs (Electronic Speed Controllers) in drones and RC aircraft. Encodes throttle values as digital packets rather than analog PWM signals, eliminating calibration requirements. DSHOT150/300/600/1200 variants indicate bitrate in kbps. Supports bidirectional telemetry (RPM feedback) in extended variants.
+
+**Difficulty:** Advanced
+**Category:** Protocol

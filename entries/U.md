@@ -439,3 +439,131 @@ Binary file (/var/run/utmp on Linux) that tracks currently logged-in users, acti
 General-purpose processor register accessible to user-mode code without privilege escalation. Distinguished from kernel registers that are only accessible in ring 0 (x86) or EL1+ (ARM). The number and width of user registers varies by ISA (e.g. 16 in x86-64, 31 in AArch64).
 **Difficulty:** Advanced
 **Category:** Hardware
+
+
+---
+
+## UNAME — Unix System Name
+
+Unix/Linux command returning system information: kernel name (-s), hostname (-n), kernel release (-r), kernel version (-v), machine hardware (-m), OS (-o). uname -a returns all fields. Kernel release (uname -r) is critical for module compatibility, security patch verification, and automation scripts selecting the correct package version.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## UNIXS — Unix Domain Socket
+
+IPC endpoint in the filesystem (AF_UNIX socket family). Supports stream (TCP semantics), datagram (UDP semantics), and sequential packet modes. Faster than loopback TCP for local IPC due to no TCP/IP overhead or address resolution. Used by PostgreSQL, MySQL, Docker daemon, systemd socket activation, and D-Bus for local connections.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## UBUTU — Ubuntu Linux Distro
+
+Debian-based Linux distribution by Canonical. Available in LTS (5-year support) and interim (9-month) releases. Uses apt/dpkg package management, GNOME desktop by default, systemd, and netplan for network configuration. Widely used for cloud servers (most popular base image on AWS, GCP, Azure), Docker base images, WSL2, and developer workstations.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## USRNS — User Namespace Isolation
+
+Linux kernel namespace (since 3.8) mapping UIDs/GIDs between the namespace and the host. Enables rootless containers: a process appears as UID 0 inside but maps to an unprivileged UID on the host. Used by Podman, LXC (with user maps), and Singularity for unprivileged container execution without setuid helpers or root privileges.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## UACCT — User Account Control
+
+Windows security feature (UAC) requiring explicit elevation for administrative tasks. Standard users receive a credential prompt; administrators receive a consent prompt. Implemented via token splitting: users receive a standard token by default; the elevated token is granted only after UAC confirmation. Configurable via Group Policy (ConsentPromptBehaviorAdmin registry key).
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## UMASK — File Creation Mask
+
+Unix permission mask subtracted from default permissions when new files and directories are created. Specified as octal: umask 022 removes write permission for group and others, resulting in 644 for files (666-022) and 755 for directories (777-022). Set per-session in shell; configured globally in /etc/profile or /etc/bashrc for system-wide defaults.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## UPNPD — UPnP Daemon
+
+Background service implementing Universal Plug and Play on a router, allowing LAN devices (game consoles, media servers) to automatically open inbound port mappings on the NAT gateway. Security concern: UPnP is unauthenticated; malicious LAN software can create arbitrary port forwards. miniupnpd is the most common open-source implementation.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## UPRXY — URL Proxy Server
+
+Proxy accepting full URL-based HTTP requests (GET http://example.com/ HTTP/1.1) and fetching resources on behalf of clients. Used in transparent proxy deployments (WCCP redirect), corporate internet gateways, and caching proxies (Squid). HTTPS requires the CONNECT method to tunnel the TLS session, bypassing URL inspection.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## USVCS — Microservices Architecture
+
+Architectural style structuring an application as independently deployable services communicating via APIs (REST, gRPC, events). Each service owns its data store and scales autonomously. Benefits: independent deployment, technology diversity, fault isolation. Challenges: distributed tracing, eventual consistency, network latency, and increased operational complexity vs monolithic deployment.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## ULTST — Unit Test Suite
+
+Collection of automated tests verifying individual code units (functions, methods, classes) in isolation. Dependencies replaced by mocks or stubs. Frameworks: pytest (Python), JUnit (Java), Go test (built-in), Jest (JavaScript), RSpec (Ruby). Coverage tools (coverage.py, JaCoCo, Istanbul/nyc) measure which lines are exercised. Target: >80% meaningful coverage.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## UPDNS — Update DNS Record
+
+Operation modifying a DNS resource record via Dynamic DNS (RFC 2136, nsupdate), zone file edit and rndc reload, or a REST API (Cloudflare, Route53, PowerDNS). Change propagation depends on the previous TTL cached by resolvers. Verify with dig @authoritative-ns to confirm the new serial and record value before the old TTL expires.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+
+---
+
+## UWSGI — Universal Web Server Gateway Interface
+
+Full-featured application server and process manager for Python (WSGI), Ruby (Rack), PHP, Perl, and other language backends. Supports multiple socket types (UNIX, TCP, UDP), process/thread management, native uWSGI protocol for Nginx integration, Emperor mode for managing multiple apps, and plugins for language-specific optimizations.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## UBOOT — Das U-Boot Bootloader
+
+Open-source bootloader widely used in embedded Linux systems, network appliances, and single-board computers (Raspberry Pi, BeagleBone, Jetson). Provides hardware initialization, environment variable storage in non-volatile memory, network boot (TFTP, NFS), USB boot, and a scripting environment for boot sequence customization. Configured via defconfig and Device Tree.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## UBSAN — Undefined Behavior Sanitizer
+
+Compiler instrumentation tool (GCC and Clang) that detects undefined behavior in C/C++ code at runtime. Catches signed integer overflow, null pointer dereference, misaligned memory access, invalid enum values, array out-of-bounds, and use of uninitialized values. Reports violations with source location. Used in the Linux kernel (CONFIG_UBSAN) and application testing pipelines.
+
+**Difficulty:** Advanced
+**Category:** Dev

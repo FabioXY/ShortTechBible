@@ -340,3 +340,111 @@ IETF protocol (RFC 6116) that maps PSTN telephone numbers (E.164 format) to URIs
 Dual usage in IT: (1) Unix filesystem execute bit (chmod +x) granting permission to run a file as a program. (2) Generic term for remote command execution protocols (rexec, SSH exec channel, Docker exec). In security contexts, arbitrary code execution via exec() system calls is a primary attack objective.
 **Difficulty:** Base
 **Category:** OS
+
+---
+
+## EIGRP — Enhanced Interior Gateway Routing
+
+Cisco advanced distance-vector routing protocol (RFC 7868). Uses DUAL (Diffusing Update Algorithm) for loop-free, fast convergence without full SPF recalculation. Maintains feasible successors as pre-computed backup routes enabling sub-second failover. Supports VLSM, summarization, and multiple address families. Metric based on bandwidth and delay by default.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## ECDSA — Elliptic Curve Digital Signature
+
+Public-key digital signature algorithm based on elliptic curve cryptography. Produces shorter key and signature sizes than RSA for equivalent security (256-bit ECDSA ≈ 3072-bit RSA). Used in TLS 1.3 (P-256, P-384), Bitcoin transactions (secp256k1), SSH host keys, and code signing certificates. Defined in FIPS 186-4 and RFC 6979.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## ECDHE — Elliptic Curve Diffie-Hellman Ephemeral
+
+Key agreement protocol combining ECDH with ephemeral key pairs to provide forward secrecy. Each TLS session generates fresh key pairs, ensuring past sessions remain secure if the server's long-term private key is later compromised. Mandatory in TLS 1.3; the preferred key exchange mechanism in TLS 1.2 ECDHE cipher suites.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## EAPOL — EAP over LAN Protocol
+
+Encapsulation of EAP (Extensible Authentication Protocol) frames over IEEE 802 LAN media (Ethernet, Wi-Fi). Defined in IEEE 802.1X. The supplicant sends EAPOL-Start to begin authentication; the authenticator (switch/AP) forwards EAP messages to the RADIUS server. Port remains in unauthorized state until authentication succeeds.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## ENVOY — Envoy Proxy Server
+
+Open-source L4/L7 proxy (CNCF project) originally built by Lyft. Designed as a sidecar in service mesh architectures (Istio, Consul Connect). Provides dynamic service discovery via xDS API, load balancing, TLS termination, circuit breaking, retries, rate limiting, and observability (metrics, traces, access logs). Supports gRPC, HTTP/2, and WebSocket natively.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## EXFAT — Extended FAT File System
+
+Microsoft file system optimized for flash storage and removable media. Supports files larger than 4 GB (removing FAT32's limit), cluster sizes up to 32 MB, and timestamps with 10ms precision. No journaling. Supported natively on Windows, macOS (10.6.5+), and Linux (kernel 5.4+ exfat module). Standard format for SDXC cards per SD Association specification.
+
+**Difficulty:** Base
+**Category:** Hardware
+
+---
+
+## EMRFS — EMR File System
+
+Amazon EMR's HDFS-compatible connector for accessing Amazon S3. Provides consistent view semantics, server-side encryption integration, and retry logic for transient S3 errors. Replaces HDFS as the primary storage layer in cloud-native EMR deployments, decoupling compute (EMR cluster) from storage (S3) for independent scaling and cost optimization.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## ESXCL — ESXi Command Line Interface
+
+VMware ESXi's built-in CLI accessible via DCUI, SSH, or remote sessions. Core tool: esxcli with namespaces for networking (esxcli network), storage (esxcli storage), software VIB management (esxcli software vib), and system configuration (esxcli system). Also invocable remotely via vSphere CLI or PowerCLI from an administration workstation.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## ESTMP — ESMTP Protocol
+
+Extended SMTP (RFC 5321): modern superset of SMTP introducing capability negotiation via EHLO (instead of HELO) and enabling extensions: AUTH (authentication), STARTTLS (opportunistic encryption), SIZE (message size declaration), DSN (delivery status notifications), and PIPELINING (command batching to reduce round-trips).
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## EDAC — Error Detection And Correction
+
+Linux kernel subsystem that monitors hardware memory error rates reported by ECC RAM controllers, chipsets, and CPUs. Exposes correctable (CE) and uncorrectable (UE) error counts via /sys/bus/platform/drivers/edac/ and kernel logs. Used with tools like edac-util to track memory degradation before failures become critical.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## ERSPAN — Encapsulated Remote SPAN
+
+Cisco protocol for tunneling mirrored traffic across a routed network to a remote analyzer. ERSPAN Type II/III encapsulates SPAN traffic in GRE with a proprietary header carrying session ID, VLAN, and timestamp metadata. Used for centralized packet capture in distributed campus or data center environments.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## ETAGS — Entity Tags
+
+HTTP response header (ETag) providing a unique identifier for a specific version of a resource. Used in conditional requests (If-None-Match) to enable cache validation without full content transfer. A matching ETag returns 304 Not Modified; a mismatch triggers a full 200 response. Strong ETags compare byte-for-byte; weak ETags (W/) allow semantic equivalence.
+
+**Difficulty:** Intermediate
+**Category:** Protocol

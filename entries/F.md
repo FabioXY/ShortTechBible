@@ -335,3 +335,102 @@ An ISO OSI application-layer protocol (ISO 8571) providing file transfer and rem
 Kernel or userspace subsystem that tracks filesystem events (create, modify, delete, rename) and notifies applications. Linux: inotify (per-file) and fanotify (filesystem-wide). macOS: FSEvents. Windows: ReadDirectoryChangesW. Used by IDEs, backup tools, antivirus, and live-reload development servers.
 **Difficulty:** Intermediate
 **Category:** OS
+
+---
+
+## FHRP — First Hop Redundancy Protocol
+
+Category of protocols providing default gateway redundancy by allowing multiple routers to present a single virtual IP and MAC to hosts. Examples: HSRP (Cisco), VRRP (RFC 5798, open standard), GLBP (Cisco, load-balancing variant). The active/master router responds to ARP for the virtual IP; standby takes over on failure detection.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## FLASK — Flask Web Framework
+
+Lightweight Python WSGI micro web framework using Werkzeug for WSGI utilities and Jinja2 for templating. No built-in ORM or form validation. Suitable for REST APIs and small to medium web applications. Extensions (Flask-SQLAlchemy, Flask-Login, Flask-Migrate) add functionality on demand. Flask's simplicity makes it a common first framework for Python web development.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## FSYNC — File Sync System Call
+
+POSIX system call flushing a file's dirty pages from the kernel page cache to persistent storage, ensuring durability before returning. Critical for database crash consistency: PostgreSQL, SQLite, and MySQL use fsync for WAL writes. fdatasync() flushes data without metadata. Disabling fsync dramatically improves write throughput at the cost of data loss on power failure.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## FDISK — Fixed Disk Partition Tool
+
+Interactive command-line partitioning utility for MBR (and GPT in modern versions) disks. Creates, deletes, resizes, and changes partition type codes. On Linux: fdisk /dev/sdb launches interactive mode; no changes are written until the user saves explicitly. For GPT disks gdisk and parted are preferred alternatives. Replaced on modern systems by partprobe for kernel notification.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## FPERM — File Permission Bits
+
+Set of access rights (read, write, execute) on a file or directory for owner, group, and others in POSIX systems. Represented as octal (chmod 755) or symbolic (rwxr-xr-x). Extended by ACLs (getfacl/setfacl) for per-user and per-group rules. Special bits: SUID (execute as owner), SGID (execute as group or inherit group on directory), sticky bit (restrict deletion to owner).
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## FRRTG — FRRouting Suite
+
+Free Range Routing: open-source IP routing protocol suite for Linux and Unix, forked from Quagga and maintained by the Linux Foundation. Implements BGP, OSPF, IS-IS, RIP, EIGRP, PIM, LDP, MPLS, and EVPN via modular daemons managed by a central zebra daemon. Used in network appliances, SD-WAN, and data center routing.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## FWKNOP — FireWall KNock Operator
+
+Single Packet Authorization (SPA) implementation keeping firewall ports closed until a valid encrypted, authenticated single UDP packet is received. Authorizes temporary access (e.g. opens SSH for a specific source IP for 30 seconds). Services are completely invisible to unauthenticated port scanners, providing stealth port access control.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## FSIMG — File System Image
+
+Binary snapshot of a complete file system stored as a single file. Created with dd, mkfs imaging options, or specialized tools. Used for OS deployment (golden images), embedded system flashing (rootfs.img), VM disk images (ext4 inside qcow2), and forensic acquisition. Mountable via loopback device (mount -o loop image.img /mnt).
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## FUTEX — Fast Userspace Mutex
+
+Linux kernel primitive (syscall futex(2)) enabling userspace synchronization with minimal kernel involvement. In the uncontended case, lock/unlock operations use atomic CPU instructions entirely in userspace memory. The kernel is invoked only on contention (futex_wait) or wakeup (futex_wake). Foundation for pthreads mutexes, semaphores, and Java monitors on Linux.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## FRIDA — Dynamic Instrumentation Toolkit
+
+Open-source dynamic binary instrumentation framework for reverse engineering and security research. Injects a JavaScript engine (Duktape/V8) into target processes, allowing runtime function hooking, memory inspection, and API interception on Android, iOS, Linux, Windows, and macOS without modifying binaries. Widely used in mobile app security testing.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## FWCTL — Firmware Control
+
+Linux kernel subsystem (introduced in 6.11) providing a standardized userspace API for firmware-specific device management operations not covered by existing subsystems. Exposes a character device per firmware interface, allowing privileged userspace tools to issue vendor-specific commands to hardware (SmartNICs, DPUs, storage controllers).
+
+**Difficulty:** Advanced
+**Category:** OS

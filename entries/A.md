@@ -355,3 +355,131 @@ The cloud computing platform operated by Amazon, offering over 200 services incl
 
 **Difficulty:** Base
 **Category:** Cloud
+
+
+---
+
+## ADLDS — Active Directory Lightweight Directory Services
+
+Standalone LDAP-compatible directory service in Windows Server running without a full AD domain. Provides application-specific directory data without Domain Controller infrastructure. Used by applications like Exchange and SharePoint for schema-isolated directory partitions. Managed via dsdbutil and Active Directory Sites and Services.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## APIPA — Automatic Private IP Addressing
+
+Windows and Linux fallback mechanism (RFC 3927) assigning a self-configured 169.254.x.x/16 address when DHCP is unavailable. Allows link-local communication between hosts on the same segment without a DHCP server. APIPA addresses are non-routable and their presence indicates DHCP failure during diagnostics.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## ASPNET — ASP.NET Framework
+
+Microsoft web application framework built on the .NET runtime. Supports MVC, Web API, Razor Pages, and SignalR. ASP.NET Core (cross-platform successor) runs on Linux, macOS, and Windows with built-in dependency injection and a middleware pipeline. NuGet package manager handles dependencies; Kestrel is the built-in HTTP server.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## ATAPI — AT Attachment Packet Interface
+
+Extension of the ATA (IDE) interface allowing non-disk devices (CD-ROM, DVD, tape drives) to connect via the same ribbon cable and protocol. Uses SCSI command packets encapsulated over the ATA bus. Superseded by SATA with ATAPI tunneling support (SATA Packet Interface). Still referenced in optical drive and legacy hardware documentation.
+
+**Difficulty:** Intermediate
+**Category:** Hardware
+
+---
+
+## AXFR — DNS Zone Transfer Full
+
+DNS operation (query type AXFR) transferring an entire zone from a primary to a secondary name server over TCP port 53. Initiated by the secondary server. Should be restricted to authorized secondary IPs via ACL or TSIG authentication to prevent zone enumeration by attackers.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## AIOPS — AIOps Platform
+
+Application of artificial intelligence and machine learning to IT operations. Aggregates data from monitoring, logs, events, and metrics to automate anomaly detection, root cause analysis, and incident correlation. Platforms include Moogsoft, BigPanda, Dynatrace Davis AI, and IBM Watson AIOps. Reduces MTTA and MTTR by correlating related alerts automatically.
+
+**Difficulty:** Advanced
+**Category:** AI
+
+---
+
+## AUTHZ — Authorization Token
+
+Short form of authorization: the process of determining what actions an authenticated identity is permitted to perform. Distinguished from AuthN (authentication). Implemented via RBAC, ABAC, policy engines (OPA, Cedar), and OAuth 2.0 scopes in modern identity-aware systems. Typically represented as claims in JWT tokens.
+
+**Difficulty:** Base
+**Category:** Security
+
+---
+
+## AUTHN — Authentication Method
+
+Short form of authentication: verifying the identity of a user, device, or service. Methods include passwords, X.509 certificates (mTLS), biometrics, hardware tokens (FIDO2), and federated SSO assertions. Precedes Authorization (AuthZ) in the AAA security model. Multi-factor authentication (MFA) combines two or more independent AuthN factors.
+
+**Difficulty:** Base
+**Category:** Security
+
+---
+
+## ASNDB — Autonomous System Number Database
+
+Repository mapping Autonomous System Numbers (ASNs) to registered organizations, country, and IP prefix ranges. Maintained by ARIN, RIPE, APNIC, and aggregators like CAIDA, MaxMind, and IPinfo. Used for geolocation, traffic attribution, BGP policy enforcement, and abuse contact lookup during incident response.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## ARPTS — ARP Table Size
+
+Maximum number of entries the kernel ARP cache can hold before eviction. Configurable on Linux via /proc/sys/net/ipv4/neigh/default/gc_thresh1-3. Undersized ARP tables cause packet loss in large Layer 2 segments with many hosts; oversized tables waste kernel memory. Monitor with ip neigh show and arp -n.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+
+---
+
+## ALSA — Advanced Linux Sound Architecture
+
+Kernel-level sound subsystem replacing OSS in Linux 2.6+. Provides device drivers for audio hardware, a user-space library (alsa-lib) for applications, and a plugin system for format conversion and resampling. ALSA uses device nodes under /dev/snd/ and exposes cards, PCM devices, and mixer controls.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## AIDE — Advanced Intrusion Detection Environment
+
+Host-based IDS that builds a database of file attributes (hashes, permissions, timestamps, inodes) at baseline and detects deviations on subsequent scans. Configured via aide.conf with include/exclude rules and attribute selectors. Commonly run via cron and used to detect unauthorized file modifications.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## ABEND — Abnormal End
+
+Term originating in IBM mainframe environments (OS/360) for a process termination caused by an unrecoverable error rather than a normal exit. Each ABEND carries a system or user completion code (e.g., S0C7 = data exception). The term persists in modern usage to describe any unexpected program crash.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## AVFS — A Virtual File System
+
+FUSE-based virtual filesystem allowing access to compressed and archive files (ZIP, TAR, GZ, BZ2) as if they were directories. Mounts archives transparently at ~/.avfs, enabling standard tools to read archive contents without explicit extraction. Used in file managers and shell scripts.
+
+**Difficulty:** Intermediate
+**Category:** OS

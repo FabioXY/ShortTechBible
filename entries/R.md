@@ -467,3 +467,140 @@ IETF signaling protocol (RFC 2205) used by hosts and routers to request and rese
 Companion protocol to RTP that provides out-of-band control and statistics for media streams. Sends RTCP packets (SR, RR, SDES, BYE, APP types) to report packet loss, jitter, and round-trip time. Used by VoIP and video conferencing systems (WebRTC, SIP) to monitor and adapt media quality.
 **Difficulty:** Advanced
 **Category:** Protocol
+
+
+---
+
+## REDIS — Redis Cache Server
+
+In-memory data structure server supporting strings, hashes, lists, sets, sorted sets, streams, and geospatial indexes. Persistence: RDB snapshots and AOF (append-only file). HA via Redis Sentinel; horizontal sharding via Redis Cluster. Commonly used for caching, session storage, pub/sub messaging, rate limiting, and distributed locks (Redlock algorithm).
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## REGEX — Regular Expression
+
+Formal language describing string patterns using metacharacters (., *, +, ?, [], {}, ^, $, |, ()). Implemented in virtually every programming language and tool (grep, sed, Perl, Python re, PCRE2). Two main engine types: NFA (backtracking, feature-rich) and DFA (linear time, no backtracking). ReDoS attacks exploit catastrophic backtracking in poorly written expressions.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## RSYNC — Remote Sync Utility
+
+Unix utility for fast, incremental file and directory synchronization over SSH or rsync daemon protocol. Uses a rolling checksum delta algorithm to transfer only changed file blocks. Preserves permissions, timestamps, symlinks, hardlinks, and ACLs. Key flags: -a (archive), -v (verbose), -z (compress), --delete (mirror), --dry-run (preview). Basis of many backup solutions.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## REALM — Kerberos Auth Realm
+
+Administrative domain in Kerberos containing users, services, and a KDC (Key Distribution Center). Realm names are uppercase by convention, typically matching the DNS domain (EXAMPLE.COM). Cross-realm trust allows principals from one realm to authenticate to services in another. Active Directory domains map one-to-one to Kerberos realms.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## RCLNE — Rclone Cloud Sync
+
+Command-line utility syncing and managing files between local storage and 40+ cloud providers (S3, GCS, Azure Blob, Backblaze B2, Dropbox, OneDrive, SFTP). Supports encrypted remotes, FUSE mounting, bandwidth throttling, server-side copy, and filtering. Used for multi-cloud backup, migration, and mounting S3 buckets as local filesystems.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## RTFCT — runc Container Runtime
+
+Low-level OCI container runtime implementing the OCI Runtime Specification. Spawns and manages container processes using Linux namespaces, cgroups v1/v2, and seccomp profiles. Used by Docker (via containerd), Kubernetes (via CRI-O or containerd), and Podman as the default underlying runtime. Alternative runtimes (gVisor, Kata Containers) implement the same OCI interface.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## RSTLS — Rustls TLS Library
+
+Modern TLS implementation in pure Rust without unsafe code. Implements TLS 1.2 and 1.3 with a focus on memory safety and correctness. No support for legacy protocols (SSL 3.0, TLS 1.0/1.1) or weak cipher suites by design. Used in Cloudflare infrastructure, Actix-web, and Hyper HTTP library. Growing adoption as a safer alternative to OpenSSL.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## RPCBM — RPC Bind Mapper
+
+Portmapper service (rpcbind) mapping ONC RPC program numbers to TCP/UDP ports. Clients query rpcbind (port 111) to discover which port a specific RPC service is listening on. Required for NFSv3, NIS, and other ONC RPC services. NFSv4 uses only port 2049 and does not require rpcbind, simplifying firewall rules for NFS.
+
+**Difficulty:** Intermediate
+**Category:** Protocol
+
+---
+
+## RPKID — RPKI Validation Daemon
+
+Software daemon implementing Resource Public Key Infrastructure for BGP route origin validation. Fetches Route Origin Authorizations (ROAs) from RPKI repositories, validates cryptographically, and exports Validated ROA Payloads to the BGP router via RTR protocol (RFC 8210). Implementations: Routinator (NLnet Labs), FORT, Cloudflare OctoRPKI.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## RTTMS — RTT Measurement
+
+Round-Trip Time: elapsed time between sending a packet and receiving its acknowledgment. Measured by ping (ICMP), traceroute, and TCP (SRTT — Smoothed RTT per connection). TCP uses RTT to calculate RTO (Retransmission Timeout): RTO = SRTT + 4*RTTVAR. High RTT reduces TCP throughput by limiting congestion window growth.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## ROOTF — Root Filesystem
+
+Top-level filesystem mounted at / in Unix/Linux systems. Contains essential directories: /bin, /sbin, /etc, /lib, /proc, /sys, /dev, /tmp, /var, /usr, /home. The kernel mounts it at boot from the device specified in the bootloader. Immutable rootfs (read-only root) is used in container images and embedded systems for security and reproducibility.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## RUSTP — Rust Language Toolchain
+
+Rust language ecosystem: Cargo (build system and package manager), crates.io (package registry), Cargo.toml (dependencies), Cargo.lock (reproducible builds). Rust's ownership and borrow checker prevents memory safety bugs at compile time: no use-after-free, no data races, no null pointer dereferences in safe code. Widely adopted for systems programming, WebAssembly, and CLI tools.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+
+---
+
+## RBASH — Restricted Bash
+
+Restricted variant of the Bash shell (invoked as rbash or bash -r) that limits the user's ability to change directories, set PATH/SHELL/HISTFILE, redirect output, and execute commands with slashes in their names. Used to create constrained shell environments for service accounts or shared systems. Escape vectors exist; not suitable as a security boundary without additional isolation.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## RPATH — Runtime Library Search Path
+
+ELF binary metadata field specifying directories the dynamic linker searches for shared libraries at runtime, before consulting LD_LIBRARY_PATH and /etc/ld.so.conf. Embedded at link time via -Wl,-rpath,/path. Useful for deploying applications with bundled libraries but can create security issues if writable paths are included. $ORIGIN substitution enables relative rpaths.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## RDTSC — Read Time Stamp Counter
+
+x86 instruction that reads the processor's Time Stamp Counter — a 64-bit counter incremented every clock cycle since reset. Used for high-resolution timing in benchmarks, profiling, and latency measurements. Modern CPUs provide a constant-rate TSC (invariant TSC) unaffected by frequency scaling. RDTSCP adds a memory fence and processor ID for serialized reads.
+
+**Difficulty:** Advanced
+**Category:** Hardware

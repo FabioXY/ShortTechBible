@@ -478,3 +478,131 @@ Channel or iSCSI fabrics.
 
 **Difficulty:** Intermediate
 **Category:** Hardware
+
+
+---
+
+## LINUX — Linux Kernel
+
+Open-source Unix-like monolithic kernel created by Linus Torvalds in 1991. Written in C with architecture-specific assembly. Key subsystems: CFS process scheduler, virtual memory manager, VFS (virtual file system), TCP/IP networking stack, Netfilter, device driver model, and eBPF runtime. Licensed under GPLv2. Basis of Android, embedded systems, and the majority of global server infrastructure.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## LBAAS — Load Balancer as a Service
+
+Cloud networking service providing on-demand load balancing without managing appliances. Examples: AWS ALB/NLB, Azure Load Balancer, GCP Cloud Load Balancing, OpenStack Octavia. Features: health checks, SSL termination, session persistence, autoscaling integration, and WAF attachment. Billed per hour and per gigabyte of processed traffic.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## LUSTRE — Lustre File System
+
+High-performance parallel distributed file system used in HPC. Architecture: Metadata Servers (MDS/MDT) handle namespace operations; Object Storage Servers (OSS/OST) handle data. Clients mount Lustre via kernel module, striping files across multiple OSTs for parallel I/O throughput reaching hundreds of GB/s. Used in the majority of top 500 supercomputers.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## LOGFM — Log Format Standard
+
+Specification defining the structure and fields of log output for a service or application. Common formats: Apache Combined Log Format, JSON structured logging, syslog RFC 5424, W3C Extended Log Format. Structured JSON logs are preferred in observability stacks (Loki, Splunk, Elasticsearch) for machine-readable field parsing and search.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## LOGRT — Log Rotation Config
+
+Process and configuration archiving current log files and creating new empty ones to prevent unlimited disk growth. Managed by logrotate on Linux (/etc/logrotate.d/). Rotation strategies: size-based, time-based (daily, weekly), or count-based. Signals (SIGHUP) reload daemons after rotation so they open new file descriptors on the new log file.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## LSYND — Lsyncd Live Sync
+
+Live Syncing Daemon watching directories using inotify (Linux) or kqueue (BSD) and triggering rsync on changes. Provides near-real-time file replication between servers with configurable delay batching to avoid excessive sync invocations during rapid file changes. Used for web content replication, active-active NFS alternatives, and incremental backup triggers.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## LSSOF — lsof File Inspector
+
+List Open Files: Unix/Linux diagnostic tool displaying all files (regular files, sockets, pipes, device nodes) opened by running processes. Used to find which process holds a lock, which ports are listening (lsof -i :443), and which deleted files are keeping disk space allocated. Key options: -p (by PID), -u (by user), -i (by network connection).
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## LTERM — Linux Terminal Emulator
+
+Graphical terminal emulator providing a command-line interface to the shell. Common emulators: GNOME Terminal, Konsole, Alacritty, WezTerm, xterm. Implement VT100/VT220/xterm escape sequences for cursor control, color (256-color, true color), and formatting. Session multiplexers (tmux, screen) add persistence, window management, and split panes.
+
+**Difficulty:** Base
+**Category:** OS
+
+---
+
+## LWIP — Lightweight IP Stack
+
+Open-source TCP/IP stack for embedded systems with severe memory constraints (tens of KB RAM). Implements IPv4/IPv6, TCP, UDP, DHCP, DNS, ICMP, SNMP, and PPP. Used in microcontrollers (STM32, ESP32, ESP8266) and RTOS environments (FreeRTOS+TCP, Zephyr). Configurable to trade feature completeness for memory footprint.
+
+**Difficulty:** Advanced
+**Category:** Hardware
+
+---
+
+## LOGLV — Log Level Hierarchy
+
+Severity classification for log messages controlling which messages are emitted and stored. Standard levels (syslog RFC 5424, lowest to highest severity): DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERG. Application frameworks (Log4j, Python logging, Winston) implement similar hierarchies. Production systems typically emit WARNING and above.
+
+**Difficulty:** Base
+**Category:** Dev
+
+---
+
+## LZONE — DNS Local Zone Override
+
+DNS zone configured on a resolver to override public DNS responses for specific domains with local records. Used for split-horizon DNS (returning internal IPs for internal queries), development overrides, and ad/malware blocking (RPZ — Response Policy Zones). Configured in BIND via zone blocks, Unbound via local-zone/local-data, or Pi-hole custom DNS entries.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+
+---
+
+## LLDB — Low Level Debugger
+
+Debugger developed by the LLVM project as a modern alternative to GDB. Supports C, C++, Objective-C, and Swift debugging with a consistent Python scripting API, structured data inspection, and expression evaluation using the Clang/LLVM infrastructure. Default debugger in Xcode. Provides memory and register inspection, breakpoints, watchpoints, and remote debugging via GDB server protocol.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## LKRG — Linux Kernel Runtime Guard
+
+Loadable kernel module implementing runtime integrity checking for the Linux kernel. Monitors kernel text, read-only data, and process credentials for unauthorized modifications. Detects rootkit techniques such as syscall table hijacking, function pointer overwriting, and privilege escalation attempts. Developed by the Openwall Project.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## LGTM — Looks Good To Me
+
+Code review approval signal used in pull request workflows to indicate a reviewer has inspected changes and approves merging. Popularized as text comment, later formalized in GitHub review approvals. Also the name of GitHub's now-retired static analysis platform (LGTM.com) based on CodeQL, replaced by GitHub Advanced Security.
+
+**Difficulty:** Base
+**Category:** Dev

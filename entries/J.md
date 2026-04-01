@@ -470,3 +470,149 @@ access controls, audit logging, and compartmentalization.
 Structured, append-only log format used in some messaging and replication systems (e.g. OmniTI's Jlog library) to provide durable, multi-subscriber log consumption. Subscribers maintain independent read positions; data is retained until all subscribers have consumed it. Used in Resmon and other monitoring infrastructure.
 **Difficulty:** Advanced
 **Category:** Dev
+
+
+---
+
+## JINJA — Jinja2 Template Engine
+
+Python templating engine used by Ansible, Flask, SaltStack, and many other tools. Syntax: {{ variable }}, {% for/if blocks %}, {# comments #}. Supports filters (| lower, | default), tests, macros, and template inheritance. Ansible uses Jinja2 for variable interpolation in playbooks and templates with a sandboxed execution mode.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JSONP — JSON with Padding
+
+Legacy cross-origin data request technique wrapping JSON in a callback function call: callbackFn({data}). Client includes a script tag pointing to the endpoint. Predates CORS standardization. Only supports GET requests and introduces XSS risks because the response is executed as JavaScript. Deprecated in favor of proper CORS headers.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JSONB — JSONB Binary Format
+
+PostgreSQL binary representation of JSON data providing more efficient storage and indexing than the text-based JSON type. Parses JSON into a decomposed binary format, discarding insignificant whitespace and last duplicate keys. Supports GIN indexes for fast containment (@>), key existence (?), and path queries using jsonpath expressions.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## JSONL — JSON Lines Format
+
+Text format where each line is a valid JSON object (also called NDJSON: Newline Delimited JSON). Enables streaming and line-by-line processing without loading the entire document. Used in log pipelines (Fluentd, Logstash), ML dataset storage, API streaming, and is compatible with Unix line-oriented tools (grep, awk, jq --raw-input).
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JCEKS — Java Crypto Extension Keystore
+
+Stronger alternative to JKS (Java KeyStore) providing Triple-DES encryption for private key entries instead of JKS's weak proprietary encryption. Used in Java applications storing TLS certificates, code signing keys, and symmetric secrets. Being superseded by PKCS#12 (.p12/.pfx) as the Java default keystore format since JDK 9.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## JFROG — JFrog DevOps Platform
+
+Enterprise DevOps platform providing universal artifact repository (Artifactory), security scanning (Xray), and distribution tools. Supports all major package formats: Maven, npm, Docker, Helm, PyPI, Conda, Debian, RPM. Central to binary management and software supply chain security, with integration into CI/CD pipelines for artifact promotion and vulnerability scanning.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JPATH — JSONPath Query
+
+Query language for JSON documents analogous to XPath for XML. Syntax: $ (root), .field (child), .. (recursive), [] (subscript/filter). Implementations: jmespath (AWS CLI, Ansible), jsonpath-ng (Python), jq. Used in Kubernetes admission webhooks, API Gateway request transformation, and log field extraction.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JVMTI — JVM Tool Interface
+
+Native API for monitoring and controlling JVM execution. Provides capabilities: heap iteration, stack sampling, class file transformation (Java agents), breakpoints, method entry/exit events, and GC callbacks. Used by profilers (YourKit, JProfiler, async-profiler), APM agents (Dynatrace, New Relic), and code coverage tools (JaCoCo).
+
+**Difficulty:** Advanced
+**Category:** Dev
+
+---
+
+## JWTKS — JWT Key Set
+
+JSON Web Key Set (RFC 7517): JSON structure containing public keys used to verify JWT signatures. Published at /.well-known/jwks.json by identity providers (Auth0, Keycloak, Okta, Azure AD). Clients fetch and cache the JWKS to validate ID tokens and access tokens locally without contacting the IdP for each request validation.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## JSSHA — JavaScript SHA Library
+
+JavaScript implementation of the SHA hash family (SHA-1, SHA-256, SHA-384, SHA-512, SHA-3) for browser and Node.js environments. Libraries: jsSHA, Node.js built-in crypto module, SubtleCrypto (Web Crypto API). Used for client-side integrity verification, HMAC generation, and digital signature operations in web applications.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## JSTAT — JVM Statistics Tool
+
+JDK command-line tool monitoring JVM performance statistics: heap usage by generation (young, old, metaspace), garbage collection counts and timing, class loading, and JIT compilation activity. Invoked as jstat -gcutil <pid> <interval> <count>. Used for GC tuning, memory leak detection, and heap sizing analysis alongside heap dump inspection.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JAEGER — Jaeger Distributed Tracing
+
+Open-source distributed tracing system (CNCF graduated) originally developed by Uber. Implements OpenTracing specification. Records request traces across microservices: spans with parent-child relationships, timing, tags, and logs. Storage backends: Elasticsearch, Cassandra, Badger. OpenTelemetry Collector can export traces to Jaeger via OTLP for vendor-neutral instrumentation.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+
+---
+
+## JBOSS — JBoss Application Server
+
+Open-source Java EE (Jakarta EE) application server developed by Red Hat, now rebranded as WildFly for the community edition. Provides EJB, JPA, CDI, JAX-RS, and JMS containers with hot deployment. JBoss EAP is the supported enterprise version. Uses a modular classloading architecture (JBoss Modules) to isolate deployment dependencies.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JDEPS — Java Dependencies Analyzer
+
+JDK command-line tool that analyzes class and JAR file dependencies, reporting which packages and modules each class depends on. Used to identify platform internal API usage (sun.misc.*), prepare applications for Java 9+ module system migration, and verify module boundary compliance. Output can be filtered by API type (JDK internal vs. public).
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JLINK — Java Linker
+
+JDK tool (introduced in Java 9) that creates custom, minimal JVM runtime images containing only the modules an application actually needs. The resulting image has no JRE overhead from unused modules, reducing footprint significantly for containerized deployments. Works with the Java module system (JPMS) and integrates with jpackage for native installers.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## JCMD — Java Command
+
+JDK diagnostic utility for sending commands to running JVM processes. Replaces multiple older tools (jstack, jmap, jinfo) with a unified interface. Supports heap dump generation, GC diagnostics, JFR recording start/stop, VM flags inspection, and thread dump output. Requires the same UID as the target JVM or root privileges.
+
+**Difficulty:** Intermediate
+**Category:** Dev

@@ -472,3 +472,140 @@ management and incident response readiness.
 Linux kernel testing infrastructure located in tools/testing/selftests/. Provides a standardized way to write and run userspace tests that exercise kernel subsystems (networking, memory, cgroups, BPF, etc.). Tests are run via make -C tools/testing/selftests run_tests and integrated into kernel CI pipelines.
 **Difficulty:** Advanced
 **Category:** OS
+
+
+---
+
+## KAFKA — Apache Kafka
+
+Distributed event streaming platform for high-throughput, fault-tolerant publish-subscribe messaging. Data organized into topics partitioned across brokers; consumers track offsets enabling replay. KRaft mode (KIP-500) removes ZooKeeper dependency. Used for event-driven architectures, change data capture (CDC), real-time analytics pipelines, and microservice decoupling.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## KIALI — Kiali Service Mesh Console
+
+Open-source observability console for Istio service mesh. Provides topology visualization, traffic flow graphs, health status, distributed tracing integration (Jaeger/Zipkin), and Istio configuration validation. Displays telemetry collected by Prometheus. Installed as an Istio addon or standalone via Helm chart; accessible via kubectl port-forward.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## KNFSD — Kernel NFS Daemon
+
+Linux kernel-space NFS server providing higher performance than user-space alternatives. Runs as kernel threads (nfsd, lockd, mountd). Configured via /etc/exports and managed with exportfs, nfsstat, and rpcinfo. Supports NFSv3, NFSv4, and NFSv4.1 (pNFS). NFS over RDMA (NFSoRDMA) available since kernel 4.20 for low-latency storage networks.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## KIBNA — Kibana Dashboard
+
+Elasticsearch's visualization and exploration platform (part of Elastic Stack). Provides Discover (log search), Dashboard (metric panels), Lens (visual editor), and Maps (geo visualization). Integrates with Elastic APM, Security (SIEM), and Observability solutions. Configures index patterns, saved searches, alerting rules, and Canvas presentations.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## KSMEM — KSM Memory Merging
+
+Kernel Samepage Merging: Linux feature scanning memory pages across processes and merging identical pages into a single copy-on-write page. Reduces memory consumption in KVM virtualization environments where multiple VMs run the same OS image. Controlled via /sys/kernel/mm/ksm/. Disabled for security-sensitive workloads to prevent side-channel timing attacks.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## KRBTG — Kerberos TGT Ticket
+
+Kerberos Ticket Granting Ticket issued by the Authentication Service (AS) after successful initial authentication. Allows the client to request service tickets from the Ticket Granting Service (TGS) without re-authenticating. Default lifetime: 10 hours (renewable up to 7 days). Golden Ticket attacks forge TGTs by compromising the krbtgt account's NTLM hash.
+
+**Difficulty:** Advanced
+**Category:** Security
+
+---
+
+## KYVNO — Kyverno Policy Engine
+
+Kubernetes-native policy engine validating, mutating, and generating Kubernetes resources using declarative YAML policies without Rego. Enforces Pod Security Standards, auto-injects labels and annotations, generates ConfigMaps from templates, and verifies container image signatures (Cosign, Notary v2). CNCF incubating project with active adoption in GitOps pipelines.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## KPROB — Kprobe Kernel Tracing
+
+Linux kernel dynamic tracing mechanism placing breakpoints at arbitrary kernel function entry and return points without recompiling the kernel. Accessed via /sys/kernel/debug/kprobes/ or eBPF kprobe programs. Used for performance analysis, kernel code path debugging, and security monitoring of kernel function invocations in production systems.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## KPACK — Kubernetes Buildpack
+
+CNCF project (kpack) implementing Cloud Native Buildpacks on Kubernetes. Automatically builds OCI container images from source code without Dockerfiles. Triggered by source code changes or buildpack updates; rebuilt images are pushed to a registry. Used in enterprise developer platforms (VMware Tanzu, Paketo) for secure, opinionated image builds.
+
+**Difficulty:** Advanced
+**Category:** Cloud
+
+---
+
+## KVLOG — Key-Value Log
+
+Append-only log format storing entries as key-value pairs, enabling efficient key lookup and chronological replay. Used in Kafka (topic-compacted logs), etcd (MVCC key history), and LSM-tree databases (LevelDB, RocksDB) as the write path before compaction into sorted string tables (SSTables). Provides durability and ordered event history in distributed systems.
+
+**Difficulty:** Intermediate
+**Category:** Database
+
+---
+
+## KVERS — Kernel Version String
+
+String identifying the specific version of the OS kernel. On Linux: uname -r returns major.minor.patch-build-arch (e.g. 6.8.0-45-generic). Critical for module compatibility, security patch verification, and feature availability checks in automation scripts. Linux follows time-based rolling releases; distributions maintain separate versioning schemes with backported patches.
+
+**Difficulty:** Base
+**Category:** OS
+
+
+---
+
+## KASAN — Kernel Address Sanitizer
+
+Dynamic memory error detector for the Linux kernel. Instruments memory accesses at compile time to detect out-of-bounds reads/writes and use-after-free bugs in kernel code. Uses shadow memory (1 byte per 8 bytes of kernel memory) to track valid access ranges. KASAN reports with full stack traces. Available in generic (slow) and SW/HW tag-based (faster) modes.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## KCSAN — Kernel Concurrency Sanitizer
+
+Dynamic race condition detector for the Linux kernel using compile-time instrumentation to detect data races on shared kernel memory. When two concurrent accesses to the same memory location occur without proper synchronization (and at least one is a write), KCSAN reports the race with stack traces for both threads. Replaces KTSAN for mainline use.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## KFENCE — Kernel Electric Fence
+
+Low-overhead kernel memory safety detector (Linux 5.12+) designed for production use. Samples a small fraction of kernel allocations into a guarded memory pool where each allocation is surrounded by guard pages. Page faults on guard pages immediately detect out-of-bounds accesses. Negligible performance impact compared to KASAN.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## KSMBD — Kernel SMB Daemon
+
+In-kernel SMB3 server implementation (Linux 5.15+) providing file sharing without a userspace daemon overhead. Processes SMB2/3 requests directly in kernel context for lower latency and higher throughput than Samba's userspace approach. Managed via ksmbd-tools (ksmbd.adduser, ksmbd.addshare). Still considered experimental for production use by many distributions.
+
+**Difficulty:** Advanced
+**Category:** OS

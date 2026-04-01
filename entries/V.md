@@ -445,3 +445,95 @@ Layer 2 network segmentation technique defined by IEEE 802.1Q. Tags Ethernet fra
 Distributed database layer used in some SDN controllers and network virtualization platforms to replicate VXLAN tunnel endpoint tables and overlay network state across controller cluster nodes. Ensures consistent forwarding tables without a single point of failure.
 **Difficulty:** Advanced
 **Category:** Database
+
+
+---
+
+## VAULT — HashiCorp Vault
+
+Secrets management platform providing centralized storage, access control, dynamic credential generation, and encryption-as-a-service. Secret engines: KV (static secrets), PKI (certificate issuance), AWS/GCP/Azure (dynamic cloud credentials), database (dynamic DB credentials). Auth methods: AppRole, Kubernetes, AWS IAM, LDAP. Key rotation and lease expiry enforce least-privilege access.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## VIRSH — Virsh KVM CLI
+
+Command-line interface for managing KVM/QEMU virtual machines and libvirt resources. Key commands: virsh list --all, virsh start/shutdown/destroy, virsh console, virsh snapshot-create-as, virsh edit (XML), virsh dumpxml, virsh pool-list, virsh net-list. Scriptable via bash; pairs with virt-install for VM provisioning and virt-clone for cloning.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## VCNTR — vCenter Management
+
+VMware vCenter Server: centralized management platform for vSphere environments. Manages ESXi hosts, VMs, clusters, distributed switches, storage, and vSAN via web UI and REST API. Core features: vMotion (live VM migration), DRS (Distributed Resource Scheduler), HA (automatic VM restart), and lifecycle management. Deployed as vCSA (Linux appliance) since vSphere 7.0.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## VELRO — Velero Kubernetes Backup
+
+Open-source Kubernetes backup and restore tool (formerly Heptio Ark). Backs up Kubernetes resource definitions (from API server) and persistent volume data (via Restic/Kopia or CSI snapshots) to object storage (S3, GCS, Azure Blob). Supports cluster migration, DR, and namespace-level restore. Schedule CRDs automate recurring backup jobs.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## VMBKP — VM Backup Strategy
+
+Process creating consistent copies of VM state (disk images, configuration) for recovery. Methods: agent-based (Veeam agent inside VM), agentless (VMware VADP snapshot-based), image-level (qemu-img, AWS Backup). Consistency: VSS quiescing (Windows) or fsfreeze (Linux) during snapshot to avoid filesystem inconsistency in the backup image.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## VPCRT — VPC Route Table
+
+Cloud routing construct defining traffic direction within a VPC subnet. Each subnet associates with one route table; each route has a destination CIDR and a target (internet gateway, NAT gateway, VPC peering, transit gateway, VPN, or local). Most-specific route wins. Separate route tables for public (IGW route) and private (NAT GW route) subnets enforce network segmentation.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+---
+
+## VSFTD — vsftpd FTP Daemon
+
+Very Secure FTP Daemon: lightweight, security-focused FTP server for Linux. Supports virtual users, SSL/TLS (FTPS via ssl_enable=YES), IPv6, bandwidth throttling, and chroot jailing of users to home directories. Configuration: /etc/vsftpd.conf. Passive mode requires pasv_min/max_port range and matching firewall rules to allow data connections.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## VTUND — VTun VPN Daemon
+
+Open-source VPN daemon creating virtual tunnel interfaces (tun/tap) over TCP or UDP. Supports LZO/zlib compression and bandwidth shaping. Earlier alternative to OpenVPN; less maintained but found in legacy network appliances and embedded Linux VPN implementations where a simple tunnel without PKI complexity is sufficient.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## VXRMD — VXLAN Remote MAC DB
+
+Database of MAC address entries learned for remote VTEPs in a VXLAN overlay, populated via BGP EVPN control plane or flood-and-learn data plane. When a frame targets a remote MAC, the local VTEP encapsulates it and forwards to the corresponding remote VTEP IP. Inspectable via bridge fdb show on Linux VXLAN interfaces.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+
+---
+
+## VBOX — VirtualBox
+
+Open-source x86/AMD64 hypervisor (Type 2) developed by Oracle. Supports Windows, Linux, macOS, and Solaris guests with hardware virtualization (VT-x/AMD-V), paravirtualization (VirtIO, Hyper-V interface), snapshots, linked clones, NAT/bridged/internal networking, shared folders via Guest Additions, and a headless mode. Free for personal use; PUEL license for enterprise extensions.
+
+**Difficulty:** Base
+**Category:** Cloud

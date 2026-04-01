@@ -340,3 +340,131 @@ Raw access layer of the BPF kernel subsystem, providing a VM-based packet filter
 Cloud encryption model where the customer generates and controls the master encryption key rather than relying on the provider's managed keys. Keys are stored in a customer-managed HSM or KMS (e.g. AWS CloudHSM, Azure Key Vault) and imported into the cloud service. Revocation immediately renders encrypted data inaccessible.
 **Difficulty:** Intermediate
 **Category:** Security
+
+
+---
+
+## BSSID — Basic Service Set Identifier
+
+48-bit MAC address uniquely identifying a specific access point radio in a Wi-Fi network. Unlike the SSID (human-readable name), the BSSID identifies the physical radio interface and is broadcast in Beacon frames. Used by clients to associate with a specific AP in multi-AP deployments and roaming decisions.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## BPFCC — BPF Compiler Collection
+
+Toolkit (bcc) providing Python and Lua frontends for writing eBPF programs without directly authoring BPF bytecode. Includes ready-made tools: execsnoop, opensnoop, tcptracer, biolatency, and profile. Used for Linux kernel observability, performance analysis, and security monitoring without kernel module development.
+
+**Difficulty:** Advanced
+**Category:** OS
+
+---
+
+## BCAST — Broadcast Address
+
+Network transmission targeting all hosts on a segment simultaneously. In IPv4, the directed broadcast address is the highest address in the subnet (e.g. 192.168.1.255/24). Limited broadcast (255.255.255.255) is not forwarded by routers. IPv6 eliminates broadcast entirely in favor of multicast and anycast.
+
+**Difficulty:** Base
+**Category:** Networking
+
+---
+
+## BGPLS — BGP Link State
+
+BGP extension (RFC 7752) distributing network topology information from IGPs (OSPF, IS-IS) to external BGP peers. Enables SDN controllers (OpenDaylight, ONOS) to build a complete topology graph without running an IGP themselves. Used in traffic engineering, segment routing, and PCE-based path computation.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## BITLK — BitLocker Disk Encryption
+
+Full-disk encryption feature in Windows using AES-CBC or AES-XTS (128 or 256-bit). Keys stored in TPM 2.0, optionally combined with PIN or USB startup key. Also refers to the Linux kernel driver (bitlk in cryptsetup) for reading BitLocker-encrypted volumes. Managed via Group Policy, MBAM, or Microsoft Intune in enterprise deployments.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## BRCTL — Bridge Control Utility
+
+Linux command-line utility managing Ethernet bridges (software Layer 2 switches). Creates bridges (brctl addbr), adds interfaces (brctl addif), and displays STP state (brctl showstp). Deprecated in favor of ip link and bridge commands in iproute2 but still widely referenced in documentation and older scripts.
+
+**Difficulty:** Intermediate
+**Category:** Networking
+
+---
+
+## BYOID — Bring Your Own Identity
+
+Identity federation model allowing users to authenticate with their existing identity provider (Google, Microsoft, Apple, corporate IdP) rather than creating new credentials. Implemented via OIDC or SAML 2.0. Reduces password fatigue and centralizes credential management at the user's home IdP.
+
+**Difficulty:** Intermediate
+**Category:** Security
+
+---
+
+## BUFIO — Buffered I/O
+
+I/O model accumulating reads and writes in a memory buffer before flushing to the underlying device or socket. Reduces system call overhead by batching small operations. Implemented via stdio (fread/fwrite in C), BufferedReader/Writer in Java, bufio package in Go, and the kernel page cache for file I/O.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## BRKPT — Breakpoint Debug
+
+Intentional pause point in a program's execution set by a debugger. When reached, the process suspends and control returns to the debugger (gdb, lldb, WinDbg), allowing inspection of registers, memory, and call stack. Software breakpoints use INT 3 (0xCC) on x86; hardware breakpoints use debug registers (DR0-DR3) without modifying code.
+
+**Difficulty:** Intermediate
+**Category:** Dev
+
+---
+
+## BYODB — Bring Your Own Database
+
+Enterprise IT policy allowing teams or developers to select and operate their preferred database engine rather than a centrally mandated platform. Increases agility but introduces challenges in DBA support, backup standardization, security auditing, and licensing compliance across heterogeneous database landscapes.
+
+**Difficulty:** Intermediate
+**Category:** Cloud
+
+
+---
+
+## BTRFS — B-Tree File System
+
+Copy-on-write filesystem for Linux built on B-tree data structures. Supports transparent compression (zstd, lzo, zlib), inline checksums for data and metadata, snapshots, subvolumes, RAID 0/1/10/5/6, and online defragmentation. The CoW design prevents torn writes but requires careful RAID configuration for data integrity.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## BURP — Backup and Restore Program
+
+Open-source network backup system using librsync for efficient delta transfers. The burp server manages client schedules, retention policies, and storage pools. Supports Windows and Linux clients with strong encryption (TLS) and deduplication. Often confused with the Burp Suite web proxy—completely unrelated.
+
+**Difficulty:** Intermediate
+**Category:** OS
+
+---
+
+## BIGIP — Big-IP Platform
+
+F5 Networks application delivery platform combining load balancing, SSL offload, WAF, and application acceleration in hardware/software appliances. Managed via TMOS (Traffic Management Operating System), iRules (TCL-based traffic scripting), and iApps templates. Widely deployed in enterprise and cloud environments.
+
+**Difficulty:** Advanced
+**Category:** Networking
+
+---
+
+## BCRYPT — Blowfish Crypt
+
+Password hashing function based on the Blowfish cipher, designed by Niels Provos and David Mazières. Incorporates a cost factor (work factor) that controls iteration count, making brute-force attacks progressively more expensive as hardware improves. Stores the salt embedded in the hash string. Standard in most web application stacks.
+
+**Difficulty:** Intermediate
+**Category:** Security
