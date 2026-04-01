@@ -321,6 +321,118 @@ const ACRONYMS_DATA = [
     "letter": "A"
   },
   {
+    "acronym": "ADLDS",
+    "full_name": "Active Directory Lightweight Directory Services",
+    "description": "Standalone LDAP-compatible directory service in Windows Server running without a full AD domain. Provides application-specific directory data without Domain Controller infrastructure. Used by applications like Exchange and SharePoint for schema-isolated directory partitions. Managed via dsdbutil and Active Directory Sites and Services.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "A"
+  },
+  {
+    "acronym": "APIPA",
+    "full_name": "Automatic Private IP Addressing",
+    "description": "Windows and Linux fallback mechanism (RFC 3927) assigning a self-configured 169.254.x.x/16 address when DHCP is unavailable. Allows link-local communication between hosts on the same segment without a DHCP server. APIPA addresses are non-routable and their presence indicates DHCP failure during diagnostics.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "A"
+  },
+  {
+    "acronym": "ASPNET",
+    "full_name": "ASP.NET Framework",
+    "description": "Microsoft web application framework built on the .NET runtime. Supports MVC, Web API, Razor Pages, and SignalR. ASP.NET Core (cross-platform successor) runs on Linux, macOS, and Windows with built-in dependency injection and a middleware pipeline. NuGet package manager handles dependencies; Kestrel is the built-in HTTP server.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "A"
+  },
+  {
+    "acronym": "ATAPI",
+    "full_name": "AT Attachment Packet Interface",
+    "description": "Extension of the ATA (IDE) interface allowing non-disk devices (CD-ROM, DVD, tape drives) to connect via the same ribbon cable and protocol. Uses SCSI command packets encapsulated over the ATA bus. Superseded by SATA with ATAPI tunneling support (SATA Packet Interface). Still referenced in optical drive and legacy hardware documentation.",
+    "difficulty": "Intermediate",
+    "category": "Hardware",
+    "letter": "A"
+  },
+  {
+    "acronym": "AXFR",
+    "full_name": "DNS Zone Transfer Full",
+    "description": "DNS operation (query type AXFR) transferring an entire zone from a primary to a secondary name server over TCP port 53. Initiated by the secondary server. Should be restricted to authorized secondary IPs via ACL or TSIG authentication to prevent zone enumeration by attackers.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "A"
+  },
+  {
+    "acronym": "AIOPS",
+    "full_name": "AIOps Platform",
+    "description": "Application of artificial intelligence and machine learning to IT operations. Aggregates data from monitoring, logs, events, and metrics to automate anomaly detection, root cause analysis, and incident correlation. Platforms include Moogsoft, BigPanda, Dynatrace Davis AI, and IBM Watson AIOps. Reduces MTTA and MTTR by correlating related alerts automatically.",
+    "difficulty": "Advanced",
+    "category": "AI",
+    "letter": "A"
+  },
+  {
+    "acronym": "AUTHZ",
+    "full_name": "Authorization Token",
+    "description": "Short form of authorization: the process of determining what actions an authenticated identity is permitted to perform. Distinguished from AuthN (authentication). Implemented via RBAC, ABAC, policy engines (OPA, Cedar), and OAuth 2.0 scopes in modern identity-aware systems. Typically represented as claims in JWT tokens.",
+    "difficulty": "Base",
+    "category": "Security",
+    "letter": "A"
+  },
+  {
+    "acronym": "AUTHN",
+    "full_name": "Authentication Method",
+    "description": "Short form of authentication: verifying the identity of a user, device, or service. Methods include passwords, X.509 certificates (mTLS), biometrics, hardware tokens (FIDO2), and federated SSO assertions. Precedes Authorization (AuthZ) in the AAA security model. Multi-factor authentication (MFA) combines two or more independent AuthN factors.",
+    "difficulty": "Base",
+    "category": "Security",
+    "letter": "A"
+  },
+  {
+    "acronym": "ASNDB",
+    "full_name": "Autonomous System Number Database",
+    "description": "Repository mapping Autonomous System Numbers (ASNs) to registered organizations, country, and IP prefix ranges. Maintained by ARIN, RIPE, APNIC, and aggregators like CAIDA, MaxMind, and IPinfo. Used for geolocation, traffic attribution, BGP policy enforcement, and abuse contact lookup during incident response.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "A"
+  },
+  {
+    "acronym": "ARPTS",
+    "full_name": "ARP Table Size",
+    "description": "Maximum number of entries the kernel ARP cache can hold before eviction. Configurable on Linux via /proc/sys/net/ipv4/neigh/default/gc_thresh1-3. Undersized ARP tables cause packet loss in large Layer 2 segments with many hosts; oversized tables waste kernel memory. Monitor with ip neigh show and arp -n.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "A"
+  },
+  {
+    "acronym": "ALSA",
+    "full_name": "Advanced Linux Sound Architecture",
+    "description": "Kernel-level sound subsystem replacing OSS in Linux 2.6+. Provides device drivers for audio hardware, a user-space library (alsa-lib) for applications, and a plugin system for format conversion and resampling. ALSA uses device nodes under /dev/snd/ and exposes cards, PCM devices, and mixer controls.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "A"
+  },
+  {
+    "acronym": "AIDE",
+    "full_name": "Advanced Intrusion Detection Environment",
+    "description": "Host-based IDS that builds a database of file attributes (hashes, permissions, timestamps, inodes) at baseline and detects deviations on subsequent scans. Configured via aide.conf with include/exclude rules and attribute selectors. Commonly run via cron and used to detect unauthorized file modifications.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "A"
+  },
+  {
+    "acronym": "ABEND",
+    "full_name": "Abnormal End",
+    "description": "Term originating in IBM mainframe environments (OS/360) for a process termination caused by an unrecoverable error rather than a normal exit. Each ABEND carries a system or user completion code (e.g., S0C7 = data exception). The term persists in modern usage to describe any unexpected program crash.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "A"
+  },
+  {
+    "acronym": "AVFS",
+    "full_name": "A Virtual File System",
+    "description": "FUSE-based virtual filesystem allowing access to compressed and archive files (ZIP, TAR, GZ, BZ2) as if they were directories. Mounts archives transparently at ~/.avfs, enabling standard tools to read archive contents without explicit extraction. Used in file managers and shell scripts.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "A"
+  },
+  {
     "acronym": "BAAS",
     "full_name": "Backend as a Service",
     "description": "A cloud model that provides developers with pre-built backend infrastructure (authentication, databases, file storage, push notifications, APIs) accessible via SDKs, eliminating the need to manage servers. Examples include Firebase, AWS Amplify, and Supabase. BaaS accelerates mobile and web app development at the cost of vendor lock-in.",
@@ -633,6 +745,118 @@ const ACRONYMS_DATA = [
     "letter": "B"
   },
   {
+    "acronym": "BSSID",
+    "full_name": "Basic Service Set Identifier",
+    "description": "48-bit MAC address uniquely identifying a specific access point radio in a Wi-Fi network. Unlike the SSID (human-readable name), the BSSID identifies the physical radio interface and is broadcast in Beacon frames. Used by clients to associate with a specific AP in multi-AP deployments and roaming decisions.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "B"
+  },
+  {
+    "acronym": "BPFCC",
+    "full_name": "BPF Compiler Collection",
+    "description": "Toolkit (bcc) providing Python and Lua frontends for writing eBPF programs without directly authoring BPF bytecode. Includes ready-made tools: execsnoop, opensnoop, tcptracer, biolatency, and profile. Used for Linux kernel observability, performance analysis, and security monitoring without kernel module development.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "B"
+  },
+  {
+    "acronym": "BCAST",
+    "full_name": "Broadcast Address",
+    "description": "Network transmission targeting all hosts on a segment simultaneously. In IPv4, the directed broadcast address is the highest address in the subnet (e.g. 192.168.1.255/24). Limited broadcast (255.255.255.255) is not forwarded by routers. IPv6 eliminates broadcast entirely in favor of multicast and anycast.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "B"
+  },
+  {
+    "acronym": "BGPLS",
+    "full_name": "BGP Link State",
+    "description": "BGP extension (RFC 7752) distributing network topology information from IGPs (OSPF, IS-IS) to external BGP peers. Enables SDN controllers (OpenDaylight, ONOS) to build a complete topology graph without running an IGP themselves. Used in traffic engineering, segment routing, and PCE-based path computation.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "B"
+  },
+  {
+    "acronym": "BITLK",
+    "full_name": "BitLocker Disk Encryption",
+    "description": "Full-disk encryption feature in Windows using AES-CBC or AES-XTS (128 or 256-bit). Keys stored in TPM 2.0, optionally combined with PIN or USB startup key. Also refers to the Linux kernel driver (bitlk in cryptsetup) for reading BitLocker-encrypted volumes. Managed via Group Policy, MBAM, or Microsoft Intune in enterprise deployments.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "B"
+  },
+  {
+    "acronym": "BRCTL",
+    "full_name": "Bridge Control Utility",
+    "description": "Linux command-line utility managing Ethernet bridges (software Layer 2 switches). Creates bridges (brctl addbr), adds interfaces (brctl addif), and displays STP state (brctl showstp). Deprecated in favor of ip link and bridge commands in iproute2 but still widely referenced in documentation and older scripts.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "B"
+  },
+  {
+    "acronym": "BYOID",
+    "full_name": "Bring Your Own Identity",
+    "description": "Identity federation model allowing users to authenticate with their existing identity provider (Google, Microsoft, Apple, corporate IdP) rather than creating new credentials. Implemented via OIDC or SAML 2.0. Reduces password fatigue and centralizes credential management at the user's home IdP.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "B"
+  },
+  {
+    "acronym": "BUFIO",
+    "full_name": "Buffered I/O",
+    "description": "I/O model accumulating reads and writes in a memory buffer before flushing to the underlying device or socket. Reduces system call overhead by batching small operations. Implemented via stdio (fread/fwrite in C), BufferedReader/Writer in Java, bufio package in Go, and the kernel page cache for file I/O.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "B"
+  },
+  {
+    "acronym": "BRKPT",
+    "full_name": "Breakpoint Debug",
+    "description": "Intentional pause point in a program's execution set by a debugger. When reached, the process suspends and control returns to the debugger (gdb, lldb, WinDbg), allowing inspection of registers, memory, and call stack. Software breakpoints use INT 3 (0xCC) on x86; hardware breakpoints use debug registers (DR0-DR3) without modifying code.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "B"
+  },
+  {
+    "acronym": "BYODB",
+    "full_name": "Bring Your Own Database",
+    "description": "Enterprise IT policy allowing teams or developers to select and operate their preferred database engine rather than a centrally mandated platform. Increases agility but introduces challenges in DBA support, backup standardization, security auditing, and licensing compliance across heterogeneous database landscapes.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "B"
+  },
+  {
+    "acronym": "BTRFS",
+    "full_name": "B-Tree File System",
+    "description": "Copy-on-write filesystem for Linux built on B-tree data structures. Supports transparent compression (zstd, lzo, zlib), inline checksums for data and metadata, snapshots, subvolumes, RAID 0/1/10/5/6, and online defragmentation. The CoW design prevents torn writes but requires careful RAID configuration for data integrity.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "B"
+  },
+  {
+    "acronym": "BURP",
+    "full_name": "Backup and Restore Program",
+    "description": "Open-source network backup system using librsync for efficient delta transfers. The burp server manages client schedules, retention policies, and storage pools. Supports Windows and Linux clients with strong encryption (TLS) and deduplication. Often confused with the Burp Suite web proxy—completely unrelated.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "B"
+  },
+  {
+    "acronym": "BIGIP",
+    "full_name": "Big-IP Platform",
+    "description": "F5 Networks application delivery platform combining load balancing, SSL offload, WAF, and application acceleration in hardware/software appliances. Managed via TMOS (Traffic Management Operating System), iRules (TCL-based traffic scripting), and iApps templates. Widely deployed in enterprise and cloud environments.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "B"
+  },
+  {
+    "acronym": "BCRYPT",
+    "full_name": "Blowfish Crypt",
+    "description": "Password hashing function based on the Blowfish cipher, designed by Niels Provos and David Mazières. Incorporates a cost factor (work factor) that controls iteration count, making brute-force attacks progressively more expensive as hardware improves. Stores the salt embedded in the hash string. Standard in most web application stacks.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "B"
+  },
+  {
     "acronym": "CAP",
     "full_name": "Consistency, Availability, Partition tolerance",
     "description": "A theorem formulated by Eric Brewer stating that a distributed system can guarantee at most two of three properties simultaneously: Consistency (every read receives the most recent write), Availability (every request receives a non-error response), and Partition tolerance (the system continues operating despite network partitions). Real distributed systems must handle partitions, so the real trade-off is C vs A.",
@@ -910,6 +1134,110 @@ const ACRONYMS_DATA = [
     "description": "HTTP response header that isolates a browsing context from cross-origin documents, preventing cross-window access via window.opener. Required alongside COEP to enable SharedArrayBuffer and high-resolution timers in browsers (mitigating Spectre-class timing attacks). Values: same-origin, same-origin-allow-popups, unsafe-none.",
     "difficulty": "Advanced",
     "category": "Security",
+    "letter": "C"
+  },
+  {
+    "acronym": "CAPEX",
+    "full_name": "Capital Expenditure",
+    "description": "One-time investment for purchasing and deploying owned IT assets (servers, licenses, networking hardware). Contrasted with OPEX (operational expenditure), which covers recurring costs. Cloud computing shifts IT spending from CAPEX to OPEX by replacing owned hardware with subscription-based, on-demand services billed by consumption.",
+    "difficulty": "Base",
+    "category": "Cloud",
+    "letter": "C"
+  },
+  {
+    "acronym": "CFSSL",
+    "full_name": "Cloudflare SSL Toolkit",
+    "description": "Open-source PKI toolkit from Cloudflare for generating, signing, and managing TLS certificates. Includes a JSON API server, CLI, and certificate bundler. Used to build internal CAs and issue short-lived certificates. Often deployed alongside HashiCorp Vault PKI secrets engine in zero-trust certificate automation pipelines.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "C"
+  },
+  {
+    "acronym": "CMDB",
+    "full_name": "Configuration Management DB",
+    "description": "Repository storing structured records of IT assets (configuration items) and their relationships. Central component of ITIL service management. Populated by discovery tools (ServiceNow Discovery, Lansweeper), used by change management, incident management, and infrastructure automation workflows to maintain accurate asset inventory.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "C"
+  },
+  {
+    "acronym": "CSIRT",
+    "full_name": "Computer Security Incident Team",
+    "description": "Organized group responsible for receiving, analyzing, and responding to cybersecurity incidents. Coordinates containment, eradication, recovery, and post-incident review. Distinguished from SOC (ongoing monitoring) by its incident-focused mandate. PSIRTs (Product Security Incident Response Teams) handle vendor-specific vulnerability disclosures.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "C"
+  },
+  {
+    "acronym": "COBIT",
+    "full_name": "Control Objectives for IT",
+    "description": "ISACA framework for IT governance and management defining 40 governance and management objectives across five domains: EDM, APO, BAI, DSS, and MEA. Used for audit, compliance, and IT governance maturity assessments. Aligns IT strategy with business goals and provides metrics for measuring IT process performance.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "C"
+  },
+  {
+    "acronym": "CRTSH",
+    "full_name": "Certificate Transparency Search",
+    "description": "Web interface and API (crt.sh) operated by Sectigo for querying Certificate Transparency logs. Returns all publicly logged TLS certificates for a given domain, including wildcards and subdomains. Used for attack surface discovery, phishing detection, subdomain enumeration, and certificate lifecycle auditing in security assessments.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "C"
+  },
+  {
+    "acronym": "CHAOS",
+    "full_name": "Chaos Engineering",
+    "description": "Discipline of intentionally injecting failures into production systems to build confidence in resilience. Popularized by Netflix (Chaos Monkey). Principles: define steady state, hypothesize it continues, introduce variables (instance failure, latency, network partition), observe deviations. Tooling: Chaos Monkey, Litmus, Gremlin, AWS Fault Injection Simulator.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "C"
+  },
+  {
+    "acronym": "CLOAD",
+    "full_name": "Container Resource Load",
+    "description": "Aggregate resource demand (CPU millicores, memory bytes) of containers running on a Kubernetes node. Used by the scheduler to balance workloads across nodes. Defined in resource requests (scheduling guarantee) and limits (enforced ceiling) per container. High CPU load triggers throttling; memory overcommit triggers OOM killer.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "C"
+  },
+  {
+    "acronym": "CBWFQ",
+    "full_name": "Class-Based Weighted Fair Queue",
+    "description": "Cisco QoS queuing mechanism dividing traffic into user-defined classes and allocating guaranteed minimum bandwidth using weighted fair queuing. Extends WFQ with explicit class definitions via MQC (Modular QoS CLI). Typically combined with LLQ (Low Latency Queue) to provide strict priority for voice traffic while protecting data classes.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "C"
+  },
+  {
+    "acronym": "COAP",
+    "full_name": "Constrained Application Protocol",
+    "description": "UDP-based application protocol (RFC 7252) for constrained devices (IoT sensors, microcontrollers) with limited CPU and memory. Mirrors REST semantics (GET/PUT/POST/DELETE) over a binary framing format. Supports confirmable messages with retransmission, multicast, and optional DTLS security. Proxy-capable for HTTP interoperability.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "C"
+  },
+  {
+    "acronym": "CHAP",
+    "full_name": "Challenge Handshake Authentication Protocol",
+    "description": "Authentication protocol (RFC 1994) using a three-way handshake: server sends a random challenge, client responds with MD5(challenge + shared secret), server verifies. Used in PPP and iSCSI. Avoids sending passwords in clear text but depends on MD5, making it vulnerable to offline dictionary attacks. MS-CHAPv2 extends it for Windows environments.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "C"
+  },
+  {
+    "acronym": "CTDB",
+    "full_name": "Clustered Trivial Database",
+    "description": "Distributed database layer used by Samba to share TDB (Trivial Database) state across cluster nodes. Provides a virtual IP failover mechanism, node health monitoring, and lock synchronization for file serving in high-availability NAS clusters. Required for clustered Samba deployments serving SMB clients.",
+    "difficulty": "Advanced",
+    "category": "Database",
+    "letter": "C"
+  },
+  {
+    "acronym": "CGRP",
+    "full_name": "Control Group",
+    "description": "Linux kernel mechanism (cgroups) for organizing processes into hierarchical groups and applying resource limits (CPU, memory, I/O, network). cgroups v2 uses a unified hierarchy under /sys/fs/cgroup/. Used by systemd, Docker, Kubernetes, and any container runtime to enforce per-container resource isolation.",
+    "difficulty": "Intermediate",
+    "category": "OS",
     "letter": "C"
   },
   {
@@ -1214,6 +1542,110 @@ const ACRONYMS_DATA = [
     "description": "NAT variant that rewrites the destination IP address (and optionally port) of incoming packets. Used to forward external traffic to an internal server (port forwarding). Implemented in iptables via the DNAT target in the PREROUTING chain, or in nftables with dnat to. The inverse of SNAT.",
     "difficulty": "Intermediate",
     "category": "Networking",
+    "letter": "D"
+  },
+  {
+    "acronym": "DACL",
+    "full_name": "Discretionary Access Control List",
+    "description": "Component of a Windows security descriptor specifying which users and groups are allowed or denied access to a securable object (file, registry key, service, process). Controlled by the object owner. Distinguished from SACL (System ACL, used for auditing). Managed via icacls, Get-Acl/Set-Acl, or the Security tab in Windows Explorer.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "D"
+  },
+  {
+    "acronym": "DMARC",
+    "full_name": "Domain-based Message Auth Reporting",
+    "description": "Email authentication policy framework (RFC 7489) built on SPF and DKIM. Instructs receiving servers what to do with messages failing authentication: none (monitor only), quarantine (spam folder), or reject. Generates aggregate (rua) and forensic (ruf) XML reports. Essential for preventing domain spoofing and business email compromise (BEC) attacks.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "D"
+  },
+  {
+    "acronym": "DNSBL",
+    "full_name": "DNS Block List",
+    "description": "Blacklist published via DNS used by mail servers and security appliances to check if a sending IP or domain is a known source of spam, malware, or phishing. Queried via reversed IP lookup (e.g. 4.3.2.1.zen.spamhaus.org). A positive response indicates the IP is listed. Major DNSBLs: Spamhaus ZEN, Barracuda, SORBS, URIBL.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "D"
+  },
+  {
+    "acronym": "DNSSEC",
+    "full_name": "DNS Security Extensions",
+    "description": "IETF standards (RFC 4033-4035) adding cryptographic signatures to DNS records. Signs RRsets with RRSIG records; DNSKEY records publish zone signing keys; DS records chain trust from parent to child zones. Prevents cache poisoning (Kaminsky attack) by allowing resolvers to verify record authenticity. Does not encrypt DNS queries.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "D"
+  },
+  {
+    "acronym": "DRBD",
+    "full_name": "Distributed Replicated Block Device",
+    "description": "Open-source Linux kernel module synchronously mirroring block devices between two servers over TCP/IP or RDMA. Creates a software RAID-1 equivalent across nodes without shared SAN hardware. Used in Pacemaker-based HA clusters for automatic failover of databases and file systems. Supports Primary/Primary mode for active-active configurations with cluster-aware applications.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "D"
+  },
+  {
+    "acronym": "DPAPI",
+    "full_name": "Data Protection API",
+    "description": "Windows cryptographic API encrypting data tied to a user or machine identity without explicit key management. Applications call CryptProtectData/CryptUnprotectData; Windows derives the encryption key from the user's password hash or machine secret. Used by Chrome (saved passwords), Credential Manager, and BitLocker recovery key protection.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "D"
+  },
+  {
+    "acronym": "DSYNC",
+    "full_name": "Directory Sync Process",
+    "description": "Synchronization of identity data (users, groups, attributes) between a source directory (AD, LDAP) and a target (cloud IdP, SaaS application). Implemented by Azure AD Connect, Okta AD Agent, and Google Cloud Directory Sync. Supports full sync and delta sync modes. Attribute mapping rules control which fields are replicated and transformed.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "D"
+  },
+  {
+    "acronym": "DEVOP",
+    "full_name": "DevOps Practice",
+    "description": "Cultural and technical movement combining software development (Dev) and IT operations (Ops) to shorten delivery cycles and improve reliability. Key practices: CI/CD pipelines, infrastructure as code, monitoring as code, and blameless postmortems. Measured via DORA metrics: deployment frequency, lead time for changes, MTTR, and change failure rate.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "D"
+  },
+  {
+    "acronym": "DRATS",
+    "full_name": "Disaster Recovery as a Service",
+    "description": "Cloud-delivered disaster recovery model where a provider replicates workloads to their infrastructure and manages failover automation. Provides contractual RTO/RPO guarantees without a dedicated DR data center. Implemented via Zerto, VMware Cloud DR, and AWS Elastic Disaster Recovery. Billed on a subscription model based on protected VM count.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "D"
+  },
+  {
+    "acronym": "DTLS",
+    "full_name": "Datagram Transport Layer Security",
+    "description": "Adaptation of TLS for datagram protocols (UDP, DCCP) defined in RFC 6347. Adds sequence numbers and retransmission logic to handle packet loss and reordering without a reliable transport layer. Used in WebRTC (DTLS-SRTP for media), QUIC predecessors, VPN protocols, and IoT deployments requiring encrypted UDP.",
+    "difficulty": "Advanced",
+    "category": "Protocol",
+    "letter": "D"
+  },
+  {
+    "acronym": "DEVFS",
+    "full_name": "Device Filesystem",
+    "description": "Virtual filesystem exposing kernel device objects as files under /dev, populated dynamically as hardware is detected. In Linux, replaced by udev (userspace device manager) which creates device nodes based on kernel uevents and rules in /etc/udev/rules.d/. Provides a consistent interface between hardware drivers and userspace applications.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "D"
+  },
+  {
+    "acronym": "DLRM",
+    "full_name": "Deep Learning Recommendation Model",
+    "description": "Neural network architecture published by Meta for large-scale recommendation systems. Combines embedding tables for categorical features (user IDs, item IDs) with MLPs for dense features, then applies dot-product interactions. Characterized by massive embedding memory requirements (hundreds of GB) and mixed CPU/GPU execution patterns.",
+    "difficulty": "Advanced",
+    "category": "AI",
+    "letter": "D"
+  },
+  {
+    "acronym": "DSHOT",
+    "full_name": "Digital Shot",
+    "description": "Digital protocol for communication between flight controllers and ESCs (Electronic Speed Controllers) in drones and RC aircraft. Encodes throttle values as digital packets rather than analog PWM signals, eliminating calibration requirements. DSHOT150/300/600/1200 variants indicate bitrate in kbps. Supports bidirectional telemetry (RPM feedback) in extended variants.",
+    "difficulty": "Advanced",
+    "category": "Protocol",
     "letter": "D"
   },
   {
@@ -1529,6 +1961,102 @@ const ACRONYMS_DATA = [
     "letter": "E"
   },
   {
+    "acronym": "EIGRP",
+    "full_name": "Enhanced Interior Gateway Routing",
+    "description": "Cisco advanced distance-vector routing protocol (RFC 7868). Uses DUAL (Diffusing Update Algorithm) for loop-free, fast convergence without full SPF recalculation. Maintains feasible successors as pre-computed backup routes enabling sub-second failover. Supports VLSM, summarization, and multiple address families. Metric based on bandwidth and delay by default.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "E"
+  },
+  {
+    "acronym": "ECDSA",
+    "full_name": "Elliptic Curve Digital Signature",
+    "description": "Public-key digital signature algorithm based on elliptic curve cryptography. Produces shorter key and signature sizes than RSA for equivalent security (256-bit ECDSA ≈ 3072-bit RSA). Used in TLS 1.3 (P-256, P-384), Bitcoin transactions (secp256k1), SSH host keys, and code signing certificates. Defined in FIPS 186-4 and RFC 6979.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "E"
+  },
+  {
+    "acronym": "ECDHE",
+    "full_name": "Elliptic Curve Diffie-Hellman Ephemeral",
+    "description": "Key agreement protocol combining ECDH with ephemeral key pairs to provide forward secrecy. Each TLS session generates fresh key pairs, ensuring past sessions remain secure if the server's long-term private key is later compromised. Mandatory in TLS 1.3; the preferred key exchange mechanism in TLS 1.2 ECDHE cipher suites.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "E"
+  },
+  {
+    "acronym": "EAPOL",
+    "full_name": "EAP over LAN Protocol",
+    "description": "Encapsulation of EAP (Extensible Authentication Protocol) frames over IEEE 802 LAN media (Ethernet, Wi-Fi). Defined in IEEE 802.1X. The supplicant sends EAPOL-Start to begin authentication; the authenticator (switch/AP) forwards EAP messages to the RADIUS server. Port remains in unauthorized state until authentication succeeds.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "E"
+  },
+  {
+    "acronym": "ENVOY",
+    "full_name": "Envoy Proxy Server",
+    "description": "Open-source L4/L7 proxy (CNCF project) originally built by Lyft. Designed as a sidecar in service mesh architectures (Istio, Consul Connect). Provides dynamic service discovery via xDS API, load balancing, TLS termination, circuit breaking, retries, rate limiting, and observability (metrics, traces, access logs). Supports gRPC, HTTP/2, and WebSocket natively.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "E"
+  },
+  {
+    "acronym": "EXFAT",
+    "full_name": "Extended FAT File System",
+    "description": "Microsoft file system optimized for flash storage and removable media. Supports files larger than 4 GB (removing FAT32's limit), cluster sizes up to 32 MB, and timestamps with 10ms precision. No journaling. Supported natively on Windows, macOS (10.6.5+), and Linux (kernel 5.4+ exfat module). Standard format for SDXC cards per SD Association specification.",
+    "difficulty": "Base",
+    "category": "Hardware",
+    "letter": "E"
+  },
+  {
+    "acronym": "EMRFS",
+    "full_name": "EMR File System",
+    "description": "Amazon EMR's HDFS-compatible connector for accessing Amazon S3. Provides consistent view semantics, server-side encryption integration, and retry logic for transient S3 errors. Replaces HDFS as the primary storage layer in cloud-native EMR deployments, decoupling compute (EMR cluster) from storage (S3) for independent scaling and cost optimization.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "E"
+  },
+  {
+    "acronym": "ESXCL",
+    "full_name": "ESXi Command Line Interface",
+    "description": "VMware ESXi's built-in CLI accessible via DCUI, SSH, or remote sessions. Core tool: esxcli with namespaces for networking (esxcli network), storage (esxcli storage), software VIB management (esxcli software vib), and system configuration (esxcli system). Also invocable remotely via vSphere CLI or PowerCLI from an administration workstation.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "E"
+  },
+  {
+    "acronym": "ESTMP",
+    "full_name": "ESMTP Protocol",
+    "description": "Extended SMTP (RFC 5321): modern superset of SMTP introducing capability negotiation via EHLO (instead of HELO) and enabling extensions: AUTH (authentication), STARTTLS (opportunistic encryption), SIZE (message size declaration), DSN (delivery status notifications), and PIPELINING (command batching to reduce round-trips).",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "E"
+  },
+  {
+    "acronym": "EDAC",
+    "full_name": "Error Detection And Correction",
+    "description": "Linux kernel subsystem that monitors hardware memory error rates reported by ECC RAM controllers, chipsets, and CPUs. Exposes correctable (CE) and uncorrectable (UE) error counts via /sys/bus/platform/drivers/edac/ and kernel logs. Used with tools like edac-util to track memory degradation before failures become critical.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "E"
+  },
+  {
+    "acronym": "ERSPAN",
+    "full_name": "Encapsulated Remote SPAN",
+    "description": "Cisco protocol for tunneling mirrored traffic across a routed network to a remote analyzer. ERSPAN Type II/III encapsulates SPAN traffic in GRE with a proprietary header carrying session ID, VLAN, and timestamp metadata. Used for centralized packet capture in distributed campus or data center environments.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "E"
+  },
+  {
+    "acronym": "ETAGS",
+    "full_name": "Entity Tags",
+    "description": "HTTP response header (ETag) providing a unique identifier for a specific version of a resource. Used in conditional requests (If-None-Match) to enable cache validation without full content transfer. A matching ETag returns 304 Not Modified; a mismatch triggers a full 200 response. Strong ETags compare byte-for-byte; weak ETags (W/) allow semantic equivalence.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "E"
+  },
+  {
     "acronym": "FAB",
     "full_name": "Semiconductor Fabrication Facility",
     "description": "A manufacturing plant producing integrated circuits by depositing and patterning material layers on silicon wafers via photolithography. Process nodes (28nm, 7nm, 3nm) describe feature sizes; smaller nodes yield higher transistor density and lower power. Major fabs: TSMC, Samsung, Intel Foundry. Fabless companies (NVIDIA, AMD, Qualcomm) design chips but outsource fabrication entirely.",
@@ -1829,6 +2357,94 @@ const ACRONYMS_DATA = [
     "full_name": "File System Change Monitor",
     "description": "Kernel or userspace subsystem that tracks filesystem events (create, modify, delete, rename) and notifies applications. Linux: inotify (per-file) and fanotify (filesystem-wide). macOS: FSEvents. Windows: ReadDirectoryChangesW. Used by IDEs, backup tools, antivirus, and live-reload development servers.",
     "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "F"
+  },
+  {
+    "acronym": "FHRP",
+    "full_name": "First Hop Redundancy Protocol",
+    "description": "Category of protocols providing default gateway redundancy by allowing multiple routers to present a single virtual IP and MAC to hosts. Examples: HSRP (Cisco), VRRP (RFC 5798, open standard), GLBP (Cisco, load-balancing variant). The active/master router responds to ARP for the virtual IP; standby takes over on failure detection.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "F"
+  },
+  {
+    "acronym": "FLASK",
+    "full_name": "Flask Web Framework",
+    "description": "Lightweight Python WSGI micro web framework using Werkzeug for WSGI utilities and Jinja2 for templating. No built-in ORM or form validation. Suitable for REST APIs and small to medium web applications. Extensions (Flask-SQLAlchemy, Flask-Login, Flask-Migrate) add functionality on demand. Flask's simplicity makes it a common first framework for Python web development.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "F"
+  },
+  {
+    "acronym": "FSYNC",
+    "full_name": "File Sync System Call",
+    "description": "POSIX system call flushing a file's dirty pages from the kernel page cache to persistent storage, ensuring durability before returning. Critical for database crash consistency: PostgreSQL, SQLite, and MySQL use fsync for WAL writes. fdatasync() flushes data without metadata. Disabling fsync dramatically improves write throughput at the cost of data loss on power failure.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "F"
+  },
+  {
+    "acronym": "FDISK",
+    "full_name": "Fixed Disk Partition Tool",
+    "description": "Interactive command-line partitioning utility for MBR (and GPT in modern versions) disks. Creates, deletes, resizes, and changes partition type codes. On Linux: fdisk /dev/sdb launches interactive mode; no changes are written until the user saves explicitly. For GPT disks gdisk and parted are preferred alternatives. Replaced on modern systems by partprobe for kernel notification.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "F"
+  },
+  {
+    "acronym": "FPERM",
+    "full_name": "File Permission Bits",
+    "description": "Set of access rights (read, write, execute) on a file or directory for owner, group, and others in POSIX systems. Represented as octal (chmod 755) or symbolic (rwxr-xr-x). Extended by ACLs (getfacl/setfacl) for per-user and per-group rules. Special bits: SUID (execute as owner), SGID (execute as group or inherit group on directory), sticky bit (restrict deletion to owner).",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "F"
+  },
+  {
+    "acronym": "FRRTG",
+    "full_name": "FRRouting Suite",
+    "description": "Free Range Routing: open-source IP routing protocol suite for Linux and Unix, forked from Quagga and maintained by the Linux Foundation. Implements BGP, OSPF, IS-IS, RIP, EIGRP, PIM, LDP, MPLS, and EVPN via modular daemons managed by a central zebra daemon. Used in network appliances, SD-WAN, and data center routing.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "F"
+  },
+  {
+    "acronym": "FWKNOP",
+    "full_name": "FireWall KNock Operator",
+    "description": "Single Packet Authorization (SPA) implementation keeping firewall ports closed until a valid encrypted, authenticated single UDP packet is received. Authorizes temporary access (e.g. opens SSH for a specific source IP for 30 seconds). Services are completely invisible to unauthenticated port scanners, providing stealth port access control.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "F"
+  },
+  {
+    "acronym": "FSIMG",
+    "full_name": "File System Image",
+    "description": "Binary snapshot of a complete file system stored as a single file. Created with dd, mkfs imaging options, or specialized tools. Used for OS deployment (golden images), embedded system flashing (rootfs.img), VM disk images (ext4 inside qcow2), and forensic acquisition. Mountable via loopback device (mount -o loop image.img /mnt).",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "F"
+  },
+  {
+    "acronym": "FUTEX",
+    "full_name": "Fast Userspace Mutex",
+    "description": "Linux kernel primitive (syscall futex(2)) enabling userspace synchronization with minimal kernel involvement. In the uncontended case, lock/unlock operations use atomic CPU instructions entirely in userspace memory. The kernel is invoked only on contention (futex_wait) or wakeup (futex_wake). Foundation for pthreads mutexes, semaphores, and Java monitors on Linux.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "F"
+  },
+  {
+    "acronym": "FRIDA",
+    "full_name": "Dynamic Instrumentation Toolkit",
+    "description": "Open-source dynamic binary instrumentation framework for reverse engineering and security research. Injects a JavaScript engine (Duktape/V8) into target processes, allowing runtime function hooking, memory inspection, and API interception on Android, iOS, Linux, Windows, and macOS without modifying binaries. Widely used in mobile app security testing.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "F"
+  },
+  {
+    "acronym": "FWCTL",
+    "full_name": "Firmware Control",
+    "description": "Linux kernel subsystem (introduced in 6.11) providing a standardized userspace API for firmware-specific device management operations not covered by existing subsystems. Exposes a character device per firmware interface, allowing privileged userspace tools to issue vendor-specific commands to hardware (SmartNICs, DPUs, storage controllers).",
+    "difficulty": "Advanced",
     "category": "OS",
     "letter": "F"
   },
@@ -2137,6 +2753,118 @@ const ACRONYMS_DATA = [
     "letter": "G"
   },
   {
+    "acronym": "GITLB",
+    "full_name": "GitLab Platform",
+    "description": "Web-based DevOps platform providing Git hosting, CI/CD pipelines, container registry, package registry, SAST/DAST security scanning, and project management in a single application. Available as SaaS (gitlab.com) or self-hosted (Community/Enterprise Edition). Auto DevOps feature auto-configures pipelines based on project type. Competes with GitHub and Bitbucket.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "G"
+  },
+  {
+    "acronym": "GOMOD",
+    "full_name": "Go Module System",
+    "description": "Dependency management system for Go (default from Go 1.16). Each module has a go.mod file declaring the module path, Go version, and dependency versions. The go.sum file contains cryptographic hashes for reproducible builds. Commands: go mod tidy (update dependencies), go mod vendor (copy dependencies locally), go get (add/upgrade dependency).",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "G"
+  },
+  {
+    "acronym": "GPGPU",
+    "full_name": "General Purpose GPU Computing",
+    "description": "Use of a GPU for computations traditionally performed by CPUs. GPUs contain thousands of smaller cores optimized for parallel floating-point operations. Frameworks: CUDA (NVIDIA), OpenCL (cross-vendor), ROCm (AMD), SYCL (Intel). Primary workloads: deep learning training and inference, molecular dynamics, financial modeling, and computational fluid dynamics.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "G"
+  },
+  {
+    "acronym": "GRUB2",
+    "full_name": "GRUB2 Bootloader",
+    "description": "GNU GRand Unified Bootloader version 2, default bootloader for most Linux distributions. Supports BIOS (MBR) and UEFI (GPT) boot, multiple OS entries, scripting, encrypted filesystems (LUKS), and PXE chainloading. Configuration generated by grub2-mkconfig from /etc/grub.d/ and /etc/default/grub. Kernel parameters passed via GRUB_CMDLINE_LINUX.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "G"
+  },
+  {
+    "acronym": "GSSAPI",
+    "full_name": "GSS-API Authentication",
+    "description": "Generic Security Services Application Program Interface (RFC 2743): uniform API for security services (authentication, message integrity, confidentiality) independent of the underlying mechanism. Kerberos V5 is the most common mechanism. Used in NFSv4, SSH (gssapi-with-mic method), LDAP SASL, and SMTP AUTH GSSAPI for transparent Kerberos SSO.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "G"
+  },
+  {
+    "acronym": "GITOP",
+    "full_name": "GitOps Workflow",
+    "description": "Operational model declaring infrastructure and application desired state in Git repositories. Changes are applied automatically by an operator (ArgoCD, Flux) that continuously reconciles the live environment with the repository. Provides auditability (git log), rollback (git revert), and developer-familiar change management for infrastructure automation.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "G"
+  },
+  {
+    "acronym": "GBITS",
+    "full_name": "Gigabits Unit",
+    "description": "Unit of data equal to 10^9 bits (SI). Network interface speeds expressed in Gbps: 1GbE (1 Gbps), 10GbE (10 Gbps), 25GbE, 100GbE, 400GbE. Distinct from GByte (storage capacity, 8x larger). Conversion: 1 Gbps = 125 MB/s theoretical maximum throughput for capacity planning.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "G"
+  },
+  {
+    "acronym": "GNUTL",
+    "full_name": "GnuTLS Library",
+    "description": "Open-source TLS/SSL library implementing TLS 1.2 and 1.3, DTLS, PKIX certificate handling, PKCS#11 HSM integration, and OpenPGP support. Alternative to OpenSSL used by GnuPG, wget, and many GNU/Linux system components. API differs from OpenSSL requiring separate porting effort. Licensed under LGPL; broadly used in desktop Linux distributions.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "G"
+  },
+  {
+    "acronym": "GVISR",
+    "full_name": "gVisor Sandbox",
+    "description": "Google's open-source application kernel intercepting and handling system calls in userspace to isolate containers from the host kernel. Written in Go. Two modes: ptrace (broader compatibility) and KVM (higher performance via hardware virtualization). Used in Google Cloud Run and GKE Sandbox for untrusted, multi-tenant workload isolation.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "G"
+  },
+  {
+    "acronym": "GCONF",
+    "full_name": "GNOME Config System",
+    "description": "Legacy GNOME 2 configuration storage system storing application preferences as XML in ~/.gconf/. Replaced by GSettings/dconf in GNOME 3. GSettings provides a typed, schematized API backed by a binary dconf database. Migration tools convert gconf keys to GSettings schemas. Still referenced in enterprise Linux and older documentation.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "G"
+  },
+  {
+    "acronym": "GITEA",
+    "full_name": "Git Tea",
+    "description": "Self-hosted Git service written in Go, providing repository management, issue tracking, pull requests, CI integration (Gitea Actions), and an API compatible with GitHub's. Runs as a single binary with SQLite, MySQL, or PostgreSQL backends. Designed for low-resource deployments (Raspberry Pi-class hardware) with Docker image available.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "G"
+  },
+  {
+    "acronym": "GCOV",
+    "full_name": "GCC Coverage",
+    "description": "Source code coverage tool built into GCC. When compiled with -fprofile-arcs -ftest-coverage, the runtime writes .gcda and .gcno files tracking which lines and branches executed. The gcov utility then produces annotated source files showing execution counts per line. Integrated with lcov for HTML reporting and commonly used with CI pipelines.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "G"
+  },
+  {
+    "acronym": "GPXE",
+    "full_name": "Generalized PXE",
+    "description": "Open-source network bootloader extending PXE with additional protocols (HTTP, iSCSI, AoE, FCoE, NFS) and scripting capabilities. Fork of Etherboot, later succeeded by iPXE. Allows booting from HTTP servers, SAN targets, and cloud image stores. Used in diskless workstation environments and automated provisioning pipelines.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "G"
+  },
+  {
+    "acronym": "GOBPF",
+    "full_name": "Go eBPF Library",
+    "description": "Go bindings for loading and interacting with eBPF programs in the Linux kernel. Provides APIs to compile BPF bytecode via LLVM, load programs into the kernel, manage BPF maps, and attach programs to kprobes, tracepoints, and network hooks. Alternative to the cilium/ebpf library in the Go ecosystem.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "G"
+  },
+  {
     "acronym": "HBA",
     "full_name": "Host Bus Adapter",
     "description": "A hardware component connecting a server to a storage network (SAN) via Fibre Channel, iSCSI, or SAS. HBAs offload storage protocol processing from the CPU, providing dedicated queues, DMA engines, and protocol acceleration. FC HBAs require unique WWPNs (World Wide Port Names) for fabric zoning. SmartHBAs combine NIC and HBA functions; software-defined HBAs use the main NIC with driver-level protocol handling.",
@@ -2414,6 +3142,118 @@ const ACRONYMS_DATA = [
     "description": "Extension to Mobile IP that introduces a regional anchor point (MAP - Mobility Anchor Point) to localize handover signaling within a visited domain. Reduces handover latency and binding updates to the home agent by handling local mobility regionally. Defined in RFC 4140.",
     "difficulty": "Advanced",
     "category": "Protocol",
+    "letter": "H"
+  },
+  {
+    "acronym": "HTTPS",
+    "full_name": "HTTP Secure",
+    "description": "HTTP protocol secured by TLS encryption. Operates on port 443 by default. The TLS handshake precedes any HTTP exchange, providing server authentication (X.509 certificate), data confidentiality, and integrity. HSTS (HTTP Strict Transport Security) forces HTTPS by instructing browsers to refuse plain HTTP connections for the declared max-age duration.",
+    "difficulty": "Base",
+    "category": "Protocol",
+    "letter": "H"
+  },
+  {
+    "acronym": "HIPAA",
+    "full_name": "Health Insurance Portability Act",
+    "description": "US federal law establishing standards for protecting patient health information (PHI). IT requirements: access controls, audit logging, encryption of PHI at rest and in transit, breach notification (within 72 hours), and Business Associate Agreements with cloud providers. Compliance frameworks: NIST 800-66, HITRUST CSF. Civil penalties range from $100 to $50,000 per violation.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "H"
+  },
+  {
+    "acronym": "HAPRX",
+    "full_name": "HAProxy Load Balancer",
+    "description": "High Availability Proxy: open-source TCP/HTTP load balancer and proxy. Provides Layer 4 and Layer 7 load balancing, health checking, SSL termination, ACL-based routing, and detailed statistics via a management socket. Event-driven architecture handles hundreds of thousands of concurrent connections. Widely used as Kubernetes Ingress controller and database proxy.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "H"
+  },
+  {
+    "acronym": "HBASE",
+    "full_name": "Apache HBase",
+    "description": "Distributed, column-oriented NoSQL database running on HDFS, modeled after Google's Bigtable. Provides strong consistency for row-level operations, random read/write access to tables with billions of rows, and automatic region-based sharding. Used for time-series data (OpenTSDB), user profiles, and event logging at web scale. Integrates with MapReduce, Spark, and Phoenix SQL layer.",
+    "difficulty": "Advanced",
+    "category": "Database",
+    "letter": "H"
+  },
+  {
+    "acronym": "HMSET",
+    "full_name": "Hash Multi-Set Command",
+    "description": "Redis command setting multiple field-value pairs in a hash in one atomic operation. Syntax: HMSET key field1 value1 field2 value2. Deprecated in Redis 4.0 in favor of HSET, which now accepts multiple field-value pairs with identical semantics. Commonly used for session storage, user profile caching, and feature flag storage in Redis-backed applications.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "H"
+  },
+  {
+    "acronym": "HTTPX",
+    "full_name": "HTTP Extended Client",
+    "description": "Async Python HTTP client library supporting HTTP/1.1 and HTTP/2 with a requests-compatible API. Features: connection pooling, cookie handling, redirect following, certificate verification, streaming responses, and configurable timeouts. Also refers to a fast web probe tool in security reconnaissance that identifies live HTTP/HTTPS services at scale across large IP ranges.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "H"
+  },
+  {
+    "acronym": "HEXDP",
+    "full_name": "Hex Dump Format",
+    "description": "Representation of binary data as hexadecimal values displayed alongside ASCII printable characters. Used for binary protocol analysis, file format inspection, and memory debugging. Tools: xxd, hexdump -C, od -Ax -tx1, and Wireshark's packet bytes pane. Convention: 16 bytes per line, byte offset on left, ASCII representation on right.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "H"
+  },
+  {
+    "acronym": "HWVRT",
+    "full_name": "Hardware Virtualization",
+    "description": "Processor feature enabling efficient virtualization via dedicated CPU instructions for guest/host context switching. Intel VT-x (vmx extension) and AMD-V (svm extension) allow the hypervisor to trap privileged guest instructions in hardware without binary translation. Required by KVM, Hyper-V, and VMware ESXi for near-native VM performance.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "H"
+  },
+  {
+    "acronym": "HLASM",
+    "full_name": "High-Level Assembler IBM",
+    "description": "IBM's assembler language for z/Architecture (mainframe) systems. Extends OS/360 assembly with structured programming macros, conditional assembly, and SYSLIST debugging. HLASM programs are assembled into object modules linked into load modules executed under z/OS. Used for performance-critical system routines in banking and insurance mainframe environments.",
+    "difficulty": "Advanced",
+    "category": "Dev",
+    "letter": "H"
+  },
+  {
+    "acronym": "HTTPL",
+    "full_name": "HTTP Long Poll",
+    "description": "Web technique where the client sends a request and the server holds the connection open until new data is available (or a timeout occurs). Simulates server push over HTTP/1.1 without WebSockets. Used in legacy real-time applications (chat, notifications). Replaced by WebSockets, Server-Sent Events (SSE), or HTTP/2 push in modern implementations.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "H"
+  },
+  {
+    "acronym": "HTTPD",
+    "full_name": "HTTP Daemon",
+    "description": "Generic name for any process serving HTTP requests, most commonly referring to Apache HTTP Server (httpd). The Apache httpd uses a modular architecture (mod_ssl, mod_rewrite, mod_proxy) with prefork, worker, or event MPMs for concurrency. Configuration via httpd.conf and .htaccess files. Also used as the binary name for nginx and other servers.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "H"
+  },
+  {
+    "acronym": "HKDF",
+    "full_name": "HMAC-based Key Derivation Function",
+    "description": "Key derivation function (RFC 5869) built on HMAC. Two-stage process: extract (compress input keying material and salt into a pseudorandom key) then expand (derive output key material of arbitrary length). Used in TLS 1.3, Signal Protocol, and Noise Framework to derive session keys from Diffie-Hellman outputs and pre-shared secrets.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "H"
+  },
+  {
+    "acronym": "HPROF",
+    "full_name": "Heap Profiler",
+    "description": "Built-in JVM profiling agent (activated via -agentlib:hprof) that captures heap dumps, CPU sampling data, and memory allocation traces. Output written as binary HPROF format, readable by Eclipse MAT, VisualVM, and JProfiler. Largely replaced by JFR (Java Flight Recorder) in modern JVMs but still referenced for legacy heap dump analysis.",
+    "difficulty": "Advanced",
+    "category": "Dev",
+    "letter": "H"
+  },
+  {
+    "acronym": "HWLOC",
+    "full_name": "Hardware Locality",
+    "description": "Open-source library and toolset for querying CPU topology, NUMA nodes, cache hierarchy, I/O devices, and GPU affinity. The lstopo command visualizes the hardware topology graph. Used by MPI runtimes (Open MPI, MPICH) and HPC schedulers to bind processes and threads to optimal cores for NUMA-aware parallel computing.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
     "letter": "H"
   },
   {
@@ -2726,6 +3566,126 @@ const ACRONYMS_DATA = [
     "description": "DNS mechanism (RFC 1995) allowing a secondary nameserver to request only the changes to a zone since its last synchronization, rather than a full AXFR transfer. Reduces bandwidth consumption significantly for large zones. The primary server must maintain a change history indexed by the DNS zone serial number.",
     "difficulty": "Advanced",
     "category": "Protocol",
+    "letter": "I"
+  },
+  {
+    "acronym": "IPSEC",
+    "full_name": "IPsec Protocol Suite",
+    "description": "IETF framework securing IP communications via cryptographic authentication and encryption at the network layer. Two modes: Transport (encrypts payload only, host-to-host) and Tunnel (encrypts the entire original IP packet, used in VPNs). Protocols: AH (authentication header) and ESP (encapsulating security payload). Key management: IKEv2 (RFC 7296, recommended) or legacy IKEv1.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "I"
+  },
+  {
+    "acronym": "INODE",
+    "full_name": "Index Node Structure",
+    "description": "Data structure in Unix/Linux file systems (ext4, XFS, Btrfs) storing file metadata: permissions, owner, timestamps, file size, and pointers to data blocks. Does not contain the filename, which is stored in the directory entry. Each file has one inode identified by a unique inode number. Running out of inodes prevents creating new files even with free disk space available.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "I"
+  },
+  {
+    "acronym": "ISTIO",
+    "full_name": "Istio Service Mesh",
+    "description": "Open-source service mesh (CNCF graduated) adding traffic management, mTLS, observability, and policy enforcement to Kubernetes workloads without application code changes. Uses Envoy sidecar proxies injected into pods. Control plane: istiod. Configured via CRDs: VirtualService, DestinationRule, Gateway, AuthorizationPolicy. Provides circuit breaking, retries, and canary deployments.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "I"
+  },
+  {
+    "acronym": "IPMGR",
+    "full_name": "IP Address Manager",
+    "description": "Software component allocating, tracking, and managing IP address assignments across a network. Core functions: IPAM (IP Address Management), DNS and DHCP integration, subnet planning, conflict detection, and utilization reporting. Platforms: Infoblox, phpIPAM, NetBox, SolarWinds IPAM. NetBox is widely used as open-source IPAM with REST API and IaC integration.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "I"
+  },
+  {
+    "acronym": "ISATAP",
+    "full_name": "Intra-Site Auto Tunnel Addressing",
+    "description": "IPv6 transition mechanism (RFC 5214) allowing IPv6 communication over IPv4 infrastructure within an organization. Encapsulates IPv6 in IPv4 with an interface identifier derived from the IPv4 address. Deprecated in modern deployments; superseded by native dual-stack or 464XLAT/DS-Lite for IPv6 transition in enterprise and carrier environments.",
+    "difficulty": "Advanced",
+    "category": "Protocol",
+    "letter": "I"
+  },
+  {
+    "acronym": "ISAKMP",
+    "full_name": "IKE Security Association Protocol",
+    "description": "Framework (RFC 2408) for establishing Security Associations and exchanging cryptographic keys for IPsec. Defines message format and negotiation procedures but not specific algorithms. Forms the basis of IKEv1 Phase 1 (Main Mode, Aggressive Mode). Superseded by IKEv2, which merges ISAKMP and IKE into a simpler, more reliable exchange.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "I"
+  },
+  {
+    "acronym": "IPFIX",
+    "full_name": "IP Flow Information Export",
+    "description": "IETF standard (RFC 7011) for exporting IP flow data from routers and network devices to collectors. Successor to NetFlow v9 with a template-based approach where the exporter defines field types before sending records. Used for traffic analysis, capacity planning, security monitoring, anomaly detection, and ISP billing across carrier and enterprise networks.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "I"
+  },
+  {
+    "acronym": "IMAPS",
+    "full_name": "IMAP Secure Protocol",
+    "description": "IMAP4 over implicit TLS on port 993. Provides encrypted email retrieval with full IMAP4 semantics: server-side message storage, folder management, message flags, server-side search, and selective download. Preferred over STARTTLS on port 143 for mail client configuration as the encrypted session begins immediately without protocol upgrade.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "I"
+  },
+  {
+    "acronym": "INFRA",
+    "full_name": "IT Infrastructure",
+    "description": "Physical and virtual resources providing the foundation for computing systems: servers, networking, storage, power, and platform software. In Infrastructure as Code (IaC) contexts, infrastructure is defined declaratively (Terraform, Pulumi, Crossplane) and version-controlled. Cloud-native infrastructure follows the immutable infrastructure pattern: replace rather than modify.",
+    "difficulty": "Base",
+    "category": "Cloud",
+    "letter": "I"
+  },
+  {
+    "acronym": "IRQBL",
+    "full_name": "IRQ Balance Daemon",
+    "description": "Linux daemon (irqbalance) automatically distributing hardware interrupt requests across CPU cores to prevent a single core becoming the bottleneck for all device interrupts. Improves throughput on multi-core systems under heavy I/O load. Network performance tuning often pins specific NIC queue IRQs to dedicated CPU cores using /proc/irq/N/smp_affinity instead.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "I"
+  },
+  {
+    "acronym": "IOMMU",
+    "full_name": "Input-Output Memory Management Unit",
+    "description": "Hardware unit that maps device-visible virtual addresses to physical memory addresses, enabling DMA remapping. Intel calls it VT-d; AMD uses AMD-Vi. Critical for PCI passthrough in virtualization (VFIO), preventing DMA attacks from malicious or compromised PCIe devices, and enabling SR-IOV virtual functions to operate in isolated address spaces.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "I"
+  },
+  {
+    "acronym": "IDRAC",
+    "full_name": "Integrated Dell Remote Access Controller",
+    "description": "Out-of-band management controller embedded in Dell PowerEdge servers. Provides remote KVM (virtual console), power management, hardware monitoring, firmware updates, and OS deployment via a dedicated NIC and management web interface, Redfish API, and RACADM CLI. Operates independently of the host OS, allowing management even when the OS is crashed or offline.",
+    "difficulty": "Intermediate",
+    "category": "Hardware",
+    "letter": "I"
+  },
+  {
+    "acronym": "IPVS",
+    "full_name": "IP Virtual Server",
+    "description": "Layer-4 load balancing component built into the Linux kernel (netfilter framework). Supports NAT, DR (Direct Routing), and IP tunneling forwarding modes with scheduling algorithms including round-robin, least connections, weighted, and source hashing. Used by Kubernetes kube-proxy in IPVS mode as a scalable alternative to iptables for service routing.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "I"
+  },
+  {
+    "acronym": "IMUX",
+    "full_name": "Inverse Multiplexer",
+    "description": "Device or protocol that aggregates multiple low-bandwidth links into a single logical channel, splitting traffic across them and reassembling at the far end. Used historically with ISDN bonding (multiple B-channels) and in multilink PPP (MLPPP). Modern equivalents include LACP bonding, SD-WAN path aggregation, and MPTCP.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "I"
+  },
+  {
+    "acronym": "IKEV2",
+    "full_name": "Internet Key Exchange Version 2",
+    "description": "Protocol (RFC 7296) used in IPsec to establish and manage Security Associations. IKEv2 replaces IKEv1's aggressive/main modes with a simplified four-message exchange (IKE_SA_INIT + IKE_AUTH). Supports MOBIKE for VPN mobility across IP changes (e.g., Wi-Fi to cellular), EAP authentication, and traffic selector negotiation.",
+    "difficulty": "Advanced",
+    "category": "Security",
     "letter": "I"
   },
   {
@@ -3049,6 +4009,134 @@ const ACRONYMS_DATA = [
     "letter": "J"
   },
   {
+    "acronym": "JINJA",
+    "full_name": "Jinja2 Template Engine",
+    "description": "Python templating engine used by Ansible, Flask, SaltStack, and many other tools. Syntax: {{ variable }}, {% for/if blocks %}, {# comments #}. Supports filters (| lower, | default), tests, macros, and template inheritance. Ansible uses Jinja2 for variable interpolation in playbooks and templates with a sandboxed execution mode.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JSONP",
+    "full_name": "JSON with Padding",
+    "description": "Legacy cross-origin data request technique wrapping JSON in a callback function call: callbackFn({data}). Client includes a script tag pointing to the endpoint. Predates CORS standardization. Only supports GET requests and introduces XSS risks because the response is executed as JavaScript. Deprecated in favor of proper CORS headers.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JSONB",
+    "full_name": "JSONB Binary Format",
+    "description": "PostgreSQL binary representation of JSON data providing more efficient storage and indexing than the text-based JSON type. Parses JSON into a decomposed binary format, discarding insignificant whitespace and last duplicate keys. Supports GIN indexes for fast containment (@>), key existence (?), and path queries using jsonpath expressions.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "J"
+  },
+  {
+    "acronym": "JSONL",
+    "full_name": "JSON Lines Format",
+    "description": "Text format where each line is a valid JSON object (also called NDJSON: Newline Delimited JSON). Enables streaming and line-by-line processing without loading the entire document. Used in log pipelines (Fluentd, Logstash), ML dataset storage, API streaming, and is compatible with Unix line-oriented tools (grep, awk, jq --raw-input).",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JCEKS",
+    "full_name": "Java Crypto Extension Keystore",
+    "description": "Stronger alternative to JKS (Java KeyStore) providing Triple-DES encryption for private key entries instead of JKS's weak proprietary encryption. Used in Java applications storing TLS certificates, code signing keys, and symmetric secrets. Being superseded by PKCS#12 (.p12/.pfx) as the Java default keystore format since JDK 9.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "J"
+  },
+  {
+    "acronym": "JFROG",
+    "full_name": "JFrog DevOps Platform",
+    "description": "Enterprise DevOps platform providing universal artifact repository (Artifactory), security scanning (Xray), and distribution tools. Supports all major package formats: Maven, npm, Docker, Helm, PyPI, Conda, Debian, RPM. Central to binary management and software supply chain security, with integration into CI/CD pipelines for artifact promotion and vulnerability scanning.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JPATH",
+    "full_name": "JSONPath Query",
+    "description": "Query language for JSON documents analogous to XPath for XML. Syntax: $ (root), .field (child), .. (recursive), [] (subscript/filter). Implementations: jmespath (AWS CLI, Ansible), jsonpath-ng (Python), jq. Used in Kubernetes admission webhooks, API Gateway request transformation, and log field extraction.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JVMTI",
+    "full_name": "JVM Tool Interface",
+    "description": "Native API for monitoring and controlling JVM execution. Provides capabilities: heap iteration, stack sampling, class file transformation (Java agents), breakpoints, method entry/exit events, and GC callbacks. Used by profilers (YourKit, JProfiler, async-profiler), APM agents (Dynatrace, New Relic), and code coverage tools (JaCoCo).",
+    "difficulty": "Advanced",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JWTKS",
+    "full_name": "JWT Key Set",
+    "description": "JSON Web Key Set (RFC 7517): JSON structure containing public keys used to verify JWT signatures. Published at /.well-known/jwks.json by identity providers (Auth0, Keycloak, Okta, Azure AD). Clients fetch and cache the JWKS to validate ID tokens and access tokens locally without contacting the IdP for each request validation.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "J"
+  },
+  {
+    "acronym": "JSSHA",
+    "full_name": "JavaScript SHA Library",
+    "description": "JavaScript implementation of the SHA hash family (SHA-1, SHA-256, SHA-384, SHA-512, SHA-3) for browser and Node.js environments. Libraries: jsSHA, Node.js built-in crypto module, SubtleCrypto (Web Crypto API). Used for client-side integrity verification, HMAC generation, and digital signature operations in web applications.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "J"
+  },
+  {
+    "acronym": "JSTAT",
+    "full_name": "JVM Statistics Tool",
+    "description": "JDK command-line tool monitoring JVM performance statistics: heap usage by generation (young, old, metaspace), garbage collection counts and timing, class loading, and JIT compilation activity. Invoked as jstat -gcutil <pid> <interval> <count>. Used for GC tuning, memory leak detection, and heap sizing analysis alongside heap dump inspection.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JAEGER",
+    "full_name": "Jaeger Distributed Tracing",
+    "description": "Open-source distributed tracing system (CNCF graduated) originally developed by Uber. Implements OpenTracing specification. Records request traces across microservices: spans with parent-child relationships, timing, tags, and logs. Storage backends: Elasticsearch, Cassandra, Badger. OpenTelemetry Collector can export traces to Jaeger via OTLP for vendor-neutral instrumentation.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JBOSS",
+    "full_name": "JBoss Application Server",
+    "description": "Open-source Java EE (Jakarta EE) application server developed by Red Hat, now rebranded as WildFly for the community edition. Provides EJB, JPA, CDI, JAX-RS, and JMS containers with hot deployment. JBoss EAP is the supported enterprise version. Uses a modular classloading architecture (JBoss Modules) to isolate deployment dependencies.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JDEPS",
+    "full_name": "Java Dependencies Analyzer",
+    "description": "JDK command-line tool that analyzes class and JAR file dependencies, reporting which packages and modules each class depends on. Used to identify platform internal API usage (sun.misc.*), prepare applications for Java 9+ module system migration, and verify module boundary compliance. Output can be filtered by API type (JDK internal vs. public).",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JLINK",
+    "full_name": "Java Linker",
+    "description": "JDK tool (introduced in Java 9) that creates custom, minimal JVM runtime images containing only the modules an application actually needs. The resulting image has no JRE overhead from unused modules, reducing footprint significantly for containerized deployments. Works with the Java module system (JPMS) and integrates with jpackage for native installers.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
+    "acronym": "JCMD",
+    "full_name": "Java Command",
+    "description": "JDK diagnostic utility for sending commands to running JVM processes. Replaces multiple older tools (jstack, jmap, jinfo) with a unified interface. Supports heap dump generation, GC diagnostics, JFR recording start/stop, VM flags inspection, and thread dump output. Requires the same UID as the target JVM or root privileges.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "J"
+  },
+  {
     "acronym": "KABI",
     "full_name": "Kernel Application Binary Interface",
     "description": "Stable interface between the Linux kernel and loadable kernel modules or user-space programs. Kernel developers aim to preserve KABI across minor releases so that out-of-tree drivers do not need recompilation. Enterprise Linux distributions (RHEL, SLES) provide explicit KABI stability guarantees with each major release.",
@@ -3364,6 +4452,126 @@ const ACRONYMS_DATA = [
     "acronym": "KSFT",
     "full_name": "Kernel Selftests Framework",
     "description": "Linux kernel testing infrastructure located in tools/testing/selftests/. Provides a standardized way to write and run userspace tests that exercise kernel subsystems (networking, memory, cgroups, BPF, etc.). Tests are run via make -C tools/testing/selftests run_tests and integrated into kernel CI pipelines.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KAFKA",
+    "full_name": "Apache Kafka",
+    "description": "Distributed event streaming platform for high-throughput, fault-tolerant publish-subscribe messaging. Data organized into topics partitioned across brokers; consumers track offsets enabling replay. KRaft mode (KIP-500) removes ZooKeeper dependency. Used for event-driven architectures, change data capture (CDC), real-time analytics pipelines, and microservice decoupling.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "K"
+  },
+  {
+    "acronym": "KIALI",
+    "full_name": "Kiali Service Mesh Console",
+    "description": "Open-source observability console for Istio service mesh. Provides topology visualization, traffic flow graphs, health status, distributed tracing integration (Jaeger/Zipkin), and Istio configuration validation. Displays telemetry collected by Prometheus. Installed as an Istio addon or standalone via Helm chart; accessible via kubectl port-forward.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "K"
+  },
+  {
+    "acronym": "KNFSD",
+    "full_name": "Kernel NFS Daemon",
+    "description": "Linux kernel-space NFS server providing higher performance than user-space alternatives. Runs as kernel threads (nfsd, lockd, mountd). Configured via /etc/exports and managed with exportfs, nfsstat, and rpcinfo. Supports NFSv3, NFSv4, and NFSv4.1 (pNFS). NFS over RDMA (NFSoRDMA) available since kernel 4.20 for low-latency storage networks.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KIBNA",
+    "full_name": "Kibana Dashboard",
+    "description": "Elasticsearch's visualization and exploration platform (part of Elastic Stack). Provides Discover (log search), Dashboard (metric panels), Lens (visual editor), and Maps (geo visualization). Integrates with Elastic APM, Security (SIEM), and Observability solutions. Configures index patterns, saved searches, alerting rules, and Canvas presentations.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "K"
+  },
+  {
+    "acronym": "KSMEM",
+    "full_name": "KSM Memory Merging",
+    "description": "Kernel Samepage Merging: Linux feature scanning memory pages across processes and merging identical pages into a single copy-on-write page. Reduces memory consumption in KVM virtualization environments where multiple VMs run the same OS image. Controlled via /sys/kernel/mm/ksm/. Disabled for security-sensitive workloads to prevent side-channel timing attacks.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KRBTG",
+    "full_name": "Kerberos TGT Ticket",
+    "description": "Kerberos Ticket Granting Ticket issued by the Authentication Service (AS) after successful initial authentication. Allows the client to request service tickets from the Ticket Granting Service (TGS) without re-authenticating. Default lifetime: 10 hours (renewable up to 7 days). Golden Ticket attacks forge TGTs by compromising the krbtgt account's NTLM hash.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "K"
+  },
+  {
+    "acronym": "KYVNO",
+    "full_name": "Kyverno Policy Engine",
+    "description": "Kubernetes-native policy engine validating, mutating, and generating Kubernetes resources using declarative YAML policies without Rego. Enforces Pod Security Standards, auto-injects labels and annotations, generates ConfigMaps from templates, and verifies container image signatures (Cosign, Notary v2). CNCF incubating project with active adoption in GitOps pipelines.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "K"
+  },
+  {
+    "acronym": "KPROB",
+    "full_name": "Kprobe Kernel Tracing",
+    "description": "Linux kernel dynamic tracing mechanism placing breakpoints at arbitrary kernel function entry and return points without recompiling the kernel. Accessed via /sys/kernel/debug/kprobes/ or eBPF kprobe programs. Used for performance analysis, kernel code path debugging, and security monitoring of kernel function invocations in production systems.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KPACK",
+    "full_name": "Kubernetes Buildpack",
+    "description": "CNCF project (kpack) implementing Cloud Native Buildpacks on Kubernetes. Automatically builds OCI container images from source code without Dockerfiles. Triggered by source code changes or buildpack updates; rebuilt images are pushed to a registry. Used in enterprise developer platforms (VMware Tanzu, Paketo) for secure, opinionated image builds.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "K"
+  },
+  {
+    "acronym": "KVLOG",
+    "full_name": "Key-Value Log",
+    "description": "Append-only log format storing entries as key-value pairs, enabling efficient key lookup and chronological replay. Used in Kafka (topic-compacted logs), etcd (MVCC key history), and LSM-tree databases (LevelDB, RocksDB) as the write path before compaction into sorted string tables (SSTables). Provides durability and ordered event history in distributed systems.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "K"
+  },
+  {
+    "acronym": "KVERS",
+    "full_name": "Kernel Version String",
+    "description": "String identifying the specific version of the OS kernel. On Linux: uname -r returns major.minor.patch-build-arch (e.g. 6.8.0-45-generic). Critical for module compatibility, security patch verification, and feature availability checks in automation scripts. Linux follows time-based rolling releases; distributions maintain separate versioning schemes with backported patches.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KASAN",
+    "full_name": "Kernel Address Sanitizer",
+    "description": "Dynamic memory error detector for the Linux kernel. Instruments memory accesses at compile time to detect out-of-bounds reads/writes and use-after-free bugs in kernel code. Uses shadow memory (1 byte per 8 bytes of kernel memory) to track valid access ranges. KASAN reports with full stack traces. Available in generic (slow) and SW/HW tag-based (faster) modes.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KCSAN",
+    "full_name": "Kernel Concurrency Sanitizer",
+    "description": "Dynamic race condition detector for the Linux kernel using compile-time instrumentation to detect data races on shared kernel memory. When two concurrent accesses to the same memory location occur without proper synchronization (and at least one is a write), KCSAN reports the race with stack traces for both threads. Replaces KTSAN for mainline use.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KFENCE",
+    "full_name": "Kernel Electric Fence",
+    "description": "Low-overhead kernel memory safety detector (Linux 5.12+) designed for production use. Samples a small fraction of kernel allocations into a guarded memory pool where each allocation is surrounded by guard pages. Page faults on guard pages immediately detect out-of-bounds accesses. Negligible performance impact compared to KASAN.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "K"
+  },
+  {
+    "acronym": "KSMBD",
+    "full_name": "Kernel SMB Daemon",
+    "description": "In-kernel SMB3 server implementation (Linux 5.15+) providing file sharing without a userspace daemon overhead. Processes SMB2/3 requests directly in kernel context for lower latency and higher throughput than Samba's userspace approach. Managed via ksmbd-tools (ksmbd.adduser, ksmbd.addshare). Still considered experimental for production use by many distributions.",
     "difficulty": "Advanced",
     "category": "OS",
     "letter": "K"
@@ -3689,6 +4897,118 @@ const ACRONYMS_DATA = [
     "letter": "L"
   },
   {
+    "acronym": "LINUX",
+    "full_name": "Linux Kernel",
+    "description": "Open-source Unix-like monolithic kernel created by Linus Torvalds in 1991. Written in C with architecture-specific assembly. Key subsystems: CFS process scheduler, virtual memory manager, VFS (virtual file system), TCP/IP networking stack, Netfilter, device driver model, and eBPF runtime. Licensed under GPLv2. Basis of Android, embedded systems, and the majority of global server infrastructure.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "L"
+  },
+  {
+    "acronym": "LBAAS",
+    "full_name": "Load Balancer as a Service",
+    "description": "Cloud networking service providing on-demand load balancing without managing appliances. Examples: AWS ALB/NLB, Azure Load Balancer, GCP Cloud Load Balancing, OpenStack Octavia. Features: health checks, SSL termination, session persistence, autoscaling integration, and WAF attachment. Billed per hour and per gigabyte of processed traffic.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "L"
+  },
+  {
+    "acronym": "LUSTRE",
+    "full_name": "Lustre File System",
+    "description": "High-performance parallel distributed file system used in HPC. Architecture: Metadata Servers (MDS/MDT) handle namespace operations; Object Storage Servers (OSS/OST) handle data. Clients mount Lustre via kernel module, striping files across multiple OSTs for parallel I/O throughput reaching hundreds of GB/s. Used in the majority of top 500 supercomputers.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "L"
+  },
+  {
+    "acronym": "LOGFM",
+    "full_name": "Log Format Standard",
+    "description": "Specification defining the structure and fields of log output for a service or application. Common formats: Apache Combined Log Format, JSON structured logging, syslog RFC 5424, W3C Extended Log Format. Structured JSON logs are preferred in observability stacks (Loki, Splunk, Elasticsearch) for machine-readable field parsing and search.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "L"
+  },
+  {
+    "acronym": "LOGRT",
+    "full_name": "Log Rotation Config",
+    "description": "Process and configuration archiving current log files and creating new empty ones to prevent unlimited disk growth. Managed by logrotate on Linux (/etc/logrotate.d/). Rotation strategies: size-based, time-based (daily, weekly), or count-based. Signals (SIGHUP) reload daemons after rotation so they open new file descriptors on the new log file.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "L"
+  },
+  {
+    "acronym": "LSYND",
+    "full_name": "Lsyncd Live Sync",
+    "description": "Live Syncing Daemon watching directories using inotify (Linux) or kqueue (BSD) and triggering rsync on changes. Provides near-real-time file replication between servers with configurable delay batching to avoid excessive sync invocations during rapid file changes. Used for web content replication, active-active NFS alternatives, and incremental backup triggers.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "L"
+  },
+  {
+    "acronym": "LSSOF",
+    "full_name": "lsof File Inspector",
+    "description": "List Open Files: Unix/Linux diagnostic tool displaying all files (regular files, sockets, pipes, device nodes) opened by running processes. Used to find which process holds a lock, which ports are listening (lsof -i :443), and which deleted files are keeping disk space allocated. Key options: -p (by PID), -u (by user), -i (by network connection).",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "L"
+  },
+  {
+    "acronym": "LTERM",
+    "full_name": "Linux Terminal Emulator",
+    "description": "Graphical terminal emulator providing a command-line interface to the shell. Common emulators: GNOME Terminal, Konsole, Alacritty, WezTerm, xterm. Implement VT100/VT220/xterm escape sequences for cursor control, color (256-color, true color), and formatting. Session multiplexers (tmux, screen) add persistence, window management, and split panes.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "L"
+  },
+  {
+    "acronym": "LWIP",
+    "full_name": "Lightweight IP Stack",
+    "description": "Open-source TCP/IP stack for embedded systems with severe memory constraints (tens of KB RAM). Implements IPv4/IPv6, TCP, UDP, DHCP, DNS, ICMP, SNMP, and PPP. Used in microcontrollers (STM32, ESP32, ESP8266) and RTOS environments (FreeRTOS+TCP, Zephyr). Configurable to trade feature completeness for memory footprint.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "L"
+  },
+  {
+    "acronym": "LOGLV",
+    "full_name": "Log Level Hierarchy",
+    "description": "Severity classification for log messages controlling which messages are emitted and stored. Standard levels (syslog RFC 5424, lowest to highest severity): DEBUG, INFO, NOTICE, WARNING, ERROR, CRITICAL, ALERT, EMERG. Application frameworks (Log4j, Python logging, Winston) implement similar hierarchies. Production systems typically emit WARNING and above.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "L"
+  },
+  {
+    "acronym": "LZONE",
+    "full_name": "DNS Local Zone Override",
+    "description": "DNS zone configured on a resolver to override public DNS responses for specific domains with local records. Used for split-horizon DNS (returning internal IPs for internal queries), development overrides, and ad/malware blocking (RPZ — Response Policy Zones). Configured in BIND via zone blocks, Unbound via local-zone/local-data, or Pi-hole custom DNS entries.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "L"
+  },
+  {
+    "acronym": "LLDB",
+    "full_name": "Low Level Debugger",
+    "description": "Debugger developed by the LLVM project as a modern alternative to GDB. Supports C, C++, Objective-C, and Swift debugging with a consistent Python scripting API, structured data inspection, and expression evaluation using the Clang/LLVM infrastructure. Default debugger in Xcode. Provides memory and register inspection, breakpoints, watchpoints, and remote debugging via GDB server protocol.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "L"
+  },
+  {
+    "acronym": "LKRG",
+    "full_name": "Linux Kernel Runtime Guard",
+    "description": "Loadable kernel module implementing runtime integrity checking for the Linux kernel. Monitors kernel text, read-only data, and process credentials for unauthorized modifications. Detects rootkit techniques such as syscall table hijacking, function pointer overwriting, and privilege escalation attempts. Developed by the Openwall Project.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "L"
+  },
+  {
+    "acronym": "LGTM",
+    "full_name": "Looks Good To Me",
+    "description": "Code review approval signal used in pull request workflows to indicate a reviewer has inspected changes and approves merging. Popularized as text comment, later formalized in GitHub review approvals. Also the name of GitHub's now-retired static analysis platform (LGTM.com) based on CodeQL, replaced by GitHub Advanced Security.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "L"
+  },
+  {
     "acronym": "MAAS",
     "full_name": "Metal as a Service",
     "description": "Canonical's open-source platform for provisioning bare-metal servers as cloud instances. Automates server discovery via BMC/IPMI, PXE booting, OS deployment, and lifecycle management. Enables cloud-like provisioning automation on physical hardware without requiring a hypervisor layer.",
@@ -4001,6 +5321,118 @@ const ACRONYMS_DATA = [
     "letter": "M"
   },
   {
+    "acronym": "MITRE",
+    "full_name": "MITRE ATT&CK Framework",
+    "description": "Globally accessible knowledge base of adversary tactics, techniques, and procedures (TTPs) based on real-world observations. Organized into matrices (Enterprise, Mobile, ICS) with Tactics (why), Techniques (how), and Sub-techniques (specific implementations). Used for threat modeling, red/blue team exercises, detection gap analysis, and SOC coverage mapping.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "M"
+  },
+  {
+    "acronym": "MYSQL",
+    "full_name": "MySQL Database",
+    "description": "Open-source relational database (GPL/commercial, owned by Oracle). Plugin-based storage engine architecture: InnoDB (default, ACID, row-level locking), MyISAM (legacy). Supports replication (async, semi-sync, Group Replication), partitioning, JSON columns, and full-text search. MariaDB is a community fork maintaining broad compatibility with additional features.",
+    "difficulty": "Base",
+    "category": "Database",
+    "letter": "M"
+  },
+  {
+    "acronym": "MESOS",
+    "full_name": "Apache Mesos",
+    "description": "Distributed resource management platform abstracting CPU, memory, storage, and network across a cluster. Two-level scheduling: Mesos manages resources; frameworks (Marathon, Spark, Chronos) schedule tasks on offered resources. Largely superseded by Kubernetes for container orchestration but remains in some HPC and large-scale data processing environments.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "M"
+  },
+  {
+    "acronym": "MINIO",
+    "full_name": "MinIO Object Storage",
+    "description": "High-performance, S3-compatible open-source object storage. Runs on-premises or in any cloud. Supports erasure coding for data protection, distributed mode for horizontal scaling, server-side encryption (SSE-S3, SSE-KMS, SSE-C), and S3 lifecycle management. API-compatible with AWS S3 SDK for self-hosted private cloud and edge storage deployments.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "M"
+  },
+  {
+    "acronym": "MCAST",
+    "full_name": "Multicast Transmission",
+    "description": "Network delivery mode sending a single stream to multiple recipients simultaneously using a multicast group address (224.0.0.0/4 IPv4, ff00::/8 IPv6). Requires IGMP (IPv4) or MLD (IPv6) for group membership on each segment. PIM (Protocol Independent Multicast) routes multicast between segments. Used for IPTV, financial market data feeds, and video conferencing.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "M"
+  },
+  {
+    "acronym": "MDMGR",
+    "full_name": "MDM Manager Platform",
+    "description": "Mobile Device Management system remotely configuring, monitoring, and enforcing policies on smartphones, tablets, and laptops. Capabilities: certificate and profile deployment, application management, encryption enforcement, remote wipe, compliance checking, and conditional access integration. Platforms: Microsoft Intune, Jamf Pro, VMware Workspace ONE.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "M"
+  },
+  {
+    "acronym": "MSSQL",
+    "full_name": "Microsoft SQL Server",
+    "description": "Enterprise relational database management system from Microsoft. Key features: T-SQL language, AlwaysOn Availability Groups (HA), columnstore indexes (OLAP performance), in-memory OLTP (Hekaton), Row-Level Security, dynamic data masking, and Always Encrypted. Available on Windows and Linux. Editions: Express (free), Standard, Enterprise, Developer.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "M"
+  },
+  {
+    "acronym": "MLOCK",
+    "full_name": "Memory Lock Syscall",
+    "description": "System call (mlock/mlockall) preventing memory pages or an entire process's address space from being swapped to disk. Critical for cryptographic key material (preventing secrets from appearing in swap), real-time applications requiring deterministic latency, and database buffer pools. Controlled by RLIMIT_MEMLOCK resource limit per process.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "M"
+  },
+  {
+    "acronym": "MTRCE",
+    "full_name": "Multicast Trace Tool",
+    "description": "Linux network tool querying multicast routers along the path from source to destination, collecting hop-by-hop information about tree membership, packet counts, and TTL values. Analogous to traceroute for multicast paths. Used for diagnosing multicast routing failures, verifying PIM join propagation, and measuring multicast tree depth.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "M"
+  },
+  {
+    "acronym": "MPENG",
+    "full_name": "Malware Protection Engine",
+    "description": "Microsoft Malware Protection Engine (MpEngine): core antimalware scanning component used by Windows Defender, Microsoft Defender for Endpoint, and Exchange Online Protection. Processes file signatures, heuristics, cloud-based queries (MAPS), and behavioral analysis. Updated independently of Windows via Windows Update; critical MpEngine vulnerabilities have historically been high-severity RCE vectors.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "M"
+  },
+  {
+    "acronym": "MPTCP",
+    "full_name": "Multipath TCP",
+    "description": "Extension to TCP (RFC 8684) allowing a single connection to use multiple network paths simultaneously. Each subflow is a standard TCP stream; the MPTCP layer resequences data across paths. Enables seamless Wi-Fi/LTE handover on mobile devices (used in Apple iOS since iOS 7 for Siri), bandwidth aggregation, and resilience against link failures.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "M"
+  },
+  {
+    "acronym": "MBUF",
+    "full_name": "Memory Buffer",
+    "description": "Fundamental data structure in BSD-derived network stacks (FreeBSD, macOS, older Linux) for holding network packet data. An mbuf is a fixed-size structure (128 or 256 bytes) with a data region and pointer to the next mbuf in a chain. Modern Linux replaced mbufs with sk_buff (socket buffer) structures, but the term persists in BSD/macOS networking code.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "M"
+  },
+  {
+    "acronym": "MOBY",
+    "full_name": "Moby Project",
+    "description": "Open-source framework and upstream project behind Docker Engine, maintained by Docker Inc. and contributors. Provides modular components (containerd, runc, BuildKit, libnetwork) that can be assembled into custom container platforms. The name reflects Docker's shift from a monolithic product to a component ecosystem. Docker Desktop and Docker Engine are downstream products of Moby.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "M"
+  },
+  {
+    "acronym": "MDBX",
+    "full_name": "Memory-Mapped Database Extended",
+    "description": "Embedded key-value database derived from LMDB (Lightning Memory-Mapped Database). Uses memory-mapped files for zero-copy reads and MVCC (multi-version concurrency control) for concurrent readers with a single writer. MDBX adds improvements over LMDB: online compaction, reclaimable space tracking, and crash consistency guarantees. Used in Ethereum clients and high-throughput systems.",
+    "difficulty": "Advanced",
+    "category": "Database",
+    "letter": "M"
+  },
+  {
     "acronym": "NAT",
     "full_name": "Network Address Translation",
     "description": "Process of rewriting source or destination IP addresses in packet headers as they pass through a router or firewall. Enables private RFC 1918 address spaces to communicate with the Internet via a single public IP. Introduces connection tracking state and complicates inbound connections requiring port forwarding.",
@@ -4309,6 +5741,118 @@ const ACRONYMS_DATA = [
     "full_name": "Network Wire Filter Program",
     "description": "BPF (Berkeley Packet Filter) program attached to a network interface at the kernel level to filter or process packets before they reach userspace. Written in eBPF bytecode and loaded via tc (traffic control) or XDP (eXpress Data Path). Used for packet capture filtering (tcpdump), DDoS mitigation, and high-performance load balancing.",
     "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "N"
+  },
+  {
+    "acronym": "NGINX",
+    "full_name": "NGINX Web Server",
+    "description": "High-performance open-source web server, reverse proxy, and load balancer. Event-driven, asynchronous architecture handles tens of thousands of concurrent connections with low memory usage. Used as HTTP server, SSL terminator, upstream load balancer, and API gateway. NGINX Plus adds active health checks, dynamic upstream reconfiguration, and NGINX App Protect WAF.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "N"
+  },
+  {
+    "acronym": "NETNS",
+    "full_name": "Network Namespace",
+    "description": "Linux kernel isolation primitive creating an independent network stack (interfaces, routing tables, firewall rules, sockets) for a process group. Used by containers (Docker, Podman) and Kubernetes pods for network isolation. Created with ip netns add. Virtual Ethernet pairs (veth) connect namespaces to each other or to the host bridge.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "N"
+  },
+  {
+    "acronym": "NFSV4",
+    "full_name": "NFSv4 Protocol",
+    "description": "Version 4 of the Network File System (RFC 7530). Introduces stateful semantics (file locking), mandatory strong security (Kerberos/RPCSEC_GSS), compound operations reducing round-trips, NFSv4 ACL support, and a single well-known port (2049). NFSv4.1 adds pNFS (parallel NFS) for distributed data access across multiple storage servers.",
+    "difficulty": "Advanced",
+    "category": "Protocol",
+    "letter": "N"
+  },
+  {
+    "acronym": "NOSQL",
+    "full_name": "NoSQL Database",
+    "description": "Category of databases not using the relational model or SQL. Types: document (MongoDB, CouchDB), key-value (Redis, DynamoDB), wide-column (Cassandra, HBase), and graph (Neo4j, Neptune). Trade ACID guarantees (in some implementations) for horizontal scalability, flexible schemas, and high write throughput. BASE consistency model: Basically Available, Soft state, Eventually consistent.",
+    "difficulty": "Base",
+    "category": "Database",
+    "letter": "N"
+  },
+  {
+    "acronym": "NMCLI",
+    "full_name": "NetworkManager CLI",
+    "description": "Command-line interface for NetworkManager on Linux. Manages wired, Wi-Fi, VPN, bond, bridge, VLAN, and team connections. Key operations: nmcli con show, nmcli con up/down, nmcli dev status, nmcli con mod. Connection profiles stored in /etc/NetworkManager/system-connections/ as INI-format files. Essential for server-side network configuration scripting.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "N"
+  },
+  {
+    "acronym": "NVMET",
+    "full_name": "NVMe over Fabrics Target",
+    "description": "Linux kernel subsystem exposing local NVMe namespaces to remote initiators over RDMA (RoCE, iWARP), Fibre Channel (FC-NVMe), or TCP (NVMe/TCP). Configured via configfs (/sys/kernel/config/nvmet/). Provides latency approaching local NVMe storage when used over high-speed RDMA fabrics. Managed with nvmetcli tool.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "N"
+  },
+  {
+    "acronym": "NBIOS",
+    "full_name": "NetBIOS Protocol",
+    "description": "Legacy network API and protocol providing name resolution (NBNS), session establishment, and datagram distribution over LAN. Three services: Name Service (UDP 137), Datagram Service (UDP 138), Session Service (TCP 139). NetBIOS over TCP/IP (NBT, RFC 1001/1002) extended it to IP networks. Largely replaced by DNS and SMB direct (port 445) in modern Windows environments.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "N"
+  },
+  {
+    "acronym": "NLOAD",
+    "full_name": "Network Traffic Monitor",
+    "description": "Linux command-line tool visualizing NIC traffic in real time as ASCII bar charts. Displays incoming and outgoing throughput, peak values, and total transferred data per interface. Useful for quick bandwidth monitoring on servers without a full observability stack. Complements iftop (per-connection view) and nethogs (per-process bandwidth).",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "N"
+  },
+  {
+    "acronym": "NFLOG",
+    "full_name": "Netfilter Log",
+    "description": "Linux Netfilter subsystem for logging matched packets to userspace via the NFLOG target in iptables/nftables rules. Packets sent to a netlink socket are processed by ulogd2 or libnetfilter_log. Provides richer metadata than the syslog-based LOG target: full packet headers, timestamps, and routing interface information for security auditing.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "N"
+  },
+  {
+    "acronym": "NSTAT",
+    "full_name": "Netstat Statistics Tool",
+    "description": "Command displaying network statistics: socket table (listening and connected), routing table, interface counters, and multicast memberships. Being replaced by ss (socket statistics from iproute2), which queries kernel netlink and is faster for large socket counts. Both remain useful: netstat -rn for routing table, ss -tulpn for listening ports and associated processes.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "N"
+  },
+  {
+    "acronym": "NETSH",
+    "full_name": "Network Shell",
+    "description": "Windows command-line scripting utility for configuring and monitoring network components. Supports firewall rules (netsh advfirewall), interface configuration, wireless profiles (netsh wlan), HTTP.sys URL reservation (netsh http), and IPsec policies. Outputs can be exported as scripts for repeatable configuration. Partially superseded by PowerShell networking cmdlets.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "N"
+  },
+  {
+    "acronym": "NVML",
+    "full_name": "NVIDIA Management Library",
+    "description": "C-based API for monitoring and managing NVIDIA GPU devices. Exposes GPU utilization, memory usage, temperature, power draw, ECC error counts, clock speeds, and process information. Used by nvidia-smi, monitoring agents (Prometheus nvidia_gpu_exporter), ML frameworks, and cluster managers (SLURM, Kubernetes device plugin) for GPU resource management.",
+    "difficulty": "Intermediate",
+    "category": "Hardware",
+    "letter": "N"
+  },
+  {
+    "acronym": "NBDE",
+    "full_name": "Network Bound Disk Encryption",
+    "description": "Framework for automating LUKS volume decryption at boot based on network policy rather than a passphrase. The Clevis client binds a LUKS key to a Tang server's signing key; decryption succeeds only when the machine can reach the Tang server on the network. Prevents offline decryption of stolen drives. Implemented in Red Hat/Fedora via Clevis+Tang.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "N"
+  },
+  {
+    "acronym": "NTPQ",
+    "full_name": "NTP Query Tool",
+    "description": "Command-line utility for querying and monitoring NTP servers and the local ntpd daemon. Displays peer status (stratum, offset, jitter, reference clock), association variables, and kernel timekeeping state. Key commands: peers (list all peers), rv (read variables), mru (most recently used clients). Used for diagnosing NTP synchronization issues.",
+    "difficulty": "Intermediate",
     "category": "Networking",
     "letter": "N"
   },
@@ -4633,6 +6177,126 @@ const ACRONYMS_DATA = [
     "letter": "O"
   },
   {
+    "acronym": "OAUTH",
+    "full_name": "OAuth 2.0 Framework",
+    "description": "Open authorization framework (RFC 6749) enabling third-party applications to obtain limited access to user accounts without exposing credentials. Core grant types: Authorization Code (web apps), Client Credentials (M2M), and Device Code (input-constrained devices). OAuth 2.1 draft consolidates best practices by removing Implicit and ROPC grant types.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "O"
+  },
+  {
+    "acronym": "OWASP",
+    "full_name": "OWASP Foundation",
+    "description": "Open Web Application Security Project: non-profit producing freely available security resources. Best known for the OWASP Top 10 (most critical web security risks), ASVS (Application Security Verification Standard), WSTG (Web Security Testing Guide), ZAP (Zed Attack Proxy), and Dependency-Check (SCA tool for known vulnerable components).",
+    "difficulty": "Base",
+    "category": "Security",
+    "letter": "O"
+  },
+  {
+    "acronym": "OVSDB",
+    "full_name": "OVS Database Protocol",
+    "description": "Management protocol and schema for Open vSwitch configuration (RFC 7047). Stores bridge, port, interface, flow, tunnel, and QoS settings. The ovsdb-server process manages the database; ovs-vsctl is the CLI client. Used by SDN controllers (OpenDaylight, OpenStack Neutron) to configure OVS remotely via JSON-RPC over TCP or Unix socket.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "O"
+  },
+  {
+    "acronym": "OSTREE",
+    "full_name": "OSTree Versioned OS",
+    "description": "Library and tool for versioning operating system file trees, analogous to git for OS images. Used by Fedora Silverblue, GNOME OS, and embedded Linux for atomic, transactional OS updates with rollback capability. Each deployment is a separate checkout; bootloader selects the active deployment. Core of the rpm-ostree and flatpak ecosystems.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "O"
+  },
+  {
+    "acronym": "OSSEC",
+    "full_name": "OSSEC HIDS",
+    "description": "Open-source host-based intrusion detection system performing log analysis, file integrity monitoring (FIM), rootkit detection, real-time alerting, and active response (auto firewall rules, account lockout). Supports agentless monitoring via SSH and agent-based deployment across Linux, Windows, and macOS. Successor projects: Wazuh (full SIEM), OSSEC+ (commercial).",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "O"
+  },
+  {
+    "acronym": "OPCUA",
+    "full_name": "OPC Unified Architecture",
+    "description": "Industrial communication standard (IEC 62541) for data exchange between industrial controllers, SCADA systems, and IT applications. Platform-independent, service-oriented with built-in security (TLS, X.509, authentication). Used in Industry 4.0 and IIoT to bridge OT (operational technology) and IT networks without proprietary vendor protocols.",
+    "difficulty": "Advanced",
+    "category": "Protocol",
+    "letter": "O"
+  },
+  {
+    "acronym": "OTELM",
+    "full_name": "OpenTelemetry SDK",
+    "description": "CNCF observability framework (graduated) providing unified APIs and SDKs for generating traces, metrics, and logs. Vendor-neutral: exports to Jaeger, Zipkin, Prometheus, and any OTLP-compatible backend. OpenTelemetry Collector acts as a telemetry pipeline: receives, processes, and exports data. Merged OpenTracing and OpenCensus projects.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "O"
+  },
+  {
+    "acronym": "OVIRT",
+    "full_name": "oVirt Virtualization",
+    "description": "Open-source virtualization management platform built on KVM/QEMU. Provides centralized management of hosts, VMs, storage domains, and networking via web UI and REST API. Architecture: oVirt Engine (Java/WildFly) with VDSM agents on KVM hosts. Supports live migration, snapshots, and VM HA. Basis for Red Hat Virtualization (now replaced by Red Hat OpenShift Virtualization).",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "O"
+  },
+  {
+    "acronym": "OPWRT",
+    "full_name": "OpenWrt Firmware",
+    "description": "Open-source Linux distribution for embedded network devices (routers, APs, switches). Provides a writable filesystem, opkg package manager, and LuCI web UI replacing vendor firmware. Supports advanced networking: VLAN, VPN (WireGuard, OpenVPN), QoS, BGP (via FRRouting), and custom package installation. Runs on hundreds of supported devices.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "O"
+  },
+  {
+    "acronym": "OSINT",
+    "full_name": "Open Source Intelligence",
+    "description": "Collection and analysis of information from publicly available sources. In cybersecurity: gathering target information (domains, IPs, employee names, technologies, leaked credentials) before an engagement. Tools: Shodan, theHarvester, Maltego, SpiderFoot, WHOIS, Censys, Certificate Transparency logs. Also used by threat intelligence teams tracking adversary infrastructure.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "O"
+  },
+  {
+    "acronym": "OFLOW",
+    "full_name": "Buffer Overflow Attack",
+    "description": "Error condition when a computation result exceeds the representable range or a write goes beyond the end of a fixed-size buffer. Stack overflow overwrites the return address enabling code injection. Heap overflow corrupts adjacent metadata. Integer overflow wraps around to an unexpected small value. Foundation of many memory corruption exploits mitigated by ASLR, stack canaries, and NX/DEP.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "O"
+  },
+  {
+    "acronym": "OBJST",
+    "full_name": "Object Storage Model",
+    "description": "Storage architecture managing data as discrete objects (data + metadata + unique key) rather than files or blocks. Accessed via HTTP APIs (S3-compatible, Swift). No directory hierarchy; flat namespace with bucket/prefix organization. Ideal for unstructured data at scale: backups, media files, logs, and ML datasets. Examples: AWS S3, MinIO, Ceph RADOS GW, Azure Blob Storage.",
+    "difficulty": "Base",
+    "category": "Cloud",
+    "letter": "O"
+  },
+  {
+    "acronym": "OVPN",
+    "full_name": "OpenVPN Configuration File",
+    "description": "File format and abbreviation for OpenVPN, an open-source SSL/TLS VPN solution. OpenVPN uses TLS for key exchange, supports UDP and TCP transports, operates in tun (layer 3) or tap (layer 2) mode, and authenticates via certificates, pre-shared keys, or username/password with MFA. The .ovpn file bundles server address, port, certificates, and client key into a single portable configuration.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "O"
+  },
+  {
+    "acronym": "OPATH",
+    "full_name": "Open Path File Descriptor",
+    "description": "Linux open(2) flag (O_PATH, since kernel 2.6.39) that opens a file descriptor referring to a path without opening the underlying file for read/write. The resulting fd can be used for fstat, fchdir, and as a base for openat/linkat operations. Useful for safely traversing directory trees without TOCTOU races or opening special files (devices, pipes) unintentionally.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "O"
+  },
+  {
+    "acronym": "OLMEC",
+    "full_name": "Online Machine-state Error Checker",
+    "description": "Internal AMD diagnostic framework used during silicon validation to detect memory controller and CPU core errors under real workloads. Not a user-facing product; referenced in AMD processor errata and validation reports. Analogous to Intel's MCA (Machine Check Architecture) validation infrastructure.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "O"
+  },
+  {
     "acronym": "PAT",
     "full_name": "Port Address Translation",
     "description": "Specific form of NAT where both IP address and port number are translated, allowing thousands of private hosts to share a single public IP. The gateway maintains a table of (private IP, private port) → (public IP, public port) mappings. Also called NAPT or IP masquerading in Linux terminology.",
@@ -4934,6 +6598,134 @@ const ACRONYMS_DATA = [
     "description": "Development tool measuring program performance by sampling or instrumenting code execution. Records which functions consume the most CPU time, memory allocations, and call frequencies. Types: sampling profilers (perf, py-spy) measure with minimal overhead; instrumentation profilers (gprof) add code to every function.",
     "difficulty": "Intermediate",
     "category": "Dev",
+    "letter": "P"
+  },
+  {
+    "acronym": "PYENV",
+    "full_name": "Pyenv Python Manager",
+    "description": "Tool managing multiple Python versions on a single system. Installs Python versions into ~/.pyenv/versions/, sets global and per-directory versions via .python-version files, and provides shims intercepting python/pip calls. Works with pyenv-virtualenv plugin for isolated per-project environments. Alternative to system Python, avoiding dependency conflicts.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "P"
+  },
+  {
+    "acronym": "PGSQL",
+    "full_name": "PostgreSQL Database",
+    "description": "Short form of PostgreSQL: open-source object-relational database emphasizing extensibility and SQL standards compliance. Key features: MVCC, full ACID compliance, advanced indexing (GIN, GiST, BRIN, partial indexes), JSONB, table inheritance, custom types, procedural languages (PL/pgSQL, PL/Python), and logical replication with publication/subscription.",
+    "difficulty": "Base",
+    "category": "Database",
+    "letter": "P"
+  },
+  {
+    "acronym": "PXEBT",
+    "full_name": "PXE Network Boot",
+    "description": "Preboot Execution Environment: boots a client OS image from the network via DHCP+TFTP without a local disk. BIOS/UEFI sends a DHCP Discover with PXE option; server returns TFTP address and boot filename. Used for OS deployment (Cobbler, Foreman, WDS), diskless workstations, rescue environments, and automated bare-metal provisioning.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "P"
+  },
+  {
+    "acronym": "PHPFM",
+    "full_name": "PHP-FPM Process Manager",
+    "description": "PHP FastCGI Process Manager providing advanced process management over standard CGI: adaptive process spawning, per-pool configuration, slow log, emergency restart, and per-pool resource limits. Web servers (NGINX, Apache mod_proxy_fcgi) communicate with PHP-FPM over Unix socket or TCP. Standard deployment model for PHP in containerized environments.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "P"
+  },
+  {
+    "acronym": "PROTO",
+    "full_name": "Protocol Buffer",
+    "description": "Short form for Protobuf: Google's language-neutral, platform-neutral mechanism for serializing structured data. Schema defined in .proto files; protoc compiler generates typed classes in 10+ languages. Produces compact binary encoding significantly smaller and faster to parse than JSON. Used by gRPC, Cloud Spanner, and many internal Google systems.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "P"
+  },
+  {
+    "acronym": "PODFL",
+    "full_name": "Podman Container File",
+    "description": "Containerfile or Dockerfile processed by Podman (podman build). Podman is a daemonless OCI container engine compatible with Docker CLI but running rootless by default. Uses Buildah for image construction, supports pods (groups of containers sharing a network namespace), and generates systemd unit files for container lifecycle management.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "P"
+  },
+  {
+    "acronym": "PTRAC",
+    "full_name": "ptrace System Call",
+    "description": "Linux/Unix system call allowing a process to observe and control another process's execution. Used by debuggers (gdb, lldb, strace) to set breakpoints, read/write registers and memory, and intercept system calls. Security: seccomp policies can restrict ptrace; YAMA LSM limits ptrace scope. Also the basis for sandboxing tools (minijail, gVisor ptrace mode).",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "P"
+  },
+  {
+    "acronym": "PGBDR",
+    "full_name": "pgBouncer Connection Pooler",
+    "description": "Lightweight PostgreSQL connection pooler maintaining a pool of persistent connections and multiplexing shorter-lived client connections onto them. Modes: session pooling (default), transaction pooling (most efficient), statement pooling. Reduces PostgreSQL process overhead when many short-lived clients connect. Configured via pgbouncer.ini with listen_addr, pool_mode, and auth settings.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "P"
+  },
+  {
+    "acronym": "PWNDB",
+    "full_name": "Pwned Credentials DB",
+    "description": "Service indexing leaked credential dumps from data breaches for security research. Used by security teams to check if organizational email addresses appear in breach data. Have I Been Pwned (hibp) offers a k-anonymity API: client sends the first 5 chars of a SHA-1 hash; server returns matching hashes without exposing the full password query.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "P"
+  },
+  {
+    "acronym": "PKICP",
+    "full_name": "PKI Certificate Policy",
+    "description": "Formal document defining rules under which a CA issues, manages, and revokes certificates. Identified by an OID in the Certificate Policies extension. Paired with a CPS (Certification Practice Statement). CA/Browser Forum Baseline Requirements define mandatory policies for publicly trusted CAs covering key generation, validation, and revocation timelines.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "P"
+  },
+  {
+    "acronym": "PSYNC",
+    "full_name": "Partial Rsync Sync",
+    "description": "rsync's incremental transfer algorithm transferring only changed portions of files. The sender computes rolling checksums of fixed-size blocks; the receiver identifies matching blocks, and only non-matching data is transmitted. The --partial flag preserves incomplete transfers for resumption. Reduces bandwidth dramatically for large file updates over slow links.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "P"
+  },
+  {
+    "acronym": "PIPLN",
+    "full_name": "CI/CD Pipeline",
+    "description": "Automated sequence of stages (build → test → scan → deploy) triggered by code commits. In Unix shells: cmd1 | cmd2 | cmd3 connects stdout to stdin. In CPU architecture: instruction pipeline stages (fetch, decode, execute, writeback) enabling instruction-level parallelism. In data engineering: ETL stages transforming raw data to enriched output.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "P"
+  },
+  {
+    "acronym": "PERF",
+    "full_name": "Performance Analysis Tool",
+    "description": "Linux kernel profiling tool using hardware performance counters (PMU), software counters, and tracepoints. Core commands: perf stat (aggregate counts), perf record + perf report (call graph sampling), perf top (live top-like view), perf trace (syscall tracer). Generates flame graphs via perf script output. Requires CAP_SYS_ADMIN or relaxed /proc/sys/kernel/perf_event_paranoid.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "P"
+  },
+  {
+    "acronym": "PROOT",
+    "full_name": "Userspace chroot",
+    "description": "Userspace implementation of chroot(2) using ptrace to intercept and translate filesystem path syscalls. Allows unprivileged users to run software as if rooted at an alternative directory, enabling package installation in a non-root environment. Used by Termux for Linux package compatibility on Android and in CI environments where root is unavailable.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "P"
+  },
+  {
+    "acronym": "PKILL",
+    "full_name": "Process Kill by Pattern",
+    "description": "Unix utility that sends signals to processes matching a name pattern or other criteria, without requiring a known PID. Internally wraps pgrep logic. Common usage: pkill -9 firefox (SIGKILL by name), pkill -HUP nginx (reload by name), pkill -u username (kill all processes of a user). Counterpart to killall; behavior differences exist between Linux and BSD implementations.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "P"
+  },
+  {
+    "acronym": "PSTAT",
+    "full_name": "Process Status Information",
+    "description": "BSD-derived tool displaying process statistics including memory usage, swap, I/O, and CPU time accumulated since process start. On Linux, similar data is exposed via /proc/[pid]/stat and /proc/[pid]/status. The pstat name also refers to a kernel data structure inspection tool in older BSD systems for examining swap, process tables, and open files.",
+    "difficulty": "Intermediate",
+    "category": "OS",
     "letter": "P"
   },
   {
@@ -5252,6 +7044,38 @@ const ACRONYMS_DATA = [
     "acronym": "QPTP",
     "full_name": "Quantum Point-to-Point",
     "description": "Direct quantum communication link between two nodes using QKD over a dedicated fiber or free-space channel. The simplest QKD topology, limited by fiber attenuation to roughly 100-200 km without quantum repeaters.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "Q"
+  },
+  {
+    "acronym": "QUERY",
+    "full_name": "Database Query Statement",
+    "description": "Request for data retrieval or manipulation submitted to a DBMS. SQL queries use SELECT, INSERT, UPDATE, DELETE, and DDL statements. The query planner selects execution plans based on statistics, indexes, and join order. EXPLAIN/EXPLAIN ANALYZE shows the chosen plan and actual cost. Query optimization is the primary lever for database performance tuning.",
+    "difficulty": "Base",
+    "category": "Database",
+    "letter": "Q"
+  },
+  {
+    "acronym": "QUEUE",
+    "full_name": "First-In First-Out Data Structure",
+    "description": "Abstract data structure where elements are inserted at the tail and removed from the head (FIFO semantics). Implemented as linked lists, ring buffers, or lock-free structures depending on concurrency requirements. Kernel message queues (POSIX mq_open), task queues in thread pools, network packet queues (qdisc in Linux), and job queues in distributed systems all implement queue semantics.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "Q"
+  },
+  {
+    "acronym": "QUART",
+    "full_name": "Async Python Web Framework",
+    "description": "Python async web microframework compatible with Flask's API but built on asyncio. Allows existing Flask applications to be ported to async with minimal code changes. Supports async request handlers, websockets, and server-sent events. Uses Hypercorn as its default ASGI server. Useful as a migration path from Flask to fully async architectures.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "Q"
+  },
+  {
+    "acronym": "QDISC",
+    "full_name": "Queuing Discipline",
+    "description": "Linux kernel component of the traffic control (tc) subsystem that manages packet scheduling on a network interface. Different qdiscs implement different scheduling algorithms: pfifo_fast (default, three priority bands), HTB (Hierarchical Token Bucket for bandwidth shaping), FQ_CODEL (Fair Queue CoDel for bufferbloat), CAKE (Common Applications Kept Enhanced). Configured via tc qdisc commands.",
     "difficulty": "Advanced",
     "category": "Networking",
     "letter": "Q"
@@ -5577,6 +7401,126 @@ const ACRONYMS_DATA = [
     "letter": "R"
   },
   {
+    "acronym": "REDIS",
+    "full_name": "Redis Cache Server",
+    "description": "In-memory data structure server supporting strings, hashes, lists, sets, sorted sets, streams, and geospatial indexes. Persistence: RDB snapshots and AOF (append-only file). HA via Redis Sentinel; horizontal sharding via Redis Cluster. Commonly used for caching, session storage, pub/sub messaging, rate limiting, and distributed locks (Redlock algorithm).",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "R"
+  },
+  {
+    "acronym": "REGEX",
+    "full_name": "Regular Expression",
+    "description": "Formal language describing string patterns using metacharacters (., *, +, ?, [], {}, ^, $, |, ()). Implemented in virtually every programming language and tool (grep, sed, Perl, Python re, PCRE2). Two main engine types: NFA (backtracking, feature-rich) and DFA (linear time, no backtracking). ReDoS attacks exploit catastrophic backtracking in poorly written expressions.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "R"
+  },
+  {
+    "acronym": "RSYNC",
+    "full_name": "Remote Sync Utility",
+    "description": "Unix utility for fast, incremental file and directory synchronization over SSH or rsync daemon protocol. Uses a rolling checksum delta algorithm to transfer only changed file blocks. Preserves permissions, timestamps, symlinks, hardlinks, and ACLs. Key flags: -a (archive), -v (verbose), -z (compress), --delete (mirror), --dry-run (preview). Basis of many backup solutions.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "R"
+  },
+  {
+    "acronym": "REALM",
+    "full_name": "Kerberos Auth Realm",
+    "description": "Administrative domain in Kerberos containing users, services, and a KDC (Key Distribution Center). Realm names are uppercase by convention, typically matching the DNS domain (EXAMPLE.COM). Cross-realm trust allows principals from one realm to authenticate to services in another. Active Directory domains map one-to-one to Kerberos realms.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "R"
+  },
+  {
+    "acronym": "RCLNE",
+    "full_name": "Rclone Cloud Sync",
+    "description": "Command-line utility syncing and managing files between local storage and 40+ cloud providers (S3, GCS, Azure Blob, Backblaze B2, Dropbox, OneDrive, SFTP). Supports encrypted remotes, FUSE mounting, bandwidth throttling, server-side copy, and filtering. Used for multi-cloud backup, migration, and mounting S3 buckets as local filesystems.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "R"
+  },
+  {
+    "acronym": "RTFCT",
+    "full_name": "runc Container Runtime",
+    "description": "Low-level OCI container runtime implementing the OCI Runtime Specification. Spawns and manages container processes using Linux namespaces, cgroups v1/v2, and seccomp profiles. Used by Docker (via containerd), Kubernetes (via CRI-O or containerd), and Podman as the default underlying runtime. Alternative runtimes (gVisor, Kata Containers) implement the same OCI interface.",
+    "difficulty": "Advanced",
+    "category": "Cloud",
+    "letter": "R"
+  },
+  {
+    "acronym": "RSTLS",
+    "full_name": "Rustls TLS Library",
+    "description": "Modern TLS implementation in pure Rust without unsafe code. Implements TLS 1.2 and 1.3 with a focus on memory safety and correctness. No support for legacy protocols (SSL 3.0, TLS 1.0/1.1) or weak cipher suites by design. Used in Cloudflare infrastructure, Actix-web, and Hyper HTTP library. Growing adoption as a safer alternative to OpenSSL.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "R"
+  },
+  {
+    "acronym": "RPCBM",
+    "full_name": "RPC Bind Mapper",
+    "description": "Portmapper service (rpcbind) mapping ONC RPC program numbers to TCP/UDP ports. Clients query rpcbind (port 111) to discover which port a specific RPC service is listening on. Required for NFSv3, NIS, and other ONC RPC services. NFSv4 uses only port 2049 and does not require rpcbind, simplifying firewall rules for NFS.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "R"
+  },
+  {
+    "acronym": "RPKID",
+    "full_name": "RPKI Validation Daemon",
+    "description": "Software daemon implementing Resource Public Key Infrastructure for BGP route origin validation. Fetches Route Origin Authorizations (ROAs) from RPKI repositories, validates cryptographically, and exports Validated ROA Payloads to the BGP router via RTR protocol (RFC 8210). Implementations: Routinator (NLnet Labs), FORT, Cloudflare OctoRPKI.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "R"
+  },
+  {
+    "acronym": "RTTMS",
+    "full_name": "RTT Measurement",
+    "description": "Round-Trip Time: elapsed time between sending a packet and receiving its acknowledgment. Measured by ping (ICMP), traceroute, and TCP (SRTT — Smoothed RTT per connection). TCP uses RTT to calculate RTO (Retransmission Timeout): RTO = SRTT + 4*RTTVAR. High RTT reduces TCP throughput by limiting congestion window growth.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "R"
+  },
+  {
+    "acronym": "ROOTF",
+    "full_name": "Root Filesystem",
+    "description": "Top-level filesystem mounted at / in Unix/Linux systems. Contains essential directories: /bin, /sbin, /etc, /lib, /proc, /sys, /dev, /tmp, /var, /usr, /home. The kernel mounts it at boot from the device specified in the bootloader. Immutable rootfs (read-only root) is used in container images and embedded systems for security and reproducibility.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "R"
+  },
+  {
+    "acronym": "RUSTP",
+    "full_name": "Rust Language Toolchain",
+    "description": "Rust language ecosystem: Cargo (build system and package manager), crates.io (package registry), Cargo.toml (dependencies), Cargo.lock (reproducible builds). Rust's ownership and borrow checker prevents memory safety bugs at compile time: no use-after-free, no data races, no null pointer dereferences in safe code. Widely adopted for systems programming, WebAssembly, and CLI tools.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "R"
+  },
+  {
+    "acronym": "RBASH",
+    "full_name": "Restricted Bash",
+    "description": "Restricted variant of the Bash shell (invoked as rbash or bash -r) that limits the user's ability to change directories, set PATH/SHELL/HISTFILE, redirect output, and execute commands with slashes in their names. Used to create constrained shell environments for service accounts or shared systems. Escape vectors exist; not suitable as a security boundary without additional isolation.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "R"
+  },
+  {
+    "acronym": "RPATH",
+    "full_name": "Runtime Library Search Path",
+    "description": "ELF binary metadata field specifying directories the dynamic linker searches for shared libraries at runtime, before consulting LD_LIBRARY_PATH and /etc/ld.so.conf. Embedded at link time via -Wl,-rpath,/path. Useful for deploying applications with bundled libraries but can create security issues if writable paths are included. $ORIGIN substitution enables relative rpaths.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "R"
+  },
+  {
+    "acronym": "RDTSC",
+    "full_name": "Read Time Stamp Counter",
+    "description": "x86 instruction that reads the processor's Time Stamp Counter — a 64-bit counter incremented every clock cycle since reset. Used for high-resolution timing in benchmarks, profiling, and latency measurements. Modern CPUs provide a constant-rate TSC (invariant TSC) unaffected by frequency scaling. RDTSCP adds a memory fence and processor ID for serialized reads.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "R"
+  },
+  {
     "acronym": "SAN",
     "full_name": "Storage Area Network",
     "description": "Dedicated high-speed network connecting servers to shared block storage devices. Uses Fibre Channel (FC) or iSCSI over Ethernet. Storage appears to servers as locally attached block devices (LUNs). Contrasted with NAS, which provides file-level access (NFS, SMB) over a standard IP network.",
@@ -5889,6 +7833,134 @@ const ACRONYMS_DATA = [
     "letter": "S"
   },
   {
+    "acronym": "SHELL",
+    "full_name": "Unix Shell Interpreter",
+    "description": "Command interpreter providing a user interface to the OS. Parses and executes commands, manages job control, handles I/O redirection (>, >>, <, 2>&1) and pipelines (|). Supports scripting: variables, loops, conditionals, functions. Common shells: bash (default on most Linux), zsh (default on macOS), fish, dash (POSIX minimal, used for /bin/sh on Debian/Ubuntu).",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "S"
+  },
+  {
+    "acronym": "SMTPS",
+    "full_name": "SMTP Secure Port 465",
+    "description": "SMTP over implicit TLS on port 465, where the connection starts encrypted immediately. Re-standardized in RFC 8314 (2018) as the preferred submission port for mail clients. Distinct from STARTTLS on port 587 (upgrades unencrypted connection). Mail relaying between servers still uses port 25 with STARTTLS opportunistic encryption.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "S"
+  },
+  {
+    "acronym": "SYSMD",
+    "full_name": "Systemd Init System",
+    "description": "System and service manager for Linux replacing SysV init. Unit files (.service, .socket, .timer, .mount, .target) declare dependencies and startup order. journald collects structured binary logs queryable via journalctl -u service. Parallel service startup reduces boot time. Provides socket activation, cgroup-based process tracking, and transient service units.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "S"
+  },
+  {
+    "acronym": "SFLOW",
+    "full_name": "sFlow Sampling Protocol",
+    "description": "Sampling-based network monitoring protocol (RFC 3176) providing continuous traffic analysis at line rate. Samples 1-in-N packets and exports flow records to a collector. More scalable than NetFlow/IPFIX for 100G+ links where full flow export is impractical. Supported by data center switches (Arista, Juniper, Cumulus) for traffic visibility and capacity planning.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "S"
+  },
+  {
+    "acronym": "SWARM",
+    "full_name": "Docker Swarm Mode",
+    "description": "Native Docker container orchestration mode grouping Docker hosts into a swarm with manager and worker nodes. Services define desired state (replicas, image, ports); the swarm scheduler places containers across workers. Supports rolling updates, service discovery via internal DNS, overlay networks, and secrets management. Simpler than Kubernetes but less feature-rich.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "S"
+  },
+  {
+    "acronym": "SOCAT",
+    "full_name": "Socket Cat Relay",
+    "description": "Multipurpose relay utility for bidirectional byte stream transfer between two addresses. Supports TCP, UDP, Unix sockets, files, processes, SSL/TLS, and VSOCK. More powerful than netcat: supports full-duplex relay, SSL termination, SOCKS proxy. Used for port forwarding, socket debugging, VPN-less tunneling, and creating test listeners.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "S"
+  },
+  {
+    "acronym": "SPARK",
+    "full_name": "Apache Spark Engine",
+    "description": "Unified analytics engine for large-scale data processing. In-memory computation provides 10-100x speed improvement over Hadoop MapReduce for iterative algorithms. Supports batch (DataFrame API), streaming (Structured Streaming), ML (MLlib), and graph (GraphX) workloads. APIs in Python (PySpark), Scala, Java, and R. Runs on YARN, Kubernetes, Mesos, or standalone cluster.",
+    "difficulty": "Advanced",
+    "category": "Database",
+    "letter": "S"
+  },
+  {
+    "acronym": "SLAAC",
+    "full_name": "Stateless Address Autoconfiguration",
+    "description": "IPv6 mechanism (RFC 4862) allowing hosts to self-configure global unicast addresses without DHCP. Combines the /64 prefix from Router Advertisement messages with an Interface Identifier (EUI-64 from MAC or random per RFC 8981 privacy extensions). DNS configuration requires RDNSS option (RFC 8106) in the RA or a separate DHCPv6 stateless server.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "S"
+  },
+  {
+    "acronym": "SWAGR",
+    "full_name": "Swagger API Spec Tool",
+    "description": "Original name for the OpenAPI Specification (OAS): language-agnostic, machine-readable format for REST API definitions. Swagger 2.0 was donated to the OpenAPI Initiative and renamed OpenAPI 3.0. Swagger UI renders interactive API documentation from OpenAPI files; Swagger Codegen generates client SDKs and server stubs in 40+ languages.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "S"
+  },
+  {
+    "acronym": "STELT",
+    "full_name": "Stealth Port Scan",
+    "description": "Nmap TCP SYN scan (-sS, half-open scan) sending SYN packets without completing the TCP handshake. Open port: returns SYN-ACK (scanner immediately resets). Closed port: returns RST. Faster and less detectable than full connect scans since no connection is established and many systems do not log incomplete handshakes. Requires raw socket privileges.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "S"
+  },
+  {
+    "acronym": "SHMEM",
+    "full_name": "Shared Memory IPC",
+    "description": "Inter-process communication mechanism allowing multiple processes to access a common memory region without kernel mediation per data transfer. POSIX API: shm_open, mmap, shm_unlink. System V API: shmget, shmat, shmdt. Fastest IPC method but requires explicit synchronization (mutex, semaphore) to prevent race conditions. Used in databases, video processing, and high-frequency trading.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "S"
+  },
+  {
+    "acronym": "SALTK",
+    "full_name": "SaltStack Automation",
+    "description": "Python-based infrastructure automation tool using a master-minion architecture with ZeroMQ messaging. States (.sls files in YAML+Jinja2) describe desired system configuration. Execution modules run ad-hoc commands across thousands of minions simultaneously. Salt-ssh provides agentless mode over SSH. Acquired by VMware; now part of Broadcom's portfolio.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "S"
+  },
+  {
+    "acronym": "STAP",
+    "full_name": "SystemTap",
+    "description": "Linux dynamic tracing framework that compiles probe scripts into kernel modules at runtime. A stap script attaches probes to kernel functions, syscalls, uprobes, and tracepoints; probe handlers execute arbitrary C-like code to collect and aggregate data. Used for performance analysis and debugging without kernel recompilation. Requires debug symbols or DWARF info.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "S"
+  },
+  {
+    "acronym": "SMAP",
+    "full_name": "Supervisor Mode Access Prevention",
+    "description": "x86 CPU security feature (Intel Broadwell+, AMD Zen) that prevents the kernel from accidentally reading or writing userspace memory while running in kernel mode (ring 0). Access must be explicitly allowed via STAC/CLAC instructions around intentional user memory copies (copy_from_user, copy_to_user). Mitigates certain kernel exploitation techniques.",
+    "difficulty": "Advanced",
+    "category": "Hardware",
+    "letter": "S"
+  },
+  {
+    "acronym": "SONAR",
+    "full_name": "SonarQube Platform",
+    "description": "Continuous code quality and security platform that performs static analysis on source code. Detects bugs, code smells, security vulnerabilities, and measures technical debt. Integrates with CI/CD pipelines via SonarScanner; results displayed on a dashboard with issue tracking. Supports 30+ languages. SonarCloud is the hosted SaaS version.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "S"
+  },
+  {
+    "acronym": "SECAP",
+    "full_name": "Security Capability",
+    "description": "Linux capability bit within the kernel's POSIX capabilities model, subdivided into permitted, effective, and inheritable sets per process. Individual capabilities (CAP_NET_ADMIN, CAP_SYS_PTRACE, CAP_SETUID, etc.) grant specific privileged operations without requiring full root. Container runtimes drop all non-required capabilities by default to reduce attack surface.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "S"
+  },
+  {
     "acronym": "TFTP",
     "full_name": "Trivial File Transfer Protocol",
     "description": "Simplified UDP-based file transfer protocol (RFC 1350) using a lock-step acknowledgment model. No authentication, no directory listing, no security. Used for network booting (PXE), CISCO IOS image transfers, and loading firmware to network devices where simplicity and small code footprint matter more than features.",
@@ -6193,6 +8265,118 @@ const ACRONYMS_DATA = [
     "letter": "T"
   },
   {
+    "acronym": "TCPDP",
+    "full_name": "Tcpdump Packet Analyzer",
+    "description": "Command-line packet capture and analysis tool using libpcap for raw socket capture. BPF filter syntax: port 443, host 10.0.0.1, tcp and not port 22. Output modes: ASCII (-A), hex+ASCII (-X), pcap file (-w file.pcap). Captured pcaps openable in Wireshark. Essential for protocol debugging, network troubleshooting, and TLS handshake inspection.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "T"
+  },
+  {
+    "acronym": "TMPFS",
+    "full_name": "Tmpfs RAM Filesystem",
+    "description": "Linux virtual memory filesystem storing files entirely in RAM (and swap if needed). Mounted at /tmp, /run, /dev/shm. Size configurable: mount -t tmpfs -o size=512m tmpfs /mnt/tmp. Files disappear on reboot. Used for POSIX shared memory (/dev/shm), inter-process scratch space, and build artifacts in CI environments where disk I/O is the bottleneck.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "T"
+  },
+  {
+    "acronym": "TFORM",
+    "full_name": "Terraform IaC Config",
+    "description": "HashiCorp Terraform infrastructure-as-code configuration in HCL format (.tf files). Declares providers, resources, data sources, variables, outputs, and modules. State file (terraform.tfstate) tracks deployed resource attributes. Workflow: init → plan → apply. Remote state in S3/GCS/Azure Blob with DynamoDB/GCS locking prevents concurrent apply conflicts.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "T"
+  },
+  {
+    "acronym": "TLSNI",
+    "full_name": "TLS SNI Extension",
+    "description": "Server Name Indication (RFC 6066): TLS extension where the client specifies the target hostname in the ClientHello before any certificate is sent. Enables virtual hosting of multiple TLS certificates on a single IP address. Without SNI, the server cannot select the correct certificate. ESNI/ECH (Encrypted Client Hello) encrypts SNI to prevent surveillance and censorship.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "T"
+  },
+  {
+    "acronym": "TAINT",
+    "full_name": "Kubernetes Node Taint",
+    "description": "Node configuration preventing pods from being scheduled unless the pod has a matching Toleration. Three effects: NoSchedule (new pods not scheduled), PreferNoSchedule (soft constraint), NoExecute (evicts existing pods lacking a toleration). Used to reserve nodes for specific workloads (GPU nodes), isolate dedicated infrastructure nodes, and drain nodes for maintenance.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "T"
+  },
+  {
+    "acronym": "TMODE",
+    "full_name": "Transparent Proxy Mode",
+    "description": "Network device operating mode forwarding traffic without altering layer 2/3 addresses, appearing invisible to endpoints. Used in: inline security appliances (IDS/IPS transparent mode), bridges forwarding Ethernet frames, and transparent HTTP proxies intercepting requests without client-side proxy configuration. Opposite of routed mode.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "T"
+  },
+  {
+    "acronym": "TRFMT",
+    "full_name": "Terraform Format Tool",
+    "description": "terraform fmt command enforcing canonical HCL code style: two-space indentation, aligned equals signs in attribute blocks, and sorted argument ordering. Run in CI pipelines as terraform fmt -check to fail builds on unformatted code. Analogous to gofmt for Go or Black for Python. Ensures consistent IaC code style across teams.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "T"
+  },
+  {
+    "acronym": "TUNER",
+    "full_name": "System Performance Tuner",
+    "description": "Tool or daemon optimizing OS parameters for specific workloads beyond defaults. Linux tuned daemon applies profiles (throughput-performance, latency-performance, virtual-guest). Parameters: CPU governor (performance vs powersave), NUMA balancing, transparent huge pages, IRQ affinity, and sysctl values (/etc/sysctl.conf). Database tuning targets: memory allocation, I/O scheduler, and swap tendency.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "T"
+  },
+  {
+    "acronym": "TRANS",
+    "full_name": "Network Address Translation",
+    "description": "Generic term for address or port translation by network devices. Encompasses NAT (Network Address Translation), PAT (Port Address Translation), and NAPT (Network Address and Port Translation). Maintains a state table mapping original and translated address-port pairs. Stateful connection tracking enables bidirectional traffic through a single public IP address.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "T"
+  },
+  {
+    "acronym": "TSHUT",
+    "full_name": "Graceful Process Shutdown",
+    "description": "Process termination sequence allowing an application to complete in-flight requests, flush write buffers, and release resources before exiting. Triggered by SIGTERM on Unix. Contrast with SIGKILL (immediate, uncatchable). In Kubernetes: pod receives SIGTERM, waits terminationGracePeriodSeconds (default 30s), then receives SIGKILL. Critical for zero-downtime rolling deployments.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "T"
+  },
+  {
+    "acronym": "TOPOL",
+    "full_name": "Network Topology",
+    "description": "Physical or logical arrangement of nodes, links, and paths in a network. Common topologies: Bus (shared medium), Ring, Star (hub-and-spoke), Mesh (full or partial redundant links), Spine-Leaf (data center two-tier), and Tree (hierarchical enterprise). Topology determines redundancy, failure domains, broadcast scope, latency characteristics, and deployment cost.",
+    "difficulty": "Base",
+    "category": "Networking",
+    "letter": "T"
+  },
+  {
+    "acronym": "TELEM",
+    "full_name": "Telemetry",
+    "description": "Automated collection and transmission of measurements from remote systems to a central monitoring infrastructure. In IT contexts, covers metrics (CPU, memory, network), traces (distributed request paths), and logs (event streams) — the three pillars of observability. Protocols include OTLP (OpenTelemetry), StatsD, and proprietary agents. Privacy regulations increasingly restrict system telemetry collection.",
+    "difficulty": "Base",
+    "category": "Cloud",
+    "letter": "T"
+  },
+  {
+    "acronym": "TOKIO",
+    "full_name": "Asynchronous Rust Runtime",
+    "description": "Event-driven, non-blocking I/O runtime for the Rust programming language. Provides an async task executor, a multi-threaded scheduler, async TCP/UDP sockets, timers, and synchronization primitives. The de facto standard async runtime in the Rust ecosystem; used by Actix-web, Axum, Tonic (gRPC), and most Rust network services. Built on Rust's async/await syntax and Future trait.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "T"
+  },
+  {
+    "acronym": "TRAEF",
+    "full_name": "Traefik Reverse Proxy",
+    "description": "Cloud-native reverse proxy and load balancer written in Go. Automatically discovers services via providers (Docker labels, Kubernetes Ingress, Consul) and configures routing dynamically without restarts. Supports automatic ACME certificate provisioning, middleware plugins (rate limiting, auth, headers), and dashboard UI. Common in Kubernetes and Docker Swarm deployments.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "T"
+  },
+  {
     "acronym": "UEFI",
     "full_name": "Unified Extensible Firmware Interface",
     "description": "Modern replacement for BIOS providing a standardized firmware interface between hardware and OS. Features: graphical pre-boot environment, Secure Boot (blocking unsigned bootloaders), network boot, support for GPT disks larger than 2 TB, and a modular driver model (EFI drivers) independent of the OS.",
@@ -6494,6 +8678,118 @@ const ACRONYMS_DATA = [
     "description": "General-purpose processor register accessible to user-mode code without privilege escalation. Distinguished from kernel registers that are only accessible in ring 0 (x86) or EL1+ (ARM). The number and width of user registers varies by ISA (e.g. 16 in x86-64, 31 in AArch64).",
     "difficulty": "Advanced",
     "category": "Hardware",
+    "letter": "U"
+  },
+  {
+    "acronym": "UNAME",
+    "full_name": "Unix System Name",
+    "description": "Unix/Linux command returning system information: kernel name (-s), hostname (-n), kernel release (-r), kernel version (-v), machine hardware (-m), OS (-o). uname -a returns all fields. Kernel release (uname -r) is critical for module compatibility, security patch verification, and automation scripts selecting the correct package version.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "U"
+  },
+  {
+    "acronym": "UNIXS",
+    "full_name": "Unix Domain Socket",
+    "description": "IPC endpoint in the filesystem (AF_UNIX socket family). Supports stream (TCP semantics), datagram (UDP semantics), and sequential packet modes. Faster than loopback TCP for local IPC due to no TCP/IP overhead or address resolution. Used by PostgreSQL, MySQL, Docker daemon, systemd socket activation, and D-Bus for local connections.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "U"
+  },
+  {
+    "acronym": "UBUTU",
+    "full_name": "Ubuntu Linux Distro",
+    "description": "Debian-based Linux distribution by Canonical. Available in LTS (5-year support) and interim (9-month) releases. Uses apt/dpkg package management, GNOME desktop by default, systemd, and netplan for network configuration. Widely used for cloud servers (most popular base image on AWS, GCP, Azure), Docker base images, WSL2, and developer workstations.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "U"
+  },
+  {
+    "acronym": "USRNS",
+    "full_name": "User Namespace Isolation",
+    "description": "Linux kernel namespace (since 3.8) mapping UIDs/GIDs between the namespace and the host. Enables rootless containers: a process appears as UID 0 inside but maps to an unprivileged UID on the host. Used by Podman, LXC (with user maps), and Singularity for unprivileged container execution without setuid helpers or root privileges.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "U"
+  },
+  {
+    "acronym": "UACCT",
+    "full_name": "User Account Control",
+    "description": "Windows security feature (UAC) requiring explicit elevation for administrative tasks. Standard users receive a credential prompt; administrators receive a consent prompt. Implemented via token splitting: users receive a standard token by default; the elevated token is granted only after UAC confirmation. Configurable via Group Policy (ConsentPromptBehaviorAdmin registry key).",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "U"
+  },
+  {
+    "acronym": "UMASK",
+    "full_name": "File Creation Mask",
+    "description": "Unix permission mask subtracted from default permissions when new files and directories are created. Specified as octal: umask 022 removes write permission for group and others, resulting in 644 for files (666-022) and 755 for directories (777-022). Set per-session in shell; configured globally in /etc/profile or /etc/bashrc for system-wide defaults.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "U"
+  },
+  {
+    "acronym": "UPNPD",
+    "full_name": "UPnP Daemon",
+    "description": "Background service implementing Universal Plug and Play on a router, allowing LAN devices (game consoles, media servers) to automatically open inbound port mappings on the NAT gateway. Security concern: UPnP is unauthenticated; malicious LAN software can create arbitrary port forwards. miniupnpd is the most common open-source implementation.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "U"
+  },
+  {
+    "acronym": "UPRXY",
+    "full_name": "URL Proxy Server",
+    "description": "Proxy accepting full URL-based HTTP requests (GET http://example.com/ HTTP/1.1) and fetching resources on behalf of clients. Used in transparent proxy deployments (WCCP redirect), corporate internet gateways, and caching proxies (Squid). HTTPS requires the CONNECT method to tunnel the TLS session, bypassing URL inspection.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "U"
+  },
+  {
+    "acronym": "USVCS",
+    "full_name": "Microservices Architecture",
+    "description": "Architectural style structuring an application as independently deployable services communicating via APIs (REST, gRPC, events). Each service owns its data store and scales autonomously. Benefits: independent deployment, technology diversity, fault isolation. Challenges: distributed tracing, eventual consistency, network latency, and increased operational complexity vs monolithic deployment.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "U"
+  },
+  {
+    "acronym": "ULTST",
+    "full_name": "Unit Test Suite",
+    "description": "Collection of automated tests verifying individual code units (functions, methods, classes) in isolation. Dependencies replaced by mocks or stubs. Frameworks: pytest (Python), JUnit (Java), Go test (built-in), Jest (JavaScript), RSpec (Ruby). Coverage tools (coverage.py, JaCoCo, Istanbul/nyc) measure which lines are exercised. Target: >80% meaningful coverage.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "U"
+  },
+  {
+    "acronym": "UPDNS",
+    "full_name": "Update DNS Record",
+    "description": "Operation modifying a DNS resource record via Dynamic DNS (RFC 2136, nsupdate), zone file edit and rndc reload, or a REST API (Cloudflare, Route53, PowerDNS). Change propagation depends on the previous TTL cached by resolvers. Verify with dig @authoritative-ns to confirm the new serial and record value before the old TTL expires.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "U"
+  },
+  {
+    "acronym": "UWSGI",
+    "full_name": "Universal Web Server Gateway Interface",
+    "description": "Full-featured application server and process manager for Python (WSGI), Ruby (Rack), PHP, Perl, and other language backends. Supports multiple socket types (UNIX, TCP, UDP), process/thread management, native uWSGI protocol for Nginx integration, Emperor mode for managing multiple apps, and plugins for language-specific optimizations.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "U"
+  },
+  {
+    "acronym": "UBOOT",
+    "full_name": "Das U-Boot Bootloader",
+    "description": "Open-source bootloader widely used in embedded Linux systems, network appliances, and single-board computers (Raspberry Pi, BeagleBone, Jetson). Provides hardware initialization, environment variable storage in non-volatile memory, network boot (TFTP, NFS), USB boot, and a scripting environment for boot sequence customization. Configured via defconfig and Device Tree.",
+    "difficulty": "Intermediate",
+    "category": "Hardware",
+    "letter": "U"
+  },
+  {
+    "acronym": "UBSAN",
+    "full_name": "Undefined Behavior Sanitizer",
+    "description": "Compiler instrumentation tool (GCC and Clang) that detects undefined behavior in C/C++ code at runtime. Catches signed integer overflow, null pointer dereference, misaligned memory access, invalid enum values, array out-of-bounds, and use of uninitialized values. Reports violations with source location. Used in the Linux kernel (CONFIG_UBSAN) and application testing pipelines.",
+    "difficulty": "Advanced",
+    "category": "Dev",
     "letter": "U"
   },
   {
@@ -6817,6 +9113,86 @@ const ACRONYMS_DATA = [
     "letter": "V"
   },
   {
+    "acronym": "VAULT",
+    "full_name": "HashiCorp Vault",
+    "description": "Secrets management platform providing centralized storage, access control, dynamic credential generation, and encryption-as-a-service. Secret engines: KV (static secrets), PKI (certificate issuance), AWS/GCP/Azure (dynamic cloud credentials), database (dynamic DB credentials). Auth methods: AppRole, Kubernetes, AWS IAM, LDAP. Key rotation and lease expiry enforce least-privilege access.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "V"
+  },
+  {
+    "acronym": "VIRSH",
+    "full_name": "Virsh KVM CLI",
+    "description": "Command-line interface for managing KVM/QEMU virtual machines and libvirt resources. Key commands: virsh list --all, virsh start/shutdown/destroy, virsh console, virsh snapshot-create-as, virsh edit (XML), virsh dumpxml, virsh pool-list, virsh net-list. Scriptable via bash; pairs with virt-install for VM provisioning and virt-clone for cloning.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "V"
+  },
+  {
+    "acronym": "VCNTR",
+    "full_name": "vCenter Management",
+    "description": "VMware vCenter Server: centralized management platform for vSphere environments. Manages ESXi hosts, VMs, clusters, distributed switches, storage, and vSAN via web UI and REST API. Core features: vMotion (live VM migration), DRS (Distributed Resource Scheduler), HA (automatic VM restart), and lifecycle management. Deployed as vCSA (Linux appliance) since vSphere 7.0.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "V"
+  },
+  {
+    "acronym": "VELRO",
+    "full_name": "Velero Kubernetes Backup",
+    "description": "Open-source Kubernetes backup and restore tool (formerly Heptio Ark). Backs up Kubernetes resource definitions (from API server) and persistent volume data (via Restic/Kopia or CSI snapshots) to object storage (S3, GCS, Azure Blob). Supports cluster migration, DR, and namespace-level restore. Schedule CRDs automate recurring backup jobs.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "V"
+  },
+  {
+    "acronym": "VMBKP",
+    "full_name": "VM Backup Strategy",
+    "description": "Process creating consistent copies of VM state (disk images, configuration) for recovery. Methods: agent-based (Veeam agent inside VM), agentless (VMware VADP snapshot-based), image-level (qemu-img, AWS Backup). Consistency: VSS quiescing (Windows) or fsfreeze (Linux) during snapshot to avoid filesystem inconsistency in the backup image.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "V"
+  },
+  {
+    "acronym": "VPCRT",
+    "full_name": "VPC Route Table",
+    "description": "Cloud routing construct defining traffic direction within a VPC subnet. Each subnet associates with one route table; each route has a destination CIDR and a target (internet gateway, NAT gateway, VPC peering, transit gateway, VPN, or local). Most-specific route wins. Separate route tables for public (IGW route) and private (NAT GW route) subnets enforce network segmentation.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "V"
+  },
+  {
+    "acronym": "VSFTD",
+    "full_name": "vsftpd FTP Daemon",
+    "description": "Very Secure FTP Daemon: lightweight, security-focused FTP server for Linux. Supports virtual users, SSL/TLS (FTPS via ssl_enable=YES), IPv6, bandwidth throttling, and chroot jailing of users to home directories. Configuration: /etc/vsftpd.conf. Passive mode requires pasv_min/max_port range and matching firewall rules to allow data connections.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "V"
+  },
+  {
+    "acronym": "VTUND",
+    "full_name": "VTun VPN Daemon",
+    "description": "Open-source VPN daemon creating virtual tunnel interfaces (tun/tap) over TCP or UDP. Supports LZO/zlib compression and bandwidth shaping. Earlier alternative to OpenVPN; less maintained but found in legacy network appliances and embedded Linux VPN implementations where a simple tunnel without PKI complexity is sufficient.",
+    "difficulty": "Intermediate",
+    "category": "Networking",
+    "letter": "V"
+  },
+  {
+    "acronym": "VXRMD",
+    "full_name": "VXLAN Remote MAC DB",
+    "description": "Database of MAC address entries learned for remote VTEPs in a VXLAN overlay, populated via BGP EVPN control plane or flood-and-learn data plane. When a frame targets a remote MAC, the local VTEP encapsulates it and forwards to the corresponding remote VTEP IP. Inspectable via bridge fdb show on Linux VXLAN interfaces.",
+    "difficulty": "Advanced",
+    "category": "Networking",
+    "letter": "V"
+  },
+  {
+    "acronym": "VBOX",
+    "full_name": "VirtualBox",
+    "description": "Open-source x86/AMD64 hypervisor (Type 2) developed by Oracle. Supports Windows, Linux, macOS, and Solaris guests with hardware virtualization (VT-x/AMD-V), paravirtualization (VirtIO, Hyper-V interface), snapshots, linked clones, NAT/bridged/internal networking, shared folders via Guest Additions, and a headless mode. Free for personal use; PUEL license for enterprise extensions.",
+    "difficulty": "Base",
+    "category": "Cloud",
+    "letter": "V"
+  },
+  {
     "acronym": "WAMP",
     "full_name": "Windows Apache MySQL PHP",
     "description": "Software stack bundling Apache HTTP server, MySQL (or MariaDB), and PHP on Windows for local web development. Common tools include WampServer and XAMPP. Equivalent to LAMP on Linux. Used to run and test PHP applications locally without a dedicated server.",
@@ -7134,6 +9510,126 @@ const ACRONYMS_DATA = [
     "description": "Logical environment grouping tools, configurations, files, and sessions for a specific project or user context. In IDEs (VS Code, IntelliJ), a workspace defines the root directory and project settings. In container and cloud platforms, it defines resource and access boundaries for a development or deployment unit.",
     "difficulty": "Base",
     "category": "Dev",
+    "letter": "W"
+  },
+  {
+    "acronym": "WAFFW",
+    "full_name": "WAF Firewall",
+    "description": "Web Application Firewall inspecting HTTP/HTTPS traffic and blocking requests matching known attack signatures (OWASP Core Rule Set), rate limits, or custom rules. Deployed inline (reverse proxy), out-of-band, or as a cloud service (AWS WAF, Cloudflare WAF, F5 AWAF). Protects against SQLi, XSS, CSRF, LFI, RFI, and automated bot attacks.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "W"
+  },
+  {
+    "acronym": "WRKFL",
+    "full_name": "Workflow Engine",
+    "description": "System orchestrating task execution sequences, decisions, and data transformations. Examples: Apache Airflow (DAG-based ETL), Temporal.io (durable workflow execution), AWS Step Functions (serverless state machine), Argo Workflows (Kubernetes-native). Key features: retry logic, dependency management, parallel execution, and durable state persistence across failures.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "W"
+  },
+  {
+    "acronym": "WINHV",
+    "full_name": "Windows Hypervisor",
+    "description": "Hyper-V: Microsoft's native type-1 hypervisor integrated into Windows Server and Windows 10/11 Pro/Enterprise. Uses Intel VT-x/AMD-V hardware virtualization. Manages VMs via Hyper-V Manager, PowerShell, or Windows Admin Center. Supports nested virtualization, live migration, generation 2 VMs (UEFI, Secure Boot), and ReFS/VHDX virtual disk formats.",
+    "difficulty": "Intermediate",
+    "category": "Cloud",
+    "letter": "W"
+  },
+  {
+    "acronym": "WEBGL",
+    "full_name": "WebGL Graphics API",
+    "description": "JavaScript API for GPU-accelerated 2D and 3D rendering in browsers without plugins. WebGL 1.0 is based on OpenGL ES 2.0; WebGL 2.0 on OpenGL ES 3.0. Executes GLSL shader programs on the GPU. Used for data visualization (deck.gl, three.js), browser games, and CAD tools. WebGPU is the next-generation successor with compute shader support.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "W"
+  },
+  {
+    "acronym": "WINSV",
+    "full_name": "Windows Server OS",
+    "description": "Microsoft's server OS providing Active Directory, DNS, DHCP, SMB file sharing, IIS web hosting, Hyper-V, failover clustering, and WSUS patch management. Available in Standard, Datacenter, and Essentials editions. Licensed per-core with CALs. Current release: Windows Server 2025. Server Core installation option provides a minimal footprint without GUI.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "W"
+  },
+  {
+    "acronym": "WEBPK",
+    "full_name": "Webpack JS Bundler",
+    "description": "JavaScript module bundler transforming application source files (JS, CSS, images) into optimized browser bundles. Concepts: entry points, loaders (transforming non-JS assets), plugins (HTML generation, optimization), code splitting (dynamic imports), and tree shaking (dead code elimination). Being supplemented by Vite, esbuild, and Turbopack in modern toolchains.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "W"
+  },
+  {
+    "acronym": "WSHKL",
+    "full_name": "Web Shell Malware",
+    "description": "Malicious script (PHP, ASP, JSP) uploaded to a web server to provide remote command execution via HTTP. Deployed after exploiting file upload vulnerabilities, RCE flaws, or CMS plugin vulnerabilities. Detection: file integrity monitoring (Tripwire, AIDE), EDR behavioral analysis, web server access log anomalies (unusual POST to image directories). Examples: China Chopper, b374k.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "W"
+  },
+  {
+    "acronym": "WCORS",
+    "full_name": "CORS Web Policy",
+    "description": "Cross-Origin Resource Sharing (W3C specification) controlling which origins can make cross-origin HTTP requests in browsers. Server responds with Access-Control-Allow-Origin, Access-Control-Allow-Methods, and Access-Control-Allow-Headers. Preflight OPTIONS request checks permissions before state-changing requests. Misconfigured wildcard CORS with credentials enables cross-site data theft.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "W"
+  },
+  {
+    "acronym": "WRKLD",
+    "full_name": "Cloud Workload",
+    "description": "Defined set of computing tasks running on cloud infrastructure. In Kubernetes: managed via Deployment, StatefulSet, DaemonSet, Job, and CronJob resources. Workload Identity Federation allows pods to authenticate to cloud APIs (S3, GCS, KMS) using Kubernetes service account tokens without static credentials stored as Secrets.",
+    "difficulty": "Base",
+    "category": "Cloud",
+    "letter": "W"
+  },
+  {
+    "acronym": "WPAPI",
+    "full_name": "WordPress REST API",
+    "description": "WordPress REST API providing JSON endpoints for programmatic access to posts, pages, users, and taxonomies at /wp-json/wp/v2/. Authentication: Application Passwords, OAuth 1.0a, or JWT plugins. Enables headless WordPress architectures (Next.js/React frontend consuming WP content), mobile app backends, and third-party content integrations.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "W"
+  },
+  {
+    "acronym": "WMIRM",
+    "full_name": "WMI Remote Management",
+    "description": "Windows Management Instrumentation for remote system management: querying hardware inventory, monitoring performance counters, executing remote commands, and managing services via DCOM/RPC. PowerShell uses Get-CimInstance (WS-Man transport, recommended) or Get-WmiObject (deprecated). WMI lateral movement is heavily monitored by EDR solutions.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "W"
+  },
+  {
+    "acronym": "WINRM",
+    "full_name": "Windows Remote Management",
+    "description": "Microsoft implementation of the WS-Management SOAP protocol enabling remote command execution and system management on Windows. Uses HTTP (port 5985) or HTTPS (port 5986). PowerShell Remoting (Enter-PSSession, Invoke-Command) runs over WinRM. Ansible uses WinRM for Windows automation. Requires explicit enablement (Enable-PSRemoting) and firewall rule configuration.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "W"
+  },
+  {
+    "acronym": "WAZUH",
+    "full_name": "Open-Source SIEM and XDR",
+    "description": "Open-source security platform combining HIDS (host intrusion detection), log analysis, vulnerability detection, and incident response. Agents installed on endpoints forward security data to the Wazuh manager, which correlates events using rules and integrates with OpenSearch/Elasticsearch for storage and visualization. Successor to OSSEC with active commercial development.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "W"
+  },
+  {
+    "acronym": "WARP",
+    "full_name": "Cloudflare WARP Protocol",
+    "description": "Cloudflare's VPN and DNS-over-HTTPS client using the WireGuard protocol with Cloudflare's network as the carrier. Routes all device traffic through Cloudflare's 1.1.1.1 infrastructure for filtering and acceleration. WARP+ adds intelligent routing for performance. WARP for Teams integrates with Cloudflare Access for Zero Trust network policies.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "W"
+  },
+  {
+    "acronym": "WEBDAV",
+    "full_name": "Web Distributed Authoring and Versioning",
+    "description": "HTTP extension (RFC 4918) enabling collaborative document editing over the web. Adds methods PROPFIND, PROPPATCH, MKCOL, COPY, MOVE, LOCK, and UNLOCK to standard HTTP. Allows clients to mount remote filesystems over HTTP(S). Used by calendar (CalDAV) and contact (CardDAV) sync protocols and legacy document management systems. Supported natively by Windows, macOS, and Linux file managers.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
     "letter": "W"
   },
   {
@@ -7457,6 +9953,70 @@ const ACRONYMS_DATA = [
     "letter": "X"
   },
   {
+    "acronym": "XPATH",
+    "full_name": "XPath Query Language",
+    "description": "W3C query language for selecting nodes from XML documents. Syntax: /root/child (absolute), //element (any descendant), @attr (attribute), [predicate] (filter condition). Used in XSLT, XQuery, Selenium (element locators), and XML configuration systems. XPath 2.0 adds a type system; XPath 3.1 adds maps, arrays, and JSON support.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "X"
+  },
+  {
+    "acronym": "XAUTH",
+    "full_name": "X11 Authorization",
+    "description": "Authentication mechanism for X Window System connections. xauth manages .Xauthority files containing MIT-MAGIC-COOKIE-1 tokens. SSH X11 forwarding (ssh -X/-Y) creates synthetic cookies preventing unauthorized local X connections. Without XAUTH any local process can connect to the X server and capture keystrokes or take screenshots.",
+    "difficulty": "Intermediate",
+    "category": "Security",
+    "letter": "X"
+  },
+  {
+    "acronym": "XMLRP",
+    "full_name": "XML-RPC Protocol",
+    "description": "Remote procedure call protocol encoding calls and responses in XML over HTTP. Simpler than SOAP: no WSDL, no namespaces. Supports basic types: int, string, boolean, double, dateTime, base64, array, struct. Used in WordPress XML-RPC API, Bugzilla, Confluence, and legacy blog publishing tools. Largely replaced by REST and gRPC in new systems.",
+    "difficulty": "Intermediate",
+    "category": "Protocol",
+    "letter": "X"
+  },
+  {
+    "acronym": "XSSER",
+    "full_name": "XSS Testing Framework",
+    "description": "Open-source penetration testing tool for discovering and exploiting Cross-Site Scripting vulnerabilities. Automates XSS payload injection, vector testing (GET, POST, cookie, HTTP header), WAF bypass detection, and result reporting. Supports DOM-based, reflected, and stored XSS testing. Used in authorized web application security assessments.",
+    "difficulty": "Advanced",
+    "category": "Security",
+    "letter": "X"
+  },
+  {
+    "acronym": "XSLTF",
+    "full_name": "XSLT Transform File",
+    "description": "XSL Transformation file (.xsl/.xslt) containing template rules for transforming XML source documents into XML, HTML, or plain text. Processors: Saxon, Xalan, libxslt. Templates match input nodes and produce output fragments. Used in data integration pipelines, document publishing workflows, and converting between XML schemas (e.g. WSDL to HTML documentation).",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "X"
+  },
+  {
+    "acronym": "XUNIT",
+    "full_name": "xUnit Testing Framework",
+    "description": "Family of unit testing frameworks following a common architecture originally defined by SUnit (Smalltalk). Implementations exist for every major language: JUnit (Java), NUnit/.NET (C#), PyTest/unittest (Python), CppUnit (C++), RSpec (Ruby). Core concepts: test fixtures (setUp/tearDown), test cases, test suites, and test runners with assertion libraries.",
+    "difficulty": "Base",
+    "category": "Dev",
+    "letter": "X"
+  },
+  {
+    "acronym": "XFCE",
+    "full_name": "Xfce Desktop Environment",
+    "description": "Lightweight GTK-based desktop environment for Unix-like systems. Designed for low resource consumption while remaining visually complete and functionally capable. Components include Xfwm4 (window manager), Thunar (file manager), and Xfce Panel. Popular in Linux distributions targeting older hardware (Xubuntu, MX Linux) and as a lightweight alternative on full-spec systems.",
+    "difficulty": "Base",
+    "category": "OS",
+    "letter": "X"
+  },
+  {
+    "acronym": "XDGBP",
+    "full_name": "XDG Base Directory Protocol",
+    "description": "Freedesktop.org specification defining standard locations for user-specific configuration, data, and cache files on Unix systems. Defines XDG_CONFIG_HOME (~/.config), XDG_DATA_HOME (~/.local/share), XDG_CACHE_HOME (~/.cache), and XDG_RUNTIME_DIR. Applications following XDG avoid cluttering the home directory with dot-files and enable clean multi-user environments.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "X"
+  },
+  {
     "acronym": "YAML",
     "full_name": "YAML Ain't Markup Language",
     "description": "Human-readable data serialization format commonly used for configuration files and data exchange. Uses indentation for structure, supports scalars, lists, and mappings. Widely adopted in DevOps tooling: Kubernetes manifests, Ansible playbooks, GitHub Actions, Docker Compose, and Helm charts. Strict on tabs vs spaces (tabs are forbidden).",
@@ -7777,6 +10337,30 @@ const ACRONYMS_DATA = [
     "letter": "Y"
   },
   {
+    "acronym": "YCBCR",
+    "full_name": "YCbCr Color Space",
+    "description": "Digital color encoding separating luminance (Y) from blue-difference (Cb) and red-difference (Cr) chroma channels. Allows chroma subsampling (4:2:0, 4:2:2, 4:4:4) to reduce bandwidth without significant perceptual quality loss. Used in JPEG compression, H.264, H.265, AV1, and broadcast video standards (BT.601, BT.709, BT.2020).",
+    "difficulty": "Intermediate",
+    "category": "Hardware",
+    "letter": "Y"
+  },
+  {
+    "acronym": "YACC",
+    "full_name": "Yet Another Compiler Compiler",
+    "description": "LALR(1) parser generator developed at Bell Labs. Takes a grammar specification in BNF-like notation and produces a C parser that recognizes the language defined by that grammar. Paired with Lex (lexer generator). GNU Bison is the modern compatible replacement. Historical importance: used to build the original Unix C compiler (cc) and many subsequent language parsers.",
+    "difficulty": "Advanced",
+    "category": "Dev",
+    "letter": "Y"
+  },
+  {
+    "acronym": "YAJL",
+    "full_name": "Yet Another JSON Library",
+    "description": "Streaming SAX-style JSON parser written in C with a minimal footprint. Designed for parsing arbitrarily large JSON documents without loading the entire document into memory. Provides callback-based event notifications (string, number, boolean, null, array start/end, map start/end). Used in systems-level applications where memory allocation must be tightly controlled.",
+    "difficulty": "Advanced",
+    "category": "Dev",
+    "letter": "Y"
+  },
+  {
     "acronym": "ZRAM",
     "full_name": "Zram (formerly compcache)",
     "description": "Linux kernel module that creates a compressed block device entirely in RAM. Used as a swap device to hold compressed memory pages, effectively expanding usable RAM with CPU overhead. Enabled by default in Android, ChromeOS, and many Linux distributions (Fedora, Ubuntu). Configured via /sys/block/zram0/ and systemd-zram-setup.",
@@ -8094,6 +10678,46 @@ const ACRONYMS_DATA = [
     "description": "Authorization primitive in capability-based security systems (object-capability model) that grants a specific set of rights (read, write, execute, delegate) to a resource within a defined zone. Used in Zephyr RTOS, capability-based microkernel research (seL4, Fuchsia), and emerging Web Permissions APIs to replace ambient authority with explicit, unforgeable tokens.",
     "difficulty": "Advanced",
     "category": "Security",
+    "letter": "Z"
+  },
+  {
+    "acronym": "ZINCD",
+    "full_name": "Zinc Search Daemon",
+    "description": "Lightweight Elasticsearch-compatible full-text search engine daemon written in Go. Designed as a low-resource alternative to Elasticsearch for self-hosted environments. Supports Elasticsearch query DSL, index mappings, and API compatibility, allowing drop-in use with Elasticsearch clients without JVM or the operational complexity of a full Elastic Stack deployment.",
+    "difficulty": "Intermediate",
+    "category": "Database",
+    "letter": "Z"
+  },
+  {
+    "acronym": "ZSTRD",
+    "full_name": "Zstd Streaming Mode",
+    "description": "Zstandard compression in streaming mode processing data in chunks without requiring the full input in memory. Enables real-time compression of network streams, log pipelines (Fluentd zstd output plugin), and large file transfers. The zstd CLI --stream flag, libzstd streaming API, and kernel integration all support chunk-based streaming compression and decompression.",
+    "difficulty": "Intermediate",
+    "category": "Dev",
+    "letter": "Z"
+  },
+  {
+    "acronym": "ZINIT",
+    "full_name": "Zsh Plugin Manager",
+    "description": "Fast Zsh plugin manager (formerly zplugin) supporting turbo mode for deferred plugin loading after shell startup, reducing interactive shell launch time. Supports loading from GitHub, local paths, and OMZ-compatible plugins. Features include snippet management, binary program management via pack, and ice-modifiers for fine-grained load control.",
+    "difficulty": "Intermediate",
+    "category": "OS",
+    "letter": "Z"
+  },
+  {
+    "acronym": "ZSWAP",
+    "full_name": "Compressed Swap Cache",
+    "description": "Linux kernel feature (since 3.11) implementing a compressed in-memory cache for swap pages. When a page is swapped out, ZSWAP compresses it (using lz4, zstd, or lzo) and stores it in a dynamically allocated pool before writing to the swap device. Reduces swap I/O at the cost of CPU cycles for compression/decompression. Useful on systems with fast CPUs and slow disks.",
+    "difficulty": "Advanced",
+    "category": "OS",
+    "letter": "Z"
+  },
+  {
+    "acronym": "ZBEAM",
+    "full_name": "Zero-copy Beam",
+    "description": "Internal Erlang/OTP VM (BEAM) optimization concept for reducing memory copies when sending large binaries between processes or over network sockets. The BEAM VM uses reference-counted binary heaps shared across processes; binaries above 64 bytes are stored off-process heap and passed by reference rather than copied. Critical for high-throughput Erlang/Elixir network servers.",
+    "difficulty": "Advanced",
+    "category": "Dev",
     "letter": "Z"
   }
 ];

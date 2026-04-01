@@ -36,13 +36,13 @@ The content is written by practitioners, validated by CI, and exported as a down
 ## Acronym of the Day
 
 <!-- STB:AOTD_START -->
-### 📖 Acronym of the Day — 2026-03-31
+### 📖 Acronym of the Day — 2026-04-01
 
-**CRC** — Cyclic Redundancy Check
+**BRPF** — Berkeley Packet Filter (Raw)
 
-> An error-detection algorithm that treats data as a polynomial and computes a remainder when divided by a generator polynomial. The resulting checksum (typically 16 or 32 bits) is appended to data and recomputed on receipt; a mismatch indicates corruption. Used in Ethernet frames, ZIP files, storage protocols, and firmware images.
+> Raw access layer of the BPF kernel subsystem, providing a VM-based packet filtering engine at the network driver level. eBPF extends the classic BPF with a more capable instruction set, maps, and helper functions, enabling use beyond packet filtering: tracing, security policy, and XDP forwarding.
 
-*Difficulty: Intermediate · Category: Protocol*
+*Difficulty: Advanced · Category: OS*
 <!-- STB:AOTD_END -->
 
 ---
@@ -63,56 +63,56 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 ## Stats
 
 <!-- STB:TOTAL_START -->
-**1012 acronyms** — last updated 2026-03-31
+**1340 acronyms** — last updated 2026-04-01
 <!-- STB:TOTAL_END -->
 
 <!-- STB:STATS_START -->
 | Letter | Count |
 |--------|-------|
-| A | 40 |
-| B | 39 |
-| C | 35 |
-| D | 38 |
-| E | 39 |
-| F | 38 |
-| G | 38 |
-| H | 35 |
-| I | 39 |
-| J | 40 |
-| K | 40 |
-| L | 40 |
-| M | 39 |
-| N | 39 |
-| O | 40 |
-| P | 38 |
-| Q | 40 |
-| R | 40 |
-| S | 39 |
-| T | 38 |
-| U | 38 |
-| V | 40 |
-| W | 40 |
-| X | 40 |
-| Y | 40 |
-| Z | 40 |
+| A | 54 |
+| B | 53 |
+| C | 48 |
+| D | 51 |
+| E | 51 |
+| F | 49 |
+| G | 52 |
+| H | 49 |
+| I | 54 |
+| J | 56 |
+| K | 55 |
+| L | 54 |
+| M | 53 |
+| N | 53 |
+| O | 55 |
+| P | 54 |
+| Q | 44 |
+| R | 55 |
+| S | 55 |
+| T | 52 |
+| U | 52 |
+| V | 50 |
+| W | 55 |
+| X | 48 |
+| Y | 43 |
+| Z | 45 |
 
 | Category | Count |
 |----------|-------|
-| Networking | 204 |
-| Security | 189 |
-| Dev | 165 |
-| OS | 149 |
-| Hardware | 131 |
-| Protocol | 88 |
-| Cloud | 44 |
-| Database | 32 |
-| AI | 10 |
+| Networking | 251 |
+| Security | 250 |
+| Dev | 224 |
+| OS | 220 |
+| Hardware | 150 |
+| Protocol | 106 |
+| Cloud | 78 |
+| Database | 49 |
+| AI | 12 |
 
 | Difficulty | Count |
 |------------|-------|
-| Base | 171 |
-| Intermediate | 462 |
-| Advanced | 379 |
+| Base | 216 |
+| Intermediate | 635 |
+| Advanced | 489 |
 <!-- STB:STATS_END -->
 
 ---
