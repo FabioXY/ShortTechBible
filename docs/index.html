@@ -55,30 +55,48 @@
     }
     .header-links a:hover { background: rgba(255,255,255,.28); }
 
-    /* ── Controls ── */
-    /* ── Controls: 3 rows ── */
+    /* ── Controls bar ── */
     .controls {
       position: sticky;
       top: 0;
       z-index: 100;
       background: #fff;
       border-bottom: 1px solid var(--border);
-      padding: 12px 24px;
+      padding: 10px 24px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       box-shadow: var(--shadow);
     }
 
-    /* Row 1: search full width */
-    .controls-row1 { display: flex; gap: 10px; align-items: center; }
-
-    #search {
+    /* Row 1: search (contained) + hint + sort + download */
+    .controls-row1 {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+    }
+    .search-wrapper {
       flex: 1;
-      padding: 9px 14px;
+      max-width: 520px;
+      position: relative;
+    }
+    .search-wrapper::before {
+      content: '⌕';
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: var(--gray);
+      pointer-events: none;
+    }
+    #search {
+      width: 100%;
+      padding: 8px 14px 8px 34px;
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
-      font-size: 1rem;
+      font-size: .95rem;
       outline: none;
       transition: border-color .2s;
     }
@@ -88,31 +106,30 @@
       background: var(--gray-lt); border: 1px solid var(--border);
       border-radius: 4px; padding: 1px 5px; font-size: .72rem;
     }
+    .controls-actions { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
 
-    /* Row 2: category filters centered */
+    /* Row 2: all filters centered on one line */
     .controls-row2 {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
     }
-
-    /* Row 3: difficulty filters + download buttons */
-    .controls-row3 {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+    /* Vertical separator between filter groups */
+    .filter-sep {
+      width: 1px;
+      height: 18px;
+      background: var(--border);
+      flex-shrink: 0;
+      align-self: center;
     }
-    .controls-row3-left  { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-    .controls-row3-right { display: flex; gap: 8px; align-items: center; }
 
-    .filter-group { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .filter-group { display: flex; gap: 5px; flex-wrap: wrap; align-items: center; }
     .filter-label {
-      font-size: .75rem; font-weight: 700; color: var(--gray);
+      font-size: .72rem; font-weight: 700; color: var(--gray);
       text-transform: uppercase; letter-spacing: .6px; white-space: nowrap;
+      margin-right: 2px;
     }
 
     .filter-btn {
@@ -358,19 +375,25 @@
 </header>
 
 <div class="controls">
-  <!-- Row 1: search bar + sort -->
+  <!-- Row 1: search (contained) · hint · sort · downloads -->
   <div class="controls-row1">
-    <input type="search" id="search" placeholder="Search acronyms, names, or descriptions…" autocomplete="off" />
+    <div class="search-wrapper">
+      <input type="search" id="search" placeholder="Search acronyms, names, or descriptions…" autocomplete="off" />
+    </div>
     <span class="search-hint">Press <kbd>/</kbd> to search</span>
-    <select id="sort-select" class="sort-select" title="Sort order">
-      <option value="az">A → Z</option>
-      <option value="za">Z → A</option>
-      <option value="short">Shortest first</option>
-      <option value="long">Longest first</option>
-    </select>
+    <div class="controls-actions">
+      <select id="sort-select" class="sort-select" title="Sort order">
+        <option value="az">A → Z</option>
+        <option value="za">Z → A</option>
+        <option value="short">Shortest first</option>
+        <option value="long">Longest first</option>
+      </select>
+      <button class="download-btn" id="download-csv">⬇ CSV</button>
+      <button class="download-btn" id="download-json">⬇ JSON</button>
+    </div>
   </div>
 
-  <!-- Row 2: category filters (centered) -->
+  <!-- Row 2: all filters on one line, centered, with separators -->
   <div class="controls-row2">
     <div class="filter-group" id="cat-filters">
       <span class="filter-label">Category</span>
@@ -385,30 +408,26 @@
       <button class="filter-btn" data-filter="AI">AI</button>
       <button class="filter-btn" data-filter="Protocol">Protocol</button>
     </div>
-  </div>
 
-  <!-- Row 3: difficulty filters (left) + download buttons (right) -->
-  <div class="controls-row3">
-    <div class="controls-row3-left">
-      <div class="filter-group" id="diff-filters">
-        <span class="filter-label">Difficulty</span>
-        <button class="filter-btn active" data-diff="all">All</button>
-        <button class="filter-btn" data-diff="Base">Base</button>
-        <button class="filter-btn" data-diff="Intermediate">Intermediate</button>
-        <button class="filter-btn" data-diff="Advanced">Advanced</button>
-      </div>
-      <div class="filter-group" id="len-filters">
-        <span class="filter-label">Length</span>
-        <button class="filter-btn active" data-len="all">All</button>
-        <button class="filter-btn" data-len="3">3</button>
-        <button class="filter-btn" data-len="4">4</button>
-        <button class="filter-btn" data-len="5">5</button>
-        <button class="filter-btn" data-len="6">6</button>
-      </div>
+    <div class="filter-sep"></div>
+
+    <div class="filter-group" id="diff-filters">
+      <span class="filter-label">Difficulty</span>
+      <button class="filter-btn active" data-diff="all">All</button>
+      <button class="filter-btn" data-diff="Base">Base</button>
+      <button class="filter-btn" data-diff="Intermediate">Intermediate</button>
+      <button class="filter-btn" data-diff="Advanced">Advanced</button>
     </div>
-    <div class="controls-row3-right">
-      <button class="download-btn" id="download-csv">⬇ CSV</button>
-      <button class="download-btn" id="download-json">⬇ JSON</button>
+
+    <div class="filter-sep"></div>
+
+    <div class="filter-group" id="len-filters">
+      <span class="filter-label">Length</span>
+      <button class="filter-btn active" data-len="all">All</button>
+      <button class="filter-btn" data-len="3">3</button>
+      <button class="filter-btn" data-len="4">4</button>
+      <button class="filter-btn" data-len="5">5</button>
+      <button class="filter-btn" data-len="6">6</button>
     </div>
   </div>
 </div>
