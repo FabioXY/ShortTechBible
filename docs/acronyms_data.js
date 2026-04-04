@@ -7113,6 +7113,14 @@ const ACRONYMS_DATA = [
     "letter": "R"
   },
   {
+    "acronym": "RAFT",
+    "full_name": "Reliable Replicate and Fault-Tolerant",
+    "description": "A consensus algorithm used in distributed systems to keep data consistent across multiple servers. It’s designed to be easier to understand than Paxos while achieving similar reliability. Used in systems like etcd and Consul for coordination and state management.",
+    "difficulty": "Advanced",
+    "category": "Dev",
+    "letter": "R"
+  },
+  {
     "acronym": "RFC",
     "full_name": "Request for Comments",
     "description": "Publication format of the IETF and IRTF defining Internet standards, experimental protocols, best practices, and informational documents. Despite the name, published RFCs are stable documents. Proposed Standards become full Internet Standards after two independent implementations. RFC 1 was published in 1969.",

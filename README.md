@@ -66,7 +66,7 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 ## Stats
 
 <!-- STB:TOTAL_START -->
-**1340 acronyms** — last updated 2026-04-04
+**1341 acronyms** — last updated 2026-04-04
 <!-- STB:TOTAL_END -->
 
 <!-- STB:STATS_START -->
@@ -89,7 +89,7 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 | O | 55 |
 | P | 54 |
 | Q | 44 |
-| R | 55 |
+| R | 56 |
 | S | 55 |
 | T | 52 |
 | U | 52 |
@@ -103,7 +103,7 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 |----------|-------|
 | Networking | 251 |
 | Security | 250 |
-| Dev | 224 |
+| Dev | 225 |
 | OS | 220 |
 | Hardware | 150 |
 | Protocol | 106 |
@@ -115,7 +115,7 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 |------------|-------|
 | Base | 216 |
 | Intermediate | 635 |
-| Advanced | 489 |
+| Advanced | 490 |
 <!-- STB:STATS_END -->
 
 ---

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "total": 1340,
-    "generated_at": "2026-04-04T12:39:17.051388+00:00",
+    "total": 1341,
+    "generated_at": "2026-04-04T12:43:19.673612+00:00",
     "source": "https://github.com/FabioXY/ShortTechBible"
   },
   "entries": [
@@ -7114,6 +7114,14 @@
       "full_name": "Representational State Transfer",
       "description": "Architectural style for distributed hypermedia systems defined by Roy Fielding. Key constraints: stateless client-server communication, uniform interface (HTTP verbs: GET, POST, PUT, DELETE, PATCH), resource identification via URIs, and representation (typically JSON or XML). The dominant API style for web services.",
       "difficulty": "Intermediate",
+      "category": "Dev",
+      "letter": "R"
+    },
+    {
+      "acronym": "RAFT",
+      "full_name": "Reliable Replicate and Fault-Tolerant",
+      "description": "A consensus algorithm used in distributed systems to keep data consistent across multiple servers. It’s designed to be easier to understand than Paxos while achieving similar reliability. Used in systems like etcd and Consul for coordination and state management.",
+      "difficulty": "Advanced",
       "category": "Dev",
       "letter": "R"
     },
