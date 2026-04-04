@@ -46,6 +46,17 @@ representation (typically JSON or XML). The dominant API style for web services.
 
 ---
 
+## RAFT — Reliable Replicate and Fault-Tolerant
+
+A consensus algorithm used in distributed systems to keep data consistent across multiple servers.
+It’s designed to be easier to understand than Paxos while achieving similar reliability.
+Used in systems like etcd and Consul for coordination and state management.
+
+**Difficulty:** Advanced
+**Category:** Dev
+
+---
+
 ## RFC — Request for Comments
 
 Publication format of the IETF and IRTF defining Internet standards, experimental
