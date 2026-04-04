@@ -5,7 +5,7 @@ Unchecked items will result in the PR being closed without review.
 
 ### Content validation
 - [ ] Each new entry follows the exact format: `## ACRONYM — Full Name`
-- [ ] Acronym is exactly 3 or 4 uppercase characters (A–Z, 0–9 only)
+- [ ] Acronym is 3–6 uppercase characters (A–Z, 0–9 only)
 - [ ] Description is 1–5 lines, technically accurate, written in my own words
 - [ ] `**Difficulty:**` field is present and set to one of: `Base`, `Intermediate`, `Advanced`
 - [ ] `**Category:**` field is present and set to one of: `Networking`, `Security`, `OS`, `Dev`, `Hardware`, `Cloud`, `Database`, `AI`, `Protocol`

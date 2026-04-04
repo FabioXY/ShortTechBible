@@ -247,6 +247,50 @@
     footer a { color: var(--blue); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
 
+    /* ── Copy toast ── */
+    #toast {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(60px);
+      background: #1e293b; color: #fff; padding: 10px 20px; border-radius: 8px;
+      font-size: .88rem; opacity: 0; transition: opacity .25s, transform .25s; pointer-events: none; z-index: 999;
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ── Contribute modal ── */
+    .modal-backdrop {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 200; align-items: center; justify-content: center;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal {
+      background: #fff; border-radius: 12px; padding: 32px; max-width: 640px; width: 90%;
+      max-height: 90vh; overflow-y: auto; box-shadow: 0 8px 40px rgba(0,0,0,.2);
+    }
+    .modal h2 { font-size: 1.3rem; color: var(--blue); margin-bottom: 20px; }
+    .modal label { display: block; font-size: .85rem; font-weight: 600; color: var(--text-sm); margin-bottom: 4px; margin-top: 14px; }
+    .modal input, .modal textarea, .modal select {
+      width: 100%; padding: 8px 12px; border: 1.5px solid var(--border); border-radius: var(--radius);
+      font-size: .92rem; font-family: inherit; outline: none; box-sizing: border-box;
+    }
+    .modal input:focus, .modal textarea:focus, .modal select:focus { border-color: var(--blue-lt); }
+    .modal textarea { min-height: 90px; resize: vertical; }
+    .modal-output {
+      margin-top: 18px; background: #f8fafc; border: 1.5px solid var(--border); border-radius: var(--radius);
+      padding: 14px; font-family: 'SF Mono', Consolas, monospace; font-size: .82rem;
+      white-space: pre-wrap; word-break: break-word; color: var(--text);
+    }
+    .modal-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 8px 18px; background: var(--blue); color: #fff; border: none; border-radius: 20px;
+      cursor: pointer; font-size: .9rem; font-weight: 600; transition: background .15s;
+    }
+    .btn-primary:hover { background: var(--blue-lt); }
+    .btn-secondary {
+      padding: 8px 18px; background: #fff; color: var(--blue); border: 1.5px solid var(--blue);
+      border-radius: 20px; cursor: pointer; font-size: .9rem; font-weight: 600; transition: all .15s;
+      text-decoration: none; display: inline-flex; align-items: center;
+    }
+    .btn-secondary:hover { background: var(--gray-lt); }
+    .modal-close { float: right; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--gray); line-height: 1; }
+
     /* ── Responsive ── */
     @media (max-width: 600px) {
       header h1 { font-size: 1.8rem; }
@@ -261,9 +305,10 @@
   <p>The Open-Source IT Acronym Encyclopedia — every 3–6 letter IT term, explained properly.</p>
   <div class="header-links">
     <a href="https://github.com/FabioXY/ShortTechBible" target="_blank">⭐ GitHub</a>
-    <a href="https://github.com/FabioXY/ShortTechBible/releases/latest" target="_blank">📄 Download PDF</a>
-    <a href="https://github.com/FabioXY/ShortTechBible/blob/main/CONTRIBUTING.md" target="_blank">➕ Contribute</a>
-    <a href="https://github.com/FabioXY/ShortTechBible/issues/new?template=new_acronym.md" target="_blank">💡 Propose Acronym</a>
+    <a href="https://github.com/FabioXY/ShortTechBible/blob/main/dist/acronyms.json" target="_blank">🗃️ JSON</a>
+    <a href="https://github.com/FabioXY/ShortTechBible/blob/main/dist/acronyms.csv" target="_blank">📊 CSV</a>
+    <a href="#" id="btn-random">🎲 Random</a>
+    <a href="#" id="btn-contribute">➕ Add Acronym</a>
   </div>
 </header>
 
@@ -299,6 +344,54 @@
 </div>
 
 <nav class="az-nav" id="az-nav"></nav>
+
+<!-- Toast -->
+<div id="toast"></div>
+
+<!-- Contribute modal -->
+<div class="modal-backdrop" id="contribute-modal">
+  <div class="modal">
+    <button class="modal-close" id="modal-close">×</button>
+    <h2>➕ Add a new acronym</h2>
+    <p style="font-size:.88rem;color:var(--gray);margin-bottom:8px">Fill in the fields — the formatted entry is generated automatically. Copy it and paste it into a GitHub issue or PR.</p>
+
+    <label>Acronym (3–6 uppercase chars)</label>
+    <input type="text" id="c-acronym" placeholder="e.g. NGINX" maxlength="6" style="text-transform:uppercase">
+
+    <label>Full Name</label>
+    <input type="text" id="c-fullname" placeholder="e.g. Engine X">
+
+    <label>Description (1–5 lines)</label>
+    <textarea id="c-desc" placeholder="Explain what it is, how it works, and where it's used. Be technically precise."></textarea>
+
+    <label>Difficulty</label>
+    <select id="c-diff">
+      <option value="Base">Base</option>
+      <option value="Intermediate" selected>Intermediate</option>
+      <option value="Advanced">Advanced</option>
+    </select>
+
+    <label>Category</label>
+    <select id="c-cat">
+      <option>Networking</option>
+      <option>Security</option>
+      <option>OS</option>
+      <option>Dev</option>
+      <option>Hardware</option>
+      <option>Cloud</option>
+      <option>Database</option>
+      <option>AI</option>
+      <option>Protocol</option>
+    </select>
+
+    <div class="modal-output" id="c-output">← Fill the fields above to generate the entry</div>
+
+    <div class="modal-actions">
+      <button class="btn-primary" id="c-copy">📋 Copy entry</button>
+      <a class="btn-secondary" href="https://github.com/FabioXY/ShortTechBible/issues/new?template=new_acronym.md" target="_blank">🐛 Open GitHub Issue</a>
+    </div>
+  </div>
+</div>
 
 <main>
   <div id="stats"></div>
@@ -433,10 +526,30 @@
       .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
+  // ── Toast helper ─────────────────────────────────────────────────────────
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
   // ── Event listeners ───────────────────────────────────────────────────────
   document.getElementById('search').addEventListener('input', e => {
     searchQuery = e.target.value;
     render();
+  });
+
+  // Press "/" to focus search
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      document.getElementById('search').focus();
+    }
+    if (e.key === 'Escape') {
+      document.getElementById('contribute-modal').classList.remove('open');
+      document.getElementById('search').blur();
+    }
   });
 
   document.getElementById('cat-filters').addEventListener('click', e => {
@@ -469,9 +582,7 @@
     const blob = new Blob([content], { type: mime });
     const url  = URL.createObjectURL(blob);
     const a    = document.createElement('a');
-    a.href     = url;
-    a.download = filename;
-    a.click();
+    a.href = url; a.download = filename; a.click();
     URL.revokeObjectURL(url);
   }
 
@@ -495,6 +606,81 @@
     const payload = JSON.stringify({ total: lastFiltered.length, entries: lastFiltered }, null, 2);
     downloadFile(payload, buildFilename('json'), 'application/json');
   });
+
+  // ── Random acronym ────────────────────────────────────────────────────────
+  document.getElementById('btn-random').addEventListener('click', e => {
+    e.preventDefault();
+    if (!data.length) return;
+    const entry = data[Math.floor(Math.random() * data.length)];
+    // Reset all filters and search to show the random entry
+    searchQuery = entry.acronym;
+    activeCategory = 'all';
+    activeDifficulty = 'all';
+    document.getElementById('search').value = entry.acronym;
+    document.querySelectorAll('#cat-filters .filter-btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('#diff-filters .filter-btn').forEach((b, i) => {
+      b.classList.remove('active', 'diff-active-Base', 'diff-active-Intermediate', 'diff-active-Advanced');
+      if (i === 0) b.classList.add('active');
+    });
+    render();
+    showToast(`🎲 ${entry.acronym} — ${entry.full_name || ''}`);
+  });
+
+  // ── Contribute modal ──────────────────────────────────────────────────────
+  function updateContributeOutput() {
+    const acr  = document.getElementById('c-acronym').value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+    const full = document.getElementById('c-fullname').value.trim();
+    const desc = document.getElementById('c-desc').value.trim();
+    const diff = document.getElementById('c-diff').value;
+    const cat  = document.getElementById('c-cat').value;
+
+    if (!acr) { document.getElementById('c-output').textContent = '← Fill the fields above to generate the entry'; return; }
+
+    let out = `## ${acr}`;
+    if (full) out += ` — ${full}`;
+    out += '\n\n';
+    if (desc) out += `${desc}\n\n`;
+    out += `**Difficulty:** ${diff}\n**Category:** ${cat}`;
+    document.getElementById('c-output').textContent = out;
+  }
+
+  ['c-acronym','c-fullname','c-desc','c-diff','c-cat'].forEach(id => {
+    document.getElementById(id).addEventListener('input', updateContributeOutput);
+  });
+
+  document.getElementById('btn-contribute').addEventListener('click', e => {
+    e.preventDefault();
+    document.getElementById('contribute-modal').classList.add('open');
+  });
+  document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('contribute-modal').classList.remove('open');
+  });
+  document.getElementById('contribute-modal').addEventListener('click', e => {
+    if (e.target === e.currentTarget) e.currentTarget.classList.remove('open');
+  });
+
+  document.getElementById('c-copy').addEventListener('click', () => {
+    const text = document.getElementById('c-output').textContent;
+    if (!text || text.startsWith('←')) return;
+    navigator.clipboard.writeText(text).then(() => showToast('✅ Entry copied to clipboard!'));
+  });
+
+  // ── Copy link on card click ───────────────────────────────────────────────
+  document.getElementById('entries-container').addEventListener('click', e => {
+    const card = e.target.closest('.entry-card');
+    if (!card) return;
+    const acr = card.querySelector('.entry-acronym')?.textContent;
+    if (!acr) return;
+    const url = `${location.origin}${location.pathname}?q=${encodeURIComponent(acr)}`;
+    navigator.clipboard.writeText(url).then(() => showToast(`🔗 Link for ${acr} copied!`));
+  });
+
+  // ── URL query param on load ───────────────────────────────────────────────
+  const urlQ = new URLSearchParams(location.search).get('q');
+  if (urlQ) {
+    searchQuery = urlQ;
+    document.getElementById('search').value = urlQ;
+  }
 
   // ── Initial render ────────────────────────────────────────────────────────
   render();

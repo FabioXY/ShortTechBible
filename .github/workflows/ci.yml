@@ -3,12 +3,13 @@ name: CI — Validate & Build
 on:
   push:
     branches: [main]
+    tags:     ['v*']
   pull_request:
     branches: [main]
 
 permissions:
   contents: write
-  pages: write
+  pages:    write
   id-token: write
 
 jobs:
@@ -29,12 +30,10 @@ jobs:
           python-version: "3.11"
 
       - name: Run validate.py
-        run: |
-          python scripts/validate.py
-        # Exit code 1 blocks merge automatically
+        run: python scripts/validate.py
 
   # ─────────────────────────────────────────────
-  # Job 2: Build all artifacts (only on main push or after PR validate passes)
+  # Job 2: Build artifacts (main push or tag)
   # ─────────────────────────────────────────────
   build:
     name: Build artifacts
@@ -54,38 +53,30 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install Pandoc and XeLaTeX
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended \
-            texlive-fonts-extra fonts-dejavu
-
       - name: Run build.py
-        run: |
-          python scripts/build.py
+        run: python scripts/build.py
 
       - name: Commit updated dist/ and docs/ files
+        if: github.ref == 'refs/heads/main'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add dist/ docs/acronyms_data.js README.md
-          # Only commit if there are changes
           git diff --staged --quiet || git commit -m "chore(build): regenerate dist artifacts [skip ci]"
           git push
-
-      - name: Upload PDF as workflow artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: ShortTechBible-PDF
-          path: dist/ShortTechBible.pdf
-          if-no-files-found: warn
-          retention-days: 30
 
       - name: Upload JSON as workflow artifact
         uses: actions/upload-artifact@v4
         with:
           name: ShortTechBible-JSON
           path: dist/acronyms.json
+          retention-days: 30
+
+      - name: Upload CSV as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShortTechBible-CSV
+          path: dist/acronyms.csv
           retention-days: 30
 
   # ─────────────────────────────────────────────
@@ -101,23 +92,22 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download PDF artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: ShortTechBible-PDF
-          path: dist/
-
       - name: Download JSON artifact
         uses: actions/download-artifact@v4
         with:
           name: ShortTechBible-JSON
           path: dist/
 
+      - name: Download CSV artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ShortTechBible-CSV
+          path: dist/
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            dist/ShortTechBible.pdf
             dist/acronyms.json
             dist/acronyms.csv
           generate_release_notes: true
@@ -140,7 +130,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: main  # Pull the latest commit (which has updated dist/ files)
+          ref: main
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

@@ -8,7 +8,7 @@ assignees: []
 
 ## Acronym Information
 
-**Acronym** (3–4 uppercase characters only):
+**Acronym** (3–6 uppercase characters, letters and digits only):
 ```
 WRITE_IT_HERE
 ```
@@ -43,9 +43,23 @@ Write It Here
 Your description here.
 ```
 
+## Ready-to-paste Entry
+
+> Optional but appreciated: use the format generator at https://FabioXY.github.io/ShortTechBible
+> (click "Contribute") to generate the correctly formatted entry automatically, then paste it here.
+
+```markdown
+## ACRONYM — Full Name
+
+Your description here.
+
+**Difficulty:** Base
+**Category:** Networking
+```
+
 ## Pre-submission Checklist
 
-- [ ] This acronym is not already in the repository (I searched the entries/ folder)
-- [ ] The acronym is exactly 3 or 4 characters
+- [ ] This acronym is not already in the repository (I searched the [web app](https://FabioXY.github.io/ShortTechBible) or the entries/ folder)
+- [ ] The acronym is 3–6 characters, uppercase letters and digits only
 - [ ] My description is written in my own words
-- [ ] I am willing to open a PR with the formatted entry if asked
+- [ ] I selected exactly one Category and one Difficulty

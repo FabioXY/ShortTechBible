@@ -176,7 +176,7 @@ Do not open a PR that adds 50 acronyms at once — it is very hard to review.
 5. Fix the error, commit to the same branch, and push — CI re-runs automatically.
 6. A maintainer reviews for content quality (technical accuracy, clarity).
 7. Once both CI and human review pass, the PR is merged.
-8. The build pipeline runs on `main`, regenerates the PDF/JSON/CSV, and deploys the site.
+8. The build pipeline runs on `main`, regenerates the JSON/CSV, and deploys the site.
 
 ### Common CI failures and how to fix them
 
@@ -210,10 +210,6 @@ If you want to test the full build pipeline:
 ```bash
 # Python 3.10+ required
 python scripts/validate.py   # Check for errors
-
-# For PDF generation, also install:
-# Ubuntu/Debian: sudo apt install pandoc texlive-xetex texlive-fonts-recommended
-# macOS: brew install pandoc && brew install --cask mactex
 python scripts/build.py      # Generates dist/ files and updates README
 ```
 

@@ -4,7 +4,7 @@
 
 ### The Open-Source IT Acronym Encyclopedia
 
-*Every 3–6 letter acronym in IT, explained properly.*
+*Every 3–6 letter IT acronym, explained properly.*
 
 [![Acronym Count](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FFabioXY%2FShortTechBible%2Fmain%2Fdist%2Facronyms.json&query=%24.meta.total&label=acronyms&color=1e508c&style=flat-square)](https://github.com/FabioXY/ShortTechBible)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
@@ -13,7 +13,7 @@
 [![Contributors](https://img.shields.io/github/contributors/FabioXY/ShortTechBible?style=flat-square&color=orange)](https://github.com/FabioXY/ShortTechBible/graphs/contributors)
 [![Stars](https://img.shields.io/github/stars/FabioXY/ShortTechBible?style=social)](https://github.com/FabioXY/ShortTechBible/stargazers)
 
-[**Browse Online →**](https://FabioXY.github.io/ShortTechBible) · [**Download PDF →**](https://github.com/FabioXY/ShortTechBible/releases/latest) · [**Add an Acronym →**](.github/ISSUE_TEMPLATE/new_acronym.md)
+[**Browse Online →**](https://FabioXY.github.io/ShortTechBible) · [**Add an Acronym →**](.github/ISSUE_TEMPLATE/new_acronym.md)
 
 </div>
 
@@ -29,18 +29,18 @@ Every entry follows a strict, consistent format:
 - **Difficulty** level: Base / Intermediate / Advanced
 - **Category**: Networking, Security, OS, Dev, Hardware, Cloud, Database, AI, Protocol
 
-The content is written by practitioners, validated by CI, and exported as a downloadable PDF designed to look like a professional technical book.
+The content is written by practitioners, validated by CI, and exported as machine-readable JSON and CSV datasets.
 
 ---
 
 ## Acronym of the Day
 
 <!-- STB:AOTD_START -->
-### 📖 Acronym of the Day — 2026-04-01
+### 📖 Acronym of the Day — 2026-04-04
 
-**BRPF** — Berkeley Packet Filter (Raw)
+**BPFCC** — BPF Compiler Collection
 
-> Raw access layer of the BPF kernel subsystem, providing a VM-based packet filtering engine at the network driver level. eBPF extends the classic BPF with a more capable instruction set, maps, and helper functions, enabling use beyond packet filtering: tracing, security policy, and XDP forwarding.
+> Toolkit (bcc) providing Python and Lua frontends for writing eBPF programs without directly authoring BPF bytecode. Includes ready-made tools: execsnoop, opensnoop, tcptracer, biolatency, and profile. Used for Linux kernel observability, performance analysis, and security monitoring without kernel module development.
 
 *Difficulty: Advanced · Category: OS*
 <!-- STB:AOTD_END -->
@@ -63,7 +63,7 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 ## Stats
 
 <!-- STB:TOTAL_START -->
-**1340 acronyms** — last updated 2026-04-01
+**1340 acronyms** — last updated 2026-04-04
 <!-- STB:TOTAL_END -->
 
 <!-- STB:STATS_START -->
@@ -121,7 +121,6 @@ Or search interactively on the **[GitHub Pages site →](https://FabioXY.github.
 
 | Format | Description | Link |
 |--------|-------------|------|
-| 📄 **PDF** | Full encyclopedia, book layout, table of contents | [Latest Release](https://github.com/FabioXY/ShortTechBible/releases/latest) |
 | 🗃️ **JSON** | Machine-readable, all fields, suitable for APIs and scripts | [acronyms.json](dist/acronyms.json) |
 | 📊 **CSV** | Spreadsheet-friendly, one row per acronym | [acronyms.csv](dist/acronyms.csv) |
 
@@ -188,8 +187,8 @@ ShortTechBible/
 ├── entries/            # One .md file per letter (A.md → Z.md)
 ├── scripts/
 │   ├── validate.py     # Validates all entries — run before every PR
-│   └── build.py        # Generates PDF, JSON, CSV, updates README
-├── dist/               # Generated output (PDF, JSON, CSV) — do not edit manually
+│   └── build.py        # Generates JSON, CSV, updates README
+├── dist/               # Generated output (JSON, CSV) — do not edit manually
 ├── docs/               # GitHub Pages site source
 ├── .github/
 │   ├── workflows/ci.yml           # CI/CD pipeline
@@ -197,7 +196,6 @@ ShortTechBible/
 │   └── ISSUE_TEMPLATE/
 │       ├── new_acronym.md
 │       └── bug_report.md
-├── pandoc-template.latex   # Custom LaTeX template for the PDF
 ├── CONTRIBUTING.md
 └── README.md
 ```
@@ -206,7 +204,7 @@ ShortTechBible/
 
 ## Roadmap
 
-- [ ] **v1.0** — 500+ acronyms across all letters, full CI/CD, PDF release
+- [x] **v1.0** — 1300+ acronyms across all letters, full CI/CD, JSON/CSV release
 - [ ] **REST API** — public read-only JSON API hosted on GitHub Pages (`/api/v1/acronyms/{acronym}`)
 - [ ] **CLI tool** — `stb get TCP`, `stb search cloud`, `stb random` via pip/npx
 - [ ] **Web search** — full-text search on the GitHub Pages site (already scaffolded)
