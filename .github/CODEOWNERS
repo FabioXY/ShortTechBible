@@ -1,0 +1,4 @@
+# CODEOWNERS — every PR is automatically assigned to the maintainer for review.
+# GitHub uses this file to request reviews when a pull request touches any file.
+
+* @FabioXY

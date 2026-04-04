@@ -22,9 +22,12 @@ ENTRIES_DIR = ROOT / "entries"
 DIST_DIR    = ROOT / "dist"
 DOCS_DIR    = ROOT / "docs"
 README_PATH = ROOT / "README.md"
-OUTPUT_JSON = DIST_DIR / "acronyms.json"
-OUTPUT_CSV  = DIST_DIR / "acronyms.csv"
-OUTPUT_JS   = DOCS_DIR / "acronyms_data.js"
+OUTPUT_JSON    = DIST_DIR / "acronyms.json"
+OUTPUT_CSV     = DIST_DIR / "acronyms.csv"
+OUTPUT_JS      = DOCS_DIR / "acronyms_data.js"
+OUTPUT_SITEMAP = DOCS_DIR / "sitemap.xml"
+
+BASE_URL = "https://FabioXY.github.io/ShortTechBible"
 
 # ── Parsing (shared logic with validate.py) ───────────────────────────────────
 
@@ -133,6 +136,40 @@ def generate_csv(entries: list[dict]) -> None:
     print(f"  ✓ Generated {OUTPUT_CSV.relative_to(ROOT)}")
 
 
+def generate_sitemap(entries: list[dict]) -> None:
+    """Generate a sitemap.xml for GitHub Pages to improve SEO indexing."""
+    from xml.etree.ElementTree import Element, SubElement, ElementTree, indent
+    import urllib.parse
+
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+    urlset = Element("urlset")
+    urlset.set("xmlns", "http://www.sitemaps.org/schemas/sitemap/0.9")
+
+    # Homepage
+    home = SubElement(urlset, "url")
+    SubElement(home, "loc").text    = BASE_URL + "/"
+    SubElement(home, "lastmod").text = today
+    SubElement(home, "priority").text = "1.0"
+    SubElement(home, "changefreq").text = "weekly"
+
+    # One URL per acronym via ?q= param
+    for e in entries:
+        url_el = SubElement(urlset, "url")
+        loc = BASE_URL + "/?q=" + urllib.parse.quote(e["acronym"])
+        SubElement(url_el, "loc").text      = loc
+        SubElement(url_el, "lastmod").text  = today
+        SubElement(url_el, "priority").text = "0.6"
+        SubElement(url_el, "changefreq").text = "monthly"
+
+    tree = ElementTree(urlset)
+    indent(tree, space="  ")
+    DOCS_DIR.mkdir(exist_ok=True)
+    with OUTPUT_SITEMAP.open("wb") as f:
+        tree.write(f, encoding="utf-8", xml_declaration=True)
+    print(f"  ✓ Generated {OUTPUT_SITEMAP.relative_to(ROOT)} ({len(entries)+1} URLs)")
+
+
 def generate_js_for_docs(entries: list[dict]) -> None:
     """Write a JS file that the GitHub Pages site imports directly (no CORS issues)."""
     DOCS_DIR.mkdir(exist_ok=True)
@@ -217,23 +254,24 @@ def main() -> int:
     print(" ShortTechBible — Build System")
     print(f"{'─'*60}\n")
 
-    print("[1/4] Loading entries …")
+    print("[1/5] Loading entries …")
     entries = load_all_entries()
     if not entries:
         print("  ✗ No entries found. Run validate.py first.")
         return 1
     print(f"  ✓ Loaded {len(entries)} entries from {ENTRIES_DIR}/")
 
-    print("\n[2/4] Generating dist/acronyms.json …")
+    print("\n[2/5] Generating dist/acronyms.json …")
     generate_json(entries)
 
-    print("\n[3/4] Generating dist/acronyms.csv …")
+    print("\n[3/5] Generating dist/acronyms.csv …")
     generate_csv(entries)
 
-    print("\n[4/4] Generating docs/acronyms_data.js …")
+    print("\n[4/5] Generating docs/acronyms_data.js + docs/sitemap.xml …")
     generate_js_for_docs(entries)
+    generate_sitemap(entries)
 
-    print("\n[4/4] Updating README.md …")
+    print("\n[5/5] Updating README.md …")
     aotd = get_acronym_of_the_day(entries)
     update_readme(entries, aotd)
 

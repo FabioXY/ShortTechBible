@@ -56,23 +56,25 @@
     .header-links a:hover { background: rgba(255,255,255,.28); }
 
     /* ── Controls ── */
+    /* ── Controls: 3 rows ── */
     .controls {
       position: sticky;
       top: 0;
       z-index: 100;
       background: #fff;
       border-bottom: 1px solid var(--border);
-      padding: 14px 24px;
+      padding: 12px 24px;
       display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
       box-shadow: var(--shadow);
     }
 
+    /* Row 1: search full width */
+    .controls-row1 { display: flex; gap: 10px; align-items: center; }
+
     #search {
       flex: 1;
-      min-width: 200px;
       padding: 9px 14px;
       border: 1.5px solid var(--border);
       border-radius: var(--radius);
@@ -81,61 +83,82 @@
       transition: border-color .2s;
     }
     #search:focus { border-color: var(--blue-lt); }
+    .search-hint { font-size: .75rem; color: var(--gray); white-space: nowrap; }
+    .search-hint kbd {
+      background: var(--gray-lt); border: 1px solid var(--border);
+      border-radius: 4px; padding: 1px 5px; font-size: .72rem;
+    }
 
-    .filter-group { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-    .filter-label { font-size: .78rem; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: .5px; white-space: nowrap; }
+    /* Row 2: category filters centered */
+    .controls-row2 {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Row 3: difficulty filters + download buttons */
+    .controls-row3 {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .controls-row3-left  { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .controls-row3-right { display: flex; gap: 8px; align-items: center; }
+
+    .filter-group { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .filter-label {
+      font-size: .75rem; font-weight: 700; color: var(--gray);
+      text-transform: uppercase; letter-spacing: .6px; white-space: nowrap;
+    }
 
     .filter-btn {
-      padding: 6px 14px;
+      padding: 5px 13px;
       border: 1.5px solid var(--border);
       border-radius: 20px;
       background: #fff;
       cursor: pointer;
-      font-size: .85rem;
+      font-size: .83rem;
       color: var(--text-sm);
       transition: all .15s;
     }
-    .filter-btn.active {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #fff;
-    }
-    .filter-btn:hover:not(.active) { border-color: var(--blue-lt); color: var(--blue); }
+    .filter-btn.active      { background: var(--blue); border-color: var(--blue); color: #fff; }
+    .filter-btn:hover:not(.active):not([class*="diff-active"]) { border-color: var(--blue-lt); color: var(--blue); }
 
     /* Difficulty active states */
     .filter-btn.diff-active-Base         { background: #166534; border-color: #166534; color: #fff; }
     .filter-btn.diff-active-Intermediate { background: #854d0e; border-color: #854d0e; color: #fff; }
     .filter-btn.diff-active-Advanced     { background: #991b1b; border-color: #991b1b; color: #fff; }
 
-    /* Download button */
+    /* Download buttons */
     .download-btn {
-      padding: 6px 16px;
+      padding: 5px 14px;
       border: 1.5px solid var(--blue);
       border-radius: 20px;
       background: #fff;
       cursor: pointer;
-      font-size: .85rem;
+      font-size: .83rem;
       color: var(--blue);
       font-weight: 600;
       transition: all .15s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
     .download-btn:hover { background: var(--blue); color: #fff; }
-    .download-group { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; align-items: center; }
 
-    /* ── A–Z nav ── */
+    /* ── A–Z nav — centered ── */
     .az-nav {
-      padding: 12px 24px;
+      padding: 10px 24px;
       background: var(--gray-lt);
       border-bottom: 1px solid var(--border);
       display: flex;
-      gap: 4px;
+      gap: 2px;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .az-nav a {
-      width: 30px; height: 30px;
+      width: 32px; height: 32px;
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: .9rem;
       color: var(--blue);
@@ -291,6 +314,28 @@
     .btn-secondary:hover { background: var(--gray-lt); }
     .modal-close { float: right; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--gray); line-height: 1; }
 
+    /* ── Search highlight ── */
+    mark {
+      background: #fef08a;
+      color: inherit;
+      border-radius: 2px;
+      padding: 0 1px;
+    }
+
+    /* ── Sort select ── */
+    .sort-select {
+      padding: 5px 10px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: .83rem;
+      color: var(--text-sm);
+      background: #fff;
+      cursor: pointer;
+      outline: none;
+      white-space: nowrap;
+    }
+    .sort-select:focus { border-color: var(--blue-lt); }
+
     /* ── Responsive ── */
     @media (max-width: 600px) {
       header h1 { font-size: 1.8rem; }
@@ -313,33 +358,58 @@
 </header>
 
 <div class="controls">
-  <input type="search" id="search" placeholder="Search acronyms, names, or descriptions…" autocomplete="off" />
-
-  <div class="filter-group" id="cat-filters">
-    <span class="filter-label">Category</span>
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="Networking">Networking</button>
-    <button class="filter-btn" data-filter="Security">Security</button>
-    <button class="filter-btn" data-filter="OS">OS</button>
-    <button class="filter-btn" data-filter="Dev">Dev</button>
-    <button class="filter-btn" data-filter="Hardware">Hardware</button>
-    <button class="filter-btn" data-filter="Cloud">Cloud</button>
-    <button class="filter-btn" data-filter="Database">Database</button>
-    <button class="filter-btn" data-filter="AI">AI</button>
-    <button class="filter-btn" data-filter="Protocol">Protocol</button>
+  <!-- Row 1: search bar + sort -->
+  <div class="controls-row1">
+    <input type="search" id="search" placeholder="Search acronyms, names, or descriptions…" autocomplete="off" />
+    <span class="search-hint">Press <kbd>/</kbd> to search</span>
+    <select id="sort-select" class="sort-select" title="Sort order">
+      <option value="az">A → Z</option>
+      <option value="za">Z → A</option>
+      <option value="short">Shortest first</option>
+      <option value="long">Longest first</option>
+    </select>
   </div>
 
-  <div class="filter-group" id="diff-filters">
-    <span class="filter-label">Difficulty</span>
-    <button class="filter-btn active" data-diff="all">All</button>
-    <button class="filter-btn" data-diff="Base">Base</button>
-    <button class="filter-btn" data-diff="Intermediate">Intermediate</button>
-    <button class="filter-btn" data-diff="Advanced">Advanced</button>
+  <!-- Row 2: category filters (centered) -->
+  <div class="controls-row2">
+    <div class="filter-group" id="cat-filters">
+      <span class="filter-label">Category</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Networking">Networking</button>
+      <button class="filter-btn" data-filter="Security">Security</button>
+      <button class="filter-btn" data-filter="OS">OS</button>
+      <button class="filter-btn" data-filter="Dev">Dev</button>
+      <button class="filter-btn" data-filter="Hardware">Hardware</button>
+      <button class="filter-btn" data-filter="Cloud">Cloud</button>
+      <button class="filter-btn" data-filter="Database">Database</button>
+      <button class="filter-btn" data-filter="AI">AI</button>
+      <button class="filter-btn" data-filter="Protocol">Protocol</button>
+    </div>
   </div>
 
-  <div class="download-group">
-    <button class="download-btn" id="download-csv">⬇ CSV</button>
-    <button class="download-btn" id="download-json">⬇ JSON</button>
+  <!-- Row 3: difficulty filters (left) + download buttons (right) -->
+  <div class="controls-row3">
+    <div class="controls-row3-left">
+      <div class="filter-group" id="diff-filters">
+        <span class="filter-label">Difficulty</span>
+        <button class="filter-btn active" data-diff="all">All</button>
+        <button class="filter-btn" data-diff="Base">Base</button>
+        <button class="filter-btn" data-diff="Intermediate">Intermediate</button>
+        <button class="filter-btn" data-diff="Advanced">Advanced</button>
+      </div>
+      <div class="filter-group" id="len-filters">
+        <span class="filter-label">Length</span>
+        <button class="filter-btn active" data-len="all">All</button>
+        <button class="filter-btn" data-len="3">3</button>
+        <button class="filter-btn" data-len="4">4</button>
+        <button class="filter-btn" data-len="5">5</button>
+        <button class="filter-btn" data-len="6">6</button>
+      </div>
+    </div>
+    <div class="controls-row3-right">
+      <button class="download-btn" id="download-csv">⬇ CSV</button>
+      <button class="download-btn" id="download-json">⬇ JSON</button>
+    </div>
   </div>
 </div>
 
@@ -388,8 +458,13 @@
 
     <div class="modal-actions">
       <button class="btn-primary" id="c-copy">📋 Copy entry</button>
-      <a class="btn-secondary" href="https://github.com/FabioXY/ShortTechBible/issues/new?template=new_acronym.md" target="_blank">🐛 Open GitHub Issue</a>
+      <a class="btn-secondary" id="c-issue" href="#" target="_blank">🐛 Open pre-filled Issue</a>
+      <a class="btn-secondary" id="c-edit" href="#" target="_blank">✏️ Edit file on GitHub</a>
     </div>
+    <p style="font-size:.78rem;color:var(--gray);margin-top:12px">
+      <strong>Issue</strong>: submit the entry for review — a maintainer adds it.<br>
+      <strong>Edit file</strong>: opens the correct <code>entries/X.md</code> in GitHub's editor — paste, commit, done.
+    </p>
   </div>
 </div>
 
@@ -428,6 +503,8 @@
   // ── State ────────────────────────────────────────────────────────────────
   let activeCategory   = 'all';
   let activeDifficulty = 'all';
+  let activeLength     = 'all';
+  let activeSort       = 'az';
   let searchQuery      = '';
   let lastFiltered     = data; // cache for download
 
@@ -461,26 +538,39 @@
     const filtered = data.filter(e => {
       const catMatch  = activeCategory   === 'all' || e.category   === activeCategory;
       const diffMatch = activeDifficulty === 'all' || e.difficulty === activeDifficulty;
+      const lenMatch  = activeLength     === 'all' || e.acronym.length === parseInt(activeLength);
       const qMatch    = !q ||
         e.acronym.toLowerCase().includes(q) ||
         (e.full_name || '').toLowerCase().includes(q) ||
         (e.description || '').toLowerCase().includes(q);
-      return catMatch && diffMatch && qMatch;
+      return catMatch && diffMatch && lenMatch && qMatch;
     });
 
-    lastFiltered = filtered;
+    // Apply sort
+    const sorted = [...filtered].sort((a, b) => {
+      if (activeSort === 'za')    return b.acronym.localeCompare(a.acronym);
+      if (activeSort === 'short') return a.acronym.length - b.acronym.length || a.acronym.localeCompare(b.acronym);
+      if (activeSort === 'long')  return b.acronym.length - a.acronym.length || a.acronym.localeCompare(b.acronym);
+      return a.acronym.localeCompare(b.acronym); // az default
+    });
+
+    lastFiltered = sorted;
 
     // Group by letter
     const byLetter = {};
-    filtered.forEach(e => {
+    sorted.forEach(e => {
       (byLetter[e.letter] = byLetter[e.letter] || []).push(e);
     });
 
     const container = document.getElementById('entries-container');
     container.innerHTML = '';
 
-    const sortedLetters = Object.keys(byLetter).sort();
-    sortedLetters.forEach(letter => {
+    // Letter order follows sort direction
+    const letterOrder = Object.keys(byLetter).sort(
+      activeSort === 'za' ? (a, b) => b.localeCompare(a) : (a, b) => a.localeCompare(b)
+    );
+
+    letterOrder.forEach(letter => {
       const group = document.createElement('div');
       group.className = 'letter-group';
       group.id = 'letter-' + letter;
@@ -498,10 +588,10 @@
         card.className = 'entry-card';
         card.innerHTML = `
           <div class="entry-header">
-            <span class="entry-acronym">${esc(e.acronym)}</span>
-            <span class="entry-fullname">${esc(e.full_name || '')}</span>
+            <span class="entry-acronym">${highlight(e.acronym, searchQuery)}</span>
+            <span class="entry-fullname">${highlight(e.full_name || '', searchQuery)}</span>
           </div>
-          <div class="entry-desc">${esc(e.description || '')}</div>
+          <div class="entry-desc">${highlight(e.description || '', searchQuery)}</div>
           <div class="entry-meta">
             <span class="badge diff-${esc(e.difficulty)}">${esc(e.difficulty)}</span>
             <span class="badge cat">${esc(e.category)}</span>
@@ -515,15 +605,33 @@
     });
 
     const empty = document.getElementById('empty-state');
-    empty.style.display = filtered.length === 0 ? 'block' : 'none';
+    empty.style.display = sorted.length === 0 ? 'block' : 'none';
 
-    renderStats(filtered);
+    renderStats(sorted);
   }
 
   function esc(str) {
     return String(str)
       .replace(/&/g,'&amp;').replace(/</g,'&lt;')
       .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // Highlights query matches inside str, returning safe HTML.
+  // Works on the original unescaped string to avoid breaking HTML entities.
+  function highlight(str, query) {
+    if (!query) return esc(str);
+    const s      = String(str);
+    const lowerS = s.toLowerCase();
+    const lowerQ = query.toLowerCase();
+    const parts  = [];
+    let pos = 0, idx;
+    while ((idx = lowerS.indexOf(lowerQ, pos)) !== -1) {
+      parts.push(esc(s.slice(pos, idx)));
+      parts.push(`<mark>${esc(s.slice(idx, idx + query.length))}</mark>`);
+      pos = idx + query.length;
+    }
+    parts.push(esc(s.slice(pos)));
+    return parts.join('');
   }
 
   // ── Toast helper ─────────────────────────────────────────────────────────
@@ -634,7 +742,12 @@
     const diff = document.getElementById('c-diff').value;
     const cat  = document.getElementById('c-cat').value;
 
-    if (!acr) { document.getElementById('c-output').textContent = '← Fill the fields above to generate the entry'; return; }
+    if (!acr) {
+      document.getElementById('c-output').textContent = '← Fill the fields above to generate the entry';
+      document.getElementById('c-issue').href = '#';
+      document.getElementById('c-edit').href  = '#';
+      return;
+    }
 
     let out = `## ${acr}`;
     if (full) out += ` — ${full}`;
@@ -642,6 +755,16 @@
     if (desc) out += `${desc}\n\n`;
     out += `**Difficulty:** ${diff}\n**Category:** ${cat}`;
     document.getElementById('c-output').textContent = out;
+
+    // Pre-filled GitHub issue URL
+    const issueTitle = `feat: add ${acr}${full ? ' — ' + full : ''}`;
+    const issueBody  = `## Ready-to-paste Entry\n\n\`\`\`markdown\n${out}\n\`\`\`\n\n## Pre-submission Checklist\n- [ ] This acronym is not already in the repository\n- [ ] The acronym is 3–6 characters, uppercase letters and digits only\n- [ ] My description is written in my own words`;
+    const issueURL   = `https://github.com/FabioXY/ShortTechBible/issues/new?labels=new-acronym%2Cneeds-review&title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
+    document.getElementById('c-issue').href = issueURL;
+
+    // Direct edit link to the correct entries/X.md file
+    const letter = acr[0];
+    document.getElementById('c-edit').href = `https://github.com/FabioXY/ShortTechBible/edit/main/entries/${letter}.md`;
   }
 
   ['c-acronym','c-fullname','c-desc','c-diff','c-cat'].forEach(id => {
@@ -674,6 +797,48 @@
     const url = `${location.origin}${location.pathname}?q=${encodeURIComponent(acr)}`;
     navigator.clipboard.writeText(url).then(() => showToast(`🔗 Link for ${acr} copied!`));
   });
+
+  // ── Sort ─────────────────────────────────────────────────────────────────
+  document.getElementById('sort-select').addEventListener('change', e => {
+    activeSort = e.target.value;
+    render();
+  });
+
+  // ── Length filter ─────────────────────────────────────────────────────────
+  document.getElementById('len-filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('#len-filters .filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeLength = btn.dataset.len;
+    render();
+  });
+
+  // ── JSON-LD structured data (SEO) ─────────────────────────────────────────
+  // Injected dynamically so Google can index each acronym as a DefinedTerm
+  (function injectJsonLd() {
+    if (!data.length) return;
+    const ldScript = document.createElement('script');
+    ldScript.type = 'application/ld+json';
+    ldScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "DefinedTermSet",
+      "name": "ShortTechBible — IT Acronym Encyclopedia",
+      "description": "Open-source encyclopedia of 3–6 letter IT acronyms covering networking, security, OS, cloud, and dev terms.",
+      "url": "https://FabioXY.github.io/ShortTechBible",
+      "definedTerm": data.map(e => {
+        const term = {
+          "@type": "DefinedTerm",
+          "name": e.acronym,
+          "url": `https://FabioXY.github.io/ShortTechBible?q=${encodeURIComponent(e.acronym)}`
+        };
+        if (e.full_name)   term.alternateName = e.full_name;
+        if (e.description) term.description   = e.description;
+        return term;
+      })
+    });
+    document.head.appendChild(ldScript);
+  })();
 
   // ── URL query param on load ───────────────────────────────────────────────
   const urlQ = new URLSearchParams(location.search).get('q');

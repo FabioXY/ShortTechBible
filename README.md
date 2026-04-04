@@ -17,6 +17,9 @@
 
 </div>
 
+> **👉 Use the [interactive web app](https://FabioXY.github.io/ShortTechBible) — it's the best way to explore ShortTechBible.**
+> Search by name, filter by category and difficulty, download filtered datasets as CSV or JSON, and submit new acronyms with a single click — no setup required.
+
 ---
 
 ## What is this?
