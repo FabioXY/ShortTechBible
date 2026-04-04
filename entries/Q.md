@@ -434,13 +434,3 @@ Linux kernel component of the traffic control (tc) subsystem that manages packet
 **Difficulty:** Advanced
 **Category:** Networking
 
----
-
-## QUIC — Quick UDP Internet Connections
-
-A transport protocol developed by Google that uses UDP instead of TCP to reduce latency.
-It is the foundation of HTTP/3 and improves web connection speed and security.
-It includes built-in encryption (TLS 1.3) and enables faster connection establishment than traditional protocols.
-
-**Difficulty:** Advanced
-**Category:** Protocol
