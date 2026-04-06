@@ -66,14 +66,14 @@ jobs:
           git push
 
       - name: Upload JSON as workflow artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ShortTechBible-JSON
           path: dist/acronyms.json
           retention-days: 30
 
       - name: Upload CSV as workflow artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ShortTechBible-CSV
           path: dist/acronyms.csv
